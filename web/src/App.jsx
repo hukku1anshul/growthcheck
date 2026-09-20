@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Chart, { fmt, isDerived } from './Chart.jsx'
 import People from './People.jsx'
+import QueryBar, { StatsStrip, periodOptions } from './QueryBar.jsx'
 import {
   loadMeta,
   loadSeries,
@@ -26,12 +27,16 @@ export default function App() {
   const [selected, setSelected] = useState(URL0.countries || DEFAULT_COUNTRIES)
   const [focus, setFocus] = useState(URL0.focus || (URL0.countries || DEFAULT_COUNTRIES)[0])
   const [indicatorId, setIndicatorId] = useState(URL0.indicator || DEFAULT_INDICATOR)
+  const [indicator2Id, setIndicator2Id] = useState(URL0.indicator2 || null)
+  const [periodId, setPeriodId] = useState(URL0.period || null)
   const [range, setRange] = useState([URL0.from ?? 1960, URL0.to ?? 2025])
   const [rebased, setRebased] = useState(URL0.rebased ?? false)
   const [showSpans, setShowSpans] = useState(URL0.spans ?? true)
   const [kinds, setKinds] = useState(null) // null = not yet initialised
   const [search, setSearch] = useState('')
   const [seriesByIso, setSeriesByIso] = useState({})
+  const [series2ByIso, setSeries2ByIso] = useState({})
+  const chartApi = useRef(null)
   const [eventData, setEventData] = useState({ events: [], spans: [] })
   const [picked, setPicked] = useState(null)
   const [filtersOpen, setFiltersOpen] = useState(false)
@@ -70,6 +75,8 @@ export default function App() {
       view: mode,
       c: mode === 'countries' ? selected : undefined,
       i: mode === 'countries' ? indicatorId : undefined,
+      i2: mode === 'countries' ? indicator2Id || undefined : undefined,
+      period: mode === 'countries' ? periodId || undefined : undefined,
       from: mode === 'countries' ? range[0] : undefined,
       to: mode === 'countries' ? range[1] : undefined,
       focus: mode === 'countries' ? focus : undefined,
@@ -77,7 +84,8 @@ export default function App() {
       rebased: mode === 'countries' ? (rebased ? 1 : 0) : undefined,
       spans: mode === 'countries' ? (showSpans ? 1 : 0) : undefined,
     })
-  }, [mode, selected, indicatorId, range, focus, kinds, rebased, showSpans])
+  }, [mode, selected, indicatorId, indicator2Id, periodId, range, focus, kinds,
+      rebased, showSpans])
 
   // ---------------------------------------------------------------- data load
   useEffect(() => {
@@ -89,6 +97,17 @@ export default function App() {
       live = false
     }
   }, [indicatorId])
+
+  useEffect(() => {
+    if (!indicator2Id) return setSeries2ByIso({})
+    let live = true
+    loadSeries(indicator2Id)
+      .then((d) => live && setSeries2ByIso(d))
+      .catch(() => live && setSeries2ByIso({}))
+    return () => {
+      live = false
+    }
+  }, [indicator2Id])
 
   useEffect(() => {
     let live = true
@@ -107,6 +126,11 @@ export default function App() {
   const indicator = useMemo(
     () => meta?.indicators.find((i) => i.id === indicatorId) || null,
     [meta, indicatorId]
+  )
+
+  const indicator2 = useMemo(
+    () => (indicator2Id ? meta?.indicators.find((i) => i.id === indicator2Id) || null : null),
+    [meta, indicator2Id]
   )
 
   const countryName = useCallback(
@@ -129,6 +153,109 @@ export default function App() {
     }
     return out
   }, [selected, seriesByIso, rebased, range])
+
+  const chartSeries2 = useMemo(() => {
+    if (!indicator2Id) return {}
+    const out = {}
+    for (const iso3 of selected) {
+      const raw = series2ByIso[iso3] || []
+      out[iso3] = rebased
+        ? rebase(raw, range)
+        : raw.filter(([y]) => y >= range[0] && y <= range[1])
+    }
+    return out
+  }, [indicator2Id, selected, series2ByIso, rebased, range])
+
+  // --- export ---------------------------------------------------------------
+  // The filename carries the question, so a folder of downloads stays legible:
+  // gdp_pc__IND-CHN__1991-2025.png rather than chart(3).png.
+  const slug = useCallback(() => {
+    const parts = [indicatorId, indicator2Id, selected.join('-'), `${range[0]}-${range[1]}`]
+    return parts.filter(Boolean).join('__').replace(/[^\w.-]+/g, '_')
+  }, [indicatorId, indicator2Id, selected, range])
+
+  const download = (href, name) => {
+    const a = document.createElement('a')
+    a.href = href
+    a.download = name
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+  }
+
+  const exportPNG = useCallback(() => {
+    const api = chartApi.current
+    if (!api) return
+    // An opaque background, because a transparent PNG pasted into a document
+    // with a dark theme renders the axis labels invisible.
+    download(
+      api.getDataURL({ type: 'png', pixelRatio: 2, backgroundColor: dark ? '#0f172a' : '#ffffff' }),
+      `${slug()}.png`
+    )
+  }, [slug, dark])
+
+  const exportCSV = useCallback(() => {
+    // Long format: one row per country-indicator-year. Wide format needs a
+    // column per series and breaks the moment two series cover different years,
+    // which is the normal case here.
+    const rows = [['country', 'iso3', 'indicator', 'unit', 'year', 'value']]
+    const add = (ind, byIso) => {
+      if (!ind) return
+      for (const iso3 of selected) {
+        for (const [y, v] of byIso[iso3] || []) {
+          if (v === null || v === undefined) continue
+          rows.push([countryName(iso3), iso3, ind.name, ind.unit || '', y, v])
+        }
+      }
+    }
+    add(indicator, chartSeries)
+    add(indicator2, chartSeries2)
+    const NEEDS_QUOTING = /["\n,]/
+    const csv = rows
+      .map((r) =>
+        r
+          .map((x) => {
+            const cell = String(x)
+            return NEEDS_QUOTING.test(cell) ? `"${cell.replace(/"/g, '""')}"` : cell
+          })
+          .join(',')
+      )
+      .join('\n')
+    // A BOM, so Excel opens UTF-8 country names correctly instead of mojibake.
+    const blob = new Blob(['﻿' + csv], { type: 'text/csv;charset=utf-8' })
+    const url = URL.createObjectURL(blob)
+    download(url, `${slug()}.csv`)
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
+  }, [selected, indicator, indicator2, chartSeries, chartSeries2, countryName, slug])
+
+  const periods = useMemo(
+    () => periodOptions(eventData.spans, countryName(focus)),
+    [eventData.spans, countryName, focus]
+  )
+
+  // Picking a leader sets the year range. It does NOT lock it: the reader can
+  // still drag the years afterwards, and the chip then stops claiming to be
+  // that tenure.
+  useEffect(() => {
+    if (!periodId) return
+    const p = periods.find((x) => x.id === periodId)
+    if (!p) return
+    setRange(([a, b]) => (a === p.from && b === p.to ? [a, b] : [p.from, p.to]))
+  }, [periodId, periods])
+
+  // A period belongs to the focus country's history, so it cannot survive a
+  // change of focus country - Nehru is not a period in Brazil.
+  //
+  // The length guard is load-bearing. Spans arrive asynchronously, so `periods`
+  // is empty on the first render after any focus change - including the very
+  // first render of a shared link. Without it, opening someone's
+  // "?period=leader:Nehru:1947" link cleared the period a moment before the
+  // data that would have validated it arrived, and the reader saw the whole
+  // range with no indication anything had been dropped.
+  useEffect(() => {
+    if (!periods.length) return
+    setPeriodId((cur) => (cur && !periods.some((p) => p.id === cur) ? null : cur))
+  }, [periods])
 
   const visibleEvents = useMemo(() => {
     if (!kinds) return []
@@ -375,11 +502,34 @@ export default function App() {
             </p>
           )}
 
+          <QueryBar
+            meta={meta}
+            indicator={indicator}
+            indicator2={indicator2}
+            onIndicator2={setIndicator2Id}
+            periods={periods}
+            periodId={periodId}
+            onPeriod={setPeriodId}
+            range={range}
+            countries={chartCountries}
+            focus={focus}
+            onRemoveCountry={(iso3) =>
+              setSelected((cur) => (cur.length > 1 ? cur.filter((x) => x !== iso3) : cur))}
+            kinds={kinds}
+            allKinds={Object.keys(meta.event_kinds || {})}
+            onResetKinds={() => setKinds(new Set(Object.keys(meta.event_kinds || {})))}
+            rebased={rebased}
+            onExportPNG={exportPNG}
+            onExportCSV={exportCSV}
+          />
+
           <Chart
             meta={meta}
             indicator={indicator}
+            indicator2={indicator2}
             countries={chartCountries}
             seriesByIso={chartSeries}
+            series2ByIso={chartSeries2}
             focus={focus}
             events={visibleEvents}
             spans={visibleSpans}
@@ -387,7 +537,16 @@ export default function App() {
             rebased={rebased}
             showSpans={showSpans}
             onPickEvent={setPicked}
+            onReady={(api) => { chartApi.current = api }}
             dark={dark}
+          />
+
+          <StatsStrip
+            countries={chartCountries}
+            seriesByIso={chartSeries}
+            indicator={indicator}
+            series2ByIso={chartSeries2}
+            indicator2={indicator2}
           />
 
           <div className="panels">

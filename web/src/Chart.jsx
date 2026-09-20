@@ -13,8 +13,10 @@ import { COLOURS, eventColour, eventLabel } from './data.js'
 export default function Chart({
   meta,
   indicator,
+  indicator2,    // optional second indicator, drawn on a right-hand axis
   countries,     // [{iso3, name}]
   seriesByIso,   // {iso3: [[year, value], ...]}
+  series2ByIso,  // same shape, for indicator2
   focus,         // iso3 whose events are drawn
   events,        // focus country's events, already filtered
   spans,         // focus country's spans, already filtered
@@ -22,6 +24,7 @@ export default function Chart({
   rebased,
   showSpans,
   onPickEvent,
+  onReady,       // hands the echarts instance up, for PNG export
   dark,
 }) {
   const ref = useRef(null)
@@ -29,7 +32,15 @@ export default function Chart({
 
   useEffect(() => {
     chart.current = echarts.init(ref.current, dark ? 'dark' : null, { renderer: 'canvas' })
-    if (import.meta.env.DEV) window.__chart = chart.current
+    // Deliberately exposed in production, not just in dev. The browser tests
+    // assert things that are only visible in the chart OPTION - that a second
+    // indicator really is bound to a second axis, and that the axis names the
+    // unit it carries - and a canvas cannot be inspected for that. Guarding it
+    // behind DEV would mean the axis tests silently passed against a build
+    // where the hook did not exist, which is the same "green tick for
+    // something never tested" failure as reusing a stale preview server.
+    // It is read-only introspection of data the page already renders.
+    window.__chart = chart.current
     const onResize = () => chart.current?.resize()
     window.addEventListener('resize', onResize)
     return () => {
@@ -45,8 +56,13 @@ export default function Chart({
     const textColour = dark ? '#cbd5e1' : '#475569'
     const faint = dark ? 'rgba(148,163,184,.10)' : 'rgba(100,116,139,.08)'
 
+    // With two indicators the country name alone is ambiguous, so the legend
+    // and tooltip carry the indicator too.
+    const label = (c, ind, second) =>
+      indicator2 ? `${c.name} · ${ind?.name || ''}` : c.name
+
     const lines = countries.map((c, i) => ({
-      name: c.name,
+      name: label(c, indicator, false),
       type: 'line',
       showSymbol: false,
       symbol: 'circle',
@@ -56,10 +72,40 @@ export default function Chart({
       emphasis: { focus: 'series' },
       itemStyle: { color: COLOURS[i % COLOURS.length] },
       data: seriesByIso[c.iso3] || [],
+      yAxisIndex: 0,
+      __unit: indicator?.unit,
       z: c.iso3 === focus ? 4 : 3,
     }))
 
+    // The second indicator shares the colour of its country but is dashed and
+    // thinner, so a reader can tell at a glance which axis a line belongs to
+    // without hunting through the legend.
+    if (indicator2) {
+      countries.forEach((c, i) => {
+        lines.push({
+          name: label(c, indicator2, true),
+          type: 'line',
+          showSymbol: false,
+          symbolSize: 6,
+          connectNulls: false,
+          lineStyle: { width: c.iso3 === focus ? 2.2 : 1.5, type: 'dashed' },
+          emphasis: { focus: 'series' },
+          itemStyle: { color: COLOURS[i % COLOURS.length] },
+          data: (series2ByIso || {})[c.iso3] || [],
+          yAxisIndex: 1,
+          __unit: indicator2.unit,
+          z: c.iso3 === focus ? 4 : 3,
+        })
+      })
+    }
+
+    // Tooltip params carry no custom fields, so the unit is looked up by index.
+    const unitOf = (p) => lines[p.seriesIndex]?.__unit
+
     // --- event markers, attached to the focus country's line -----------------
+    // Deliberately the PRIMARY series for the focus country: the secondary
+    // lines are pushed after all the primaries, so index `focusIdx` is still
+    // the left-axis line and markers stay attached to one line rather than two.
     const focusIdx = countries.findIndex((c) => c.iso3 === focus)
     if (focusIdx >= 0 && events.length) {
       lines[focusIdx].markLine = {
@@ -130,7 +176,7 @@ export default function Chart({
       {
         backgroundColor: 'transparent',
         animationDuration: 320,
-        grid: { left: 58, right: 22, top: 26, bottom: 54 },
+        grid: { left: 58, right: indicator2 ? 64 : 22, top: 26, bottom: 54 },
         tooltip: {
           trigger: 'axis',
           axisPointer: { type: 'line', lineStyle: { color: textColour, width: 1, type: 'dashed' } },
@@ -144,7 +190,9 @@ export default function Chart({
                 (p) =>
                   `<div style="display:flex;gap:10px;justify-content:space-between">
                      <span>${p.marker} ${p.seriesName}</span>
-                     <b>${fmt(p.value[1])}</b>
+                     <b>${fmt(p.value[1])}${
+                       indicator2 && unitOf(p) ? ` <span style="font-weight:400;opacity:.65">${escapeHtml(unitOf(p))}</span>` : ''
+                     }</b>
                    </div>`
               )
               .join('')
@@ -181,17 +229,34 @@ export default function Chart({
           axisLine: { lineStyle: { color: axisColour } },
           splitLine: { show: false },
         },
-        yAxis: {
-          type: 'value',
-          scale: !rebased,
-          // The unit is already in the chart header; repeating it here collides
-          // with the rotated leader-band labels.
-          name: rebased ? 'indexed: first year in range = 100' : '',
-          nameTextStyle: { color: textColour, fontSize: 10, align: 'left' },
-          nameGap: 12,
-          axisLabel: { color: textColour, formatter: (v) => fmt(v) },
-          splitLine: { lineStyle: { color: axisColour, type: 'dashed' } },
-        },
+        yAxis: [
+          {
+            type: 'value',
+            scale: !rebased,
+            // With one indicator the unit is already in the chart header, and
+            // repeating it collides with the rotated leader-band labels. With
+            // two, the axis MUST say which unit it carries or the chart is
+            // unreadable.
+            name: rebased
+              ? 'indexed: first year in range = 100'
+              : indicator2 ? indicator?.unit || '' : '',
+            nameTextStyle: { color: textColour, fontSize: 10, align: 'left' },
+            nameGap: 12,
+            axisLabel: { color: textColour, formatter: (v) => fmt(v) },
+            splitLine: { lineStyle: { color: axisColour, type: 'dashed' } },
+          },
+          {
+            type: 'value',
+            scale: !rebased,
+            show: Boolean(indicator2),
+            name: indicator2 ? indicator2.unit || '' : '',
+            nameTextStyle: { color: textColour, fontSize: 10, align: 'right' },
+            nameGap: 12,
+            axisLabel: { color: textColour, formatter: (v) => fmt(v) },
+            // Only one grid of split lines, or the two sets cross into a mesh.
+            splitLine: { show: false },
+          },
+        ],
         series: lines,
       },
       { notMerge: true }
@@ -202,7 +267,9 @@ export default function Chart({
     }
     chart.current.off('click')
     chart.current.on('click', onClick)
-  }, [meta, indicator, countries, seriesByIso, focus, events, spans, range, rebased, showSpans, dark, onPickEvent])
+    onReady?.(chart.current)
+  }, [meta, indicator, indicator2, countries, seriesByIso, series2ByIso, focus,
+      events, spans, range, rebased, showSpans, dark, onPickEvent, onReady])
 
   return <div className="chart" ref={ref} />
 }

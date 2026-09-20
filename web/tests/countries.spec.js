@@ -18,8 +18,13 @@ test('an indicator ships with its plain meaning and its blind spots', async ({ p
 
   // etl/build.py refuses to ship a series missing these, and the page has to
   // actually render them or the refusal buys nothing.
-  await expect(page.locator('.panel').first())
-    .toContainText(/WHAT THIS NUMBER ACTUALLY IS/i)
+  // Targeted by content, not by position: the chart page grew a stats panel
+  // above the explainer, and `.panel.first()` silently started pointing at a
+  // different panel.
+  const explainer = page.locator('.panel', {
+    has: page.getByText(/WHAT THIS NUMBER ACTUALLY IS/i),
+  })
+  await expect(explainer).toContainText(/WHAT THIS NUMBER ACTUALLY IS/i)
   await expect(page.locator('dd.warn').first()).toBeVisible()
   const blind = m.indicators.find((i) => i.id === 'gdp_pc').blindspots
   await expect(page.locator('dd.warn').first()).toContainText(blind.slice(0, 40))

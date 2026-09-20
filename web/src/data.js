@@ -83,8 +83,15 @@ export function readUrlState() {
     view: get('view'),
     countries: list('c'),
     indicator: get('i'),
+    // A second indicator, drawn on its own right-hand axis. Two series with
+    // different units on ONE axis is a lie with a picture attached - "% of GDP"
+    // and "constant 2015 US$" share no scale, and forcing them onto one makes
+    // whichever number is larger look dominant for no reason.
+    indicator2: get('i2'),
     from: num('from'),
     to: num('to'),
+    // A named leader or regime period, so "GDP under Vajpayee" is a link.
+    period: get('period'),
     focus: get('focus'),
     kinds: list('k'),
     rebased: q.get('rebased') === '1' ? true : q.get('rebased') === '0' ? false : undefined,
