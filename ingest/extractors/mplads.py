@@ -115,6 +115,11 @@ class MPLADS(Extractor):
         self.combo = combo
         self.detail = detail        # emit individual works, not just totals
         self._people: dict[str, int] = {}   # MP_NAME -> person_id
+        # MP_NAME -> tenure start. The allocation rows carry it and the
+        # completed-works rows do not, so it is remembered here and reused:
+        # the spend total is the spend AGAINST that tenure's allocation, and
+        # the two must share a date to be comparable at all.
+        self._tenure_start: dict[str, str | None] = {}
 
     # ------------------------------------------------------------------ fetch
     def _tile(self, key: str) -> tuple[int, list[dict]]:
@@ -175,7 +180,8 @@ class MPLADS(Extractor):
                 person_id=pid,
                 value_num=amount,
                 currency="INR",
-                as_of=_date(r.get("TENURE_START_DATE")),
+                as_of=self._tenure_start.setdefault(
+                    name, _date(r.get("TENURE_START_DATE"))),
                 note=(
                     f"MPLADS entitlement for {r.get('TENURE')}, {r.get('HOUSE_NAME')}. "
                     f"Per tenure, not per year."
@@ -205,6 +211,11 @@ class MPLADS(Extractor):
                 person_id=pid,
                 value_num=round(total, 2),
                 currency="INR",
+                # Dated to the same tenure as the allocation it is spent
+                # against. Left undated, this total could not be placed in time,
+                # could not be compared with the entitlement, and two tenures
+                # would collide as a single undated "conflict".
+                as_of=self._tenure_start.get(name),
                 note=(
                     f"Value of {counts[name]} completed works recommended by this "
                     f"member. The member recommends; district authorities sanction, "

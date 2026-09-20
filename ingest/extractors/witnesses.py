@@ -64,6 +64,21 @@ WD_OBSERVED = "2026-01-01"
 # extractor is running for is pushed into the query itself.
 WD_CITIZENSHIP = {"IND": "wd:Q668", "GBR": "wd:Q145", "USA": "wd:Q30"}
 
+# Citizenship and a position-held filter cut the namesakes down but did not
+# eliminate them: "Jugal Kishore" still resolved to a different Indian
+# officeholder born in 1894, and was published as a 132-year-old sitting MP
+# while the affidavit, PRS and OpenSanctions all said he was born in 1962.
+#
+# A witness exists to CORROBORATE. When the fact it brings is physically
+# impossible, or disagrees with everything already on record by a margin no
+# rounding or reference-date gap could explain, the likeliest reading is not
+# that four publishers are wrong - it is that the witness matched the wrong
+# person. Such a fact is dropped and counted, never published and never counted
+# as a disagreement.
+AGE_MIN, AGE_MAX = 18, 110
+# Publishers differ by two or three years; nobody differs by fifteen.
+NAMESAKE_GAP_YEARS = 15
+
 
 class Witnesses(Extractor):
     """Base behaviour shared by both witness sources."""
@@ -77,6 +92,36 @@ class Witnesses(Extractor):
             (self.country,),
         ).fetchall()
         return [dict(r) for r in rows]
+
+    def _implausible_age(self, pid: int, age: float, as_of: str) -> str | None:
+        """Why this derived age should not be published, or None to publish it.
+
+        Checked against the claims already in the store, comparing IMPLIED BIRTH
+        YEAR rather than age, because an age is only meaningful with the date it
+        was reported on.
+        """
+        if not (AGE_MIN <= age <= AGE_MAX):
+            return f"age {age:.0f} is outside {AGE_MIN}-{AGE_MAX}"
+        ref = int(str(as_of or "")[:4] or 0)
+        if not ref:
+            return None
+        born = ref - age
+        known = []
+        for value, when in self.con.execute(
+            "SELECT value_num, as_of FROM claims "
+            "WHERE person_id = ? AND predicate = 'age' AND value_num IS NOT NULL",
+            (pid,),
+        ):
+            year = int(str(when or "")[:4] or 0)
+            if year:
+                known.append(year - float(value))
+        if not known:
+            return None
+        gap = min(abs(born - k) for k in known)
+        if gap > NAMESAKE_GAP_YEARS:
+            return (f"implies birth {born:.0f}; the record says "
+                    f"{min(known):.0f}-{max(known):.0f}")
+        return None
 
     @staticmethod
     def _match(norm: str, people: list[dict]) -> int | None:
@@ -110,7 +155,7 @@ class OpenSanctionsWitness(Witnesses):
         print(f"  {len(people)} existing Indian people to corroborate", flush=True)
 
         text = body.decode("utf-8", errors="replace")
-        matched = aliases = dates = 0
+        matched = aliases = dates = mismatched = 0
         seen: set[int] = set()
         for row in csv.DictReader(io.StringIO(text)):
             nm = (row.get("name") or "").strip()
@@ -136,6 +181,15 @@ class OpenSanctionsWitness(Witnesses):
 
             dob = (row.get("birth_date") or "").strip()
             if re.match(r"^\d{4}(-\d{2}(-\d{2})?)?$", dob):
+                # Same identity check as the Wikidata witness. `_match` scores
+                # names and can land on a different member of the same house
+                # with the same name, and an age nobody else recognises is the
+                # clearest signal that it did.
+                why = self._implausible_age(
+                    pid, float(2026 - int(dob[:4])), "2026-01-01")
+                if why:
+                    mismatched += 1
+                    continue
                 dates += 1
                 if pid not in seen:
                     seen.add(pid)
@@ -152,7 +206,9 @@ class OpenSanctionsWitness(Witnesses):
                 )
         self.con.commit()
         print(f"  matched {matched} rows to existing people; "
-              f"{aliases} new aliases; {dates} birth dates", flush=True)
+              f"{aliases} new aliases; {dates} birth dates; "
+              f"{mismatched} dropped as a different person of the same name",
+              flush=True)
 
     def reparse(self, body: bytes, source_id: int, url: str) -> list[Claim]:
         return []
@@ -179,7 +235,7 @@ class WikidataWitness(Witnesses):
             "Accept": "application/sparql-results+json",
         })
 
-        found = ambiguous = unclear_party = 0
+        found = ambiguous = unclear_party = mismatched = 0
         for i in range(0, len(people), WD_BATCH):
             batch = people[i:i + WD_BATCH]
             values = " ".join(f'"{p["full_name"]}"@en' for p in batch
@@ -239,6 +295,23 @@ class WikidataWitness(Witnesses):
                 article = next(((b.get("article") or {}).get("value")
                                 for b in bs if b.get("article")), None)
 
+                dobs = {(b.get("dob") or {}).get("value", "")[:10]
+                        for b in bs if b.get("dob")}
+                dobs = {d for d in dobs if re.match(r"^\d{4}-\d{2}-\d{2}$", d)}
+
+                # The birth date is the identity check, so it runs BEFORE
+                # anything is emitted. If it says this is somebody else, then
+                # the party, the QID and the Wikipedia link are all somebody
+                # else's too, and none of them may be attached to this person.
+                if len(dobs) == 1:
+                    dob = next(iter(dobs))
+                    why = self._implausible_age(
+                        pid, float(int(WD_OBSERVED[:4]) - int(dob[:4])), WD_OBSERVED)
+                    if why:
+                        mismatched += 1
+                        print(f"    dropped {nm} ({qid}): {why}", flush=True)
+                        continue
+
                 yield Claim(
                     predicate="external_identifier", source_id=sid, person_id=pid,
                     value_text=f"wikidata={qid}", as_of=WD_OBSERVED, confidence=0.85,
@@ -248,9 +321,6 @@ class WikidataWitness(Witnesses):
                          + (f" Wikipedia: {article}" if article else ""),
                 )
 
-                dobs = {(b.get("dob") or {}).get("value", "")[:10]
-                        for b in bs if b.get("dob")}
-                dobs = {d for d in dobs if re.match(r"^\d{4}-\d{2}-\d{2}$", d)}
                 if len(dobs) == 1:
                     dob = next(iter(dobs))
                     found += 1
@@ -309,7 +379,8 @@ class WikidataWitness(Witnesses):
         print(f"  {found} witness facts; {ambiguous} names dropped as ambiguous "
               f"(the label matched more than one Wikidata entity); "
               f"{unclear_party} people whose current party Wikidata could not "
-              f"establish", flush=True)
+              f"establish; {mismatched} dropped as a different person of the "
+              f"same name", flush=True)
 
     def _query(self, values: str) -> str:
         """One SPARQL query per batch of names.

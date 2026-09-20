@@ -216,11 +216,36 @@ declaration.
 ### Checking the work
 
 ```bash
-python verify.py              # the seven commitments in docs/ETHICS.md, as code
+python verify.py              # the commitments in docs/ETHICS.md, as code
+python tools/audit.py         # every invariant against every record
 python tests/test_parsers.py  # parsers vs hand-read values from real pages
 python -m ingest.recheck --sample 25   # re-fetch and diff against what we stored
-python -m etl.corroborate     # do two publishers agree about the same people?
+python -m etl.corroborate     # do the publishers agree about the same people?
 ```
+
+**Why `audit.py` exists.** Defects here kept surfacing one at a time, in
+whatever feature happened to be open, and they were all the same defect: code
+that picked an arbitrary element out of a list.
+
+| where | what it did |
+|---|---|
+| `used[used.length-1]` | cited the 2019 affidavit as the source for a 2024 figure |
+| `vals[0]` | compared a 2019 age against a 2024 one and called it a disagreement |
+| `offices[0]` | showed a defector's **old** party as their current one |
+| `c[c.length-1]` | called an unsorted array's last element "latest" |
+| one arbitrary SPARQL row | published a party the member had **left** |
+
+Every one was correct while each person had exactly one claim per predicate.
+Harvesting the 2019 affidavits and two more witnesses gave people a second
+element and they all broke at once — silently, because a plausible wrong answer
+looks exactly like a right one.
+
+Opening a page cannot find that. `verify.py` checks the ethics commitments;
+`test_parsers.py` checks parsers against hand-read fixtures. Neither asks
+whether the 2,196 shipped bundles are consistent with the store they came from.
+`audit.py` does, over every record — 76,283 claims, every bundle, and 273,102
+observations across 23 indicators and 217 countries. A check there has to be
+true of **all** the data, never a sample.
 
 **Corroboration.** Four publishers - MyNeta, PRS, OpenSanctions and Wikidata -
 independently report party, age and education for the same people, so they can

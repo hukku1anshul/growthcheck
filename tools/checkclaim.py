@@ -117,6 +117,30 @@ def sourced(con, pid: int, predicate: str):
     ).fetchall()
 
 
+def cite(rows, year=None):
+    """The document the CHECKED figure came from.
+
+    `rows` is ordered by date, so the last row is the most recent fact - but not
+    necessarily the right receipt for it. A 2024 figure can appear in several
+    documents at once: a member who contested two seats has two 2024 affidavits,
+    and MyNeta's 2019 candidate page also lists 2024 in its "Other Elections"
+    table. Handing a reader the 2019 page for a 2024 number is not false, but it
+    is the wrong document, so the contemporaneous one is preferred.
+
+    This mirrors the same logic in web/src/CheckClaim.jsx. The UI was fixed
+    first and this was not, which is how the CLI kept citing LokSabha2019 for
+    Amit Shah's 2024 assets after the browser had stopped.
+    """
+    if not rows:
+        return None
+    if year is None:
+        return rows[-1]
+    same = [r for r in rows if str(r["as_of"] or "")[:4] == str(year)]
+    if not same:
+        return rows[-1]
+    return next((r for r in same if str(year) in (r["url"] or "")), same[-1])
+
+
 def fmt_inr(v: float) -> str:
     return f"Rs {v/1e7:,.2f} crore" if v >= 1e7 else f"Rs {v/1e5:,.2f} lakh"
 
@@ -132,6 +156,7 @@ def check_person(con, claim: str) -> list[str]:
     if topic is None:
         return out + ["CANNOT CHECK: could not tell which kind of fact the claim is about."]
     nums = parse_numbers(claim)
+    cite_year = None
     rows = sourced(con, person["id"], topic)
     if not rows:
         return out + [f"CANNOT CHECK: the record holds no '{topic}' facts for this person."]
@@ -145,6 +170,7 @@ def check_person(con, claim: str) -> list[str]:
             y0 = max([y for y in nums["years"] if y <= pts[0][0]] + [pts[0][0]]) if nums["years"] else pts[0][0]
             start = next((p for p in pts if p[0] >= y0), pts[0])
             mult = pts[-1][1] / start[1] if start[1] else None
+            cite_year = pts[-1][0]
             if mult:
                 out.append(f"claimed  : x{nums['multiple']:g}   record: x{mult:.1f} "
                            f"({start[0]} -> {pts[-1][0]})   "
@@ -152,6 +178,7 @@ def check_person(con, claim: str) -> list[str]:
                            f"(within 25%)")
         elif "amount" in nums:
             latest = pts[-1]
+            cite_year = latest[0]
             diff = abs(latest[1] - nums["amount"]) / latest[1]
             out.append(f"claimed  : {fmt_inr(nums['amount'])}   record ({latest[0]}): {fmt_inr(latest[1])}   "
                        f"{'CONSISTENT' if diff < 0.1 else 'NOT CONSISTENT'} (within 10%)")
@@ -159,6 +186,7 @@ def check_person(con, claim: str) -> list[str]:
     elif topic == "criminal_cases_declared":
         latest = [r for r in rows if r["as_of"] and r["value_num"] is not None][-1]
         n = int(latest["value_num"])
+        cite_year = str(latest["as_of"])[:4]
         out.append(f"record   : {n} declared PENDING cases as of {latest['as_of'][:4]} "
                    f"(self-declared on the ECI affidavit; NOT convictions)")
         claimed = 0 if nums.get("zero") else nums.get("count")
@@ -188,13 +216,14 @@ def check_person(con, claim: str) -> list[str]:
 
     elif topic in ("attendance_pct", "questions_asked"):
         r = rows[-1]
+        cite_year = str(r["as_of"] or "")[:4] or None
         out.append(f"record   : {r['value_num']:g} ({r['note'] or 'no benchmark'})")
         c = nums.get("percent") if topic == "attendance_pct" else nums.get("count")
         if c is not None:
             out.append(f"claimed  : {c:g}   record: {r['value_num']:g}   "
                        f"{'CONSISTENT' if abs(c - r['value_num']) <= 3 else 'NOT CONSISTENT'}")
 
-    src = rows[-1]
+    src = cite(rows, cite_year)
     out.append(f"source   : {src['url']}")
     out.append(f"archived : {src['fetched_at'][:10]}  sha256 {src['sha256'][:12]}")
     return out
