@@ -26,7 +26,9 @@ services:
     # every deploy.
     buildCommand: cd web && npm ci && npm run build
     staticPublishPath: web/dist
-    pullRequestPreviewsEnabled: true
+    # `pullRequestPreviewsEnabled` is deprecated in the current blueprint spec.
+    previews:
+      generation: automatic
 
     headers:
       # The JSON bundles are content-addressed by build, not by filename, so
