@@ -30,7 +30,12 @@ export default defineConfig({
   timeout: 45_000,
   expect: { timeout: 15_000 },
   use: {
-    baseURL: 'http://localhost:4178',
+    // PF_BASE_URL runs the same suite against a deployed site:
+    //     PF_BASE_URL=https://politicalfindings.onrender.com npx playwright test
+    // A local pass says the code is right; only this says the thing readers
+    // actually load is right, which is a different claim and the one that
+    // matters after a deploy.
+    baseURL: process.env.PF_BASE_URL || 'http://localhost:4178',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
@@ -45,7 +50,9 @@ export default defineConfig({
     },
     { name: 'mobile', use: { ...devices['Pixel 7'] }, testMatch: /responsive\.spec\.js/ },
   ],
-  webServer: {
+  // No local server when testing a deployed site - building one and then not
+  // using it would be a slow way to prove nothing.
+  webServer: process.env.PF_BASE_URL ? undefined : {
     command: 'npm run build && npm run preview -- --port 4178 --strictPort',
     url: 'http://localhost:4178',
     // NEVER reuse. `reuseExistingServer: !process.env.CI` is the documented

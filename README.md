@@ -220,6 +220,7 @@ python verify.py              # the commitments in docs/ETHICS.md, as code
 python tools/audit.py         # every invariant against every record
 python tests/test_parsers.py  # parsers vs hand-read values from real pages
 cd web && npm test            # 38 browser tests, desktop and phone
+PF_BASE_URL=https://… npm test # the same suite against the DEPLOYED site
 python -m ingest.recheck --sample 25   # re-fetch and diff against what we stored
 python -m etl.corroborate     # do the publishers agree about the same people?
 ```
