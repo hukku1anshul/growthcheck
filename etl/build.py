@@ -24,7 +24,7 @@ import yaml
 
 from .countries import registry
 from .fetch import source_manifest
-from .sources import owid, reign, worldbank
+from .sources import breaks, owid, reign, worldbank
 
 ROOT = Path(__file__).resolve().parents[1]
 CURATED = ROOT / "data" / "curated"
@@ -91,7 +91,7 @@ def build_series(catalogue: dict, valid_iso3: set[str], quick: bool) -> pd.DataF
 
 
 # ------------------------------------------------------------------------ events
-def build_events() -> tuple[pd.DataFrame, pd.DataFrame]:
+def build_events(series: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     """Returns (events, spans)."""
     ev = reign.events()
     log(f"ok   reign events          {len(ev):>7,}  {ev.year.min()}-{ev.year.max()}")
@@ -118,10 +118,16 @@ def build_events() -> tuple[pd.DataFrame, pd.DataFrame]:
     curated = pd.DataFrame(rows)
     log(f"ok   curated decisions     {len(curated):>7,}  covering {curated.iso3.nunique()} countries")
 
+    derived = breaks.all_breaks(series)
+    log(
+        f"ok   derived breaks        {len(derived):>7,}  covering "
+        f"{derived.iso3.nunique()} countries"
+    )
+
     for col in ("contested", "refs"):
         if col not in ev.columns:
             ev[col] = None
-    events = pd.concat([ev, curated], ignore_index=True)
+    events = pd.concat([ev, curated, derived], ignore_index=True)
     events = events.sort_values(["iso3", "date"]).reset_index(drop=True)
 
     # spans: leader terms and regime periods, for shaded bands
@@ -236,6 +242,7 @@ def write_bundles(countries, series, events, spans, catalogue) -> None:
             "election": {"label": "Election", "colour": "politics"},
             "power_transfer": {"label": "Election - power changes hands", "colour": "rupture"},
             "regime_change": {"label": "Regime change", "colour": "rupture"},
+            **breaks.KINDS,
         },
         "countries_with_events": sorted(set(ev_by) | set(sp_by)),
         "caveats": {
@@ -273,7 +280,7 @@ def main() -> int:
         return 1
 
     print("\n== events ==")
-    events, spans = build_events()
+    events, spans = build_events(series)
     unknown = set(events.iso3.dropna()) - valid
     if unknown:
         log(f"warn {len(unknown)} event iso3 codes not in registry: {sorted(unknown)[:8]}")

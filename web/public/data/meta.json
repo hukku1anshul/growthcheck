@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-20T08:12:37+00:00",
+ "built_at": "2026-09-20T08:41:30+00:00",
  "categories": {
   "economy": {
    "label": "Economy",
@@ -1801,13 +1801,31 @@
   "regime_change": {
    "label": "Regime change",
    "colour": "rupture"
+  },
+  "derived_regime_transition": {
+   "label": "Regime transition (derived)",
+   "colour": "rupture"
+  },
+  "derived_democratic_shift": {
+   "label": "Democratic shift (derived)",
+   "colour": "politics"
+  },
+  "derived_economic_rupture": {
+   "label": "Output collapse (derived)",
+   "colour": "crisis"
+  },
+  "derived_inflation_crisis": {
+   "label": "Inflation crisis (derived)",
+   "colour": "crisis"
   }
  },
  "countries_with_events": [
+  "ABW",
   "AFG",
   "AGO",
   "ALB",
   "AND",
+  "ARE",
   "ARG",
   "ARM",
   "ATG",
@@ -1820,6 +1838,7 @@
   "BFA",
   "BGD",
   "BGR",
+  "BHR",
   "BHS",
   "BIH",
   "BLR",
@@ -1827,6 +1846,7 @@
   "BOL",
   "BRA",
   "BRB",
+  "BRN",
   "BTN",
   "BWA",
   "CAF",
@@ -1843,6 +1863,7 @@
   "CPV",
   "CRI",
   "CUB",
+  "CUW",
   "CYP",
   "CZE",
   "DEU",
@@ -1871,7 +1892,9 @@
   "GNQ",
   "GRC",
   "GRD",
+  "GRL",
   "GTM",
+  "GUM",
   "GUY",
   "HND",
   "HRV",
@@ -1886,6 +1909,7 @@
   "ISR",
   "ITA",
   "JAM",
+  "JOR",
   "JPN",
   "KAZ",
   "KEN",
@@ -1894,6 +1918,7 @@
   "KIR",
   "KNA",
   "KOR",
+  "KWT",
   "LAO",
   "LBN",
   "LBR",
@@ -1905,7 +1930,9 @@
   "LTU",
   "LUX",
   "LVA",
+  "MAC",
   "MAR",
+  "MCO",
   "MDA",
   "MDG",
   "MDV",
@@ -1917,6 +1944,7 @@
   "MMR",
   "MNE",
   "MNG",
+  "MNP",
   "MOZ",
   "MRT",
   "MUS",
@@ -1931,6 +1959,7 @@
   "NPL",
   "NRU",
   "NZL",
+  "OMN",
   "PAK",
   "PAN",
   "PER",
@@ -1941,9 +1970,13 @@
   "PRK",
   "PRT",
   "PRY",
+  "PSE",
+  "PYF",
+  "QAT",
   "ROU",
   "RUS",
   "RWA",
+  "SAU",
   "SDN",
   "SEN",
   "SGP",
@@ -1960,8 +1993,10 @@
   "SVN",
   "SWE",
   "SWZ",
+  "SXM",
   "SYC",
   "SYR",
+  "TCA",
   "TCD",
   "TGO",
   "THA",
@@ -1980,6 +2015,7 @@
   "UZB",
   "VCT",
   "VEN",
+  "VIR",
   "VNM",
   "VUT",
   "WSM",

@@ -10,12 +10,13 @@ import argparse
 from pathlib import Path
 
 from .extractors.myneta import MyNeta
+from .extractors.ukparliament import UKParliament
 from .schema import connect
 
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "data" / "processed" / "claims.db"
 
-EXTRACTORS = {"myneta": MyNeta}
+EXTRACTORS = {"myneta": MyNeta, "ukparliament": UKParliament}
 
 
 def report(con) -> None:
@@ -70,9 +71,10 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=None, help="max records to fetch")
     ap.add_argument("--delay", type=float, default=1.0, help="seconds between requests")
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--db", default=str(DB), help="claim store path")
     args = ap.parse_args()
 
-    con = connect(DB)
+    con = connect(args.db)
 
     if args.extractor:
         cls = EXTRACTORS[args.extractor]

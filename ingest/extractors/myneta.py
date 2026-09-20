@@ -52,6 +52,16 @@ def rupees(text: str) -> float | None:
         return None
 
 
+def _dedupe(it) -> list[int]:
+    """Order-preserving dedupe."""
+    seen, out = set(), []
+    for x in it:
+        if x not in seen:
+            seen.add(x)
+            out.append(x)
+    return out
+
+
 def clean(s: str | None) -> str:
     return re.sub(r"\s+", " ", (s or "").replace(" ", " ")).strip()
 
@@ -64,33 +74,84 @@ class MyNeta(Extractor):
     licence = "Public affidavit data sourced from the Election Commission of India"
     robots_checked = True  # verified 2026-09-20; see module docstring
 
-    def __init__(self, con, election: str = "LokSabha2024", **kw):
+    def __init__(self, con, election: str = "LokSabha2024", mode: str = "full", **kw):
         super().__init__(con, **kw)
         self.election = election
         self.jurisdiction = f"IN/{election}"
+        self.mode = mode  # 'full' = every seat via constituency pages; 'summary' = demo
+
+    def _url(self, query: str) -> str:
+        return urljoin(BASE, f"{self.election}/{query}")
 
     # ------------------------------------------------------------------ index
-    def candidate_ids(self) -> list[tuple[int, int]]:
-        """Returns [(candidate_id, source_id)] from the analysed-winners index."""
-        url = urljoin(
-            BASE,
-            f"{self.election}/index.php?action=summary&subAction=winner_analyzed"
-            f"&sort=candidate",
+    def candidate_ids(self) -> list[int]:
+        ids = (
+            self._ids_from_summary() if self.mode == "summary"
+            else self._ids_from_constituencies()
         )
-        sid, html = self.archive.text(url)
+        return ids[: self.limit] if self.limit else ids
+
+    def _ids_from_summary(self) -> list[int]:
+        """The analysed-winners summary page. Fast, but only lists ~18 members."""
+        sid, html = self.archive.text(
+            self._url("index.php?action=summary&subAction=winner_analyzed&sort=candidate")
+        )
         self.stats.documents += 1
-        ids = [int(i) for i in re.findall(r"candidate\.php\?candidate_id=(\d+)", html)]
-        seen, out = set(), []
-        for i in ids:
-            if i not in seen:
-                seen.add(i)
-                out.append((i, sid))
-        return out[: self.limit] if self.limit else out
+        return _dedupe(int(i) for i in re.findall(r"candidate_id=(\d+)", html))
+
+    def _ids_from_constituencies(self) -> list[int]:
+        """Every seat's winner: landing page -> constituency page -> winning candidate.
+
+        MyNeta has no single page listing all 543 winners, so this is the only
+        complete route. The election landing page links every seat directly, which
+        is why we do NOT walk state pages: `show_constituencies&state_id=N` is a
+        paginated candidate list with no winner marker, and following it costs 36
+        extra requests to arrive at less information.
+        """
+        _, landing = self.archive.text(self._url(""))
+        self.stats.documents += 1
+        seats = _dedupe(
+            int(m) for m in re.findall(r"constituency_id=(\d+)", landing)
+        )
+        print(f"  {len(seats)} seats linked from the election landing page", flush=True)
+
+        winners: list[int] = []
+        for n, seat in enumerate(seats, 1):
+            if n % 100 == 0:
+                print(f"  seats indexed {n}/{len(seats)}", flush=True)
+            try:
+                _, html = self.archive.text(
+                    self._url(f"index.php?action=show_candidates&constituency_id={seat}")
+                )
+            except Exception as exc:  # noqa: BLE001
+                self.stats.errors.append(f"seat {seat}: {exc}")
+                continue
+            self.stats.documents += 1
+            cid = self._winner_of(html)
+            if cid:
+                winners.append(cid)
+        return _dedupe(winners)
+
+    @staticmethod
+    def _winner_of(html: str) -> int | None:
+        """The candidate_id in the row flagged Winner on a constituency page."""
+        soup = BeautifulSoup(html, "lxml")
+        for tr in soup.find_all("tr"):
+            if not re.search(r"\bwinner\b", tr.get_text(" "), re.I):
+                continue
+            a = tr.find("a", href=re.compile(r"candidate_id=(\d+)"))
+            if a:
+                return int(re.search(r"candidate_id=(\d+)", a["href"]).group(1))
+        return None
 
     # -------------------------------------------------------------- harvesting
     def harvest(self) -> Iterator[Claim | Office]:
-        for cid, _ in self.candidate_ids():
-            url = urljoin(BASE, f"{self.election}/candidate.php?candidate_id={cid}")
+        ids = self.candidate_ids()
+        print(f"  index complete: {len(ids)} members to fetch", flush=True)
+        for n, cid in enumerate(ids, 1):
+            if n % 50 == 0:
+                print(f"  ...{n}/{len(ids)}", flush=True)
+            url = self._url(f"candidate.php?candidate_id={cid}")
             try:
                 sid, html = self.archive.text(url)
             except Exception as exc:  # noqa: BLE001

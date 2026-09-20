@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import Chart, { fmt } from './Chart.jsx'
+import Chart, { fmt, isDerived } from './Chart.jsx'
+import People from './People.jsx'
 import {
   loadMeta,
   loadSeries,
@@ -29,6 +30,7 @@ export default function App() {
   const [seriesByIso, setSeriesByIso] = useState({})
   const [eventData, setEventData] = useState({ events: [], spans: [] })
   const [picked, setPicked] = useState(null)
+  const [mode, setMode] = useState('countries')
   const [dark, setDark] = useState(
     () => window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
   )
@@ -165,11 +167,26 @@ export default function App() {
             {' '}{Object.keys(meta.event_kinds).length} kinds of event, drawn on the chart
           </p>
         </div>
+        <div className="modeswitch">
+          <button
+            className={mode === 'countries' ? 'on' : ''}
+            onClick={() => setMode('countries')}
+          >
+            Countries
+          </button>
+          <button
+            className={mode === 'people' ? 'on' : ''}
+            onClick={() => setMode('people')}
+          >
+            People
+          </button>
+        </div>
         <button className="ghost" onClick={() => setDark((d) => !d)} title="Toggle theme">
           {dark ? '☀' : '☾'}
         </button>
       </header>
 
+      {mode === 'people' ? <People dark={dark} /> : (
       <div className="body">
         {/* ------------------------------------------------ filters */}
         <aside className="side">
@@ -352,6 +369,7 @@ export default function App() {
           </div>
         </main>
       </div>
+      )}
 
       <footer className="foot">
         <span>
@@ -405,6 +423,13 @@ function EventPanel({ meta, picked, events, focusName, onPick, caveats }) {
           <div className="etag" style={{ background: eventColour(meta, picked.kind) }}>
             {eventLabel(meta, picked.kind)} · {picked.date}
           </div>
+          {isDerived(picked) && (
+            <p className="derived-warn">
+              This marker was <b>computed from a data series</b>, not read from a
+              document. It says something discontinuous happened here — not that a
+              government did any particular thing.
+            </p>
+          )}
           <h4>{picked.title}</h4>
           <p>{picked.detail}</p>
           {picked.contested && (
@@ -433,9 +458,13 @@ function EventPanel({ meta, picked, events, focusName, onPick, caveats }) {
             )}
             {events.map((e, i) => (
               <button key={i} className="event-row" onClick={() => onPick(e)}>
-                <span className="swatch" style={{ background: eventColour(meta, e.kind) }} />
+                <span
+                  className={`swatch ${isDerived(e) ? 'swatch-derived' : ''}`}
+                  style={{ background: eventColour(meta, e.kind) }}
+                />
                 <span className="ey">{e.year}</span>
                 <span className="et">{e.title}</span>
+                {isDerived(e) && <span className="badge">derived</span>}
               </button>
             ))}
           </div>

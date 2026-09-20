@@ -67,10 +67,17 @@ export default function Chart({
         symbol: 'none',
         emphasis: { disabled: false },
         label: { show: false },
-        lineStyle: { type: 'solid', width: 1, opacity: 0.55 },
+        lineStyle: { width: 1 },
         data: events.map((e) => ({
           xAxis: e.year,
-          lineStyle: { color: eventColour(meta, e.kind) },
+          lineStyle: {
+            color: eventColour(meta, e.kind),
+            // A derived break is an algorithm's changepoint, not a documented act
+            // of government. Dashed and fainter, so the two can never be confused
+            // at a glance. See docs/ETHICS.md.
+            type: isDerived(e) ? 'dashed' : 'solid',
+            opacity: isDerived(e) ? 0.4 : 0.6,
+          },
           // stashed for the click handler
           __event: e,
         })),
@@ -200,6 +207,11 @@ export default function Chart({
   return <div className="chart" ref={ref} />
 }
 
+/** A break inferred from a series, as opposed to a documented event. */
+function isDerived(e) {
+  return String(e?.kind || '').startsWith('derived_')
+}
+
 function fmt(v) {
   if (v === null || v === undefined || Number.isNaN(v)) return '—'
   const a = Math.abs(v)
@@ -215,4 +227,4 @@ function escapeHtml(s) {
   return String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]))
 }
 
-export { fmt, eventLabel }
+export { fmt, eventLabel, isDerived }

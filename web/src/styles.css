@@ -212,3 +212,84 @@ body {
   .main { padding: 14px 16px; }
   .chart { height: 320px; }
 }
+
+/* ------------------------------------------------------------ mode switch */
+.modeswitch { display: flex; gap: 2px; background: var(--panel-2); padding: 2px; border-radius: 7px; margin-left: auto; margin-right: 10px; }
+.modeswitch button {
+  border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 12.5px;
+  padding: 5px 13px; border-radius: 5px; cursor: pointer;
+}
+.modeswitch button.on { background: var(--bg); color: var(--text); font-weight: 600; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+
+select.mini {
+  border: 1px solid var(--line); background: var(--bg); color: var(--text);
+  border-radius: 5px; padding: 3px 5px; font: inherit; font-size: 12px; max-width: 132px;
+}
+
+/* ------------------------------------------------------------ people table */
+.ptable { margin-top: 12px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.ptr {
+  display: grid; grid-template-columns: 1.7fr 1fr 1fr 1fr 1.1fr;
+  gap: 10px; align-items: center; width: 100%; text-align: left;
+  padding: 7px 12px; border: 0; border-bottom: 1px solid var(--line);
+  background: transparent; color: var(--text); font: inherit; font-size: 12.5px; cursor: pointer;
+}
+.ptr:last-child { border-bottom: 0; }
+.ptr:hover { background: var(--panel-2); }
+.phead {
+  background: var(--panel); cursor: default; font-size: 10.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .05em; color: var(--muted);
+}
+.phead:hover { background: var(--panel); }
+.pname { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ptr .dim { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ptr .num { text-align: right; font-variant-numeric: tabular-nums; }
+.hot { color: #c2410c; }
+
+/* --------------------------------------------------------- context compare */
+.context-box {
+  margin-top: 12px; border: 1px solid var(--line); border-left: 3px solid var(--accent);
+  background: var(--panel); border-radius: 0 var(--radius) var(--radius) 0; padding: 14px 16px;
+}
+.ctx-nums { display: flex; align-items: flex-end; gap: 22px; flex-wrap: wrap; }
+.ctx-nums > div { display: flex; flex-direction: column; gap: 1px; }
+.ctx-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; }
+.ctx-big { font-size: 27px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.ctx-muted { color: var(--muted); }
+.ctx-sub { font-size: 11.5px; color: var(--muted); }
+.ctx-vs { color: var(--muted); font-size: 12px; padding-bottom: 14px; }
+.ctx-caveat {
+  margin: 11px 0 0; font-size: 11.5px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 8px;
+}
+
+/* ------------------------------------------------------------ claim list */
+.claims { max-height: 430px; overflow-y: auto; display: flex; flex-direction: column; gap: 7px; }
+.claim { border: 1px solid var(--line); border-radius: 6px; padding: 7px 10px; background: var(--bg); }
+.cl-head { display: flex; justify-content: space-between; gap: 10px; font-size: 10.5px; }
+.cl-pred { text-transform: uppercase; letter-spacing: .05em; color: var(--muted); font-weight: 600; }
+.cl-date { font-family: var(--mono); color: var(--muted); }
+.cl-val { font-size: 14px; font-weight: 600; margin-top: 2px; }
+.cl-note { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+.cl-src { font-size: 10.5px; color: var(--muted); margin-top: 5px; font-family: var(--mono); }
+.cl-src a { color: var(--accent); }
+
+@media (max-width: 860px) {
+  .ptr { grid-template-columns: 1.6fr 1fr 1fr; }
+  .ptr > *:nth-child(4), .ptr > *:nth-child(5) { display: none; }
+  .modeswitch { margin-right: 6px; }
+}
+
+/* ------------------------------------------------------- derived breaks */
+/* A derived break must never look like a documented decision. See docs/ETHICS.md. */
+.swatch-derived { border-radius: 50%; opacity: .55; }
+.badge {
+  font-size: 9.5px; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); border: 1px solid var(--line); border-radius: 3px;
+  padding: 0 4px; flex: none;
+}
+.derived-warn {
+  font-size: 11.5px; color: var(--muted); background: var(--panel-2);
+  border-left: 2px solid var(--line); padding: 6px 9px;
+  border-radius: 0 4px 4px 0; margin: 0 0 9px;
+}

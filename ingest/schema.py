@@ -134,6 +134,11 @@ PREDICATES = {
     "age",                    # value_num
     "party_affiliation",      # value_text
     "election_contested",     # value_text - jurisdiction label
+    # declared outside interests. Distinct from declared_assets: an asset total is
+    # a stock at one date, an outside payment is a dated flow with a named payer.
+    # Collapsing them would make India and the UK look comparable when they are not.
+    "outside_earnings",       # value_num + currency, one registered payment
+    "registered_interest",    # value_text, a declared interest with no cash figure
     # money-out side, for procurement/budget extractors
     "budget_allocated",
     "budget_spent",
