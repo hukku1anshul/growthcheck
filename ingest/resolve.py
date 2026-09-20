@@ -35,7 +35,15 @@ HONORIFICS = {
 RELATION = re.compile(r"\b(s/o|d/o|w/o|c/o|son of|daughter of|wife of)\b.*", re.I)
 
 AUTO_MERGE = 0.93   # above this: same person
-REVIEW      = 0.78  # between: queue for a human. below: different people
+REVIEW = 0.62       # between: queue for a human. below: different people
+#
+# REVIEW is calibrated against the cases in verify.py, not picked by feel. The
+# binding constraint is the pair of real Indian politicians "Rahul Gandhi" and
+# "Rajiv Gandhi" (0.33) and the near-miss "Rajesh/Ramesh Kumar Sharma" (0.50):
+# both must stay well below it. Dropping from 0.78 to 0.62 brings dropped middle
+# names - "Narendra Modi" vs "Narendra Damodardas Modi" (0.67), very common in
+# Indian and Spanish naming - into human review instead of silently splitting
+# them, while keeping a comfortable margin above the true negatives.
 
 
 def normalise_name(name: str) -> str:
@@ -71,24 +79,34 @@ def score(a: str, b: str) -> float:
     exact = ta & tb
     rest_a, rest_b = ta - exact, tb - exact
 
-    # match leftover single letters against leftover full tokens
+    # Match leftover single letters against leftover full tokens, in both
+    # directions. Both sides of a match must be consumed: removing only the
+    # full token leaves the initial sitting in the unmatched pile, where it is
+    # counted a second time as evidence of difference.
     initial_hits = 0
-    for x in sorted(rest_a):
+    for x in sorted(list(rest_a)):
         if len(x) == 1:
             hit = next((y for y in sorted(rest_b) if y.startswith(x)), None)
             if hit:
+                rest_a.discard(x)
                 rest_b.discard(hit)
                 initial_hits += 1
     for y in sorted(list(rest_b)):
         if len(y) == 1:
             hit = next((x for x in sorted(rest_a) if x.startswith(y)), None)
             if hit:
+                rest_b.discard(y)
                 rest_a.discard(hit)
                 initial_hits += 1
 
+    # The denominator counts distinct *people-name components*, not distinct
+    # strings. When an initial matches a full token they are one component, so
+    # counting both in the union understates the similarity: "r k sharma" vs
+    # "rajesh kumar sharma" scored 0.68 that way and fell below even the review
+    # band, meaning an obvious same-person candidate was silently split in two.
+    components = len(exact) + initial_hits + len(rest_a) + len(rest_b)
     matched = len(exact) + initial_hits * 0.85
-    union = len(ta | tb) - initial_hits * 0.5
-    return min(1.0, matched / union) if union else 0.0
+    return min(1.0, matched / components) if components else 0.0
 
 
 def find_or_create(

@@ -227,7 +227,10 @@ function Person({ p, meta, dark, onBack }) {
               </div>
               <div className="cl-val">
                 {c.num != null
-                  ? `${sym(c.currency || p.currency)}${c.num.toLocaleString()}${
+                  ? // Only money claims carry a currency. Falling back to the
+                    // person's currency turns "0 declared pending cases" into
+                    // "0 rupees declared pending cases".
+                    `${c.currency ? sym(c.currency) : ''}${c.num.toLocaleString()}${
                       c.unit ? ` ${c.unit}` : ''
                     }`
                   : c.text}
@@ -265,6 +268,10 @@ function AssetChart({ points, currency, dark }) {
       },
       xAxis: {
         type: 'value',
+        // Years are values, not magnitudes: without an explicit domain ECharts
+        // starts the axis at 0 and squeezes two decades into the right-hand edge.
+        min: (v) => Math.floor(v.min - 1),
+        max: (v) => Math.ceil(v.max + 1),
         minInterval: 1,
         axisLabel: { color: text, formatter: (v) => String(Math.round(v)) },
         axisLine: { lineStyle: { color: line } },

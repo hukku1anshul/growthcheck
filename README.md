@@ -32,30 +32,67 @@ To rebuild only a subset while iterating:
 python -m etl.build --quick
 ```
 
-To run the politician extractor:
+To harvest politicians and feed them into the web app:
 
 ```bash
-python -m ingest.run myneta --limit 25
-python -m ingest.run --report
+python -m ingest.run myneta --delay 0.7
+python -m ingest.run ukparliament --delay 0.4
+python -m etl.export_people
+```
+
+Both are polite by default (rate-limited, archive-reusing) and safe to re-run -
+already-archived pages are served from disk and never re-requested. Add
+`--limit 20` for a quick sample.
+
+To check that the project still keeps its own promises:
+
+```bash
+python verify.py
 ```
 
 ---
 
 ## Product A: what's in it
 
-**273,102 observations · 23 indicators · 217 countries · 5,972 events · 3,110 spans**
+**273,102 observations · 23 indicators · 217 countries · 7,811 events · 3,110 spans**
 
 | Layer | Source | Coverage |
 |---|---|---|
-| Economy, livelihoods, state finances, openness, human development | World Bank WDI | 1960–2025 |
-| Long-run GDP per capita | Maddison Project (via Our World in Data) | year 1–2022 |
-| Democracy, liberal democracy, political corruption, regime type | V-Dem / Regimes of the World (via Our World in Data) | 1789–2025 |
-| Leaders, elections, regime spells | REIGN | 1921–2021 |
-| Landmark decisions with disputed interpretations | hand-curated, `data/curated/decisions.yaml` | 1965–2016, 24 countries |
+| Economy, livelihoods, state finances, openness, human development | World Bank WDI | 1960-2025 |
+| Long-run GDP per capita | Maddison Project (via Our World in Data) | year 1-2022 |
+| Democracy, liberal democracy, political corruption, regime type | V-Dem / Regimes of the World (via Our World in Data) | 1789-2025 |
+| Leaders, elections, regime spells | REIGN | 1921-2021 |
+| Landmark decisions with disputed interpretations | hand-curated, `data/curated/decisions.yaml` | 1965-2016, 24 countries |
+| Derived structural breaks | computed, `etl/sources/breaks.py` | 1789-2025, **199 countries** |
 
-Every indicator carries four explainers — what it is in plain language, what it
+Every indicator carries four explainers - what it is in plain language, what it
 literally measures, what it does **not** capture, and how governments flatter it.
 `etl/build.py` will not ship a series that is missing them.
+
+### Documented decisions vs derived breaks
+
+Two different things sit on the same chart, and the difference matters:
+
+- **Curated decisions** are read from documents. A named act of government, dated,
+  with citations and a `contested` field. 32 of them, 24 countries.
+- **Derived breaks** are computed from the series: regime transitions, sustained
+  V-Dem shifts, output collapses, inflation onsets. 1,839 of them, 199 countries.
+  They say *something discontinuous happened here* - never *a government did X*.
+
+Derived breaks are drawn with dashed, fainter markers, badged `derived` in the
+event list, and carry an explicit warning when opened. India 1975 is a good test
+case: the curated Emergency sits alongside two independent derived signals that
+flagged the same year from different data.
+
+**Why derived, and not the IMF Structural Reform Database?** That was the plan. It
+did not survive contact. `data.imf.org` sits behind Akamai and returns "Access
+Denied" to any scripted client; its SDMX data endpoints return 503 even from inside
+a browser session. And the SRD is not a list of decisions anyway - it is a set of
+regulatory-stance indexes where, in the IMF's words, "an increase in the indexes
+indicates a structural reform". Extracting events from it means detecting jumps in
+a series, which is what `breaks.py` does with series we can actually fetch. The
+result is wider (199 countries, 1789-2025) than the SRD (90 countries, 1973-2014),
+at the cost of describing outcomes rather than legislation.
 
 ### Known limits, stated up front
 
@@ -65,10 +102,8 @@ literally measures, what it does **not** capture, and how governments flatter it
   means nobody has written that entry yet.
 - **Pre-1950 Maddison figures are scholarly reconstructions**, not measurements.
 - **Historical states** (Czechoslovakia, East Germany, South Yemen, both Vietnams)
-  are mapped to successor ISO3 codes and flagged `historical` — see
+  are mapped to successor ISO3 codes and flagged `historical` - see
   `etl/countries.py`.
-
----
 
 ## Product B: the claim store
 
@@ -88,30 +123,58 @@ ingest/
   resolve.py     entity resolution; conservative, auditable, refuses to guess
   base.py        Extractor ABC + Claim/Office dataclasses
   extractors/
-    myneta.py    India — candidate affidavits (ADR / Election Commission data)
+    myneta.py         India - candidate affidavits (ADR / Election Commission data)
+    ukparliament.py   UK - members + Register of Members' Financial Interests
 ```
 
 Adding a country means writing one `Extractor` subclass.
 
 ### What it produces
 
+**544 Indian MPs · 649 UK MPs · 1,091+ archived documents · every claim sourced**
+
 Declared-asset trajectories per politician, across every election they contested,
 each point traceable to an archived document:
 
 ```
-Adv K Francis George
-  2004  Rs     1.14 cr    Lok Sabha 2004
-  2009  Rs     0.73 cr    Lok Sabha 2009
-  2016  Rs     4.79 cr    Kerala 2016
-  2021  Rs     6.22 cr    Kerala 2021
-  2024  Rs     9.52 cr    Lok Sabha 2024
+Jyotiraditya M. Scindia  (MP, BJP, Guna, Madhya Pradesh)
+  declared assets   x118.55   over 2004-2024
+  national GDP/cap  x2.65     same country, same 20 years
 ```
 
 **This is a starting point for a question, not an answer.** Declared wealth rises
 with property prices, inheritance, business income and inflation. Declared criminal
-cases are *pending cases, not convictions*.
+cases are *pending cases, not convictions*. The app shows both multiples side by
+side and never computes a score or a ranking.
 
----
+### Portability, tested rather than asserted
+
+The UK extractor exists to prove the engine travels. It is as different from
+MyNeta as a second source could be:
+
+| MyNeta (India) | UK Parliament |
+|---|---|
+| HTML pages, scraped | JSON REST API, documented and keyless |
+| one row per candidate | two APIs joined on member id |
+| declared asset **total** (a stock) | itemised outside **payments** (dated flows) |
+| affidavit, filed at election | rolling register, updated continuously |
+
+Adding it required no change to `base.py`, `archive.py`, `resolve.py` or
+`schema.py` - only the new extractor and two predicates. Stock and flow are kept
+apart: a UK speaking fee is never plotted on the same axis as an Indian asset
+declaration.
+
+### Verifying the promises
+
+```bash
+python verify.py
+```
+
+`docs/ETHICS.md` lists seven commitments; `verify.py` checks each one against the
+actual code and data and exits non-zero if any has drifted. It is how the
+commitments stay real rather than decorative - it has already caught a name-scoring
+bug that would have silently split "R. K. Sharma" from "Rajesh Kumar Sharma", and
+a foreign-key pragma that was not actually being enforced.
 
 ## Landscape: what already exists
 
