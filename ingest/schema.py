@@ -151,6 +151,19 @@ PREDICATES = {
     # Collapsing them would make India and the UK look comparable when they are not.
     "outside_earnings",       # value_num + currency, one registered payment
     "registered_interest",    # value_text, a declared interest with no cash figure
+    # what a member RAISED, not just how often. Subject + ministry, from the
+    # licensed sansad.in bulk dataset.
+    "parliamentary_question",
+    "questions_topics",
+    # a dated pointer to a primary document that exists, with NO value parsed
+    # from it. Weaker than declared_assets on purpose - the US publishes the
+    # paperwork where India publishes the numbers.
+    "disclosure_filed",
+    # cross-dataset keys (FEC, OpenSecrets, Wikidata) that make a person
+    # joinable without name matching
+    "external_identifier",
+    # a review PUBLISHED BY SOMEONE ELSE, relayed verbatim. Never our verdict.
+    "factcheck_published",
     # parliamentary activity - what a member does, as opposed to what they own
     "attendance_pct",
     "debates_participated",

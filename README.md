@@ -144,14 +144,41 @@ Adding a country means writing one `Extractor` subclass.
 extractors, every claim traceable to a hash-verified copy of the document it was
 read from.
 
-| Extractor | What it gives | Claims |
+| Extractor | What it gives | Country |
 |---|---|---|
-| `mplads` | public money: allocation, completed works, individual works | 36,608 |
-| `myneta` | declared assets, liabilities, pending cases, education | 5,677 |
-| `ukparliament` | members + registered financial interests | 3,958 |
-| `prs` | attendance, debates, questions, private member's bills | 3,749 |
-| `electoralbonds` | money IN: 26 parties, 1,233 donors | 1,259 |
-| `ocds` | public procurement, any OCDS publisher | 636 |
+| `mplads` | public money: allocation, completed works, individual works | IND |
+| `myneta` | declared assets, liabilities, pending cases, education | IND |
+| `sansadqa` | **what each member asked Parliament, and which ministry** | IND |
+| `prs` | attendance, debates, questions, private member's bills | IND |
+| `electoralbonds` | money IN: 26 parties, 1,233 donors | IND |
+| `ukparliament` | members + registered financial interests | GBR |
+| `uscongress` | members with FEC/OpenSecrets/Wikidata keys + disclosure filings | USA |
+| `ocds` | public procurement, **any** OCDS publisher | any |
+| `opensanctions` | third witness: aliases and birth dates | IND |
+| `wikidata` | fourth witness: birth dates, parties | IND |
+| `factcheck` | relays IFCN fact-checkers' published ratings | any |
+
+MyNeta runs against any election folder: `--election LokSabha2019`,
+`--election uttarpradesh2022`.
+
+### Checking a claim
+
+```bash
+python tools/checkclaim.py "Amit Shah owns assets worth Rs 500 crore"
+```
+
+Also in the browser, on the People page. It compares a numeric claim against the
+sourced record and **never returns a verdict** — it prints the claimed figure,
+the recorded figure, the gap, the source URL and the archive hash, then stops.
+It refuses when it cannot check, which is the design: a tool that always
+produces an answer is one nobody should trust. No language model is involved,
+because a model would produce a fluent answer for "Narendra Modi flew to the
+moon" — exactly the failure a fact-checking tool cannot have.
+
+Fact-checkers check virality: doctored images, fake quotes. Nobody
+automatically checks a *number* against the politician's own sworn affidavit.
+That is the gap this fills. `factcheck` relays their work rather than competing
+with it.
 
 Deploying: see [docs/DEPLOY.md](docs/DEPLOY.md). Static site, no backend.
 

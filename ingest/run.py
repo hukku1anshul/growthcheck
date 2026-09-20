@@ -10,9 +10,13 @@ import argparse
 from pathlib import Path
 
 from .extractors.electoralbonds import ElectoralBonds
+from .extractors.factcheck import FactCheck
 from .extractors.mplads import MPLADS
 from .extractors.myneta import MyNeta
 from .extractors.ocds import OCDS
+from .extractors.sansadqa import SansadQA
+from .extractors.uscongress import USCongress
+from .extractors.witnesses import OpenSanctionsWitness, WikidataWitness
 from .extractors.prs import PRS
 from .extractors.ukparliament import UKParliament
 from .schema import connect
@@ -20,8 +24,11 @@ from .schema import connect
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "data" / "processed" / "claims.db"
 
-EXTRACTORS = {"electoralbonds": ElectoralBonds, "mplads": MPLADS,
-              "myneta": MyNeta, "ocds": OCDS, "prs": PRS,
+EXTRACTORS = {"electoralbonds": ElectoralBonds, "factcheck": FactCheck,
+              "opensanctions": OpenSanctionsWitness, "wikidata": WikidataWitness,
+              "mplads": MPLADS,
+              "myneta": MyNeta, "ocds": OCDS, "prs": PRS, "sansadqa": SansadQA,
+              "uscongress": USCongress,
               "ukparliament": UKParliament}
 
 
@@ -78,13 +85,18 @@ def main() -> int:
     ap.add_argument("--delay", type=float, default=1.0, help="seconds between requests")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--db", default=str(DB), help="claim store path")
+    ap.add_argument("--election", default=None,
+                    help="MyNeta election folder, e.g. LokSabha2019, uttarpradesh2022")
     args = ap.parse_args()
 
     con = connect(args.db)
 
     if args.extractor:
         cls = EXTRACTORS[args.extractor]
-        ex = cls(con, delay=args.delay, limit=args.limit)
+        kw = {}
+        if args.election and cls is MyNeta:
+            kw['election'] = args.election
+        ex = cls(con, delay=args.delay, limit=args.limit, **kw)
         print(f"\nrunning {ex.name} v{ex.version} against {ex.publisher}")
         print(f"  rate limit: {args.delay}s between requests")
         stats = ex.run()

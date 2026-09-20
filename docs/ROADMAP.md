@@ -26,28 +26,39 @@ Sabha members and one election. That gap is closable from sources we already use
 
 ## Tier 1 — unique, feasible now, sources verified
 
-### 1. What each MP actually asked Parliament, and what the government answered
+### 1. What each MP actually asked Parliament  — BUILT, with a correction
 
-**Source:** [Indian parliament proceedings dataset on Zenodo](https://zenodo.org/records/18146342) —
-**37,271 Lok Sabha questions** with question text, the ministry's **answer text**,
-subject, ministry, date and member attribution; 7,671 debates; special mentions.
-Scraped from sansad.in through 31 Dec 2025. **Licence: CC-BY-4.0.** Already
-inspected: columns `quesNo, subjects, lokNo, member, ministry, type, date,
-questionText, answerText`.
+**Source:** [Indian parliament proceedings dataset on Zenodo](https://zenodo.org/records/18146342),
+CC-BY-4.0, scraped from sansad.in. Built as `ingest/extractors/sansadqa.py`.
 
-**Why it matters:** PRS gives us a *count* of questions asked. This gives the
-*content*. "Your MP asked 85 questions" becomes "your MP asked about toll plazas
-in Dharmapuri, and here is what the Road Transport ministry replied." Nothing in
-the market shows a citizen the substance of their representative's work with the
-government's own answer beside it.
+**CORRECTION.** An earlier version of this document said the dataset carried
+"37,271 questions **with the government's answer text**." That was wrong. The
+file has `questionText` and `answerText` columns and **both are empty in all
+37,271 rows** — I saw the column names and did not check they were populated.
 
-**Fits the model:** a `parliamentary_question` claim per question, subject as
-`value_text`, answer in the note, dated, sourced to the Zenodo record and the
-sansad.in page. Adds a "What they asked about" panel per person and, more
-usefully, a per-constituency topic breakdown: how much of this MP's attention
-went to roads, health, agriculture.
+What it actually contains, verified column by column (100% populated):
 
-**Effort:** small. It is one xlsx file, already licensed, no scraping.
+| field | example |
+|---|---|
+| `subjects` | "Toll Plazas in Dharmapuri, Tamil Nadu" |
+| `ministry` | ROAD TRANSPORT AND HIGHWAYS (56 distinct) |
+| `type` | STARRED (2,473) / UNSTARRED (34,798) |
+| `date`, `sessionNo`, `member` | 465 distinct members |
+| `questionsFilePath` | link to the per-question PDF on sansad.in |
+
+The question text and the ministry's reply live in **37,266 separate PDFs**.
+Retrieving them is a 37,000-document scrape of a government site — a separate
+project, not a parsing job.
+
+**So the honest value is still real, but different:** not "the government's
+words", but *what topics your MP raised and which ministry they held to
+account*. PRS gives a count — "asked 85 questions". This gives the substance:
+"asked about toll plazas, rail connectivity, farmer skill development and
+tourism; questioned Health, Railways and Agriculture most often."
+
+The extractor stores a sample of questions per member plus a `questions_topics`
+profile (total, how many starred, top five ministries), and its note on every
+claim states that the full text is in the linked PDF and not in this dataset.
 
 ### 2. A claim checker grounded in the claim store — the fake-news answer
 
@@ -230,8 +241,10 @@ And what it cannot check, stated plainly so nobody is misled:
 
 ## Suggested order
 
-1. Zenodo questions and answers — licensed, one file, biggest content gain.
-2. Claim checker in the UI — the prototype works; it needs a text box.
-3. Google Fact Check relay — free key, ~1,300 queries, one build step.
-4. OpenSanctions + Wikidata batch witnesses.
-5. MyNeta breadth: 2019 Lok Sabha winners, then sitting MLAs.
+~~1. Zenodo questions~~ — **built** (`sansadqa`), with the answer-text claim corrected above.
+~~2. Claim checker in the UI~~ — **built** (`web/src/CheckClaim.jsx`).
+~~3. Google Fact Check relay~~ — **built** (`factcheck`); needs a free key in `GOOGLE_FACTCHECK_KEY`.
+~~4. OpenSanctions + Wikidata witnesses~~ — **built** (`opensanctions`, `wikidata`).
+~~5. MyNeta breadth: 2019 Lok Sabha~~ — **built**; `--election LokSabha2019`. State assemblies next.
+6. Next: sitting MLAs (`--election uttarpradesh2022` and siblings), and the US
+   money layer beyond the disclosure index.

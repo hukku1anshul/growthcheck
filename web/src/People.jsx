@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import * as echarts from 'echarts'
 import { fmt } from './Chart.jsx'
 import { readUrlState, writeUrlState } from './data.js'
+import CheckClaim from './CheckClaim.jsx'
 
 const BASE = `${import.meta.env.BASE_URL}data/people`
 
@@ -167,6 +168,8 @@ export default function People({ dark, filtersOpen = false, onCloseFilters }) {
                 </p>
               </div>
             </div>
+
+            <CheckClaim people={meta.people} />
             <div className="ptable">
               <div className="ptr phead">
                 <span>Name</span>

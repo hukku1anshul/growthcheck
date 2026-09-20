@@ -360,3 +360,33 @@ select.mini {
   .pm-row { gap: 14px; }
   .pm-row > div { min-width: 104px; }
 }
+
+/* ------------------------------------------------------------- claim checker */
+.checkclaim { margin-top: 12px; border-left: 3px solid var(--accent); }
+.cc-row { display: flex; gap: 8px; align-items: center; }
+.cc-row .search { flex: 1; }
+.cc-examples { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 7px; }
+.cc-eg {
+  border: 1px dashed var(--line); background: transparent; color: var(--muted);
+  border-radius: 12px; padding: 2px 9px; font: inherit; font-size: 11px; cursor: pointer;
+}
+.cc-eg:hover { border-color: var(--accent); color: var(--accent); }
+.cc-result {
+  margin-top: 11px; border-top: 1px solid var(--line); padding-top: 9px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.cc-line { display: grid; grid-template-columns: 96px 1fr; gap: 10px; font-size: 12.5px; }
+.cc-k {
+  font-size: 10.5px; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--muted); font-weight: 600; padding-top: 2px;
+}
+.cc-v { overflow-wrap: anywhere; }
+.cc-v.ok   { color: #047857; font-weight: 600; }
+.cc-v.bad  { color: #b91c1c; font-weight: 600; }
+.cc-v.warn { color: var(--warn); }
+.cc-cannot { border-left: 2px solid var(--warn); padding-left: 10px; }
+.cc-verdict {
+  margin: 8px 0 0; font-size: 11.5px; color: var(--muted);
+  border-top: 1px solid var(--line); padding-top: 7px;
+}
+@media (max-width: 860px) { .cc-line { grid-template-columns: 1fr; gap: 1px; } }
