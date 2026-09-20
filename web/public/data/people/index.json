@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-20T20:39:36+00:00",
+ "built_at": "2026-09-20T21:59:57+00:00",
  "people": [
   {
    "id": 1014,
@@ -58204,6 +58204,7 @@
   "public_money": "MPLADS figures are PUBLIC money a member may direct to works in their constituency - not the member's own money and not their income. The member recommends works; district authorities sanction, implement and pay. Low utilisation can reflect district capacity as much as the member.",
   "questions": "Question counts here are questions this member's NAME APPEARS ON. Questions are frequently tabled jointly - 37,271 questions carry 156,760 names, a mean of 4.2 members each - and every signatory is credited. This is a different measure from the PRS 'questions asked' figure, and the two are not comparable. The text of each question and the ministry's reply are in a linked PDF and are not held here.",
   "filings": "A filing record says a financial disclosure EXISTS and links to it. No dollar figure is extracted: India publishes the numbers, the US publishes the paperwork.",
+  "cost_outliers": "This compares one published figure with other published figures for the SAME KIND of work, and nothing else. It is arithmetic, not a finding: a high ratio is not evidence of wrongdoing and very often has an ordinary explanation. A category bundles very different jobs - \u201cStreet lights\u201d covers a single pole and an entire constituency's installation booked as one work - and terrain, materials, transport to remote districts and multi-year scope all move cost legitimately. Under MPLADS the member RECOMMENDS works; district authorities sanction, implement and pay, so the amount is not the member's decision. The median and the number of works compared are shown so the figure can be checked rather than taken on trust.",
   "factchecks": "These reviews are published by independent fact-checking organisations, not by this site. The rating is theirs, in their words, and we add no assessment of our own. They review viral claims - images, quotes, videos - and not the affidavit figures shown elsewhere on this page. Each was found by SEARCHING FOR THE POLITICIAN'S NAME, with no identifier to confirm it, so a review may concern a different person of the same name. Read the linked article before relying on it.",
   "stock_vs_flow": "India's figures are total declared assets at a date. The UK's are individual registered payments. They are different kinds of number and are never plotted on the same axis."
  }

@@ -361,6 +361,53 @@ def test_seat_keys() -> None:
     check("a district number survives normalising", _seat_key("SC-06"), "sc06")
 
 
+def test_cost_comparison() -> None:
+    """The cost comparison, and the statistical choices that keep it honest.
+
+    This is the project's nearest thing to Rosie, and it is only publishable
+    because of what it compares and what it refuses to say. The arithmetic
+    below is what stops a ratio from becoming an accusation.
+    """
+    from etl.outliers import MIN_SET, baselines, category_of, compare
+
+    note = ("Interlocking work in Bankat Gram | category: "
+            "WS/MP490/2024-2025/187515-Construction of roads, link roads, "
+            "pathways or any other road | agency: VARANASI | work id: 156455")
+    # The greedy prefix matters: a lazy pattern anchors on "/2024-" and returns
+    # the year plus the work id instead of the category.
+    check("the category is read, not the year or the work id",
+          category_of(note),
+          "Construction of roads, link roads, pathways or any other road")
+    check("a note with no category yields none", category_of("no category here"), None)
+
+    # A "median" over a handful of works is a coincidence, not a comparison.
+    small = [("Rare category", 100.0) for _ in range(MIN_SET - 1)]
+    check("a category below the minimum is not a comparison set",
+          "Rare category" in baselines(small), False)
+
+    # The median, not the mean: these distributions are extremely skewed, and a
+    # mean is dragged upward by the very works being looked for, which then
+    # hides them.
+    works = [("Street lights", 100.0) for _ in range(MIN_SET)]
+    works.append(("Street lights", 1_000_000.0))          # one enormous outlier
+    base = baselines(works)
+    check("the median ignores the outlier it is meant to expose",
+          base["Street lights"]["median"], 100.0)
+    check("and the comparison size is reported", base["Street lights"]["n"], MIN_SET + 1)
+
+    hit = compare(1_000_000.0, "Street lights", base)
+    check("the outlier is measured against that median", hit["ratio"], 10000.0)
+    check("and carries the median it was compared against", hit["median"], 100.0)
+    check("and how many works that came from", hit["n"], MIN_SET + 1)
+
+    # No comparison set, no comparison. A ratio computed against nothing would
+    # be a number with no meaning attached to a named person's record.
+    check("no baseline means no claim at all",
+          compare(1_000_000.0, "Category nobody has", base), None)
+    check("a zero or missing amount is not compared",
+          compare(0, "Street lights", base), None)
+
+
 def test_url_redaction() -> None:
     """A credential must never be written down; a field selector must survive.
 
@@ -420,6 +467,7 @@ def main() -> int:
     test_corroboration_dates()
     test_seat_keys()
     test_url_redaction()
+    test_cost_comparison()
 
     con.close()
     tmp.unlink(missing_ok=True)

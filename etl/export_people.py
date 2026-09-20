@@ -39,6 +39,12 @@ from etl.corroborate import (
     learn_party_aliases,
     party_key,
 )
+
+# Cost comparison. A statement about a WORK against others of the same kind,
+# never a judgement about the member who recommended it - see etl/outliers.py
+# for why that distinction changes what is computed, not just how it is worded.
+from etl.outliers import RATIO as COST_RATIO
+from etl.outliers import baselines, category_of, compare
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -402,6 +408,16 @@ def build() -> dict:
                 party_forms[pid].add((c["text"], c["as_of"]))
     party_aliases = learn_party_aliases(party_forms)
 
+    # Cost baselines, computed across EVERY work in the store rather than the
+    # 25 sampled into each bundle - a median over one member's works would
+    # compare them only with themselves.
+    cost_base = baselines(
+        (category_of(c["note"]), c["num"])
+        for cl in claims_by_person.values()
+        for c in cl
+        if c["predicate"] == "contract_awarded" and c["extractor"] == "mplads"
+    )
+
     OUT.mkdir(parents=True, exist_ok=True)
     index = []
 
@@ -499,6 +515,25 @@ def build() -> dict:
         # person's bundle to 488KB and the whole export to 36MB, which is a slow
         # page load for data nobody scrolls through. The full set stays in
         # claims.db, which is what the analysis path uses.
+        # --- how this member's works compare with others of the same kind ---
+        # A statement about WORKS, never about the member: no count reaches the
+        # index, so the people table cannot be sorted by it. Ranking
+        # politicians by outlier count would be a score.
+        cost_outliers = []
+        for c in claims:
+            if c["predicate"] != "contract_awarded" or c["extractor"] != "mplads":
+                continue
+            cmp_ = compare(c["num"], category_of(c["note"]), cost_base)
+            if cmp_ and cmp_["ratio"] >= COST_RATIO:
+                cost_outliers.append({
+                    "amount": c["num"],
+                    "as_of": c["as_of"],
+                    "detail": c["note"],
+                    "src_url": c["src_url"],
+                    **cmp_,
+                })
+        cost_outliers.sort(key=lambda x: -x["ratio"])
+
         WORK_SAMPLE = 25
         works_in_claims = [c for c in claims if c["predicate"] == "contract_awarded"]
         shown_claims = [c for c in claims if c["predicate"] != "contract_awarded"]
@@ -513,6 +548,7 @@ def build() -> dict:
             "context": ctx,
             "public_money": public,
             "activity": activity or None,
+            "cost_outliers": cost_outliers[:20] or None,
             "asked": asked,
             "filings": sorted(filings, key=lambda f: f["as_of"] or "", reverse=True)[:20] or None,
             "factchecks": {
@@ -637,6 +673,20 @@ def build() -> dict:
                 "A filing record says a financial disclosure EXISTS and links to "
                 "it. No dollar figure is extracted: India publishes the numbers, "
                 "the US publishes the paperwork."
+            ),
+            "cost_outliers": (
+                "This compares one published figure with other published figures "
+                "for the SAME KIND of work, and nothing else. It is arithmetic, "
+                "not a finding: a high ratio is not evidence of wrongdoing and "
+                "very often has an ordinary explanation. A category bundles very "
+                "different jobs - “Street lights” covers a single pole and an "
+                "entire constituency's installation booked as one work - and "
+                "terrain, materials, transport to remote districts and multi-year "
+                "scope all move cost legitimately. Under MPLADS the member "
+                "RECOMMENDS works; district authorities sanction, implement and "
+                "pay, so the amount is not the member's decision. The median and "
+                "the number of works compared are shown so the figure can be "
+                "checked rather than taken on trust."
             ),
             "factchecks": (
                 "These reviews are published by independent fact-checking "

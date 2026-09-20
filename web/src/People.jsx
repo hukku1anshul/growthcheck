@@ -422,6 +422,32 @@ function Person({ p, meta, dark, onBack }) {
         </div>
       )}
 
+      {p.cost_outliers?.length > 0 && (
+        <div className="panel" style={{ marginTop: 12 }}>
+          <h3>Works that cost more than others of the same kind</h3>
+          {/* The heading describes the arithmetic and stops. "Suspicious",
+              "irregular" or "flagged" would carry a verdict this comparison
+              cannot support - and the member does not set the price anyway. */}
+          <p className="warn" style={{ marginTop: -4 }}>{meta.caveats.cost_outliers}</p>
+          <div className="works">
+            {p.cost_outliers.map((w, i) => (
+              <div className="work" key={i}>
+                <span className="w-amt">₹{fmt(w.amount)}</span>
+                <span className="w-date">{w.as_of}</span>
+                <span className="w-desc" style={{ color: 'var(--text)' }}>
+                  <b>{w.ratio}×</b> the median for “{w.category}”
+                  <span className="dim">
+                    {' '}— median ₹{fmt(w.median)} across{' '}
+                    {w.n.toLocaleString()} works
+                  </span>
+                </span>
+                <span className="w-desc">{w.detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {p.factchecks?.items?.length > 0 && (
         <div className="panel" style={{ marginTop: 12 }}>
           <h3>Fact-checks published about them, by others</h3>
