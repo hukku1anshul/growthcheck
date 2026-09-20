@@ -25,6 +25,19 @@ import sqlite3
 from collections import defaultdict
 
 from ingest.resolve import _near
+
+# The UI's conflict panel and the corroboration report must agree about what a
+# disagreement IS. Sharing this code is the point: comparing raw values flagged
+# 497 of 1,284 people as having conflicting sources, when almost all of those
+# were "BJP" vs "Bharatiya Janata Party", an affidavit age against a current
+# age, or two education taxonomies. Publishing that to readers would be the
+# 9.4%-agreement mistake, shown one politician at a time.
+from etl.corroborate import (
+    AGE_TOLERANCE_YEARS,
+    education_span,
+    learn_party_aliases,
+    party_key,
+)
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -131,7 +144,45 @@ def _same_seat(a: str, b: str) -> bool:
     return _near(a, b)                           # one-character spelling variant
 
 
-def _conflicts(claims: list[dict]) -> list[dict]:
+# A conflict only makes sense for a fact that should have ONE value per person
+# per date. A politician has one age and one declared asset total on a given
+# date, so two different values are a disagreement worth showing.
+#
+# These predicates are the opposite: many distinct instances legitimately share a
+# date. Four MPLADS works completed on the same day are four works, not four
+# rival claims about one work, and a UK member can register several payments on
+# one date. Grouping them by (predicate, date) made the live site announce
+# "sources disagree on 20 facts" for a member whose sources agreed completely -
+# a false alarm in exactly the place the app asks readers to trust it most.
+MULTI_INSTANCE = {
+    "contract_awarded",
+    "outside_earnings",
+    "registered_interest",
+    "electoral_bonds_received",
+    "electoral_bonds_purchased",
+    "possible_duplicate_of",
+}
+
+
+def _same_value(predicate: str, values: list, aliases: dict) -> bool:
+    """Are these reported values actually saying the same thing?"""
+    if predicate == "party_affiliation":
+        return len({party_key(str(v), aliases) for v in values}) == 1
+    if predicate == "education_level":
+        spans = [education_span(v) for v in values]
+        if any(sp is None for sp in spans):
+            return len({str(v).strip().lower() for v in values}) == 1
+        return max(sp[0] for sp in spans) <= min(sp[1] for sp in spans)
+    if predicate == "age":
+        try:
+            nums = [float(v) for v in values]
+        except (TypeError, ValueError):
+            return len(set(values)) == 1
+        return max(nums) - min(nums) <= AGE_TOLERANCE_YEARS
+    return len({str(v).strip().lower() for v in values}) == 1
+
+
+def _conflicts(claims: list[dict], aliases: dict) -> list[dict]:
     """Facts asserted differently by different documents.
 
     Reported, never resolved. Two affidavits from the same person in the same year
@@ -139,14 +190,14 @@ def _conflicts(claims: list[dict]) -> list[dict]:
     """
     seen: dict[tuple, set] = defaultdict(set)
     for c in claims:
-        if c["predicate"] == "possible_duplicate_of":
+        if c["predicate"] in MULTI_INSTANCE:
             continue
         val = c["num"] if c["num"] is not None else c["text"]
         seen[(c["predicate"], c["as_of"])].add(val)
     return [
         {"predicate": k[0], "as_of": k[1], "values": sorted(map(str, v))}
         for k, v in seen.items()
-        if len(v) > 1
+        if len(v) > 1 and not _same_value(k[0], list(v), aliases)
     ]
 
 
@@ -256,6 +307,15 @@ def build() -> dict:
         )
     con.close()
 
+    # Learn party aliases once across the whole dataset, so "TDP" and "Telugu
+    # Desam Party" are known to be the same before any person is compared.
+    party_forms: dict[int, set] = defaultdict(set)
+    for pid, cl in claims_by_person.items():
+        for c in cl:
+            if c["predicate"] == "party_affiliation" and c["text"]:
+                party_forms[pid].add(c["text"])
+    party_aliases = learn_party_aliases(party_forms)
+
     OUT.mkdir(parents=True, exist_ok=True)
     index = []
 
@@ -330,7 +390,7 @@ def build() -> dict:
             "n_claims": len(claims),
             "sources": sorted({c["src_url"] for c in claims}),
             # facts where two source documents disagree, surfaced not resolved
-            "conflicts": _conflicts(claims),
+            "conflicts": _conflicts(claims, party_aliases),
         }
         (OUT / f"{pid}.json").write_text(
             json.dumps(record, separators=(",", ":")), encoding="utf-8"
@@ -363,7 +423,7 @@ def build() -> dict:
                 "utilisation": public["utilisation"] if public else None,
                 "works": len(works) if works else None,
                 "attendance": activity.get("attendance_pct", {}).get("value"),
-                "n_conflicts": len(_conflicts(claims)),
+                "n_conflicts": len(_conflicts(claims, party_aliases)),
             }
         )
 

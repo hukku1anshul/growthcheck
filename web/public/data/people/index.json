@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-20T12:00:05+00:00",
+ "built_at": "2026-09-20T12:04:51+00:00",
  "people": [
   {
    "id": 1014,
@@ -191,7 +191,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 972,
@@ -215,7 +215,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1172,
@@ -263,7 +263,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 643,
@@ -335,7 +335,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 687,
@@ -359,7 +359,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 761,
@@ -431,7 +431,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 996,
@@ -503,7 +503,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 965,
@@ -575,7 +575,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 858,
@@ -623,7 +623,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 995,
@@ -671,7 +671,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1170,
@@ -719,7 +719,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 976,
@@ -743,7 +743,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 676,
@@ -839,7 +839,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 953,
@@ -863,7 +863,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1067,
@@ -935,7 +935,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1228,
@@ -959,7 +959,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 690,
@@ -983,7 +983,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 967,
@@ -1079,7 +1079,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 755,
@@ -1103,7 +1103,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 773,
@@ -1223,7 +1223,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 775,
@@ -1319,7 +1319,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 657,
@@ -1343,7 +1343,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 750,
@@ -1391,7 +1391,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1135,
@@ -1415,7 +1415,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 712,
@@ -1463,7 +1463,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 843,
@@ -1559,7 +1559,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 940,
@@ -1607,7 +1607,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1053,
@@ -1703,7 +1703,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 667,
@@ -1871,7 +1871,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 622,
@@ -1919,7 +1919,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1190,
@@ -1967,7 +1967,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 957,
@@ -1991,7 +1991,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1049,
@@ -2063,7 +2063,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 791,
@@ -2255,7 +2255,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 702,
@@ -2327,7 +2327,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 685,
@@ -2351,7 +2351,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 720,
@@ -2375,7 +2375,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 747,
@@ -2399,7 +2399,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 797,
@@ -2519,7 +2519,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 946,
@@ -2543,7 +2543,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 990,
@@ -2567,7 +2567,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1034,
@@ -2879,7 +2879,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 913,
@@ -2903,7 +2903,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 954,
@@ -2927,7 +2927,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 789,
@@ -2999,7 +2999,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 786,
@@ -3047,7 +3047,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1058,
@@ -3071,7 +3071,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 911,
@@ -3143,7 +3143,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 878,
@@ -3647,7 +3647,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 762,
@@ -3671,7 +3671,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1031,
@@ -3695,7 +3695,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1081,
@@ -3719,7 +3719,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1101,
@@ -3743,7 +3743,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1141,
@@ -3767,7 +3767,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1147,
@@ -3791,7 +3791,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1186,
@@ -3839,7 +3839,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 692,
@@ -4055,7 +4055,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 729,
@@ -4127,7 +4127,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 710,
@@ -4151,7 +4151,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 715,
@@ -4247,7 +4247,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 802,
@@ -4343,7 +4343,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1089,
@@ -4367,7 +4367,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 619,
@@ -4415,7 +4415,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 896,
@@ -4511,7 +4511,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 610,
@@ -4535,7 +4535,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 893,
@@ -4583,7 +4583,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1008,
@@ -4871,7 +4871,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 1163,
@@ -4967,7 +4967,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 799,
@@ -5231,7 +5231,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 851,
@@ -5303,7 +5303,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 829,
@@ -5471,7 +5471,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1024,
@@ -5591,7 +5591,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1160,
@@ -5615,7 +5615,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1212,
@@ -5711,7 +5711,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 870,
@@ -5759,7 +5759,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1022,
@@ -5807,7 +5807,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 776,
@@ -5831,7 +5831,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1204,
@@ -6071,7 +6071,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 699,
@@ -6143,7 +6143,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 722,
@@ -6167,7 +6167,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 675,
@@ -6287,7 +6287,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1002,
@@ -6359,7 +6359,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1237,
@@ -6383,7 +6383,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1168,
@@ -6407,7 +6407,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 748,
@@ -6575,7 +6575,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 983,
@@ -6599,7 +6599,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 631,
@@ -6647,7 +6647,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1077,
@@ -6671,7 +6671,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1050,
@@ -6695,7 +6695,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1020,
@@ -6911,7 +6911,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1105,
@@ -6935,7 +6935,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 850,
@@ -7103,7 +7103,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 844,
@@ -7223,7 +7223,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1010,
@@ -7823,7 +7823,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 941,
@@ -7847,7 +7847,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1234,
@@ -8135,7 +8135,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 668,
@@ -8279,7 +8279,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 792,
@@ -8303,7 +8303,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1209,
@@ -8351,7 +8351,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 624,
@@ -8375,7 +8375,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 650,
@@ -8423,7 +8423,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 900,
@@ -8543,7 +8543,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 855,
@@ -8687,7 +8687,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 905,
@@ -8759,7 +8759,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1211,
@@ -8927,7 +8927,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1129,
@@ -8975,7 +8975,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1113,
@@ -9023,7 +9023,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1033,
@@ -9071,7 +9071,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1085,
@@ -9215,7 +9215,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 809,
@@ -9263,7 +9263,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1090,
@@ -9287,7 +9287,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1133,
@@ -9647,7 +9647,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1069,
@@ -9743,7 +9743,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 796,
@@ -9935,7 +9935,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1226,
@@ -10007,7 +10007,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1100,
@@ -10031,7 +10031,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1184,
@@ -10151,7 +10151,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 898,
@@ -10175,7 +10175,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 651,
@@ -10199,7 +10199,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 705,
@@ -10223,7 +10223,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1156,
@@ -10271,7 +10271,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 612,
@@ -10295,7 +10295,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 640,
@@ -10343,7 +10343,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 662,
@@ -10439,7 +10439,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1016,
@@ -10559,7 +10559,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1108,
@@ -10583,7 +10583,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 771,
@@ -10607,7 +10607,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 826,
@@ -10631,7 +10631,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 713,
@@ -10703,7 +10703,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 934,
@@ -10727,7 +10727,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 655,
@@ -10751,7 +10751,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 885,
@@ -10823,7 +10823,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 816,
@@ -10919,7 +10919,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1060,
@@ -11039,7 +11039,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 664,
@@ -11087,7 +11087,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1241,
@@ -11111,7 +11111,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1236,
@@ -11399,7 +11399,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1199,
@@ -11423,7 +11423,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 805,
@@ -11447,7 +11447,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 890,
@@ -11471,7 +11471,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 947,
@@ -11543,7 +11543,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 669,
@@ -11759,7 +11759,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 759,
@@ -11903,7 +11903,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1017,
@@ -11927,7 +11927,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1243,
@@ -12311,7 +12311,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 868,
@@ -12359,7 +12359,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1070,
@@ -12383,7 +12383,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1152,
@@ -12503,7 +12503,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1091,
@@ -12527,7 +12527,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1196,
@@ -12551,7 +12551,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1179,
@@ -12575,7 +12575,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1018,
@@ -12623,7 +12623,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1181,
@@ -12695,7 +12695,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 961,
@@ -12719,7 +12719,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 617,
@@ -12767,7 +12767,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 917,
@@ -12815,7 +12815,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 902,
@@ -12863,7 +12863,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 774,
@@ -12959,7 +12959,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 674,
@@ -12983,7 +12983,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 711,
@@ -13055,7 +13055,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 793,
@@ -13103,7 +13103,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 854,
@@ -13151,7 +13151,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 918,
@@ -13247,7 +13247,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1123,
@@ -13295,7 +13295,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 1153,
@@ -13319,7 +13319,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 925,
@@ -13463,7 +13463,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1094,
@@ -13511,7 +13511,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 882,
@@ -13631,7 +13631,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 819,
@@ -13679,7 +13679,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 714,
@@ -13799,7 +13799,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 737,
@@ -13823,7 +13823,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 783,
@@ -13847,7 +13847,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 717,
@@ -13871,7 +13871,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 895,
@@ -13895,7 +13895,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1247,
@@ -14015,7 +14015,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 889,
@@ -14111,7 +14111,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 749,
@@ -14135,7 +14135,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 780,
@@ -14159,7 +14159,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 830,
@@ -14279,7 +14279,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 790,
@@ -14327,7 +14327,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1072,
@@ -14423,7 +14423,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 648,
@@ -14447,7 +14447,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 752,
@@ -14639,7 +14639,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 677,
@@ -14711,7 +14711,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1064,
@@ -14783,7 +14783,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 807,
@@ -14807,7 +14807,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1118,
@@ -14975,7 +14975,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 627,
@@ -15023,7 +15023,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 743,
@@ -15239,7 +15239,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 725,
@@ -15263,7 +15263,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1142,
@@ -15287,7 +15287,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 922,
@@ -15311,7 +15311,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 709,
@@ -15359,7 +15359,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 883,
@@ -15383,7 +15383,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1171,
@@ -15407,7 +15407,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1169,
@@ -15479,7 +15479,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 732,
@@ -15599,7 +15599,7 @@
    "utilisation": 38.1,
    "works": 101,
    "attendance": null,
-   "n_conflicts": 19
+   "n_conflicts": 0
   },
   {
    "id": 259,
@@ -15623,7 +15623,7 @@
    "utilisation": 26.4,
    "works": 38,
    "attendance": 64.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 147,
@@ -15647,7 +15647,7 @@
    "utilisation": 13.5,
    "works": 44,
    "attendance": 45.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 45,
@@ -15671,7 +15671,7 @@
    "utilisation": 38.4,
    "works": 124,
    "attendance": 94.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 543,
@@ -15695,7 +15695,7 @@
    "utilisation": 17.3,
    "works": 74,
    "attendance": 87.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 520,
@@ -15719,7 +15719,7 @@
    "utilisation": 40.9,
    "works": 230,
    "attendance": 28.0,
-   "n_conflicts": 43
+   "n_conflicts": 0
   },
   {
    "id": 538,
@@ -15743,7 +15743,7 @@
    "utilisation": 20.7,
    "works": 173,
    "attendance": 81.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 522,
@@ -15791,7 +15791,7 @@
    "utilisation": 24.6,
    "works": 29,
    "attendance": 84.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 428,
@@ -15815,7 +15815,7 @@
    "utilisation": 27.6,
    "works": 47,
    "attendance": 92.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 195,
@@ -15839,7 +15839,7 @@
    "utilisation": 17.8,
    "works": 109,
    "attendance": 81.0,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 276,
@@ -15863,7 +15863,7 @@
    "utilisation": 21.7,
    "works": 189,
    "attendance": 97.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 202,
@@ -15887,7 +15887,7 @@
    "utilisation": 17.5,
    "works": 64,
    "attendance": 79.0,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 198,
@@ -15911,7 +15911,7 @@
    "utilisation": 36.7,
    "works": 99,
    "attendance": 81.0,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 453,
@@ -15935,7 +15935,7 @@
    "utilisation": 24.5,
    "works": 52,
    "attendance": 81.0,
-   "n_conflicts": 12
+   "n_conflicts": 0
   },
   {
    "id": 149,
@@ -15959,7 +15959,7 @@
    "utilisation": 13.2,
    "works": 65,
    "attendance": 93.0,
-   "n_conflicts": 20
+   "n_conflicts": 1
   },
   {
    "id": 501,
@@ -15983,7 +15983,7 @@
    "utilisation": 15.9,
    "works": 91,
    "attendance": 95.0,
-   "n_conflicts": 27
+   "n_conflicts": 0
   },
   {
    "id": 48,
@@ -16007,7 +16007,7 @@
    "utilisation": 39.6,
    "works": 57,
    "attendance": 43.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 498,
@@ -16031,7 +16031,7 @@
    "utilisation": 1.1,
    "works": 3,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 457,
@@ -16055,7 +16055,7 @@
    "utilisation": 9.9,
    "works": 19,
    "attendance": 63.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 465,
@@ -16079,7 +16079,7 @@
    "utilisation": 6.2,
    "works": 40,
    "attendance": 45.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 1255,
@@ -16127,7 +16127,7 @@
    "utilisation": 59.4,
    "works": 37,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 295,
@@ -16151,7 +16151,7 @@
    "utilisation": 20.2,
    "works": 15,
    "attendance": 70.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 219,
@@ -16175,7 +16175,7 @@
    "utilisation": 9.6,
    "works": 22,
    "attendance": 87.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 292,
@@ -16199,7 +16199,7 @@
    "utilisation": 16.7,
    "works": 29,
    "attendance": 86.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 326,
@@ -16223,7 +16223,7 @@
    "utilisation": 13.6,
    "works": 66,
    "attendance": 97.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 33,
@@ -16247,7 +16247,7 @@
    "utilisation": 26.0,
    "works": 41,
    "attendance": 90.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 4,
@@ -16271,7 +16271,7 @@
    "utilisation": 15.2,
    "works": 42,
    "attendance": null,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 116,
@@ -16295,7 +16295,7 @@
    "utilisation": 2.8,
    "works": 22,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 1256,
@@ -16343,7 +16343,7 @@
    "utilisation": 15.3,
    "works": 51,
    "attendance": null,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 332,
@@ -16367,7 +16367,7 @@
    "utilisation": 12.5,
    "works": 59,
    "attendance": 66.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 331,
@@ -16391,7 +16391,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 1.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 442,
@@ -16415,7 +16415,7 @@
    "utilisation": 31.9,
    "works": 145,
    "attendance": 95.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 430,
@@ -16439,7 +16439,7 @@
    "utilisation": 26.1,
    "works": 32,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 314,
@@ -16463,7 +16463,7 @@
    "utilisation": 3.4,
    "works": 17,
    "attendance": 90.0,
-   "n_conflicts": 5
+   "n_conflicts": 1
   },
   {
    "id": 545,
@@ -16487,7 +16487,7 @@
    "utilisation": 39.9,
    "works": 74,
    "attendance": null,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 294,
@@ -16511,7 +16511,7 @@
    "utilisation": 31.2,
    "works": 21,
    "attendance": 82.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 499,
@@ -16535,7 +16535,7 @@
    "utilisation": 0.2,
    "works": 1,
    "attendance": 96.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 243,
@@ -16559,7 +16559,7 @@
    "utilisation": 28.6,
    "works": 152,
    "attendance": 88.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 272,
@@ -16583,7 +16583,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 97.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 236,
@@ -16607,7 +16607,7 @@
    "utilisation": 19.4,
    "works": 76,
    "attendance": 82.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 300,
@@ -16631,7 +16631,7 @@
    "utilisation": 5.4,
    "works": 20,
    "attendance": 91.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 159,
@@ -16655,7 +16655,7 @@
    "utilisation": 14.8,
    "works": 85,
    "attendance": null,
-   "n_conflicts": 12
+   "n_conflicts": 0
   },
   {
    "id": 459,
@@ -16679,7 +16679,7 @@
    "utilisation": 64.1,
    "works": 69,
    "attendance": null,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 1257,
@@ -16727,7 +16727,7 @@
    "utilisation": 10.5,
    "works": 62,
    "attendance": 78.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 246,
@@ -16751,7 +16751,7 @@
    "utilisation": 26.1,
    "works": 41,
    "attendance": 100.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 477,
@@ -16775,7 +16775,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 462,
@@ -16799,7 +16799,7 @@
    "utilisation": 29.7,
    "works": 86,
    "attendance": 95.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 142,
@@ -16823,7 +16823,7 @@
    "utilisation": 5.3,
    "works": 54,
    "attendance": 92.0,
-   "n_conflicts": 15
+   "n_conflicts": 2
   },
   {
    "id": 305,
@@ -16847,7 +16847,7 @@
    "utilisation": 7.8,
    "works": 47,
    "attendance": 86.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 26,
@@ -16871,7 +16871,7 @@
    "utilisation": 9.5,
    "works": 36,
    "attendance": 99.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 341,
@@ -16895,7 +16895,7 @@
    "utilisation": 14.2,
    "works": 20,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 55,
@@ -16919,7 +16919,7 @@
    "utilisation": 63.0,
    "works": 258,
    "attendance": 82.0,
-   "n_conflicts": 8
+   "n_conflicts": 1
   },
   {
    "id": 476,
@@ -16943,7 +16943,7 @@
    "utilisation": 18.1,
    "works": 36,
    "attendance": 96.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 492,
@@ -16967,7 +16967,7 @@
    "utilisation": 87.3,
    "works": 5,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 382,
@@ -16991,7 +16991,7 @@
    "utilisation": 40.1,
    "works": 54,
    "attendance": 84.0,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 407,
@@ -17015,7 +17015,7 @@
    "utilisation": 23.8,
    "works": 129,
    "attendance": 84.0,
-   "n_conflicts": 15
+   "n_conflicts": 0
   },
   {
    "id": 509,
@@ -17039,7 +17039,7 @@
    "utilisation": 37.7,
    "works": 40,
    "attendance": 45.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 412,
@@ -17063,7 +17063,7 @@
    "utilisation": 52.5,
    "works": 477,
    "attendance": 79.0,
-   "n_conflicts": 82
+   "n_conflicts": 0
   },
   {
    "id": 271,
@@ -17087,7 +17087,7 @@
    "utilisation": 14.2,
    "works": 14,
    "attendance": 99.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 403,
@@ -17111,7 +17111,7 @@
    "utilisation": 3.8,
    "works": 1,
    "attendance": 86.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 228,
@@ -17135,7 +17135,7 @@
    "utilisation": 3.3,
    "works": 15,
    "attendance": 97.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 478,
@@ -17159,7 +17159,7 @@
    "utilisation": 33.1,
    "works": 2,
    "attendance": 97.0,
-   "n_conflicts": 4
+   "n_conflicts": 1
   },
   {
    "id": 62,
@@ -17183,7 +17183,7 @@
    "utilisation": 32.1,
    "works": 81,
    "attendance": 98.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 516,
@@ -17207,7 +17207,7 @@
    "utilisation": 54.7,
    "works": 136,
    "attendance": 86.0,
-   "n_conflicts": 27
+   "n_conflicts": 1
   },
   {
    "id": 452,
@@ -17231,7 +17231,7 @@
    "utilisation": 23.4,
    "works": 40,
    "attendance": 95.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 304,
@@ -17255,7 +17255,7 @@
    "utilisation": 7.0,
    "works": 27,
    "attendance": 97.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 446,
@@ -17279,7 +17279,7 @@
    "utilisation": 55.7,
    "works": 108,
    "attendance": 92.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 517,
@@ -17303,7 +17303,7 @@
    "utilisation": 13.7,
    "works": 22,
    "attendance": 90.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 10,
@@ -17327,7 +17327,7 @@
    "utilisation": 21.1,
    "works": 53,
    "attendance": 74.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 189,
@@ -17351,7 +17351,7 @@
    "utilisation": 14.5,
    "works": 49,
    "attendance": 75.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 547,
@@ -17375,7 +17375,7 @@
    "utilisation": 7.5,
    "works": 11,
    "attendance": 66.0,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 461,
@@ -17399,7 +17399,7 @@
    "utilisation": 18.4,
    "works": 526,
    "attendance": 87.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 255,
@@ -17423,7 +17423,7 @@
    "utilisation": 9.7,
    "works": 15,
    "attendance": 99.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 313,
@@ -17447,7 +17447,7 @@
    "utilisation": 4.4,
    "works": 8,
    "attendance": 76.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 250,
@@ -17471,7 +17471,7 @@
    "utilisation": 17.1,
    "works": 29,
    "attendance": 88.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 317,
@@ -17495,7 +17495,7 @@
    "utilisation": 5.9,
    "works": 20,
    "attendance": 87.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 14,
@@ -17519,7 +17519,7 @@
    "utilisation": 2.2,
    "works": 9,
    "attendance": 86.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 406,
@@ -17543,7 +17543,7 @@
    "utilisation": 39.5,
    "works": 239,
    "attendance": 64.0,
-   "n_conflicts": 36
+   "n_conflicts": 0
   },
   {
    "id": 247,
@@ -17567,7 +17567,7 @@
    "utilisation": 22.8,
    "works": 51,
    "attendance": 88.0,
-   "n_conflicts": 9
+   "n_conflicts": 1
   },
   {
    "id": 404,
@@ -17591,7 +17591,7 @@
    "utilisation": 28.0,
    "works": 205,
    "attendance": null,
-   "n_conflicts": 28
+   "n_conflicts": 0
   },
   {
    "id": 532,
@@ -17615,7 +17615,7 @@
    "utilisation": 8.7,
    "works": 9,
    "attendance": 38.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 99,
@@ -17639,7 +17639,7 @@
    "utilisation": 13.3,
    "works": 43,
    "attendance": 95.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 536,
@@ -17663,7 +17663,7 @@
    "utilisation": 25.6,
    "works": 97,
    "attendance": 79.0,
-   "n_conflicts": 23
+   "n_conflicts": 0
   },
   {
    "id": 183,
@@ -17687,7 +17687,7 @@
    "utilisation": 8.9,
    "works": 19,
    "attendance": 80.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 1258,
@@ -17735,7 +17735,7 @@
    "utilisation": 27.5,
    "works": 144,
    "attendance": null,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 196,
@@ -17759,7 +17759,7 @@
    "utilisation": 10.1,
    "works": 24,
    "attendance": 84.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 335,
@@ -17783,7 +17783,7 @@
    "utilisation": 24.2,
    "works": 64,
    "attendance": null,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 352,
@@ -17807,7 +17807,7 @@
    "utilisation": 4.6,
    "works": 11,
    "attendance": 94.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 225,
@@ -17831,7 +17831,7 @@
    "utilisation": 2.3,
    "works": 5,
    "attendance": 86.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 108,
@@ -17855,7 +17855,7 @@
    "utilisation": 36.9,
    "works": 166,
    "attendance": 95.0,
-   "n_conflicts": 29
+   "n_conflicts": 0
   },
   {
    "id": 216,
@@ -17879,7 +17879,7 @@
    "utilisation": 29.0,
    "works": 80,
    "attendance": 97.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 307,
@@ -17903,7 +17903,7 @@
    "utilisation": 17.4,
    "works": 86,
    "attendance": 95.0,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 256,
@@ -17927,7 +17927,7 @@
    "utilisation": 13.0,
    "works": 20,
    "attendance": 97.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 288,
@@ -17951,7 +17951,7 @@
    "utilisation": 5.5,
    "works": 11,
    "attendance": 91.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 88,
@@ -17975,7 +17975,7 @@
    "utilisation": 12.1,
    "works": 29,
    "attendance": 88.0,
-   "n_conflicts": 4
+   "n_conflicts": 1
   },
   {
    "id": 248,
@@ -17999,7 +17999,7 @@
    "utilisation": 29.1,
    "works": 29,
    "attendance": 75.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 16,
@@ -18071,7 +18071,7 @@
    "utilisation": 25.3,
    "works": 31,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 309,
@@ -18095,7 +18095,7 @@
    "utilisation": 3.0,
    "works": 15,
    "attendance": 94.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 157,
@@ -18119,7 +18119,7 @@
    "utilisation": 1.8,
    "works": 5,
    "attendance": 99.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 34,
@@ -18143,7 +18143,7 @@
    "utilisation": 4.5,
    "works": 5,
    "attendance": 94.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 418,
@@ -18167,7 +18167,7 @@
    "utilisation": 16.3,
    "works": 7,
    "attendance": 84.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 440,
@@ -18191,7 +18191,7 @@
    "utilisation": 41.6,
    "works": 14,
    "attendance": 94.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 1,
@@ -18215,7 +18215,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 90.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 350,
@@ -18239,7 +18239,7 @@
    "utilisation": 32.1,
    "works": 97,
    "attendance": 100.0,
-   "n_conflicts": 24
+   "n_conflicts": 0
   },
   {
    "id": 1259,
@@ -18287,7 +18287,7 @@
    "utilisation": 18.4,
    "works": 38,
    "attendance": 84.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 220,
@@ -18311,7 +18311,7 @@
    "utilisation": 12.5,
    "works": 100,
    "attendance": 79.0,
-   "n_conflicts": 11
+   "n_conflicts": 1
   },
   {
    "id": 396,
@@ -18335,7 +18335,7 @@
    "utilisation": 54.0,
    "works": 172,
    "attendance": 74.0,
-   "n_conflicts": 25
+   "n_conflicts": 0
   },
   {
    "id": 122,
@@ -18359,7 +18359,7 @@
    "utilisation": 42.6,
    "works": 272,
    "attendance": null,
-   "n_conflicts": 30
+   "n_conflicts": 0
   },
   {
    "id": 3,
@@ -18383,7 +18383,7 @@
    "utilisation": 12.2,
    "works": 30,
    "attendance": 82.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 549,
@@ -18407,7 +18407,7 @@
    "utilisation": 41.9,
    "works": 286,
    "attendance": 92.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 178,
@@ -18431,7 +18431,7 @@
    "utilisation": 24.3,
    "works": 75,
    "attendance": null,
-   "n_conflicts": 18
+   "n_conflicts": 0
   },
   {
    "id": 105,
@@ -18455,7 +18455,7 @@
    "utilisation": 25.9,
    "works": 47,
    "attendance": null,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 401,
@@ -18479,7 +18479,7 @@
    "utilisation": 39.1,
    "works": 417,
    "attendance": 88.0,
-   "n_conflicts": 36
+   "n_conflicts": 2
   },
   {
    "id": 438,
@@ -18503,7 +18503,7 @@
    "utilisation": 8.2,
    "works": 15,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 154,
@@ -18527,7 +18527,7 @@
    "utilisation": 9.9,
    "works": 49,
    "attendance": 89.0,
-   "n_conflicts": 7
+   "n_conflicts": 3
   },
   {
    "id": 342,
@@ -18551,7 +18551,7 @@
    "utilisation": 2.2,
    "works": 10,
    "attendance": 97.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1260,
@@ -18623,7 +18623,7 @@
    "utilisation": 27.4,
    "works": 101,
    "attendance": 92.0,
-   "n_conflicts": 21
+   "n_conflicts": 0
   },
   {
    "id": 330,
@@ -18647,7 +18647,7 @@
    "utilisation": 11.0,
    "works": 58,
    "attendance": 70.0,
-   "n_conflicts": 11
+   "n_conflicts": 1
   },
   {
    "id": 275,
@@ -18671,7 +18671,7 @@
    "utilisation": 16.2,
    "works": 30,
    "attendance": 72.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 119,
@@ -18695,7 +18695,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 94.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1261,
@@ -18743,7 +18743,7 @@
    "utilisation": 65.0,
    "works": 144,
    "attendance": null,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 1262,
@@ -18791,7 +18791,7 @@
    "utilisation": 16.2,
    "works": 26,
    "attendance": 54.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 487,
@@ -18815,7 +18815,7 @@
    "utilisation": 34.5,
    "works": 271,
    "attendance": 90.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 94,
@@ -18839,7 +18839,7 @@
    "utilisation": 18.4,
    "works": 80,
    "attendance": 84.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 53,
@@ -18863,7 +18863,7 @@
    "utilisation": 30.5,
    "works": 47,
    "attendance": null,
-   "n_conflicts": 12
+   "n_conflicts": 1
   },
   {
    "id": 118,
@@ -18887,7 +18887,7 @@
    "utilisation": 33.3,
    "works": 156,
    "attendance": 92.0,
-   "n_conflicts": 42
+   "n_conflicts": 0
   },
   {
    "id": 1263,
@@ -18935,7 +18935,7 @@
    "utilisation": 23.2,
    "works": 106,
    "attendance": null,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 124,
@@ -18959,7 +18959,7 @@
    "utilisation": 37.3,
    "works": 161,
    "attendance": 95.0,
-   "n_conflicts": 25
+   "n_conflicts": 0
   },
   {
    "id": 1264,
@@ -19031,7 +19031,7 @@
    "utilisation": 39.8,
    "works": 111,
    "attendance": 94.0,
-   "n_conflicts": 27
+   "n_conflicts": 0
   },
   {
    "id": 340,
@@ -19055,7 +19055,7 @@
    "utilisation": 29.8,
    "works": 114,
    "attendance": null,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 1265,
@@ -19103,7 +19103,7 @@
    "utilisation": 28.2,
    "works": 132,
    "attendance": 91.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 226,
@@ -19127,7 +19127,7 @@
    "utilisation": 3.6,
    "works": 49,
    "attendance": 95.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 363,
@@ -19151,7 +19151,7 @@
    "utilisation": 17.4,
    "works": 4,
    "attendance": 69.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 139,
@@ -19175,7 +19175,7 @@
    "utilisation": 28.9,
    "works": 71,
    "attendance": 90.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 95,
@@ -19199,7 +19199,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 82.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 420,
@@ -19223,7 +19223,7 @@
    "utilisation": 28.8,
    "works": 62,
    "attendance": 89.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 77,
@@ -19247,7 +19247,7 @@
    "utilisation": 23.2,
    "works": 119,
    "attendance": 75.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 444,
@@ -19271,7 +19271,7 @@
    "utilisation": 38.5,
    "works": 232,
    "attendance": 97.0,
-   "n_conflicts": 5
+   "n_conflicts": 1
   },
   {
    "id": 120,
@@ -19295,7 +19295,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 99.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 550,
@@ -19319,7 +19319,7 @@
    "utilisation": 30.7,
    "works": 252,
    "attendance": null,
-   "n_conflicts": 39
+   "n_conflicts": 0
   },
   {
    "id": 258,
@@ -19343,7 +19343,7 @@
    "utilisation": 4.4,
    "works": 4,
    "attendance": 77.0,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1266,
@@ -19391,7 +19391,7 @@
    "utilisation": 5.3,
    "works": 7,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 133,
@@ -19415,7 +19415,7 @@
    "utilisation": 29.8,
    "works": 106,
    "attendance": 97.0,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 319,
@@ -19439,7 +19439,7 @@
    "utilisation": 3.9,
    "works": 2,
    "attendance": 0.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 427,
@@ -19463,7 +19463,7 @@
    "utilisation": 17.0,
    "works": 16,
    "attendance": 94.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 131,
@@ -19487,7 +19487,7 @@
    "utilisation": 23.4,
    "works": 66,
    "attendance": 94.0,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 79,
@@ -19511,7 +19511,7 @@
    "utilisation": 40.3,
    "works": 46,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 30,
@@ -19535,7 +19535,7 @@
    "utilisation": 2.0,
    "works": 9,
    "attendance": 86.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 474,
@@ -19559,7 +19559,7 @@
    "utilisation": 32.4,
    "works": 54,
    "attendance": 82.0,
-   "n_conflicts": 13
+   "n_conflicts": 1
   },
   {
    "id": 61,
@@ -19583,7 +19583,7 @@
    "utilisation": 58.6,
    "works": 106,
    "attendance": 91.0,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 107,
@@ -19607,7 +19607,7 @@
    "utilisation": 5.1,
    "works": 2,
    "attendance": 98.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 397,
@@ -19631,7 +19631,7 @@
    "utilisation": 10.6,
    "works": 15,
    "attendance": 80.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 439,
@@ -19655,7 +19655,7 @@
    "utilisation": 47.7,
    "works": 142,
    "attendance": 99.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 15,
@@ -19679,7 +19679,7 @@
    "utilisation": 17.4,
    "works": 70,
    "attendance": 92.0,
-   "n_conflicts": 19
+   "n_conflicts": 0
   },
   {
    "id": 168,
@@ -19703,7 +19703,7 @@
    "utilisation": 21.3,
    "works": 66,
    "attendance": 92.0,
-   "n_conflicts": 15
+   "n_conflicts": 0
   },
   {
    "id": 9,
@@ -19727,7 +19727,7 @@
    "utilisation": 7.3,
    "works": 9,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 333,
@@ -19751,7 +19751,7 @@
    "utilisation": 14.1,
    "works": 72,
    "attendance": 78.0,
-   "n_conflicts": 18
+   "n_conflicts": 0
   },
   {
    "id": 526,
@@ -19775,7 +19775,7 @@
    "utilisation": 8.2,
    "works": 5,
    "attendance": 90.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 150,
@@ -19799,7 +19799,7 @@
    "utilisation": 29.7,
    "works": 191,
    "attendance": null,
-   "n_conflicts": 48
+   "n_conflicts": 0
   },
   {
    "id": 303,
@@ -19823,7 +19823,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 61.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 143,
@@ -19847,7 +19847,7 @@
    "utilisation": 27.2,
    "works": 220,
    "attendance": 97.0,
-   "n_conflicts": 39
+   "n_conflicts": 0
   },
   {
    "id": 429,
@@ -19871,7 +19871,7 @@
    "utilisation": 7.4,
    "works": 16,
    "attendance": 100.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 388,
@@ -19895,7 +19895,7 @@
    "utilisation": 56.6,
    "works": 102,
    "attendance": null,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 262,
@@ -19919,7 +19919,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 82.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 52,
@@ -19943,7 +19943,7 @@
    "utilisation": 29.0,
    "works": 43,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 289,
@@ -19967,7 +19967,7 @@
    "utilisation": 10.2,
    "works": 17,
    "attendance": 73.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 130,
@@ -19991,7 +19991,7 @@
    "utilisation": 32.8,
    "works": 75,
    "attendance": 90.0,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 279,
@@ -20015,7 +20015,7 @@
    "utilisation": 0.7,
    "works": 1,
    "attendance": 98.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 264,
@@ -20039,7 +20039,7 @@
    "utilisation": 14.5,
    "works": 26,
    "attendance": 92.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 257,
@@ -20063,7 +20063,7 @@
    "utilisation": 12.6,
    "works": 20,
    "attendance": 69.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 238,
@@ -20087,7 +20087,7 @@
    "utilisation": 53.8,
    "works": 104,
    "attendance": 89.0,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 208,
@@ -20111,7 +20111,7 @@
    "utilisation": 7.7,
    "works": 54,
    "attendance": 80.0,
-   "n_conflicts": 12
+   "n_conflicts": 0
   },
   {
    "id": 451,
@@ -20135,7 +20135,7 @@
    "utilisation": 40.6,
    "works": 71,
    "attendance": 88.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 125,
@@ -20159,7 +20159,7 @@
    "utilisation": 21.0,
    "works": 77,
    "attendance": null,
-   "n_conflicts": 18
+   "n_conflicts": 0
   },
   {
    "id": 179,
@@ -20183,7 +20183,7 @@
    "utilisation": 3.9,
    "works": 6,
    "attendance": 81.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 251,
@@ -20207,7 +20207,7 @@
    "utilisation": 3.3,
    "works": 8,
    "attendance": 90.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 329,
@@ -20231,7 +20231,7 @@
    "utilisation": 27.4,
    "works": 113,
    "attendance": 53.0,
-   "n_conflicts": 15
+   "n_conflicts": 0
   },
   {
    "id": 241,
@@ -20255,7 +20255,7 @@
    "utilisation": 52.0,
    "works": 172,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 296,
@@ -20279,7 +20279,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 64.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 511,
@@ -20303,7 +20303,7 @@
    "utilisation": 14.0,
    "works": 27,
    "attendance": 79.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 437,
@@ -20327,7 +20327,7 @@
    "utilisation": 50.0,
    "works": 522,
    "attendance": 90.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 242,
@@ -20351,7 +20351,7 @@
    "utilisation": 3.4,
    "works": 12,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 175,
@@ -20375,7 +20375,7 @@
    "utilisation": 5.6,
    "works": 19,
    "attendance": 92.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 364,
@@ -20399,7 +20399,7 @@
    "utilisation": 33.9,
    "works": 40,
    "attendance": 85.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 410,
@@ -20423,7 +20423,7 @@
    "utilisation": 24.0,
    "works": 143,
    "attendance": 94.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 68,
@@ -20447,7 +20447,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 88.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 152,
@@ -20471,7 +20471,7 @@
    "utilisation": 14.7,
    "works": 57,
    "attendance": 85.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 392,
@@ -20495,7 +20495,7 @@
    "utilisation": 30.0,
    "works": 45,
    "attendance": 85.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 552,
@@ -20519,7 +20519,7 @@
    "utilisation": 44.4,
    "works": 288,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 217,
@@ -20591,7 +20591,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 94.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 171,
@@ -20615,7 +20615,7 @@
    "utilisation": 0.7,
    "works": 3,
    "attendance": 58.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 204,
@@ -20639,7 +20639,7 @@
    "utilisation": 13.9,
    "works": 50,
    "attendance": 90.0,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 408,
@@ -20663,7 +20663,7 @@
    "utilisation": 6.0,
    "works": 32,
    "attendance": 84.0,
-   "n_conflicts": 13
+   "n_conflicts": 4
   },
   {
    "id": 383,
@@ -20687,7 +20687,7 @@
    "utilisation": 28.9,
    "works": 48,
    "attendance": 83.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 232,
@@ -20711,7 +20711,7 @@
    "utilisation": 11.3,
    "works": 34,
    "attendance": 88.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 1268,
@@ -20783,7 +20783,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 188,
@@ -20807,7 +20807,7 @@
    "utilisation": 4.4,
    "works": 9,
    "attendance": 86.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 554,
@@ -20831,7 +20831,7 @@
    "utilisation": 33.4,
    "works": 54,
    "attendance": 99.0,
-   "n_conflicts": 12
+   "n_conflicts": 0
   },
   {
    "id": 555,
@@ -20855,7 +20855,7 @@
    "utilisation": 26.5,
    "works": 156,
    "attendance": 83.0,
-   "n_conflicts": 27
+   "n_conflicts": 0
   },
   {
    "id": 165,
@@ -20879,7 +20879,7 @@
    "utilisation": 27.4,
    "works": 92,
    "attendance": 86.0,
-   "n_conflicts": 22
+   "n_conflicts": 0
   },
   {
    "id": 268,
@@ -20903,7 +20903,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 96.0,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 231,
@@ -20927,7 +20927,7 @@
    "utilisation": 17.6,
    "works": 108,
    "attendance": 97.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 351,
@@ -20951,7 +20951,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 367,
@@ -20975,7 +20975,7 @@
    "utilisation": 5.8,
    "works": 7,
    "attendance": 91.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 553,
@@ -20999,7 +20999,7 @@
    "utilisation": 51.8,
    "works": 273,
    "attendance": null,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 239,
@@ -21023,7 +21023,7 @@
    "utilisation": 14.6,
    "works": 77,
    "attendance": 94.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 35,
@@ -21047,7 +21047,7 @@
    "utilisation": 5.9,
    "works": 37,
    "attendance": 77.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 110,
@@ -21071,7 +21071,7 @@
    "utilisation": 11.0,
    "works": 41,
    "attendance": 92.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 46,
@@ -21095,7 +21095,7 @@
    "utilisation": 77.3,
    "works": 94,
    "attendance": 75.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 47,
@@ -21119,7 +21119,7 @@
    "utilisation": 14.9,
    "works": 17,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 400,
@@ -21143,7 +21143,7 @@
    "utilisation": 11.9,
    "works": 80,
    "attendance": 94.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 50,
@@ -21167,7 +21167,7 @@
    "utilisation": 19.5,
    "works": 59,
    "attendance": 97.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 376,
@@ -21191,7 +21191,7 @@
    "utilisation": 18.7,
    "works": 36,
    "attendance": 77.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 177,
@@ -21215,7 +21215,7 @@
    "utilisation": 4.9,
    "works": 20,
    "attendance": 73.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 5,
@@ -21239,7 +21239,7 @@
    "utilisation": 26.4,
    "works": 28,
    "attendance": 91.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 322,
@@ -21263,7 +21263,7 @@
    "utilisation": 26.2,
    "works": 91,
    "attendance": 87.0,
-   "n_conflicts": 20
+   "n_conflicts": 0
   },
   {
    "id": 334,
@@ -21311,7 +21311,7 @@
    "utilisation": 28.9,
    "works": 112,
    "attendance": 95.0,
-   "n_conflicts": 28
+   "n_conflicts": 0
   },
   {
    "id": 230,
@@ -21335,7 +21335,7 @@
    "utilisation": 41.9,
    "works": 203,
    "attendance": 92.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 186,
@@ -21359,7 +21359,7 @@
    "utilisation": 2.4,
    "works": 7,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 354,
@@ -21383,7 +21383,7 @@
    "utilisation": 36.4,
    "works": 179,
    "attendance": 99.0,
-   "n_conflicts": 29
+   "n_conflicts": 0
   },
   {
    "id": 481,
@@ -21407,7 +21407,7 @@
    "utilisation": 13.3,
    "works": 32,
    "attendance": 99.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 121,
@@ -21431,7 +21431,7 @@
    "utilisation": 19.0,
    "works": 150,
    "attendance": 97.0,
-   "n_conflicts": 33
+   "n_conflicts": 1
   },
   {
    "id": 358,
@@ -21455,7 +21455,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 98.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 98,
@@ -21479,7 +21479,7 @@
    "utilisation": 15.1,
    "works": 53,
    "attendance": null,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 324,
@@ -21503,7 +21503,7 @@
    "utilisation": 32.9,
    "works": 160,
    "attendance": 69.0,
-   "n_conflicts": 28
+   "n_conflicts": 0
   },
   {
    "id": 556,
@@ -21527,7 +21527,7 @@
    "utilisation": 9.4,
    "works": 21,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 106,
@@ -21623,7 +21623,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 38.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 197,
@@ -21647,7 +21647,7 @@
    "utilisation": 13.8,
    "works": 21,
    "attendance": 85.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 488,
@@ -21671,7 +21671,7 @@
    "utilisation": 28.6,
    "works": 51,
    "attendance": 92.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 360,
@@ -21695,7 +21695,7 @@
    "utilisation": 50.6,
    "works": 38,
    "attendance": 92.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 463,
@@ -21719,7 +21719,7 @@
    "utilisation": 29.3,
    "works": 55,
    "attendance": 95.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 534,
@@ -21743,7 +21743,7 @@
    "utilisation": 5.8,
    "works": 25,
    "attendance": 80.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 253,
@@ -21767,7 +21767,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 280,
@@ -21815,7 +21815,7 @@
    "utilisation": 8.1,
    "works": 4,
    "attendance": 51.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 170,
@@ -21839,7 +21839,7 @@
    "utilisation": 0.3,
    "works": 1,
    "attendance": 85.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 541,
@@ -21863,7 +21863,7 @@
    "utilisation": 27.1,
    "works": 80,
    "attendance": 81.0,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 443,
@@ -21887,7 +21887,7 @@
    "utilisation": 0.2,
    "works": 1,
    "attendance": 100.0,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 136,
@@ -21911,7 +21911,7 @@
    "utilisation": 11.7,
    "works": 69,
    "attendance": 96.0,
-   "n_conflicts": 22
+   "n_conflicts": 2
   },
   {
    "id": 458,
@@ -21935,7 +21935,7 @@
    "utilisation": 12.9,
    "works": 3,
    "attendance": 85.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 237,
@@ -21959,7 +21959,7 @@
    "utilisation": 0.8,
    "works": 1,
    "attendance": 100.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 63,
@@ -22007,7 +22007,7 @@
    "utilisation": 21.8,
    "works": 101,
    "attendance": 96.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 115,
@@ -22031,7 +22031,7 @@
    "utilisation": 18.2,
    "works": 93,
    "attendance": 92.0,
-   "n_conflicts": 27
+   "n_conflicts": 0
   },
   {
    "id": 51,
@@ -22055,7 +22055,7 @@
    "utilisation": 28.9,
    "works": 152,
    "attendance": null,
-   "n_conflicts": 19
+   "n_conflicts": 1
   },
   {
    "id": 445,
@@ -22079,7 +22079,7 @@
    "utilisation": 31.3,
    "works": 192,
    "attendance": 94.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 484,
@@ -22103,7 +22103,7 @@
    "utilisation": 21.6,
    "works": 32,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 164,
@@ -22127,7 +22127,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 79.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 375,
@@ -22151,7 +22151,7 @@
    "utilisation": 23.7,
    "works": 87,
    "attendance": 95.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 38,
@@ -22175,7 +22175,7 @@
    "utilisation": 14.2,
    "works": 20,
    "attendance": 82.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 320,
@@ -22199,7 +22199,7 @@
    "utilisation": 27.6,
    "works": 91,
    "attendance": null,
-   "n_conflicts": 11
+   "n_conflicts": 2
   },
   {
    "id": 148,
@@ -22223,7 +22223,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 90.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 537,
@@ -22247,7 +22247,7 @@
    "utilisation": 12.8,
    "works": 7,
    "attendance": 79.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 224,
@@ -22271,7 +22271,7 @@
    "utilisation": 31.1,
    "works": 46,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 539,
@@ -22295,7 +22295,7 @@
    "utilisation": 8.0,
    "works": 31,
    "attendance": 71.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 89,
@@ -22319,7 +22319,7 @@
    "utilisation": 30.7,
    "works": 138,
    "attendance": 89.0,
-   "n_conflicts": 29
+   "n_conflicts": 0
   },
   {
    "id": 371,
@@ -22343,7 +22343,7 @@
    "utilisation": 53.1,
    "works": 141,
    "attendance": 90.0,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 384,
@@ -22367,7 +22367,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 82.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 394,
@@ -22391,7 +22391,7 @@
    "utilisation": 46.2,
    "works": 65,
    "attendance": 64.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 193,
@@ -22415,7 +22415,7 @@
    "utilisation": 20.7,
    "works": 41,
    "attendance": 83.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 185,
@@ -22439,7 +22439,7 @@
    "utilisation": 26.0,
    "works": 68,
    "attendance": 66.0,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 199,
@@ -22463,7 +22463,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 58.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 194,
@@ -22487,7 +22487,7 @@
    "utilisation": 17.4,
    "works": 19,
    "attendance": 81.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 557,
@@ -22511,7 +22511,7 @@
    "utilisation": 43.9,
    "works": 40,
    "attendance": null,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 415,
@@ -22535,7 +22535,7 @@
    "utilisation": 17.7,
    "works": 72,
    "attendance": 90.0,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 510,
@@ -22559,7 +22559,7 @@
    "utilisation": 34.8,
    "works": 79,
    "attendance": 62.0,
-   "n_conflicts": 10
+   "n_conflicts": 1
   },
   {
    "id": 158,
@@ -22583,7 +22583,7 @@
    "utilisation": 13.3,
    "works": 31,
    "attendance": 82.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 151,
@@ -22607,7 +22607,7 @@
    "utilisation": 13.1,
    "works": 75,
    "attendance": 94.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 529,
@@ -22631,7 +22631,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 81.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 542,
@@ -22655,7 +22655,7 @@
    "utilisation": 47.5,
    "works": 95,
    "attendance": 75.0,
-   "n_conflicts": 18
+   "n_conflicts": 0
   },
   {
    "id": 261,
@@ -22679,7 +22679,7 @@
    "utilisation": 12.5,
    "works": 19,
    "attendance": 86.0,
-   "n_conflicts": 7
+   "n_conflicts": 2
   },
   {
    "id": 37,
@@ -22703,7 +22703,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 81.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 103,
@@ -22727,7 +22727,7 @@
    "utilisation": 8.2,
    "works": 31,
    "attendance": 96.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 87,
@@ -22751,7 +22751,7 @@
    "utilisation": 52.3,
    "works": 254,
    "attendance": 94.0,
-   "n_conflicts": 19
+   "n_conflicts": 0
   },
   {
    "id": 433,
@@ -22775,7 +22775,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 558,
@@ -22799,7 +22799,7 @@
    "utilisation": 15.3,
    "works": 83,
    "attendance": null,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 144,
@@ -22823,7 +22823,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 84.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 559,
@@ -22847,7 +22847,7 @@
    "utilisation": 28.7,
    "works": 68,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 391,
@@ -22871,7 +22871,7 @@
    "utilisation": 16.2,
    "works": 12,
    "attendance": 71.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 425,
@@ -22895,7 +22895,7 @@
    "utilisation": 44.3,
    "works": 59,
    "attendance": 96.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 464,
@@ -22919,7 +22919,7 @@
    "utilisation": 31.4,
    "works": 33,
    "attendance": 92.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 386,
@@ -22943,7 +22943,7 @@
    "utilisation": 46.8,
    "works": 117,
    "attendance": 87.0,
-   "n_conflicts": 21
+   "n_conflicts": 0
   },
   {
    "id": 540,
@@ -22967,7 +22967,7 @@
    "utilisation": 12.9,
    "works": 101,
    "attendance": 92.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 66,
@@ -22991,7 +22991,7 @@
    "utilisation": 30.8,
    "works": 95,
    "attendance": 99.0,
-   "n_conflicts": 21
+   "n_conflicts": 0
   },
   {
    "id": 24,
@@ -23015,7 +23015,7 @@
    "utilisation": 2.1,
    "works": 1,
    "attendance": 86.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 285,
@@ -23039,7 +23039,7 @@
    "utilisation": 3.8,
    "works": 3,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 535,
@@ -23063,7 +23063,7 @@
    "utilisation": 4.1,
    "works": 7,
    "attendance": 95.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 527,
@@ -23087,7 +23087,7 @@
    "utilisation": 13.7,
    "works": 32,
    "attendance": 72.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 515,
@@ -23111,7 +23111,7 @@
    "utilisation": 36.7,
    "works": 48,
    "attendance": 79.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 560,
@@ -23135,7 +23135,7 @@
    "utilisation": 20.1,
    "works": 63,
    "attendance": null,
-   "n_conflicts": 12
+   "n_conflicts": 0
   },
   {
    "id": 22,
@@ -23159,7 +23159,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 2
   },
   {
    "id": 28,
@@ -23183,7 +23183,7 @@
    "utilisation": 59.2,
    "works": 124,
    "attendance": null,
-   "n_conflicts": 24
+   "n_conflicts": 0
   },
   {
    "id": 561,
@@ -23207,7 +23207,7 @@
    "utilisation": 22.2,
    "works": 37,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 455,
@@ -23255,7 +23255,7 @@
    "utilisation": 18.5,
    "works": 20,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 205,
@@ -23279,7 +23279,7 @@
    "utilisation": 16.5,
    "works": 62,
    "attendance": 82.0,
-   "n_conflicts": 8
+   "n_conflicts": 1
   },
   {
    "id": 402,
@@ -23303,7 +23303,7 @@
    "utilisation": 20.3,
    "works": 181,
    "attendance": 94.0,
-   "n_conflicts": 37
+   "n_conflicts": 1
   },
   {
    "id": 191,
@@ -23327,7 +23327,7 @@
    "utilisation": 14.4,
    "works": 52,
    "attendance": 86.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 36,
@@ -23351,7 +23351,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 92.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 134,
@@ -23399,7 +23399,7 @@
    "utilisation": 3.0,
    "works": 6,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 432,
@@ -23423,7 +23423,7 @@
    "utilisation": 31.7,
    "works": 202,
    "attendance": 97.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 6,
@@ -23447,7 +23447,7 @@
    "utilisation": 1.7,
    "works": 6,
    "attendance": 92.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 417,
@@ -23471,7 +23471,7 @@
    "utilisation": 15.3,
    "works": 18,
    "attendance": 86.0,
-   "n_conflicts": 4
+   "n_conflicts": 1
   },
   {
    "id": 345,
@@ -23495,7 +23495,7 @@
    "utilisation": 1.1,
    "works": 2,
    "attendance": 84.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 411,
@@ -23519,7 +23519,7 @@
    "utilisation": 3.8,
    "works": 6,
    "attendance": 64.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 423,
@@ -23543,7 +23543,7 @@
    "utilisation": 30.9,
    "works": 61,
    "attendance": 94.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 563,
@@ -23615,7 +23615,7 @@
    "utilisation": 1.4,
    "works": 2,
    "attendance": 99.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 76,
@@ -23639,7 +23639,7 @@
    "utilisation": 18.1,
    "works": 27,
    "attendance": 96.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 1270,
@@ -23687,7 +23687,7 @@
    "utilisation": 32.1,
    "works": 93,
    "attendance": null,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 1271,
@@ -23735,7 +23735,7 @@
    "utilisation": 3.7,
    "works": 15,
    "attendance": 73.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 184,
@@ -23759,7 +23759,7 @@
    "utilisation": 2.4,
    "works": 3,
    "attendance": 90.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 368,
@@ -23783,7 +23783,7 @@
    "utilisation": 39.9,
    "works": 74,
    "attendance": null,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 409,
@@ -23807,7 +23807,7 @@
    "utilisation": 15.6,
    "works": 41,
    "attendance": 96.0,
-   "n_conflicts": 13
+   "n_conflicts": 2
   },
   {
    "id": 19,
@@ -23831,7 +23831,7 @@
    "utilisation": 1.7,
    "works": 1,
    "attendance": 87.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 222,
@@ -23855,7 +23855,7 @@
    "utilisation": 4.3,
    "works": 10,
    "attendance": 99.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 84,
@@ -23879,7 +23879,7 @@
    "utilisation": 12.5,
    "works": 41,
    "attendance": 82.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 356,
@@ -23903,7 +23903,7 @@
    "utilisation": 11.8,
    "works": 26,
    "attendance": 94.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 533,
@@ -23927,7 +23927,7 @@
    "utilisation": 16.2,
    "works": 23,
    "attendance": 88.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 502,
@@ -23975,7 +23975,7 @@
    "utilisation": 20.1,
    "works": 84,
    "attendance": 89.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 531,
@@ -23999,7 +23999,7 @@
    "utilisation": 20.3,
    "works": 32,
    "attendance": 28.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 372,
@@ -24023,7 +24023,7 @@
    "utilisation": 59.5,
    "works": 198,
    "attendance": 90.0,
-   "n_conflicts": 22
+   "n_conflicts": 0
   },
   {
    "id": 311,
@@ -24047,7 +24047,7 @@
    "utilisation": 25.8,
    "works": 96,
    "attendance": 99.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 323,
@@ -24071,7 +24071,7 @@
    "utilisation": 27.5,
    "works": 110,
    "attendance": 95.0,
-   "n_conflicts": 19
+   "n_conflicts": 0
   },
   {
    "id": 369,
@@ -24095,7 +24095,7 @@
    "utilisation": 25.0,
    "works": 64,
    "attendance": 55.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 399,
@@ -24119,7 +24119,7 @@
    "utilisation": 50.3,
    "works": 69,
    "attendance": 88.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 156,
@@ -24143,7 +24143,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 97.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 83,
@@ -24167,7 +24167,7 @@
    "utilisation": 8.9,
    "works": 32,
    "attendance": 97.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 346,
@@ -24191,7 +24191,7 @@
    "utilisation": 7.4,
    "works": 17,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 359,
@@ -24215,7 +24215,7 @@
    "utilisation": 16.3,
    "works": 24,
    "attendance": 98.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 137,
@@ -24239,7 +24239,7 @@
    "utilisation": 0.3,
    "works": 1,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 75,
@@ -24263,7 +24263,7 @@
    "utilisation": 46.4,
    "works": 82,
    "attendance": 94.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 503,
@@ -24287,7 +24287,7 @@
    "utilisation": 6.5,
    "works": 16,
    "attendance": 88.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 100,
@@ -24311,7 +24311,7 @@
    "utilisation": 2.5,
    "works": 6,
    "attendance": 90.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 112,
@@ -24335,7 +24335,7 @@
    "utilisation": 41.0,
    "works": 210,
    "attendance": 87.0,
-   "n_conflicts": 37
+   "n_conflicts": 0
   },
   {
    "id": 380,
@@ -24359,7 +24359,7 @@
    "utilisation": 58.6,
    "works": 143,
    "attendance": 71.0,
-   "n_conflicts": 18
+   "n_conflicts": 0
   },
   {
    "id": 146,
@@ -24383,7 +24383,7 @@
    "utilisation": 6.7,
    "works": 20,
    "attendance": 65.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 565,
@@ -24407,7 +24407,7 @@
    "utilisation": 23.9,
    "works": 185,
    "attendance": null,
-   "n_conflicts": 32
+   "n_conflicts": 0
   },
   {
    "id": 69,
@@ -24431,7 +24431,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 41.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 504,
@@ -24455,7 +24455,7 @@
    "utilisation": 32.1,
    "works": 92,
    "attendance": 65.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 109,
@@ -24527,7 +24527,7 @@
    "utilisation": 33.9,
    "works": 262,
    "attendance": null,
-   "n_conflicts": 28
+   "n_conflicts": 0
   },
   {
    "id": 567,
@@ -24575,7 +24575,7 @@
    "utilisation": 56.5,
    "works": 130,
    "attendance": 99.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 486,
@@ -24599,7 +24599,7 @@
    "utilisation": 38.5,
    "works": 219,
    "attendance": 94.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 265,
@@ -24623,7 +24623,7 @@
    "utilisation": 4.5,
    "works": 41,
    "attendance": 86.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 214,
@@ -24647,7 +24647,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 88.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 215,
@@ -24671,7 +24671,7 @@
    "utilisation": 1.1,
    "works": 2,
    "attendance": 94.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 447,
@@ -24695,7 +24695,7 @@
    "utilisation": 63.0,
    "works": 246,
    "attendance": 98.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 128,
@@ -24719,7 +24719,7 @@
    "utilisation": 15.6,
    "works": 92,
    "attendance": 99.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 344,
@@ -24743,7 +24743,7 @@
    "utilisation": 10.0,
    "works": 24,
    "attendance": 97.0,
-   "n_conflicts": 9
+   "n_conflicts": 1
   },
   {
    "id": 389,
@@ -24767,7 +24767,7 @@
    "utilisation": 46.1,
    "works": 46,
    "attendance": 88.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 281,
@@ -24791,7 +24791,7 @@
    "utilisation": 8.2,
    "works": 12,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 201,
@@ -24815,7 +24815,7 @@
    "utilisation": 26.9,
    "works": 77,
    "attendance": 89.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 316,
@@ -24839,7 +24839,7 @@
    "utilisation": 9.3,
    "works": 27,
    "attendance": 85.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 153,
@@ -24863,7 +24863,7 @@
    "utilisation": 20.5,
    "works": 106,
    "attendance": 46.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 460,
@@ -24887,7 +24887,7 @@
    "utilisation": 21.7,
    "works": 135,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 284,
@@ -24911,7 +24911,7 @@
    "utilisation": 12.3,
    "works": 26,
    "attendance": 56.0,
-   "n_conflicts": 8
+   "n_conflicts": 1
   },
   {
    "id": 1273,
@@ -24959,7 +24959,7 @@
    "utilisation": 56.5,
    "works": 198,
    "attendance": null,
-   "n_conflicts": 51
+   "n_conflicts": 1
   },
   {
    "id": 448,
@@ -24983,7 +24983,7 @@
    "utilisation": 11.1,
    "works": 14,
    "attendance": 97.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 291,
@@ -25007,7 +25007,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 97.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 138,
@@ -25031,7 +25031,7 @@
    "utilisation": 33.3,
    "works": 140,
    "attendance": 80.0,
-   "n_conflicts": 34
+   "n_conflicts": 0
   },
   {
    "id": 426,
@@ -25055,7 +25055,7 @@
    "utilisation": 65.7,
    "works": 17,
    "attendance": 100.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 245,
@@ -25079,7 +25079,7 @@
    "utilisation": 11.1,
    "works": 12,
    "attendance": 81.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 113,
@@ -25103,7 +25103,7 @@
    "utilisation": 13.0,
    "works": 28,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 155,
@@ -25127,7 +25127,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 100.0,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 273,
@@ -25151,7 +25151,7 @@
    "utilisation": 17.0,
    "works": 19,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 2
   },
   {
    "id": 80,
@@ -25175,7 +25175,7 @@
    "utilisation": 11.2,
    "works": 40,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 353,
@@ -25199,7 +25199,7 @@
    "utilisation": 9.2,
    "works": 18,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 278,
@@ -25223,7 +25223,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 97.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 568,
@@ -25247,7 +25247,7 @@
    "utilisation": 12.1,
    "works": 33,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 166,
@@ -25271,7 +25271,7 @@
    "utilisation": 3.3,
    "works": 2,
    "attendance": 95.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 21,
@@ -25295,7 +25295,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 61.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 355,
@@ -25319,7 +25319,7 @@
    "utilisation": 3.4,
    "works": 8,
    "attendance": 99.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 473,
@@ -25343,7 +25343,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 569,
@@ -25367,7 +25367,7 @@
    "utilisation": 61.4,
    "works": 42,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 111,
@@ -25391,7 +25391,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 82.0,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 41,
@@ -25415,7 +25415,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 94.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 126,
@@ -25439,7 +25439,7 @@
    "utilisation": 27.1,
    "works": 97,
    "attendance": 97.0,
-   "n_conflicts": 18
+   "n_conflicts": 0
   },
   {
    "id": 512,
@@ -25463,7 +25463,7 @@
    "utilisation": 4.5,
    "works": 4,
    "attendance": 17.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 96,
@@ -25487,7 +25487,7 @@
    "utilisation": 1.0,
    "works": 1,
    "attendance": 96.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 506,
@@ -25511,7 +25511,7 @@
    "utilisation": 2.9,
    "works": 4,
    "attendance": 61.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 29,
@@ -25535,7 +25535,7 @@
    "utilisation": 3.0,
    "works": 3,
    "attendance": 79.0,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 267,
@@ -25607,7 +25607,7 @@
    "utilisation": 14.8,
    "works": 51,
    "attendance": 90.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 18,
@@ -25631,7 +25631,7 @@
    "utilisation": 47.3,
    "works": 131,
    "attendance": 76.0,
-   "n_conflicts": 35
+   "n_conflicts": 0
   },
   {
    "id": 571,
@@ -25655,7 +25655,7 @@
    "utilisation": 13.5,
    "works": 62,
    "attendance": null,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 39,
@@ -25679,7 +25679,7 @@
    "utilisation": 11.4,
    "works": 33,
    "attendance": 87.0,
-   "n_conflicts": 8
+   "n_conflicts": 1
   },
   {
    "id": 43,
@@ -25703,7 +25703,7 @@
    "utilisation": 64.3,
    "works": 39,
    "attendance": 96.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 302,
@@ -25727,7 +25727,7 @@
    "utilisation": 9.7,
    "works": 42,
    "attendance": 99.0,
-   "n_conflicts": 8
+   "n_conflicts": 3
   },
   {
    "id": 40,
@@ -25751,7 +25751,7 @@
    "utilisation": 6.8,
    "works": 13,
    "attendance": 75.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 180,
@@ -25775,7 +25775,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 572,
@@ -25799,7 +25799,7 @@
    "utilisation": 8.3,
    "works": 28,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 290,
@@ -25823,7 +25823,7 @@
    "utilisation": 1.0,
    "works": 2,
    "attendance": 91.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 524,
@@ -25847,7 +25847,7 @@
    "utilisation": 37.9,
    "works": 136,
    "attendance": 76.0,
-   "n_conflicts": 20
+   "n_conflicts": 0
   },
   {
    "id": 301,
@@ -25871,7 +25871,7 @@
    "utilisation": 1.7,
    "works": 10,
    "attendance": 82.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 573,
@@ -25919,7 +25919,7 @@
    "utilisation": 50.4,
    "works": 180,
    "attendance": 83.0,
-   "n_conflicts": 36
+   "n_conflicts": 0
   },
   {
    "id": 97,
@@ -25943,7 +25943,7 @@
    "utilisation": 12.7,
    "works": 35,
    "attendance": 99.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 483,
@@ -25967,7 +25967,7 @@
    "utilisation": 47.1,
    "works": 15,
    "attendance": 97.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 472,
@@ -25991,7 +25991,7 @@
    "utilisation": 23.8,
    "works": 726,
    "attendance": 97.0,
-   "n_conflicts": 23
+   "n_conflicts": 0
   },
   {
    "id": 213,
@@ -26015,7 +26015,7 @@
    "utilisation": 16.0,
    "works": 14,
    "attendance": 84.0,
-   "n_conflicts": 4
+   "n_conflicts": 1
   },
   {
    "id": 176,
@@ -26039,7 +26039,7 @@
    "utilisation": 7.7,
    "works": 16,
    "attendance": 60.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 419,
@@ -26063,7 +26063,7 @@
    "utilisation": 51.2,
    "works": 55,
    "attendance": null,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 467,
@@ -26087,7 +26087,7 @@
    "utilisation": 32.9,
    "works": 612,
    "attendance": 96.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 8,
@@ -26111,7 +26111,7 @@
    "utilisation": 24.6,
    "works": 63,
    "attendance": 77.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 479,
@@ -26135,7 +26135,7 @@
    "utilisation": 2.0,
    "works": 14,
    "attendance": 92.0,
-   "n_conflicts": 4
+   "n_conflicts": 1
   },
   {
    "id": 574,
@@ -26159,7 +26159,7 @@
    "utilisation": 37.5,
    "works": 77,
    "attendance": null,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 310,
@@ -26183,7 +26183,7 @@
    "utilisation": 0.4,
    "works": 3,
    "attendance": 89.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 523,
@@ -26207,7 +26207,7 @@
    "utilisation": 22.4,
    "works": 48,
    "attendance": 45.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 72,
@@ -26231,7 +26231,7 @@
    "utilisation": 40.8,
    "works": 60,
    "attendance": 95.0,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 181,
@@ -26255,7 +26255,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 51.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 91,
@@ -26279,7 +26279,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 84.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 212,
@@ -26303,7 +26303,7 @@
    "utilisation": 2.6,
    "works": 74,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 2
   },
   {
    "id": 343,
@@ -26327,7 +26327,7 @@
    "utilisation": 19.1,
    "works": 37,
    "attendance": 98.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 221,
@@ -26351,7 +26351,7 @@
    "utilisation": 23.6,
    "works": 177,
    "attendance": 95.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 65,
@@ -26375,7 +26375,7 @@
    "utilisation": 59.0,
    "works": 77,
    "attendance": null,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 337,
@@ -26399,7 +26399,7 @@
    "utilisation": 14.4,
    "works": 23,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 471,
@@ -26447,7 +26447,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 71.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 57,
@@ -26471,7 +26471,7 @@
    "utilisation": 33.7,
    "works": 114,
    "attendance": 96.0,
-   "n_conflicts": 12
+   "n_conflicts": 0
   },
   {
    "id": 277,
@@ -26495,7 +26495,7 @@
    "utilisation": 13.9,
    "works": 21,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 1274,
@@ -26543,7 +26543,7 @@
    "utilisation": 25.8,
    "works": 108,
    "attendance": 99.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 1275,
@@ -26591,7 +26591,7 @@
    "utilisation": 32.5,
    "works": 46,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 59,
@@ -26615,7 +26615,7 @@
    "utilisation": 49.6,
    "works": 67,
    "attendance": 76.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 74,
@@ -26639,7 +26639,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 97.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 575,
@@ -26735,7 +26735,7 @@
    "utilisation": 64.8,
    "works": 45,
    "attendance": 98.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 1277,
@@ -26783,7 +26783,7 @@
    "utilisation": 9.8,
    "works": 60,
    "attendance": 80.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 576,
@@ -26807,7 +26807,7 @@
    "utilisation": 17.5,
    "works": 31,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 123,
@@ -26831,7 +26831,7 @@
    "utilisation": 13.2,
    "works": 94,
    "attendance": 95.0,
-   "n_conflicts": 18
+   "n_conflicts": 1
   },
   {
    "id": 519,
@@ -26855,7 +26855,7 @@
    "utilisation": 27.3,
    "works": 84,
    "attendance": 90.0,
-   "n_conflicts": 21
+   "n_conflicts": 0
   },
   {
    "id": 494,
@@ -26879,7 +26879,7 @@
    "utilisation": 21.8,
    "works": 21,
    "attendance": 70.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 31,
@@ -26903,7 +26903,7 @@
    "utilisation": 8.0,
    "works": 25,
    "attendance": 82.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 436,
@@ -26927,7 +26927,7 @@
    "utilisation": 31.3,
    "works": 37,
    "attendance": 97.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 577,
@@ -26975,7 +26975,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 100.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 405,
@@ -26999,7 +26999,7 @@
    "utilisation": 5.7,
    "works": 22,
    "attendance": 77.0,
-   "n_conflicts": 8
+   "n_conflicts": 1
   },
   {
    "id": 489,
@@ -27023,7 +27023,7 @@
    "utilisation": 23.5,
    "works": 89,
    "attendance": 95.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 495,
@@ -27047,7 +27047,7 @@
    "utilisation": 35.9,
    "works": 6,
    "attendance": 83.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 466,
@@ -27071,7 +27071,7 @@
    "utilisation": 38.3,
    "works": 69,
    "attendance": 97.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 578,
@@ -27143,7 +27143,7 @@
    "utilisation": 63.7,
    "works": 92,
    "attendance": 94.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 102,
@@ -27167,7 +27167,7 @@
    "utilisation": 14.3,
    "works": 41,
    "attendance": 100.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 1278,
@@ -27215,7 +27215,7 @@
    "utilisation": 13.1,
    "works": 24,
    "attendance": 85.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 135,
@@ -27239,7 +27239,7 @@
    "utilisation": 10.6,
    "works": 15,
    "attendance": null,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 347,
@@ -27263,7 +27263,7 @@
    "utilisation": 4.9,
    "works": 10,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 70,
@@ -27287,7 +27287,7 @@
    "utilisation": 35.0,
    "works": 60,
    "attendance": 75.0,
-   "n_conflicts": 18
+   "n_conflicts": 1
   },
   {
    "id": 398,
@@ -27311,7 +27311,7 @@
    "utilisation": 52.1,
    "works": 222,
    "attendance": null,
-   "n_conflicts": 15
+   "n_conflicts": 0
   },
   {
    "id": 270,
@@ -27335,7 +27335,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 99.0,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 456,
@@ -27359,7 +27359,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 70.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 579,
@@ -27407,7 +27407,7 @@
    "utilisation": 47.9,
    "works": 134,
    "attendance": 99.0,
-   "n_conflicts": 20
+   "n_conflicts": 0
   },
   {
    "id": 393,
@@ -27431,7 +27431,7 @@
    "utilisation": 27.7,
    "works": 60,
    "attendance": 94.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 235,
@@ -27455,7 +27455,7 @@
    "utilisation": 24.5,
    "works": 54,
    "attendance": 94.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 90,
@@ -27479,7 +27479,7 @@
    "utilisation": 28.7,
    "works": 75,
    "attendance": null,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 1279,
@@ -27527,7 +27527,7 @@
    "utilisation": 22.6,
    "works": 165,
    "attendance": 100.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 308,
@@ -27551,7 +27551,7 @@
    "utilisation": 1.0,
    "works": 3,
    "attendance": 79.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 361,
@@ -27575,7 +27575,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 42.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 299,
@@ -27599,7 +27599,7 @@
    "utilisation": 71.1,
    "works": 40,
    "attendance": 93.0,
-   "n_conflicts": 12
+   "n_conflicts": 0
   },
   {
    "id": 580,
@@ -27623,7 +27623,7 @@
    "utilisation": 21.8,
    "works": 37,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 370,
@@ -27647,7 +27647,7 @@
    "utilisation": 40.4,
    "works": 50,
    "attendance": 93.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 172,
@@ -27671,7 +27671,7 @@
    "utilisation": 1.3,
    "works": 5,
    "attendance": 83.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 544,
@@ -27695,7 +27695,7 @@
    "utilisation": 31.3,
    "works": 96,
    "attendance": 58.0,
-   "n_conflicts": 19
+   "n_conflicts": 0
   },
   {
    "id": 297,
@@ -27719,7 +27719,7 @@
    "utilisation": 36.1,
    "works": 134,
    "attendance": 93.0,
-   "n_conflicts": 21
+   "n_conflicts": 0
   },
   {
    "id": 318,
@@ -27743,7 +27743,7 @@
    "utilisation": 21.5,
    "works": 548,
    "attendance": 90.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 431,
@@ -27767,7 +27767,7 @@
    "utilisation": 23.8,
    "works": 66,
    "attendance": 88.0,
-   "n_conflicts": 12
+   "n_conflicts": 2
   },
   {
    "id": 218,
@@ -27791,7 +27791,7 @@
    "utilisation": 8.3,
    "works": 61,
    "attendance": 95.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 306,
@@ -27815,7 +27815,7 @@
    "utilisation": 1.4,
    "works": 5,
    "attendance": 81.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 269,
@@ -27839,7 +27839,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 83.0,
-   "n_conflicts": 4
+   "n_conflicts": 2
   },
   {
    "id": 581,
@@ -27863,7 +27863,7 @@
    "utilisation": 15.7,
    "works": 28,
    "attendance": 68.0,
-   "n_conflicts": 6
+   "n_conflicts": 0
   },
   {
    "id": 163,
@@ -27887,7 +27887,7 @@
    "utilisation": 20.1,
    "works": 49,
    "attendance": null,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 293,
@@ -27911,7 +27911,7 @@
    "utilisation": 7.8,
    "works": 23,
    "attendance": 86.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 339,
@@ -27935,7 +27935,7 @@
    "utilisation": 26.4,
    "works": 78,
    "attendance": 99.0,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 93,
@@ -27959,7 +27959,7 @@
    "utilisation": 24.7,
    "works": 72,
    "attendance": 93.0,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 315,
@@ -27983,7 +27983,7 @@
    "utilisation": 17.3,
    "works": 159,
    "attendance": 99.0,
-   "n_conflicts": 24
+   "n_conflicts": 0
   },
   {
    "id": 325,
@@ -28007,7 +28007,7 @@
    "utilisation": 34.3,
    "works": 236,
    "attendance": 31.0,
-   "n_conflicts": 19
+   "n_conflicts": 0
   },
   {
    "id": 32,
@@ -28031,7 +28031,7 @@
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 395,
@@ -28055,7 +28055,7 @@
    "utilisation": 30.5,
    "works": 87,
    "attendance": 88.0,
-   "n_conflicts": 17
+   "n_conflicts": 0
   },
   {
    "id": 514,
@@ -28079,7 +28079,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 76.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 421,
@@ -28103,7 +28103,7 @@
    "utilisation": 16.8,
    "works": 21,
    "attendance": 99.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 141,
@@ -28127,7 +28127,7 @@
    "utilisation": 7.6,
    "works": 19,
    "attendance": 95.0,
-   "n_conflicts": 6
+   "n_conflicts": 1
   },
   {
    "id": 223,
@@ -28151,7 +28151,7 @@
    "utilisation": 40.0,
    "works": 179,
    "attendance": null,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 525,
@@ -28175,7 +28175,7 @@
    "utilisation": 28.2,
    "works": 118,
    "attendance": 84.0,
-   "n_conflicts": 21
+   "n_conflicts": 0
   },
   {
    "id": 140,
@@ -28199,7 +28199,7 @@
    "utilisation": 8.3,
    "works": 59,
    "attendance": 92.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 385,
@@ -28223,7 +28223,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 73.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 373,
@@ -28247,7 +28247,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 94.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 379,
@@ -28271,7 +28271,7 @@
    "utilisation": 29.2,
    "works": 51,
    "attendance": 84.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 211,
@@ -28295,7 +28295,7 @@
    "utilisation": 2.1,
    "works": 23,
    "attendance": 75.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 73,
@@ -28319,7 +28319,7 @@
    "utilisation": 15.4,
    "works": 29,
    "attendance": 96.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 227,
@@ -28343,7 +28343,7 @@
    "utilisation": 37.6,
    "works": 145,
    "attendance": 100.0,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 508,
@@ -28367,7 +28367,7 @@
    "utilisation": 4.1,
    "works": 8,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 441,
@@ -28391,7 +28391,7 @@
    "utilisation": 38.0,
    "works": 50,
    "attendance": 95.0,
-   "n_conflicts": 14
+   "n_conflicts": 1
   },
   {
    "id": 209,
@@ -28415,7 +28415,7 @@
    "utilisation": 28.0,
    "works": 52,
    "attendance": 89.0,
-   "n_conflicts": 9
+   "n_conflicts": 0
   },
   {
    "id": 505,
@@ -28439,7 +28439,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 64.0,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 582,
@@ -28463,7 +28463,7 @@
    "utilisation": 43.2,
    "works": 18,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 327,
@@ -28487,7 +28487,7 @@
    "utilisation": 62.4,
    "works": 376,
    "attendance": 86.0,
-   "n_conflicts": 44
+   "n_conflicts": 0
   },
   {
    "id": 485,
@@ -28511,7 +28511,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 84.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 234,
@@ -28535,7 +28535,7 @@
    "utilisation": 5.3,
    "works": 28,
    "attendance": 82.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 244,
@@ -28559,7 +28559,7 @@
    "utilisation": 4.4,
    "works": 10,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 167,
@@ -28583,7 +28583,7 @@
    "utilisation": 11.6,
    "works": 21,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 127,
@@ -28607,7 +28607,7 @@
    "utilisation": 30.2,
    "works": 126,
    "attendance": 99.0,
-   "n_conflicts": 28
+   "n_conflicts": 0
   },
   {
    "id": 182,
@@ -28631,7 +28631,7 @@
    "utilisation": 11.1,
    "works": 39,
    "attendance": 80.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 583,
@@ -28655,7 +28655,7 @@
    "utilisation": 42.4,
    "works": 166,
    "attendance": 8.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 584,
@@ -28679,7 +28679,7 @@
    "utilisation": 24.7,
    "works": 32,
    "attendance": 100.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 585,
@@ -28703,7 +28703,7 @@
    "utilisation": 11.8,
    "works": 49,
    "attendance": null,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 586,
@@ -28727,7 +28727,7 @@
    "utilisation": 12.8,
    "works": 63,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 587,
@@ -28751,7 +28751,7 @@
    "utilisation": 17.2,
    "works": 25,
    "attendance": null,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 588,
@@ -28775,7 +28775,7 @@
    "utilisation": 1.9,
    "works": 3,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 589,
@@ -28799,7 +28799,7 @@
    "utilisation": 19.6,
    "works": 39,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 287,
@@ -28823,7 +28823,7 @@
    "utilisation": 8.8,
    "works": 18,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 1
   },
   {
    "id": 104,
@@ -28847,7 +28847,7 @@
    "utilisation": 2.1,
    "works": 1,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 590,
@@ -28871,7 +28871,7 @@
    "utilisation": 16.0,
    "works": 32,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 266,
@@ -28895,7 +28895,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 96.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 591,
@@ -28943,7 +28943,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 94.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 513,
@@ -28967,7 +28967,7 @@
    "utilisation": 45.0,
    "works": 10,
    "attendance": 5.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 260,
@@ -28991,7 +28991,7 @@
    "utilisation": 9.5,
    "works": 9,
    "attendance": 97.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 592,
@@ -29015,7 +29015,7 @@
    "utilisation": 17.8,
    "works": 33,
    "attendance": null,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 593,
@@ -29039,7 +29039,7 @@
    "utilisation": 31.7,
    "works": 62,
    "attendance": null,
-   "n_conflicts": 15
+   "n_conflicts": 0
   },
   {
    "id": 594,
@@ -29063,7 +29063,7 @@
    "utilisation": 5.3,
    "works": 10,
    "attendance": null,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 240,
@@ -29087,7 +29087,7 @@
    "utilisation": 17.6,
    "works": 47,
    "attendance": 97.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 521,
@@ -29111,7 +29111,7 @@
    "utilisation": 5.6,
    "works": 14,
    "attendance": 83.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 25,
@@ -29135,7 +29135,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 93.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 44,
@@ -29159,7 +29159,7 @@
    "utilisation": 30.2,
    "works": 66,
    "attendance": 99.0,
-   "n_conflicts": 2
+   "n_conflicts": 1
   },
   {
    "id": 378,
@@ -29183,7 +29183,7 @@
    "utilisation": 18.6,
    "works": 41,
    "attendance": 93.0,
-   "n_conflicts": 7
+   "n_conflicts": 1
   },
   {
    "id": 49,
@@ -29207,7 +29207,7 @@
    "utilisation": 52.5,
    "works": 98,
    "attendance": 95.0,
-   "n_conflicts": 21
+   "n_conflicts": 0
   },
   {
    "id": 233,
@@ -29231,7 +29231,7 @@
    "utilisation": 6.0,
    "works": 60,
    "attendance": 94.0,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 312,
@@ -29255,7 +29255,7 @@
    "utilisation": 21.1,
    "works": 149,
    "attendance": 95.0,
-   "n_conflicts": 13
+   "n_conflicts": 0
   },
   {
    "id": 507,
@@ -29279,7 +29279,7 @@
    "utilisation": 10.4,
    "works": 33,
    "attendance": null,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 160,
@@ -29303,7 +29303,7 @@
    "utilisation": 41.0,
    "works": 131,
    "attendance": 90.0,
-   "n_conflicts": 18
+   "n_conflicts": 2
   },
   {
    "id": 328,
@@ -29327,7 +29327,7 @@
    "utilisation": 15.4,
    "works": 95,
    "attendance": 90.0,
-   "n_conflicts": 12
+   "n_conflicts": 1
   },
   {
    "id": 365,
@@ -29375,7 +29375,7 @@
    "utilisation": 13.7,
    "works": 24,
    "attendance": 61.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 82,
@@ -29399,7 +29399,7 @@
    "utilisation": 43.0,
    "works": 81,
    "attendance": 99.0,
-   "n_conflicts": 15
+   "n_conflicts": 0
   },
   {
    "id": 249,
@@ -29423,7 +29423,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 97.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 54,
@@ -29447,7 +29447,7 @@
    "utilisation": 25.2,
    "works": 143,
    "attendance": 71.0,
-   "n_conflicts": 35
+   "n_conflicts": 0
   },
   {
    "id": 210,
@@ -29471,7 +29471,7 @@
    "utilisation": 9.0,
    "works": 15,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 252,
@@ -29519,7 +29519,7 @@
    "utilisation": 14.3,
    "works": 85,
    "attendance": 89.0,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 416,
@@ -29543,7 +29543,7 @@
    "utilisation": 8.5,
    "works": 65,
    "attendance": 83.0,
-   "n_conflicts": 14
+   "n_conflicts": 0
   },
   {
    "id": 496,
@@ -29591,7 +29591,7 @@
    "utilisation": 10.8,
    "works": 12,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1280,
@@ -29639,7 +29639,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 77.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 596,
@@ -29663,7 +29663,7 @@
    "utilisation": 12.4,
    "works": 5,
    "attendance": 82.0,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 12,
@@ -29687,7 +29687,7 @@
    "utilisation": 6.9,
    "works": 6,
    "attendance": 89.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 434,
@@ -29711,7 +29711,7 @@
    "utilisation": 48.1,
    "works": 16,
    "attendance": 99.0,
-   "n_conflicts": 9
+   "n_conflicts": 2
   },
   {
    "id": 27,
@@ -29735,7 +29735,7 @@
    "utilisation": 64.7,
    "works": 107,
    "attendance": 98.0,
-   "n_conflicts": 23
+   "n_conflicts": 0
   },
   {
    "id": 58,
@@ -29759,7 +29759,7 @@
    "utilisation": 39.8,
    "works": 60,
    "attendance": 97.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 282,
@@ -29783,7 +29783,7 @@
    "utilisation": 17.5,
    "works": 18,
    "attendance": 65.0,
-   "n_conflicts": 4
+   "n_conflicts": 1
   },
   {
    "id": 169,
@@ -29807,7 +29807,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 79.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 597,
@@ -29831,7 +29831,7 @@
    "utilisation": 25.9,
    "works": 63,
    "attendance": null,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 390,
@@ -29855,7 +29855,7 @@
    "utilisation": 13.4,
    "works": 24,
    "attendance": 81.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 362,
@@ -29879,7 +29879,7 @@
    "utilisation": 58.8,
    "works": 193,
    "attendance": 72.0,
-   "n_conflicts": 26
+   "n_conflicts": 0
   },
   {
    "id": 598,
@@ -29903,7 +29903,7 @@
    "utilisation": 29.0,
    "works": 45,
    "attendance": null,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 366,
@@ -29975,7 +29975,7 @@
    "utilisation": 17.0,
    "works": 42,
    "attendance": null,
-   "n_conflicts": 7
+   "n_conflicts": 0
   },
   {
    "id": 500,
@@ -29999,7 +29999,7 @@
    "utilisation": 0.9,
    "works": 3,
    "attendance": 97.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 599,
@@ -30023,7 +30023,7 @@
    "utilisation": 51.0,
    "works": 349,
    "attendance": 100.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 422,
@@ -30047,7 +30047,7 @@
    "utilisation": 14.4,
    "works": 3,
    "attendance": 99.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 338,
@@ -30071,7 +30071,7 @@
    "utilisation": 26.7,
    "works": 98,
    "attendance": 99.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 468,
@@ -30119,7 +30119,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 86.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 190,
@@ -30143,7 +30143,7 @@
    "utilisation": 4.9,
    "works": 4,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 604,
@@ -30167,7 +30167,7 @@
    "utilisation": 14.2,
    "works": 30,
    "attendance": 95.0,
-   "n_conflicts": 1
+   "n_conflicts": 0
   },
   {
    "id": 413,
@@ -30191,7 +30191,7 @@
    "utilisation": 4.7,
    "works": 9,
    "attendance": 88.0,
-   "n_conflicts": 4
+   "n_conflicts": 0
   },
   {
    "id": 132,
@@ -30215,7 +30215,7 @@
    "utilisation": 0.3,
    "works": 3,
    "attendance": 100.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 274,
@@ -30239,7 +30239,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 68.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 321,
@@ -30263,7 +30263,7 @@
    "utilisation": 10.2,
    "works": 13,
    "attendance": 79.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 81,
@@ -30287,7 +30287,7 @@
    "utilisation": 63.9,
    "works": 30,
    "attendance": 99.0,
-   "n_conflicts": 4
+   "n_conflicts": 1
   },
   {
    "id": 600,
@@ -30311,7 +30311,7 @@
    "utilisation": 23.3,
    "works": 113,
    "attendance": null,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 377,
@@ -30335,7 +30335,7 @@
    "utilisation": 17.7,
    "works": 46,
    "attendance": 69.0,
-   "n_conflicts": 10
+   "n_conflicts": 0
   },
   {
    "id": 86,
@@ -30359,7 +30359,7 @@
    "utilisation": 15.0,
    "works": 70,
    "attendance": 82.0,
-   "n_conflicts": 8
+   "n_conflicts": 0
   },
   {
    "id": 469,
@@ -30407,7 +30407,7 @@
    "utilisation": 39.8,
    "works": 135,
    "attendance": 94.0,
-   "n_conflicts": 12
+   "n_conflicts": 0
   },
   {
    "id": 162,
@@ -30431,7 +30431,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 85.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 374,
@@ -30455,7 +30455,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 92.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 78,
@@ -30479,7 +30479,7 @@
    "utilisation": 61.6,
    "works": 95,
    "attendance": 99.0,
-   "n_conflicts": 5
+   "n_conflicts": 0
   },
   {
    "id": 602,
@@ -30503,7 +30503,7 @@
    "utilisation": 27.6,
    "works": 99,
    "attendance": null,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 1282,
@@ -30551,7 +30551,7 @@
    "utilisation": 7.5,
    "works": 11,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 1283,
@@ -30599,7 +30599,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 80.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 161,
@@ -30623,7 +30623,7 @@
    "utilisation": 38.0,
    "works": 117,
    "attendance": 99.0,
-   "n_conflicts": 11
+   "n_conflicts": 0
   },
   {
    "id": 603,
@@ -30671,7 +30671,7 @@
    "utilisation": 0.4,
    "works": 1,
    "attendance": 97.0,
-   "n_conflicts": 3
+   "n_conflicts": 1
   },
   {
    "id": 11,
@@ -30695,7 +30695,7 @@
    "utilisation": 18.8,
    "works": 57,
    "attendance": 55.0,
-   "n_conflicts": 16
+   "n_conflicts": 0
   },
   {
    "id": 187,
@@ -30719,7 +30719,7 @@
    "utilisation": 11.5,
    "works": 34,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 0
   },
   {
    "id": 1284,
@@ -30767,7 +30767,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 97.0,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 605,
@@ -30791,7 +30791,7 @@
    "utilisation": 6.9,
    "works": 11,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 0
   },
   {
    "id": 490,
@@ -30815,7 +30815,7 @@
    "utilisation": null,
    "works": null,
    "attendance": 98.0,
-   "n_conflicts": 3
+   "n_conflicts": 0
   }
  ],
  "countries": [
