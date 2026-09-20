@@ -230,6 +230,73 @@ app = (ROOT / "web" / "src" / "App.jsx").read_text(encoding="utf-8")
 check("blind spots are rendered as a warning, not hidden in a tooltip",
       'className="warn"' in app and "blindspots" in app)
 
+# 8 ---------------------------------------------------------------------------
+print("\n[8] No source file contains a control character where an escape was meant.")
+# `_seat_key` was written with the rule `\b(sc|st)\b` and reached the repo as two
+# literal backspace bytes, because a shell heredoc ate the escapes. The result
+# compiled, imported, ran, and matched NOTHING - a rule that silently did not
+# exist. No test caught it and no reviewer would: the line looks correct in most
+# editors, which render 0x08 as nothing at all.
+#
+# Any of these bytes inside a source file means an escape was eaten the same way.
+CONTROL = {0x00: "\\0", 0x07: "\\a", 0x08: "\\b",
+           0x0b: "\\v", 0x0c: "\\f", 0x1b: "\\e"}
+damaged = []
+for path in sorted(ROOT.rglob("*.py")) + sorted((ROOT / "web" / "src").rglob("*.js*")):
+    rel = path.relative_to(ROOT).as_posix()
+    if "node_modules" in rel or rel.startswith("data/"):
+        continue
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (UnicodeDecodeError, OSError):
+        continue
+    for lineno, line in enumerate(text.splitlines(), 1):
+        hit = next((CONTROL[ord(c)] for c in line if ord(c) in CONTROL), None)
+        if hit:
+            damaged.append(f"{rel}:{lineno} (should be {hit})")
+check("no eaten escapes in any source file", not damaged,
+      "; ".join(damaged) if damaged else "scanned every .py and web/src/*.js*")
+
+# 9 ---------------------------------------------------------------------------
+print("\n[9] The 'sources disagree' warning is not dominated by one predicate.")
+# A conflict is only meaningful for a fact with ONE value per person per date.
+# When a predicate that legitimately repeats is not declared in
+# etl.export_people.MULTI_INSTANCE, every repetition becomes a fake
+# disagreement - and because the fakes arrive in bulk, they drown the real ones.
+#
+# `parliamentary_question` and `disclosure_filed` did exactly this: 90% of every
+# conflict on the site was an MP tabling more than one question in a day. The
+# shape of that failure is always the same, so the shape is what is checked.
+people_dir = ROOT / "web" / "public" / "data" / "people"
+index_file = people_dir / "index.json"
+if not index_file.exists():
+    skip("conflict mix", "no exported bundle yet - run python -m etl.export_people")
+else:
+    per_predicate: dict[str, int] = {}
+    for person_file in people_dir.glob("*.json"):
+        if person_file.name == "index.json":
+            continue
+        try:
+            doc = json.loads(person_file.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        for conflict in doc.get("conflicts") or []:
+            key = conflict.get("predicate", "?")
+            per_predicate[key] = per_predicate.get(key, 0) + 1
+    total = sum(per_predicate.values())
+    if not total:
+        check("no predicate dominates the conflict count", True, "no conflicts")
+    else:
+        predicate, count = max(per_predicate.items(), key=lambda kv: kv[1])
+        share = count / total
+        check(
+            "no predicate dominates the conflict count",
+            share <= 0.5,
+            f"largest is {predicate} at {count}/{total} ({share:.0%})"
+            + ("  <- add it to MULTI_INSTANCE if it can repeat on one date"
+               if share > 0.5 else ""),
+        )
+
 # ------------------------------------------------------------------------------
 print()
 if failures:

@@ -21,6 +21,7 @@ comparison; flows are listed and summed per year, never trended against GDP.
 from __future__ import annotations
 
 import json
+import re
 import sqlite3
 from collections import defaultdict
 
@@ -106,19 +107,32 @@ def _seat_key(name: str | None) -> str:
     """Normalise a constituency name to bare letters.
 
     Reservation markers carry no identifying information - "JAMUI" and
-    "JAMUI(SC)" are one seat - so they are stripped. Two traps here, both of
+    "JAMUI(SC)" are one seat - so they are stripped. Three traps here, all of
     which this function previously fell into:
 
       * a lazy, all-optional paren pattern can match the EMPTY string, so re.sub
         inserts its replacement at every position and shreds the name.
-      * stripping "sc|st" without word boundaries corrupts ordinary names:
-        "EAST DELHI" would become "EA DELHI".
+
+      * stripping a bare "sc"/"st" anywhere in the name is not safe, and the
+        word-boundary version is not safe either. It was written once as
+        `\\b(sc|st)\\b` and reached this file with the escapes eaten, as two
+        literal backspace bytes, which quietly matched nothing at all. Repairing
+        it would have been worse than the bug: every Indian reservation marker
+        in this data is PARENTHESISED - 126 of them, none bare - so the rule
+        earns nothing here, while a working version would rename the UK's
+        "St Albans" to "Albans" and reduce South Carolina to a single seat. The
+        rule is gone rather than fixed.
+
+      * the final filter must keep digits. "SC-02" and "SC-06" are two seats.
     """
     import re as _re
     s = (name or "").lower()
     s = _re.sub(r"\([^)]*\)?", " ", s)          # drop "(sc)" and unclosed "(sc"
-    s = _re.sub(r"(sc|st)", " ", s)         # word-bounded, never mid-word
-    return _re.sub(r"[^a-z]", "", s)
+    # Digits are part of the name, not punctuation. Dropping them turned every
+    # South Carolina district - SC-02, SC-04, SC-06 - into the single key "sc",
+    # so a member redistricted from one seat to another would have shown one
+    # seat instead of two.
+    return _re.sub(r"[^a-z0-9]", "", s)
 
 
 def _same_seat(a: str, b: str) -> bool:
@@ -154,6 +168,15 @@ def _same_seat(a: str, b: str) -> bool:
 # one date. Grouping them by (predicate, date) made the live site announce
 # "sources disagree on 20 facts" for a member whose sources agreed completely -
 # a false alarm in exactly the place the app asks readers to trust it most.
+#
+# This set has to grow whenever a new multi-instance predicate is added, and it
+# was missed twice. `parliamentary_question` and `disclosure_filed` arrived with
+# the Zenodo and US House extractors and were not declared here, so an MP who
+# tabled three questions on one sitting day, or a Representative who filed an
+# original report and an amendment on one date, was announced as having sources
+# that disagree. That accounted for 1,772 of 1,935 flagged facts - 90% of the
+# warning was noise. Check [9] in verify.py now fails if one predicate dominates
+# the conflict count like that again.
 MULTI_INSTANCE = {
     "contract_awarded",
     "outside_earnings",
@@ -161,7 +184,23 @@ MULTI_INSTANCE = {
     "electoral_bonds_received",
     "electoral_bonds_purchased",
     "possible_duplicate_of",
+    # Several questions can be tabled on one sitting day, and each is its own
+    # question rather than a rival account of one question.
+    "parliamentary_question",
+    # A US filer can lodge an original report and an amendment the same day.
+    "disclosure_filed",
 }
+
+
+def _term_year(jurisdiction: str | None) -> int:
+    """The year in a jurisdiction like "IN/LokSabha2024", for ordering terms.
+
+    Jurisdictions without a year (US/Congress, UK/Commons) sort as 0, which puts
+    them after any dated term - they only ever appear alongside each other, so
+    the relative order among them is unchanged.
+    """
+    m = re.search(r"(19|20)\d{2}", jurisdiction or "")
+    return int(m.group(0)) if m else 0
 
 
 def _same_value(predicate: str, values: list, aliases: dict) -> bool:
@@ -250,11 +289,22 @@ def build() -> dict:
         # visible, but Arun Kumar Sagar's one seat was being shown as three.
         seen_seat: list[tuple] = []
         deduped = []
-        # Prefer offices that name a seat: an extractor that failed to parse the
-        # constituency should not manufacture an extra "seat contested".
+        # Most recent term first, then offices that name a seat: an extractor
+        # that failed to parse the constituency should not manufacture an extra
+        # "seat contested".
+        #
+        # The recency sort is not cosmetic. `offices[0]` becomes the party shown
+        # in the list view, and it used to be whichever row was INSERTED first -
+        # correct only because the 2024 affidavits happened to be harvested
+        # before the 2019 ones. Rebuilding the store in a different order would
+        # have relabelled every MP who has changed party with the party they
+        # left.
         raw_offices = sorted(
             (p.get("offices") or []),
-            key=lambda o: 0 if (o.get("constituency") or "").strip() else 1,
+            key=lambda o: (
+                -_term_year(o.get("jurisdiction")),
+                0 if (o.get("constituency") or "").strip() else 1,
+            ),
         )
         for o in raw_offices:
             juris, seat = o.get("jurisdiction"), _seat_key(o.get("constituency"))
@@ -308,12 +358,16 @@ def build() -> dict:
     con.close()
 
     # Learn party aliases once across the whole dataset, so "TDP" and "Telugu
-    # Desam Party" are known to be the same before any person is compared.
+    # Desam Party" are known to be the same before any person is compared. The
+    # date travels with the value: two spellings only count as evidence of a
+    # synonym when they describe the same person in the same year, or every MP
+    # who has ever crossed the floor teaches the map that their old party and
+    # their new one are the same thing.
     party_forms: dict[int, set] = defaultdict(set)
     for pid, cl in claims_by_person.items():
         for c in cl:
             if c["predicate"] == "party_affiliation" and c["text"]:
-                party_forms[pid].add(c["text"])
+                party_forms[pid].add((c["text"], c["as_of"]))
     party_aliases = learn_party_aliases(party_forms)
 
     OUT.mkdir(parents=True, exist_ok=True)
@@ -362,6 +416,30 @@ def build() -> dict:
                 ],
             }
 
+        # --- what they asked Parliament about (Zenodo / sansad.in) -----------
+        topic_claim = next(
+            (c for c in claims if c["predicate"] == "questions_topics"), None
+        )
+        questions = [c for c in claims if c["predicate"] == "parliamentary_question"]
+        asked = None
+        if topic_claim:
+            asked = {
+                "total": topic_claim["num"],
+                "ministries": topic_claim["text"],
+                "note": topic_claim["note"],
+                "recent": [
+                    {"subject": c["text"], "as_of": c["as_of"], "detail": c["note"]}
+                    for c in sorted(questions, key=lambda c: c["as_of"] or "",
+                                    reverse=True)[:12]
+                ],
+            }
+
+        # --- pointers to primary documents (US disclosures) ------------------
+        filings = [
+            {"kind": c["text"], "as_of": c["as_of"], "detail": c["note"]}
+            for c in claims if c["predicate"] == "disclosure_filed"
+        ]
+
         # --- parliamentary activity (PRS) ------------------------------------
         activity = {}
         for c in claims:
@@ -387,6 +465,8 @@ def build() -> dict:
             "context": ctx,
             "public_money": public,
             "activity": activity or None,
+            "asked": asked,
+            "filings": sorted(filings, key=lambda f: f["as_of"] or "", reverse=True)[:20] or None,
             "n_claims": len(claims),
             "sources": sorted({c["src_url"] for c in claims}),
             # facts where two source documents disagree, surfaced not resolved
@@ -423,6 +503,8 @@ def build() -> dict:
                 "utilisation": public["utilisation"] if public else None,
                 "works": len(works) if works else None,
                 "attendance": activity.get("attendance_pct", {}).get("value"),
+                "questions_named_on": topic_claim["num"] if topic_claim else None,
+                "filings": len(filings) or None,
                 "n_conflicts": len(_conflicts(claims, party_aliases)),
             }
         )
@@ -488,6 +570,20 @@ def build() -> dict:
                 "income. The member recommends works; district authorities "
                 "sanction, implement and pay. Low utilisation can reflect district "
                 "capacity as much as the member."
+            ),
+            "questions": (
+                "Question counts here are questions this member's NAME APPEARS "
+                "ON. Questions are frequently tabled jointly - 37,271 questions "
+                "carry 156,760 names, a mean of 4.2 members each - and every "
+                "signatory is credited. This is a different measure from the PRS "
+                "'questions asked' figure, and the two are not comparable. The "
+                "text of each question and the ministry's reply are in a linked "
+                "PDF and are not held here."
+            ),
+            "filings": (
+                "A filing record says a financial disclosure EXISTS and links to "
+                "it. No dollar figure is extracted: India publishes the numbers, "
+                "the US publishes the paperwork."
             ),
             "stock_vs_flow": (
                 "India's figures are total declared assets at a date. The UK's are "

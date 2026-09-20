@@ -13,7 +13,7 @@ alternatives:
 |---|---|---|---|---|---|
 | Political decisions marked on economic charts, with the dispute attached | yes | – | – | – | no decision layer |
 | Declared wealth beside **public money directed** (MPLADS) | yes | – | – | – | – |
-| Cross-publisher corroboration with a stated agreement rate | yes (97.5%) | – | – | – | – |
+| Cross-publisher corroboration with a stated agreement rate | yes (93.7% across 4 publishers) | – | – | – | – |
 | Every figure traceable to an archived, hashed document | yes | source link | source link | – | citation |
 | Disagreements between official sources shown, not resolved | yes | – | – | – | – |
 | Refuses to merge ambiguous names; queues them for a human | yes | – | – | – | – |
@@ -147,6 +147,26 @@ request path.
 **Payoff:** age and education agreement can be measured across four publishers
 instead of two, and a disagreement between the affidavit and everyone else
 becomes far more informative than one between the affidavit and PRS.
+
+**BUILT, and it immediately found two faults of its own** — worth recording,
+because both were in *our* code rather than in the source:
+
+- The query matched people by `rdfs:label` alone, so it accepted **any human on
+  Wikidata with the same English name**. Tariq Anwar was published as 81; the
+  real MP's birth date is 1951-01-16, so he is 75, which is what MyNeta, PRS and
+  OpenSanctions all say. Adding a citizenship and position-held filter removed
+  222 wrong ages — the extractor now emits 356 instead of 578, and they agree.
+- It read party from `wdt:P102`, the *truthy* predicate, which returns former
+  parties indistinguishably from current ones. Every MP who had changed party
+  was published under the party they **left**. The query now reads the full
+  statement with its start/end qualifiers and uses a membership only when it has
+  **no end date**.
+
+That second fix costs real coverage, and the honest conclusion is a limit on
+this source: most Wikidata party statements for Indian MPs carry no start or end
+date at all, so for many members Wikidata **cannot** establish a current party
+and none is claimed. Wikidata is a strong fourth witness for age and a weak one
+for party, and the site should not pretend otherwise.
 
 ### 5. Breadth: state MLAs, Rajya Sabha, and the last four Lok Sabhas
 

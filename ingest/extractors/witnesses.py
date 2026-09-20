@@ -36,6 +36,7 @@ import io
 import json
 import re
 import time
+from collections import defaultdict
 from typing import Iterator
 
 from ..base import Claim, Extractor
@@ -49,6 +50,19 @@ WDQS = "https://query.wikidata.org/sparql"
 WD_BATCH = 60          # names per SPARQL query
 WD_PAUSE = 4.0         # seconds between queries
 WD_MAX_RETRY = 3
+
+# The date these witnesses speak about. Ages here are DERIVED from a birth date,
+# so they need a reference date to be meaningful at all, and an open-ended party
+# membership is a statement about now rather than about the day it began.
+#
+# It is a fixed constant rather than today's date on purpose: a claim is unique
+# on (person, predicate, as_of, source), so dating it "today" would mint a fresh
+# near-duplicate claim on every re-run and make the store grow by calendar.
+WD_OBSERVED = "2026-01-01"
+
+# Namesakes are the failure mode of a label-keyed query, so the country the
+# extractor is running for is pushed into the query itself.
+WD_CITIZENSHIP = {"IND": "wd:Q668", "GBR": "wd:Q145", "USA": "wd:Q30"}
 
 
 class Witnesses(Extractor):
@@ -165,23 +179,14 @@ class WikidataWitness(Witnesses):
             "Accept": "application/sparql-results+json",
         })
 
-        found = 0
+        found = ambiguous = unclear_party = 0
         for i in range(0, len(people), WD_BATCH):
             batch = people[i:i + WD_BATCH]
             values = " ".join(f'"{p["full_name"]}"@en' for p in batch
                               if '"' not in p["full_name"])
             if not values:
                 continue
-            q = f"""
-SELECT ?name ?dob ?partyLabel ?article WHERE {{
-  VALUES ?name {{ {values} }}
-  ?p rdfs:label ?name .
-  ?p wdt:P31 wd:Q5 .
-  OPTIONAL {{ ?p wdt:P569 ?dob }}
-  OPTIONAL {{ ?p wdt:P102 ?party }}
-  OPTIONAL {{ ?article schema:about ?p ; schema:isPartOf <https://en.wikipedia.org/> }}
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }}
-}}"""
+            q = self._query(values)
             data = None
             for attempt in range(1, WD_MAX_RETRY + 1):
                 try:
@@ -206,34 +211,139 @@ SELECT ?name ?dob ?partyLabel ?article WHERE {{
             sid = self._archive_response(q, data)
 
             by_name = {p["full_name"]: p["id"] for p in batch}
+            # A SPARQL row is one combination of a person's values, so a person
+            # with two parties and two positions arrives as several rows. Group
+            # by name before deciding anything: the previous version read one
+            # arbitrary row per person, which is how a defector's FORMER party
+            # was published as their current one.
+            rows_by_name: dict[str, list] = defaultdict(list)
             for b in data.get("results", {}).get("bindings", []):
-                nm = b.get("name", {}).get("value")
-                pid = by_name.get(nm)
-                if pid is None:
+                nm = (b.get("name") or {}).get("value")
+                if nm in by_name:
+                    rows_by_name[nm].append(b)
+
+            for nm, bs in rows_by_name.items():
+                pid = by_name[nm]
+
+                # Labels are not unique - several humans are called "Tariq
+                # Anwar" - and the query cannot tell them apart. If the label
+                # resolved to more than one entity, no fact from it is
+                # attributable, so the whole name is dropped. A witness that
+                # guesses launders a guess into apparent corroboration.
+                qids = {(b.get("p") or {}).get("value") for b in bs}
+                qids.discard(None)
+                if len(qids) != 1:
+                    ambiguous += 1
                     continue
-                dob = (b.get("dob") or {}).get("value", "")[:10]
-                party = (b.get("partyLabel") or {}).get("value")
-                article = (b.get("article") or {}).get("value")
-                if re.match(r"^\d{4}-\d{2}-\d{2}$", dob):
+                qid = next(iter(qids)).rsplit("/", 1)[-1]
+                article = next(((b.get("article") or {}).get("value")
+                                for b in bs if b.get("article")), None)
+
+                yield Claim(
+                    predicate="external_identifier", source_id=sid, person_id=pid,
+                    value_text=f"wikidata={qid}", as_of=WD_OBSERVED, confidence=0.85,
+                    note=f"The Wikidata entity these witness facts were taken from, "
+                         f"so the match can be checked: "
+                         f"https://www.wikidata.org/wiki/{qid}"
+                         + (f" Wikipedia: {article}" if article else ""),
+                )
+
+                dobs = {(b.get("dob") or {}).get("value", "")[:10]
+                        for b in bs if b.get("dob")}
+                dobs = {d for d in dobs if re.match(r"^\d{4}-\d{2}-\d{2}$", d)}
+                if len(dobs) == 1:
+                    dob = next(iter(dobs))
                     found += 1
                     yield Claim(
                         predicate="age", source_id=sid, person_id=pid,
-                        value_num=float(2026 - int(dob[:4])), unit="years",
-                        as_of="2026-01-01", confidence=0.85,
-                        note=f"Derived from birth date {dob} on Wikidata. A fourth "
-                             f"witness for age. Wikidata is community-edited, which "
-                             f"is why this carries lower confidence than an "
-                             f"affidavit or a parliamentary register."
+                        # The age they reach during the reference year, matching
+                        # how the OpenSanctions witness derives it, so both
+                        # round-trip to exactly the same birth year.
+                        value_num=float(int(WD_OBSERVED[:4]) - int(dob[:4])),
+                        unit="years",
+                        as_of=WD_OBSERVED, confidence=0.85,
+                        note=f"Derived from birth date {dob} on Wikidata ({qid}). "
+                             f"A fourth witness for age. Wikidata is "
+                             f"community-edited, which is why this carries lower "
+                             f"confidence than an affidavit or a parliamentary "
+                             f"register."
                              + (f" Wikipedia: {article}" if article else ""),
                     )
-                if party:
-                    yield Claim(
-                        predicate="party_affiliation", source_id=sid, person_id=pid,
-                        value_text=party, as_of="2026-01-01", confidence=0.85,
-                        note="Wikidata (community-edited).",
-                    )
-            print(f"    batch {i//WD_BATCH + 1}: {found} facts so far", flush=True)
+
+                # Party membership is a statement with a life span. Only a
+                # membership with NO end date is evidence about today; one that
+                # ended is evidence about history and must not be dated to now.
+                spans: dict[str, tuple] = {}
+                for b in bs:
+                    lab = (b.get("partyLabel") or {}).get("value")
+                    if not lab:
+                        continue
+                    start = (b.get("pstart") or {}).get("value", "")[:10] or None
+                    end = (b.get("pend") or {}).get("value", "")[:10] or None
+                    prev = spans.get(lab)
+                    if prev is None or (prev[1] and not end):
+                        spans[lab] = (start, end)
+                current = [(lab, st) for lab, (st, end) in spans.items() if not end]
+                if len(current) != 1:
+                    # Either they hold none open, or Wikidata records several
+                    # with no end date and cannot say which one is live.
+                    if spans:
+                        unclear_party += 1
+                    continue
+                lab, since = current[0]
+                found += 1
+                yield Claim(
+                    predicate="party_affiliation", source_id=sid, person_id=pid,
+                    value_text=lab, as_of=WD_OBSERVED, confidence=0.85,
+                    note=f"Wikidata ({qid}), community-edited: a membership of "
+                         f"{lab} recorded with no end date"
+                         + (f", beginning {since}" if since else "")
+                         + ". Memberships Wikidata shows as ended are not used "
+                           "here, because a former party stated as a current one "
+                           "is a false claim about a living person.",
+                )
+            print(f"    batch {i//WD_BATCH + 1}: {found} facts, "
+                  f"{ambiguous} ambiguous names skipped", flush=True)
             time.sleep(WD_PAUSE)
+
+        print(f"  {found} witness facts; {ambiguous} names dropped as ambiguous "
+              f"(the label matched more than one Wikidata entity); "
+              f"{unclear_party} people whose current party Wikidata could not "
+              f"establish", flush=True)
+
+    def _query(self, values: str) -> str:
+        """One SPARQL query per batch of names.
+
+        Two things in here exist because of bugs that reached the live site:
+
+        `wdt:P102` was replaced by the full statement form `p:P102` with its
+        start and end qualifiers. The truthy `wdt:` predicate returns former
+        parties indistinguishably from current ones, so every MP who had
+        crossed the floor was published under the party they LEFT.
+
+        Citizenship and a position-held check narrow the label lookup. Matching
+        on `rdfs:label` alone matched any human on Wikidata with the same
+        English name, which is how a stranger's birth date could be attached to
+        a sitting MP.
+        """
+        cit = WD_CITIZENSHIP.get(self.country)
+        return f"""
+SELECT ?name ?p ?dob ?partyLabel ?pstart ?pend ?article WHERE {{
+  VALUES ?name {{ {values} }}
+  ?p rdfs:label ?name .
+  ?p wdt:P31 wd:Q5 .
+  {f'?p wdt:P27 {cit} .' if cit else ''}
+  FILTER EXISTS {{ ?p wdt:P39 ?position }}
+  OPTIONAL {{ ?p wdt:P569 ?dob }}
+  OPTIONAL {{
+    ?p p:P102 ?stmt .
+    ?stmt ps:P102 ?party .
+    OPTIONAL {{ ?stmt pq:P580 ?pstart }}
+    OPTIONAL {{ ?stmt pq:P582 ?pend }}
+  }}
+  OPTIONAL {{ ?article schema:about ?p ; schema:isPartOf <https://en.wikipedia.org/> }}
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en" }}
+}}"""
 
     def _archive_response(self, query: str, data: dict) -> int:
         """Store the SPARQL response as an archived document with a receipt."""

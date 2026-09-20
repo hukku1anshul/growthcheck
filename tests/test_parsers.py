@@ -231,6 +231,136 @@ def test_uk(con) -> None:
           any(c.predicate == "declared_assets" for c in claims), False)
 
 
+def test_corroboration_dates() -> None:
+    """The three date bugs that took cross-source agreement from 97.5% to 57.3%.
+
+    Each of these only appears once a person has more than one claim from the
+    same publisher, which is why none of them showed up until the 2019
+    affidavits and the 2026 witnesses were added. They are pinned here because
+    the same mistake - comparing values without their reference date - has now
+    been made twice.
+    """
+    from etl.corroborate import (
+        birth_year,
+        learn_party_aliases,
+        party_key,
+    )
+
+    # 1. An age is a fact about a DATE. A man who is 50 in 2019, 55 in 2024 and
+    #    58 in 2026 has had birthdays, not a disagreement.
+    born = [birth_year(50, "2019-01-01"), birth_year(55, "2024-01-01"),
+            birth_year(58, "2026-01-01")]
+    check("ages across years resolve to one birth year",
+          max(born) - min(born) <= 3, True)
+    check("a genuinely different birth year is still caught",
+          abs(birth_year(56, "2024-01-01") - birth_year(65, "2024-01-01")) > 3, True)
+
+    # 2. Two spellings seen for one person in one year are the same party.
+    aliases = learn_party_aliases({
+        1: {("BJP", "2024-01-01"), ("Bharatiya Janata Party", "2024-01-01")},
+        2: {("TDP", "2024-01-01"), ("Telugu Desam Party", "2024-01-01")},
+        3: {("JD(U)", "2024-01-01"), ("Janata Dal (United)", "2024-01-01")},
+    })
+    check("BJP is the Bharatiya Janata Party",
+          party_key("BJP", aliases) == party_key("Bharatiya Janata Party", aliases),
+          True)
+    check("TDP is the Telugu Desam Party",
+          party_key("TDP", aliases) == party_key("Telugu Desam Party", aliases), True)
+    check("JD(U) survives punctuation stripping",
+          party_key("JD(U)", aliases) == party_key("Janata Dal (United)", aliases),
+          True)
+
+    # Abbreviations skip the small words, and absorb an acronym whole.
+    hard = learn_party_aliases({
+        4: {("CPI(ML)(L)", "2024-01-01"),
+            ("Communist Party of India (Marxist-Leninist) (Liberation)",
+             "2024-01-01")},
+        5: {("YSRCP", "2024-01-01"),
+            ("Yuvajana Sramika Rythu Congress Party", "2024-01-01")},
+    })
+    check("'of' contributes no initial (CPI(ML)(L), not CPOIML(L))",
+          party_key("CPI(ML)(L)", hard)
+          == party_key("Communist Party of India (Marxist-Leninist) (Liberation)",
+                       hard),
+          True)
+    check("an en dash reads the same as a hyphen",
+          party_key("CPI(ML)(L)", hard)
+          == party_key("Communist Party of India (Marxist–Leninist) Liberation",
+                       hard),
+          True)
+    # "YSR" is itself three initials, so YSR Congress Party is YSRCP, not YCP.
+    # This spelling appears only in Wikidata, never beside another, so it is
+    # reached through its own abbreviation rather than through co-occurrence.
+    check("an embedded acronym contributes all its letters",
+          party_key("YSR Congress Party", hard) == party_key("YSRCP", hard), True)
+
+    # A party SPLIT is not a spelling variant. The LJP divided in 2021, and the
+    # faction name is the whole difference between the two parties.
+    check("Lok Janshakti Party (Ram Vilas) is not Lok Janshakti Party",
+          party_key("Lok Janshakti Party (Ram Vilas)", hard)
+          == party_key("Lok Janshakti Party", hard),
+          False)
+
+    # 3. THE IMPORTANT ONE. A defector reports one party in 2019 and another in
+    #    2024. That is a change of party, and must never be learned as a change
+    #    of NAME - one switcher poisoning this map moved 1,008 people onto the
+    #    wrong canonical party.
+    poisoned = learn_party_aliases({
+        1: {("BJP", "2024-01-01"), ("Bharatiya Janata Party", "2024-01-01")},
+        9: {("Indian National Congress", "2019-01-01"), ("BJP", "2024-01-01")},
+    })
+    check("a defection does not merge the two parties",
+          party_key("Indian National Congress", poisoned) == party_key("BJP", poisoned),
+          False)
+    check("the defector does not break the real alias either",
+          party_key("BJP", poisoned) == party_key("Bharatiya Janata Party", poisoned),
+          True)
+
+    # Even reported in the SAME year - a floor-crossing - the structural check
+    # refuses, because "INC" is not an abbreviation of "Bharatiya Janata Party".
+    same_year = learn_party_aliases({
+        7: {("Indian National Congress", "2024-01-01"), ("BJP", "2024-01-01")},
+    })
+    check("same-year defection is still not a synonym",
+          party_key("Indian National Congress", same_year) == party_key("BJP", same_year),
+          False)
+
+
+def test_seat_keys() -> None:
+    """One seat must stay one seat, and two seats must stay two - in 3 countries.
+
+    The rule that stripped a bare "SC"/"ST" reservation marker reached the repo
+    with its `\b` escapes eaten into literal backspace bytes, so it silently
+    matched nothing. Repairing it would have been worse than leaving it broken:
+    it would have renamed "St Albans" and collapsed South Carolina. These cases
+    are pinned because the fix is a DELETION, and a future reader who sees the
+    missing rule may be tempted to put it back.
+    """
+    from etl.export_people import _same_seat, _seat_key
+
+    def same(a, b):
+        return _same_seat(_seat_key(a), _seat_key(b))
+
+    # India: the reservation marker is always parenthesised, and carries no
+    # identifying information.
+    check("ARAKU(ST) is ARAKU", same("ARAKU(ST)", "ARAKU"), True)
+    check("NELLORE(SC) is NELLORE", same("NELLORE(SC)", "NELLORE"), True)
+    check("truncation is the same seat",
+          same("NAINITAL-UDHAM SINGH NAGAR", "NAINITAL UDHAM SINGH NAG."), True)
+    check("a one-letter spelling variant is the same seat",
+          same("BARAMULLA", "BARAMULLAH"), True)
+    check("two real seats stay two", same("WAYANAD", "RAE BARELI"), False)
+    check("EAST DELHI keeps its E-A-S-T", _seat_key("EAST DELHI"), "eastdelhi")
+
+    # United Kingdom: "St" is part of the name, not a marker.
+    check("St Albans is not Albans", _seat_key("St Albans"), "stalbans")
+    check("two St seats stay two", same("St Albans", "St Ives"), False)
+
+    # United States: the district NUMBER is the seat.
+    check("SC-02 and SC-06 are two seats", same("SC-02", "SC-06"), False)
+    check("a district number survives normalising", _seat_key("SC-06"), "sc06")
+
+
 def main() -> int:
     tmp = ROOT / "data" / "processed" / "_parsertest.db"
     if tmp.exists():
@@ -241,6 +371,8 @@ def main() -> int:
     test_myneta(ex)
     test_money_parsing()
     test_uk(con)
+    test_corroboration_dates()
+    test_seat_keys()
 
     con.close()
     tmp.unlink(missing_ok=True)

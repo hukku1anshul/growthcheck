@@ -314,6 +314,58 @@ function Person({ p, meta, dark, onBack }) {
         </div>
       )}
 
+      {p.asked && (
+        <div className="panel asked" style={{ marginTop: 12 }}>
+          <h3>What they asked Parliament about</h3>
+          <div className="pm-row">
+            <div>
+              <span className="ctx-label">Questions bearing their name</span>
+              <span className="ctx-big">{p.asked.total?.toLocaleString()}</span>
+              <span className="ctx-sub">18th Lok Sabha</span>
+            </div>
+            <div style={{ flex: 1, minWidth: 220 }}>
+              <span className="ctx-label">Ministries most often questioned</span>
+              <span className="ctx-sub" style={{ fontSize: 12.5, color: 'var(--text)' }}>
+                {p.asked.ministries}
+              </span>
+            </div>
+          </div>
+          <p className="ctx-caveat">{meta.caveats.questions}</p>
+          {p.asked.recent?.length > 0 && (
+            <>
+              <h3 style={{ marginTop: 12 }}>Most recent questions</h3>
+              <div className="works">
+                {p.asked.recent.map((q, i) => (
+                  <div className="work" key={i}>
+                    <span className="w-date">{q.as_of}</span>
+                    <span className="w-desc" style={{ color: 'var(--text)' }}>
+                      {q.subject}
+                    </span>
+                    <span className="w-desc">{q.detail}</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {p.filings?.length > 0 && (
+        <div className="panel" style={{ marginTop: 12 }}>
+          <h3>Financial disclosures filed</h3>
+          <p className="note" style={{ marginTop: -4 }}>{meta.caveats.filings}</p>
+          <div className="works">
+            {p.filings.map((f, i) => (
+              <div className="work" key={i}>
+                <span className="w-date">{f.as_of}</span>
+                <span className="w-desc" style={{ color: 'var(--text)' }}>{f.kind}</span>
+                <span className="w-desc">{f.detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {p.activity && (
         <div className="panel" style={{ marginTop: 12 }}>
           <h3>Parliamentary activity (PRS)</h3>
