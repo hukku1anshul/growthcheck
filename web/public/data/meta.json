@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-20T21:21:32+00:00",
+ "built_at": "2026-09-20T21:32:13+00:00",
  "categories": {
   "economy": {
    "label": "Economy",
@@ -20,6 +20,10 @@
   "human": {
    "label": "Human development",
    "blurb": "Health, education and survival - the slowest-moving, hardest-to-fake numbers."
+  },
+  "security": {
+   "label": "Conflict & defence",
+   "blurb": "War, armed violence and the means of it. Counted where the fighting happened, which is not the same as who caused it."
   },
   "politics": {
    "label": "Politics & rights",
@@ -697,6 +701,332 @@
     "min_year": 1970,
     "max_year": 2024,
     "observations": 11165
+   }
+  },
+  {
+   "id": "conflict_deaths",
+   "category": "security",
+   "source": "owid",
+   "code": "deaths-in-armed-conflicts",
+   "column": "Best estimate",
+   "name": "Deaths in armed conflict",
+   "unit": "deaths per year",
+   "direction": "down_good",
+   "plain": "People killed in organised armed conflict on this country's territory.",
+   "measures": "UCDP best estimate of deaths from state-based, non-state and one-sided violence, counted where the fighting happened.",
+   "blindspots": "Counted where the violence occurred, not who caused it - a country hosting someone else's war carries the number. It also counts deaths from fighting only: famine, displacement and collapsed healthcare kill far more in most wars and appear nowhere here.",
+   "gamed": "Not gamed by governments so much as contested by them. UCDP codes from reported incidents, so violence in areas closed to journalists is systematically undercounted, and the low/high estimates can differ severalfold.",
+   "coverage": {
+    "countries": 194,
+    "min_year": 1989,
+    "max_year": 2025,
+    "observations": 7178
+   }
+  },
+  {
+   "id": "conflict_count",
+   "category": "security",
+   "source": "owid",
+   "code": "number-of-armed-conflicts",
+   "column": "Intrastate",
+   "name": "Internal armed conflicts",
+   "unit": "conflicts per year",
+   "direction": "down_good",
+   "plain": "How many separate internal armed conflicts were active in the country.",
+   "measures": "Count of active intrastate conflicts - government against an organised armed group - reaching UCDP's threshold of 25 battle deaths in the year.",
+   "blindspots": "A count, so one catastrophic war and one small insurgency both read as \"1\". The 25-death threshold also means low-level violence disappears entirely, and a conflict that quietens below it looks resolved when it is dormant.",
+   "gamed": "Classification is the lever: naming an armed opponent a criminal gang rather than a political organisation keeps a conflict out of this count.",
+   "coverage": {
+    "countries": 194,
+    "min_year": 1989,
+    "max_year": 2025,
+    "observations": 7178
+   }
+  },
+  {
+   "id": "terrorism_deaths",
+   "category": "security",
+   "source": "owid",
+   "code": "terrorism-deaths",
+   "column": "Fatalities",
+   "name": "Deaths from terrorism",
+   "unit": "deaths per year",
+   "direction": "down_good",
+   "plain": "People killed in attacks coded as terrorism.",
+   "measures": "Fatalities recorded in the Global Terrorism Database, by country and year.",
+   "blindspots": "\"Terrorism\" is a contested label, not a neutral measurement. The same act is coded differently depending on who did it and who is describing it, and state violence is largely outside the definition by construction. Ends 2021.",
+   "gamed": "Definitional. Governments have strong reasons to classify political violence as ordinary crime, or ordinary crime as terrorism, and both move this number.",
+   "coverage": {
+    "countries": 179,
+    "min_year": 1970,
+    "max_year": 2021,
+    "observations": 8591
+   }
+  },
+  {
+   "id": "armed_forces",
+   "category": "security",
+   "source": "worldbank",
+   "code": "MS.MIL.TOTL.P1",
+   "name": "Armed forces personnel",
+   "unit": "people",
+   "direction": "neutral",
+   "plain": "How many people serve in the armed forces.",
+   "measures": "Active duty military personnel, including paramilitaries where they are trained and equipped for military operations.",
+   "blindspots": "A headcount says nothing about capability - a large conscript army and a small professional one are not comparable. Read beside military spending, never alone.",
+   "gamed": "Where the line falls between police, paramilitary and military is a national choice, and moving a force across it changes the number without changing who is under arms.",
+   "coverage": {
+    "countries": 174,
+    "min_year": 1985,
+    "max_year": 2020,
+    "observations": 5355
+   }
+  },
+  {
+   "id": "arms_imports",
+   "category": "security",
+   "source": "worldbank",
+   "code": "MS.MIL.MPRT.KD",
+   "name": "Arms imports",
+   "unit": "SIPRI trend-indicator value (1990 US$)",
+   "direction": "neutral",
+   "plain": "The volume of major weapons brought into the country.",
+   "measures": "SIPRI trend-indicator value of major conventional weapons transferred in - a measure of military capability delivered, not of money paid.",
+   "blindspots": "TIV is explicitly NOT a price. It cannot be read as spending, compared with a budget, or summed with cash figures. Small arms, ammunition and services are excluded, which is most of what is used in most conflicts.",
+   "gamed": "Deliveries are recorded when they arrive, so a single large order lands in one year and makes it a spike that says nothing about a trend.",
+   "coverage": {
+    "countries": 187,
+    "min_year": 1960,
+    "max_year": 2024,
+    "observations": 6873
+   }
+  },
+  {
+   "id": "arms_exports",
+   "category": "security",
+   "source": "worldbank",
+   "code": "MS.MIL.XPRT.KD",
+   "name": "Arms exports",
+   "unit": "SIPRI trend-indicator value (1990 US$)",
+   "direction": "neutral",
+   "plain": "The volume of major weapons this country sent to others.",
+   "measures": "SIPRI trend-indicator value of major conventional weapons transferred out.",
+   "blindspots": "Same unit caveat as arms imports: a capability index, never a sale value. Re-exports and licensed production abroad are attributed in ways that can surprise, and the ultimate end user is often not the recorded recipient.",
+   "gamed": "Licensed production overseas moves weapons without moving this number.",
+   "coverage": {
+    "countries": 124,
+    "min_year": 1960,
+    "max_year": 2024,
+    "observations": 2383
+   }
+  },
+  {
+   "id": "exports",
+   "category": "openness",
+   "source": "worldbank",
+   "code": "NE.EXP.GNFS.ZS",
+   "name": "Exports",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "How much of the economy is sold abroad.",
+   "measures": "Exports of goods and services as a share of output.",
+   "blindspots": "A share of GDP, so it rises when the domestic economy shrinks. It also says nothing about WHAT is exported - one commodity or a diversified base look identical here, and they are not the same position at all.",
+   "gamed": "Re-exports and goods that merely pass through inflate this for entrepot economies, which is why some small states exceed 100%.",
+   "coverage": {
+    "countries": 194,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 9029
+   }
+  },
+  {
+   "id": "imports",
+   "category": "openness",
+   "source": "worldbank",
+   "code": "NE.IMP.GNFS.ZS",
+   "name": "Imports",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "How much of what the country uses comes from abroad.",
+   "measures": "Imports of goods and services as a share of output.",
+   "blindspots": "High imports are not weakness and low imports are not strength - both can reflect wealth or crisis. Read against exports, not alone.",
+   "gamed": "Under-invoicing to avoid duty, and smuggling, both suppress this in places where enforcement is weak.",
+   "coverage": {
+    "countries": 194,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 9038
+   }
+  },
+  {
+   "id": "hightech_exports",
+   "category": "openness",
+   "source": "worldbank",
+   "code": "TX.VAL.TECH.MF.ZS",
+   "name": "High-technology exports",
+   "unit": "% of manufactured exports",
+   "direction": "up_good",
+   "plain": "How much of what the country sells abroad is advanced manufacturing.",
+   "measures": "Exports of aerospace, computers, pharmaceuticals, scientific instruments and electrical machinery, as a share of manufactured exports.",
+   "blindspots": "Classified by PRODUCT, not by what the country actually did. Assembling imported components counts in full, so a country doing final assembly can outrank one that designed the chip inside.",
+   "gamed": "Not usually gamed, but it is routinely quoted as evidence of an innovation economy when it may only show a phone assembly plant.",
+   "coverage": {
+    "countries": 186,
+    "min_year": 2007,
+    "max_year": 2024,
+    "observations": 2665
+   }
+  },
+  {
+   "id": "govt_revenue",
+   "category": "state",
+   "source": "worldbank",
+   "code": "GC.REV.XGRT.GD.ZS",
+   "name": "Government revenue",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "Everything the government takes in, except foreign aid.",
+   "measures": "Revenue excluding grants - taxes, social contributions, fines, property income.",
+   "blindspots": "Central government only in most countries, so states, provinces and municipalities are missing - which understates the true size of the state in federal countries, India and the US among them.",
+   "gamed": "One-off asset sales and central bank transfers can be booked as revenue, flattering a single year.",
+   "coverage": {
+    "countries": 162,
+    "min_year": 1972,
+    "max_year": 2024,
+    "observations": 4679
+   }
+  },
+  {
+   "id": "fiscal_balance",
+   "category": "state",
+   "source": "worldbank",
+   "code": "GC.NLD.TOTL.GD.ZS",
+   "name": "Fiscal balance",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "Whether the government took in more than it spent. Negative is a deficit.",
+   "measures": "Net lending (+) or net borrowing (-) as a share of output.",
+   "blindspots": "A deficit is not automatically mismanagement - borrowing to build something that lasts is different from borrowing to pay salaries, and this number cannot tell them apart. Nor is a surplus automatically good.",
+   "gamed": "Off-budget vehicles, state enterprise borrowing and arrears to suppliers all move spending outside the measured balance while the obligation remains.",
+   "coverage": {
+    "countries": 158,
+    "min_year": 1972,
+    "max_year": 2024,
+    "observations": 4454
+   }
+  },
+  {
+   "id": "public_wage_bill",
+   "category": "state",
+   "source": "worldbank",
+   "code": "GC.XPN.COMP.ZS",
+   "name": "Public wage bill",
+   "unit": "% of government expense",
+   "direction": "neutral",
+   "plain": "How much of government spending goes on paying its own staff.",
+   "measures": "Compensation of employees as a share of total government expense.",
+   "blindspots": "High is not automatically waste: teachers and nurses are public employees. A low share can mean an efficient state or a hollowed-out one that has stopped delivering services directly.",
+   "gamed": "Outsourcing the same work to contractors moves it out of compensation and into goods and services, with no change in what is done or spent.",
+   "coverage": {
+    "countries": 157,
+    "min_year": 1972,
+    "max_year": 2024,
+    "observations": 4300
+   }
+  },
+  {
+   "id": "govt_health_spend",
+   "category": "state",
+   "source": "worldbank",
+   "code": "SH.XPD.GHED.GD.ZS",
+   "name": "Government health spending",
+   "unit": "% of GDP",
+   "direction": "up_good",
+   "plain": "How much the government itself spends on health.",
+   "measures": "Domestic general government health expenditure as a share of output - public money only, excluding what households pay themselves.",
+   "blindspots": "Spending is not care. It says nothing about whether it reaches patients, and the gap between this and total health spending is what households pay out of pocket - often the more revealing number of the two.",
+   "gamed": "Reclassifying water, sanitation or nutrition programmes as health spending raises this without a single extra clinic.",
+   "coverage": {
+    "countries": 193,
+    "min_year": 2000,
+    "max_year": 2024,
+    "observations": 4547
+   }
+  },
+  {
+   "id": "under5_mortality",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SH.DYN.MORT",
+   "name": "Under-five mortality",
+   "unit": "deaths per 1,000 live births",
+   "direction": "down_good",
+   "plain": "How many children die before their fifth birthday.",
+   "measures": "Probability of dying between birth and age five, per 1,000 live births.",
+   "blindspots": "Among the hardest numbers to fake and the slowest to move, which is what makes it useful - but it is modelled where registration is weak, and a national figure hides differences between regions and classes that are often larger than differences between countries.",
+   "gamed": "Under-registration of births and of infant deaths lowers it, and the two do not cancel out.",
+   "coverage": {
+    "countries": 196,
+    "min_year": 1960,
+    "max_year": 2024,
+    "observations": 11861
+   }
+  },
+  {
+   "id": "death_rate",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SP.DYN.CDRT.IN",
+   "name": "Crude death rate",
+   "unit": "deaths per 1,000 people",
+   "direction": "neutral",
+   "plain": "How many people die each year per thousand of the population.",
+   "measures": "Total deaths per 1,000 mid-year population.",
+   "blindspots": "CRUDE is the operative word: it is not age-adjusted, so a rich country with many old people has a higher rate than a poor country with a young population. It measures age structure at least as much as health, and comparing two countries on it directly is usually a mistake.",
+   "gamed": "Not gamed so much as misused - it is frequently quoted as though it were a health outcome.",
+   "coverage": {
+    "countries": 217,
+    "min_year": 1960,
+    "max_year": 2024,
+    "observations": 14075
+   }
+  },
+  {
+   "id": "tb_incidence",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SH.TBS.INCD",
+   "name": "Tuberculosis incidence",
+   "unit": "new cases per 100,000 people",
+   "direction": "down_good",
+   "plain": "How many people newly fall ill with tuberculosis each year.",
+   "measures": "Estimated new and relapse TB cases per 100,000 population.",
+   "blindspots": "Estimated, not counted. A country that improves its detection can appear to get sicker while actually getting better at finding cases - a rise here may be a working health system rather than a failing one.",
+   "gamed": "Reported case notifications depend on how hard a country looks, so reduced screening lowers the notified count while the disease is unchanged.",
+   "coverage": {
+    "countries": 208,
+    "min_year": 2000,
+    "max_year": 2024,
+    "observations": 5157
+   }
+  },
+  {
+   "id": "suicide_rate",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SH.STA.SUIC.P5",
+   "name": "Suicide rate",
+   "unit": "deaths per 100,000 people",
+   "direction": "down_good",
+   "plain": "How many people take their own lives each year, per hundred thousand.",
+   "measures": "Age-standardised suicide mortality rate.",
+   "blindspots": "Systematically undercounted where suicide is criminalised or carries religious stigma, which makes cross-country comparison unreliable in exactly the places the number would matter most. Deaths of undetermined intent are handled differently by different registries.",
+   "gamed": "Coroner and certification practice decides the number as much as the underlying rate does.",
+   "coverage": {
+    "countries": 185,
+    "min_year": 2000,
+    "max_year": 2021,
+    "observations": 4070
    }
   }
  ],
@@ -2277,6 +2607,12 @@
   "note": "Automatic political events (leaders, elections, regimes) come from REIGN, whose public release ends in 2021. Curated landmark decisions run to the present but are not exhaustive - absence of a marker is not evidence that nothing happened."
  },
  "provenance": {
+  "owid_deaths-in-armed-conflicts.csv": {
+   "bytes": 206721,
+   "fetched_at": "2026-09-20T21:31:11+00:00",
+   "sha256": "37899c3801d9909fd14c3c4c7e42b2dea66b062175149d38adee496c9c8ca4f8",
+   "url": "https://ourworldindata.org/grapher/deaths-in-armed-conflicts.csv"
+  },
   "owid_electoral-democracy-index.csv": {
    "bytes": 1115469,
    "fetched_at": "2026-09-20T08:11:48+00:00",
@@ -2295,6 +2631,12 @@
    "sha256": "d6c331b8ea80027599e1bca8e28aab544382c1625b2536ea62f4df4fcb122de6",
    "url": "https://ourworldindata.org/grapher/liberal-democracy-index.csv"
   },
+  "owid_number-of-armed-conflicts.csv": {
+   "bytes": 226229,
+   "fetched_at": "2026-09-20T21:31:11+00:00",
+   "sha256": "ed1f3a67022f0543cf45fa7c42465b25f156e2fec5ac753a11a1121573505ab2",
+   "url": "https://ourworldindata.org/grapher/number-of-armed-conflicts.csv"
+  },
   "owid_political-corruption-index.csv": {
    "bytes": 930777,
    "fetched_at": "2026-09-20T08:11:49+00:00",
@@ -2306,6 +2648,12 @@
    "fetched_at": "2026-09-20T08:12:07+00:00",
    "sha256": "1e0d045bc702591c95c9885a6dbe5e8bed13bcca9b2a236464caa7c6098851ff",
    "url": "https://ourworldindata.org/grapher/political-regime.csv"
+  },
+  "owid_terrorism-deaths.csv": {
+   "bytes": 300771,
+   "fetched_at": "2026-09-20T21:31:12+00:00",
+   "sha256": "8d0a3824353dca2ff7e3e3d176b074af41f8db76832d7988051cabac11fc5dec",
+   "url": "https://ourworldindata.org/grapher/terrorism-deaths.csv"
   },
   "reign_election_list_8_21.csv": {
    "bytes": 275840,
@@ -2361,11 +2709,41 @@
    "sha256": "c23d7be39d3eb2ca87358a2451dc722fa8d0ac0ac89a8ceefa578fac9e1766d5",
    "url": "https://api.worldbank.org/v2/country/all/indicator/GC.DOD.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_GC.NLD.TOTL.GD.ZS.json": {
+   "bytes": 4151521,
+   "fetched_at": "2026-09-20T21:31:58+00:00",
+   "sha256": "33f12bbe397cc47947d06ac3e271e730b00953161c6cf1cafe830b7b866b42d9",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/GC.NLD.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_GC.REV.XGRT.GD.ZS.json": {
+   "bytes": 3959173,
+   "fetched_at": "2026-09-20T21:31:55+00:00",
+   "sha256": "2a4d52900d0b7db6c95053cc12f2fca1d64d8c6b86ca9f2e8adebd4424431c86",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/GC.REV.XGRT.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_GC.TAX.TOTL.GD.ZS.json": {
    "bytes": 3714577,
    "fetched_at": "2026-09-20T08:12:23+00:00",
    "sha256": "e2a5a0642de3a6aa602c982e9d4985af67d96c8d437fa011cc7b3242552aa110",
    "url": "https://api.worldbank.org/v2/country/all/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_GC.XPN.COMP.ZS.json": {
+   "bytes": 3972223,
+   "fetched_at": "2026-09-20T21:31:59+00:00",
+   "sha256": "59d33bbc1b236ff2cb903d410845f846cc6a50026b1a8490e2db3d45876ff353",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/GC.XPN.COMP.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_MS.MIL.MPRT.KD.json": {
+   "bytes": 4005184,
+   "fetched_at": "2026-09-20T21:31:12+00:00",
+   "sha256": "0629a1ea0f2e496491f6bc0b862f949cf938af9dc3363f863fca313b0f4d5a9b",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/MS.MIL.MPRT.KD?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_MS.MIL.TOTL.P1.json": {
+   "bytes": 3727210,
+   "fetched_at": "2026-09-20T21:31:12+00:00",
+   "sha256": "4a23271c3c5459c81a8ca8244b974cbeccbe4670ec886323fd9bdff70f5efeba",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/MS.MIL.TOTL.P1?format=json&per_page=20000&date=1960:2026"
   },
   "wb_MS.MIL.XPND.GD.ZS.json": {
    "bytes": 3931013,
@@ -2373,11 +2751,29 @@
    "sha256": "4aef0d814ea7ad970b72cec1f8f2740044ac363dd8da6d07366d51f01d163d14",
    "url": "https://api.worldbank.org/v2/country/all/indicator/MS.MIL.XPND.GD.ZS?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_MS.MIL.XPRT.KD.json": {
+   "bytes": 3977476,
+   "fetched_at": "2026-09-20T21:31:13+00:00",
+   "sha256": "fe93b0fc402f03e6e12b5fd8bcfc3c39677e8f50653abf3d90118286b0a1711f",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/MS.MIL.XPRT.KD?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_NE.EXP.GNFS.ZS.json": {
+   "bytes": 4044176,
+   "fetched_at": "2026-09-20T21:31:13+00:00",
+   "sha256": "dbcaad5b07fa880c030b944861ebcc7c49da439399be10748e71fd32c6256cb8",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NE.EXP.GNFS.ZS?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_NE.GDI.TOTL.ZS.json": {
    "bytes": 3933124,
    "fetched_at": "2026-09-20T21:21:19+00:00",
    "sha256": "313c1afc5acad1a098bf1203b67344023c131ae3c8f4fdb8a7d10997dae74296",
    "url": "https://api.worldbank.org/v2/country/all/indicator/NE.GDI.TOTL.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_NE.IMP.GNFS.ZS.json": {
+   "bytes": 4044890,
+   "fetched_at": "2026-09-20T21:31:14+00:00",
+   "sha256": "713232b8f807686a27c25440c2c5010586397a85f491ed7813673676c825d1aa",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NE.IMP.GNFS.ZS?format=json&per_page=20000&date=1960:2026"
   },
   "wb_NE.TRD.GNFS.ZS.json": {
    "bytes": 3622353,
@@ -2427,6 +2823,12 @@
    "sha256": "faba5eaf9856a03e60d0fca7d0708dc0df3ebcd5897fc8cc5a2521ca48ac3e66",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SE.XPD.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_SH.DYN.MORT.json": {
+   "bytes": 3992536,
+   "fetched_at": "2026-09-20T21:32:03+00:00",
+   "sha256": "1e5233f1f5555f530a986a99b1aba269d66f0f88fc883d8b9415ec9a5144cc15",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SH.DYN.MORT?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_SH.H2O.BASW.ZS.json": {
    "bytes": 4485151,
    "fetched_at": "2026-09-20T21:21:26+00:00",
@@ -2439,11 +2841,29 @@
    "sha256": "d19e18021c680f5f910b13c9d9f93d4219824cc5b0f44350e1b69e8840b07c73",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SH.STA.MMRT?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_SH.STA.SUIC.P5.json": {
+   "bytes": 4044828,
+   "fetched_at": "2026-09-20T21:32:07+00:00",
+   "sha256": "67f388c0101e78c9418dfff9b1516bd152fdd32a2a5b46d77ddedc6c7f00b9bc",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SH.STA.SUIC.P5?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SH.TBS.INCD.json": {
+   "bytes": 3953660,
+   "fetched_at": "2026-09-20T21:32:05+00:00",
+   "sha256": "920492633df4fa5e74aacb7bf71270eae7120aa46fd0aec0e51b5613e42e49ac",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SH.TBS.INCD?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_SH.XPD.CHEX.GD.ZS.json": {
    "bytes": 3949999,
    "fetched_at": "2026-09-20T08:12:25+00:00",
    "sha256": "7a11e2a3b0f5214e7f82e80890571f002135238a6b47f4ea7c431628fc83a191",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SH.XPD.GHED.GD.ZS.json": {
+   "bytes": 4299402,
+   "fetched_at": "2026-09-20T21:32:01+00:00",
+   "sha256": "dd221fe2a40f0549627ade6d99a0e77959975329d43104f773387a641ced7df0",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SH.XPD.GHED.GD.ZS?format=json&per_page=20000&date=1960:2026"
   },
   "wb_SI.DST.10TH.10.json": {
    "bytes": 3768859,
@@ -2487,6 +2907,12 @@
    "sha256": "58e82de86f5fd81f0630fabfdc40d10fd067cb6d14192b545b8c9cc027825a4f",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SL.UEM.TOTL.ZS?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_SP.DYN.CDRT.IN.json": {
+   "bytes": 3886700,
+   "fetched_at": "2026-09-20T21:32:03+00:00",
+   "sha256": "7a990edb6be1b83ca9f8a38f5e68d11884dc20970e3a3d9e69244bd18cc9c225",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.CDRT.IN?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_SP.DYN.IMRT.IN.json": {
    "bytes": 4025810,
    "fetched_at": "2026-09-20T08:12:31+00:00",
@@ -2510,6 +2936,12 @@
    "fetched_at": "2026-09-20T08:12:34+00:00",
    "sha256": "6f72b6bbddc94265eb41e3c7822a5b4e1c0381e212cf615cfecf4cf077a2aaf4",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SP.URB.TOTL.IN.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_TX.VAL.TECH.MF.ZS.json": {
+   "bytes": 4193735,
+   "fetched_at": "2026-09-20T21:31:14+00:00",
+   "sha256": "2a05b894b8a3adaeb5136802e41db5c391494c81d1b9d7e15b5fcffdb3b29109",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/TX.VAL.TECH.MF.ZS?format=json&per_page=20000&date=1960:2026"
   }
  }
 }

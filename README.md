@@ -61,13 +61,16 @@ python verify.py
 
 ## Product A: what's in it
 
-**375,323 observations · 36 indicators · 217 countries · 7,843 events · 3,110 spans**
+**486,756 observations · 53 indicators · 217 countries · 7,843 events · 3,110 spans**
 
 | Layer | Source | Coverage |
 |---|---|---|
 | Economy, livelihoods, state finances, openness, human development | World Bank WDI | 1960-2025 |
 | Long-run GDP per capita | Maddison Project (via Our World in Data) | year 1-2022 |
 | Democracy, liberal democracy, political corruption, regime type | V-Dem / Regimes of the World (via Our World in Data) | 1789-2025 |
+| Armed conflict deaths and counts | UCDP (via Our World in Data) | 1989-2025 |
+| Deaths from terrorism | Global Terrorism Database (via Our World in Data) | 1970-2021 |
+| Arms transfers, armed forces personnel | SIPRI (via World Bank) | 1960-2024 |
 | Leaders, elections, regime spells | REIGN | 1921-2021 |
 | Landmark decisions with disputed interpretations | hand-curated, `data/curated/decisions.yaml` | 1965-2016, 24 countries |
 | Derived structural breaks | computed, `etl/sources/breaks.py` | 1789-2025, **199 countries** |
@@ -245,8 +248,8 @@ looks exactly like a right one.
 Opening a page cannot find that. `verify.py` checks the ethics commitments;
 `test_parsers.py` checks parsers against hand-read fixtures. Neither asks
 whether the 2,196 shipped bundles are consistent with the store they came from.
-`audit.py` does, over every record — 76,668 claims, every bundle, and 375,323
-observations across 36 indicators and 217 countries. A check there has to be
+`audit.py` does, over every record — 76,668 claims, every bundle, and 486,756
+observations across 53 indicators and 217 countries. A check there has to be
 true of **all** the data, never a sample.
 
 **Why the browser tests exist too.** Several of those defects were *rendering*

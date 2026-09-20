@@ -28,6 +28,11 @@ categories:
   human:
     label: Human development
     blurb: Health, education and survival - the slowest-moving, hardest-to-fake numbers.
+  security:
+    label: Conflict & defence
+    blurb: >-
+      War, armed violence and the means of it. Counted where the fighting
+      happened, which is not the same as who caused it.
   politics:
     label: Politics & rights
     blurb: How power is won, constrained and abused. Expert-coded, not government-reported.
@@ -663,3 +668,321 @@ indicators:
     gamed: >-
       Offshoring heavy industry lowers this while global emissions are unchanged -
       the single largest source of apparent progress in rich countries.
+
+  # ---------------- conflict and defence -------------------------------------
+  # UCDP's own API now returns 401 without a key, so the conflict series come
+  # through OWID's mirror of UCDP - the same route already used for V-Dem and
+  # Maddison. Verified per-country, not regional: 196 ISO3 codes, 1989-2025.
+
+  - id: conflict_deaths
+    category: security
+    source: owid
+    code: deaths-in-armed-conflicts
+    column: Best estimate
+    name: Deaths in armed conflict
+    unit: deaths per year
+    direction: down_good
+    plain: People killed in organised armed conflict on this country's territory.
+    measures: >-
+      UCDP best estimate of deaths from state-based, non-state and one-sided
+      violence, counted where the fighting happened.
+    blindspots: >-
+      Counted where the violence occurred, not who caused it - a country hosting
+      someone else's war carries the number. It also counts deaths from fighting
+      only: famine, displacement and collapsed healthcare kill far more in most
+      wars and appear nowhere here.
+    gamed: >-
+      Not gamed by governments so much as contested by them. UCDP codes from
+      reported incidents, so violence in areas closed to journalists is
+      systematically undercounted, and the low/high estimates can differ severalfold.
+
+  - id: conflict_count
+    category: security
+    source: owid
+    code: number-of-armed-conflicts
+    column: Intrastate
+    name: Internal armed conflicts
+    unit: conflicts per year
+    direction: down_good
+    plain: How many separate internal armed conflicts were active in the country.
+    measures: >-
+      Count of active intrastate conflicts - government against an organised armed
+      group - reaching UCDP's threshold of 25 battle deaths in the year.
+    blindspots: >-
+      A count, so one catastrophic war and one small insurgency both read as "1".
+      The 25-death threshold also means low-level violence disappears entirely,
+      and a conflict that quietens below it looks resolved when it is dormant.
+    gamed: >-
+      Classification is the lever: naming an armed opponent a criminal gang
+      rather than a political organisation keeps a conflict out of this count.
+
+  - id: terrorism_deaths
+    category: security
+    source: owid
+    code: terrorism-deaths
+    column: Fatalities
+    name: Deaths from terrorism
+    unit: deaths per year
+    direction: down_good
+    plain: People killed in attacks coded as terrorism.
+    measures: Fatalities recorded in the Global Terrorism Database, by country and year.
+    blindspots: >-
+      "Terrorism" is a contested label, not a neutral measurement. The same act is
+      coded differently depending on who did it and who is describing it, and
+      state violence is largely outside the definition by construction. Ends 2021.
+    gamed: >-
+      Definitional. Governments have strong reasons to classify political violence
+      as ordinary crime, or ordinary crime as terrorism, and both move this number.
+
+  - id: armed_forces
+    category: security
+    source: worldbank
+    code: MS.MIL.TOTL.P1
+    name: Armed forces personnel
+    unit: people
+    direction: neutral
+    plain: How many people serve in the armed forces.
+    measures: Active duty military personnel, including paramilitaries where they are trained and equipped for military operations.
+    blindspots: >-
+      A headcount says nothing about capability - a large conscript army and a
+      small professional one are not comparable. Read beside military spending,
+      never alone.
+    gamed: >-
+      Where the line falls between police, paramilitary and military is a national
+      choice, and moving a force across it changes the number without changing
+      who is under arms.
+
+  - id: arms_imports
+    category: security
+    source: worldbank
+    code: MS.MIL.MPRT.KD
+    name: Arms imports
+    unit: SIPRI trend-indicator value (1990 US$)
+    direction: neutral
+    plain: The volume of major weapons brought into the country.
+    measures: >-
+      SIPRI trend-indicator value of major conventional weapons transferred in -
+      a measure of military capability delivered, not of money paid.
+    blindspots: >-
+      TIV is explicitly NOT a price. It cannot be read as spending, compared with
+      a budget, or summed with cash figures. Small arms, ammunition and services
+      are excluded, which is most of what is used in most conflicts.
+    gamed: >-
+      Deliveries are recorded when they arrive, so a single large order lands in
+      one year and makes it a spike that says nothing about a trend.
+
+  - id: arms_exports
+    category: security
+    source: worldbank
+    code: MS.MIL.XPRT.KD
+    name: Arms exports
+    unit: SIPRI trend-indicator value (1990 US$)
+    direction: neutral
+    plain: The volume of major weapons this country sent to others.
+    measures: SIPRI trend-indicator value of major conventional weapons transferred out.
+    blindspots: >-
+      Same unit caveat as arms imports: a capability index, never a sale value.
+      Re-exports and licensed production abroad are attributed in ways that can
+      surprise, and the ultimate end user is often not the recorded recipient.
+    gamed: >-
+      Licensed production overseas moves weapons without moving this number.
+
+  # ---------------- trade ----------------------------------------------------
+
+  - id: exports
+    category: openness
+    source: worldbank
+    code: NE.EXP.GNFS.ZS
+    name: Exports
+    unit: "% of GDP"
+    direction: neutral
+    plain: How much of the economy is sold abroad.
+    measures: Exports of goods and services as a share of output.
+    blindspots: >-
+      A share of GDP, so it rises when the domestic economy shrinks. It also says
+      nothing about WHAT is exported - one commodity or a diversified base look
+      identical here, and they are not the same position at all.
+    gamed: >-
+      Re-exports and goods that merely pass through inflate this for entrepot
+      economies, which is why some small states exceed 100%.
+
+  - id: imports
+    category: openness
+    source: worldbank
+    code: NE.IMP.GNFS.ZS
+    name: Imports
+    unit: "% of GDP"
+    direction: neutral
+    plain: How much of what the country uses comes from abroad.
+    measures: Imports of goods and services as a share of output.
+    blindspots: >-
+      High imports are not weakness and low imports are not strength - both can
+      reflect wealth or crisis. Read against exports, not alone.
+    gamed: >-
+      Under-invoicing to avoid duty, and smuggling, both suppress this in places
+      where enforcement is weak.
+
+  - id: hightech_exports
+    category: openness
+    source: worldbank
+    code: TX.VAL.TECH.MF.ZS
+    name: High-technology exports
+    unit: "% of manufactured exports"
+    direction: up_good
+    plain: How much of what the country sells abroad is advanced manufacturing.
+    measures: >-
+      Exports of aerospace, computers, pharmaceuticals, scientific instruments and
+      electrical machinery, as a share of manufactured exports.
+    blindspots: >-
+      Classified by PRODUCT, not by what the country actually did. Assembling
+      imported components counts in full, so a country doing final assembly can
+      outrank one that designed the chip inside.
+    gamed: >-
+      Not usually gamed, but it is routinely quoted as evidence of an innovation
+      economy when it may only show a phone assembly plant.
+
+  # ---------------- state finances -------------------------------------------
+
+  - id: govt_revenue
+    category: state
+    source: worldbank
+    code: GC.REV.XGRT.GD.ZS
+    name: Government revenue
+    unit: "% of GDP"
+    direction: neutral
+    plain: Everything the government takes in, except foreign aid.
+    measures: Revenue excluding grants - taxes, social contributions, fines, property income.
+    blindspots: >-
+      Central government only in most countries, so states, provinces and
+      municipalities are missing - which understates the true size of the state
+      in federal countries, India and the US among them.
+    gamed: >-
+      One-off asset sales and central bank transfers can be booked as revenue,
+      flattering a single year.
+
+  - id: fiscal_balance
+    category: state
+    source: worldbank
+    code: GC.NLD.TOTL.GD.ZS
+    name: Fiscal balance
+    unit: "% of GDP"
+    direction: neutral
+    plain: >-
+      Whether the government took in more than it spent. Negative is a deficit.
+    measures: Net lending (+) or net borrowing (-) as a share of output.
+    blindspots: >-
+      A deficit is not automatically mismanagement - borrowing to build something
+      that lasts is different from borrowing to pay salaries, and this number
+      cannot tell them apart. Nor is a surplus automatically good.
+    gamed: >-
+      Off-budget vehicles, state enterprise borrowing and arrears to suppliers all
+      move spending outside the measured balance while the obligation remains.
+
+  - id: public_wage_bill
+    category: state
+    source: worldbank
+    code: GC.XPN.COMP.ZS
+    name: Public wage bill
+    unit: "% of government expense"
+    direction: neutral
+    plain: How much of government spending goes on paying its own staff.
+    measures: Compensation of employees as a share of total government expense.
+    blindspots: >-
+      High is not automatically waste: teachers and nurses are public employees.
+      A low share can mean an efficient state or a hollowed-out one that has
+      stopped delivering services directly.
+    gamed: >-
+      Outsourcing the same work to contractors moves it out of compensation and
+      into goods and services, with no change in what is done or spent.
+
+  - id: govt_health_spend
+    category: state
+    source: worldbank
+    code: SH.XPD.GHED.GD.ZS
+    name: Government health spending
+    unit: "% of GDP"
+    direction: up_good
+    plain: How much the government itself spends on health.
+    measures: >-
+      Domestic general government health expenditure as a share of output -
+      public money only, excluding what households pay themselves.
+    blindspots: >-
+      Spending is not care. It says nothing about whether it reaches patients, and
+      the gap between this and total health spending is what households pay out of
+      pocket - often the more revealing number of the two.
+    gamed: >-
+      Reclassifying water, sanitation or nutrition programmes as health spending
+      raises this without a single extra clinic.
+
+  # ---------------- health and mortality -------------------------------------
+
+  - id: under5_mortality
+    category: human
+    source: worldbank
+    code: SH.DYN.MORT
+    name: Under-five mortality
+    unit: deaths per 1,000 live births
+    direction: down_good
+    plain: How many children die before their fifth birthday.
+    measures: Probability of dying between birth and age five, per 1,000 live births.
+    blindspots: >-
+      Among the hardest numbers to fake and the slowest to move, which is what
+      makes it useful - but it is modelled where registration is weak, and a
+      national figure hides differences between regions and classes that are often
+      larger than differences between countries.
+    gamed: >-
+      Under-registration of births and of infant deaths lowers it, and the two do
+      not cancel out.
+
+  - id: death_rate
+    category: human
+    source: worldbank
+    code: SP.DYN.CDRT.IN
+    name: Crude death rate
+    unit: deaths per 1,000 people
+    direction: neutral
+    plain: How many people die each year per thousand of the population.
+    measures: Total deaths per 1,000 mid-year population.
+    blindspots: >-
+      CRUDE is the operative word: it is not age-adjusted, so a rich country with
+      many old people has a higher rate than a poor country with a young
+      population. It measures age structure at least as much as health, and
+      comparing two countries on it directly is usually a mistake.
+    gamed: >-
+      Not gamed so much as misused - it is frequently quoted as though it were a
+      health outcome.
+
+  - id: tb_incidence
+    category: human
+    source: worldbank
+    code: SH.TBS.INCD
+    name: Tuberculosis incidence
+    unit: new cases per 100,000 people
+    direction: down_good
+    plain: How many people newly fall ill with tuberculosis each year.
+    measures: Estimated new and relapse TB cases per 100,000 population.
+    blindspots: >-
+      Estimated, not counted. A country that improves its detection can appear to
+      get sicker while actually getting better at finding cases - a rise here may
+      be a working health system rather than a failing one.
+    gamed: >-
+      Reported case notifications depend on how hard a country looks, so reduced
+      screening lowers the notified count while the disease is unchanged.
+
+  - id: suicide_rate
+    category: human
+    source: worldbank
+    code: SH.STA.SUIC.P5
+    name: Suicide rate
+    unit: deaths per 100,000 people
+    direction: down_good
+    plain: How many people take their own lives each year, per hundred thousand.
+    measures: Age-standardised suicide mortality rate.
+    blindspots: >-
+      Systematically undercounted where suicide is criminalised or carries
+      religious stigma, which makes cross-country comparison unreliable in exactly
+      the places the number would matter most. Deaths of undetermined intent are
+      handled differently by different registries.
+    gamed: >-
+      Coroner and certification practice decides the number as much as the
+      underlying rate does.
