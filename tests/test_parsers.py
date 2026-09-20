@@ -361,6 +361,52 @@ def test_seat_keys() -> None:
     check("a district number survives normalising", _seat_key("SC-06"), "sc06")
 
 
+def test_url_redaction() -> None:
+    """A credential must never be written down; a field selector must survive.
+
+    The URL of every request is published - stored in `sources.url`, exported as
+    `src_url` on every claim, and rendered as a link on the live site. An API
+    that authenticates with `?key=` would therefore have put the operator's
+    Google key into 2,196 person files and a public git history.
+
+    Redacting on the parameter NAME alone is not the fix, and that mistake was
+    caught by the scanner it was paired with: MPLADS asks for a metric with
+    `key=Allocated Limit for Hon'ble MPs`, where `key` selects a field and is
+    the whole meaning of the request. Masking it would have destroyed the
+    archive identity of every MPLADS document and collapsed distinct queries
+    into one colliding URL. So the VALUE decides, and both cases are pinned.
+    """
+    from ingest.archive import is_secret, redact
+
+    mplads = ("https://mplads.mospi.gov.in/rest/PreLoginDashboardData/"
+              "getTilesReportData?combo=0%2C0%2C0%2C2"
+              "&key=Allocated+Limit+for+Hon%27ble+MPs")
+    factcheck = ("https://factchecktools.googleapis.com/v1alpha1/claims:search"
+                 "?key=AIzaSyA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q"
+                 "&pageSize=10&query=Rahul+Gandhi")
+
+    check("a Google API key is masked", "AIzaSyA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q"
+          not in redact(factcheck), True)
+    check("the rest of the request survives redaction",
+          "query=Rahul+Gandhi" in redact(factcheck), True)
+    check("MPLADS' key= field selector is NOT a credential",
+          redact(mplads), mplads)
+    check("a URL with no secret is returned byte-identical",
+          redact("https://www.myneta.info/LokSabha2024/index.php?action=summary"),
+          "https://www.myneta.info/LokSabha2024/index.php?action=summary")
+
+    # Names that are unambiguous are redacted whatever they hold; ambiguous ones
+    # are judged on shape, and a space is what gives a human-readable value away.
+    check("api_key is a credential regardless of value",
+          is_secret("api_key", "x"), True)
+    check("a value containing spaces is not a credential",
+          is_secret("key", "Allocated Limit for Hon'ble MPs"), False)
+    check("a long opaque value under an ambiguous name is a credential",
+          is_secret("key", "AIzaSyA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q"), True)
+    check("a short token is not assumed to be a credential",
+          is_secret("token", "abc"), False)
+
+
 def main() -> int:
     tmp = ROOT / "data" / "processed" / "_parsertest.db"
     if tmp.exists():
@@ -373,6 +419,7 @@ def main() -> int:
     test_uk(con)
     test_corroboration_dates()
     test_seat_keys()
+    test_url_redaction()
 
     con.close()
     tmp.unlink(missing_ok=True)

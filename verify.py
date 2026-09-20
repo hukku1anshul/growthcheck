@@ -297,6 +297,69 @@ else:
                if share > 0.5 else ""),
         )
 
+# 10 --------------------------------------------------------------------------
+print("\n[10] No credential reaches the published data.")
+# Provenance is this project's whole argument, so every claim ships the URL it
+# came from and the site renders it as a link. That makes the URL a PUBLISHING
+# channel, and an API that authenticates with `?key=` turns the operator's
+# secret into public data the moment their extractor runs.
+#
+# ingest.archive.redact() masks these before anything is written down. This
+# check is the backstop: it reads what is actually on disk and about to ship.
+import re as _re  # noqa: E402
+import urllib.parse as _urlparse  # noqa: E402
+
+from ingest.archive import SECRET_PARAMS, is_secret  # noqa: E402
+
+# Candidate parameters, judged by ingest.archive.is_secret rather than by name.
+# Judging on the name alone is wrong and was caught here: MPLADS requests a
+# metric with `key=Allocated Limit for Hon'ble MPs`, which is a field selector,
+# not a credential. The scanner and the redactor must agree about what a secret
+# is, so they share one function.
+candidate = _re.compile(
+    r"(%s)=([^&\"'\s\\]+)" % "|".join(sorted(SECRET_PARAMS)), _re.IGNORECASE
+)
+# Vendor-shaped keys, in case one arrives somewhere other than a query string.
+vendor_key = _re.compile(r"AIza[0-9A-Za-z_\-]{35}|sk-[A-Za-z0-9]{32,}")
+
+
+def _leaks(text: str) -> bool:
+    if vendor_key.search(text):
+        return True
+    for name, raw in candidate.findall(text):
+        if is_secret(name, _urlparse.unquote_plus(raw)):
+            return True
+    return False
+
+
+leaks: list[str] = []
+data_root = ROOT / "web" / "public" / "data"
+for blob in sorted(data_root.rglob("*.json")) if data_root.exists() else []:
+    try:
+        text = blob.read_text(encoding="utf-8")
+    except (UnicodeDecodeError, OSError):
+        continue
+    if _leaks(text):
+        leaks.append(blob.relative_to(ROOT).as_posix())
+
+# The claim store is not published, but a secret there becomes one at the next
+# export, so it is worth failing on now rather than after it ships.
+if claims_db.exists():
+    con = sqlite3.connect(f"file:{claims_db}?mode=ro", uri=True)
+    try:
+        for (src_url,) in con.execute("SELECT url FROM sources"):
+            if src_url and _leaks(src_url):
+                leaks.append("claims.db sources.url")
+                break
+    except sqlite3.Error:
+        pass
+    con.close()
+
+check("no API key in any exported bundle or source URL", not leaks,
+      "; ".join(leaks[:5]) if leaks
+      else f"scanned {sum(1 for _ in data_root.rglob('*.json')) if data_root.exists() else 0}"
+           " json files and every source URL")
+
 # ------------------------------------------------------------------------------
 print()
 if failures:

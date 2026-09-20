@@ -7,3 +7,11 @@ __pycache__/
 .venv/
 .DS_Store
 data/archive/
+
+# Secrets. This repository is public, so a key committed here is a key
+# published. The tracked template is local.env.example; the real file is not
+# tracked and must never be.
+local.env
+.env
+*.env
+!*.env.example

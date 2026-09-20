@@ -15,11 +15,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sqlite3
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlencode, urlparse
+from urllib.parse import parse_qsl, urlencode, urlparse, urlsplit, urlunsplit
 
 import requests
 
@@ -38,6 +39,78 @@ UA = (
     "politicalfindings/0.1 (open-source public-data transparency research; "
     "respects robots.txt; contact via project repository)"
 )
+
+# Query parameters that carry a credential rather than a question.
+#
+# THE URL OF A REQUEST IS PUBLISHED. It is stored in `sources.url`, exported as
+# `src_url` on every single claim, and rendered as a clickable link on the live
+# site - that traceability is the point of the project. An API that
+# authenticates with `?key=` therefore puts the operator's secret on the public
+# web the moment their extractor runs. The Google Fact Check Tools API does
+# exactly this, and would have published the key in 2,196 person files and a
+# public git history.
+#
+# So the archive redacts before it stores. The real URL is fetched; only the
+# masked form is ever written down.
+# A parameter with one of these names is a credential whatever it contains.
+ALWAYS_SECRET = {
+    "api_key", "apikey", "api-key", "access_token", "auth_token",
+    "client_secret", "subscription-key", "subscription_key",
+    "password", "secret",
+}
+# These names are ambiguous and must be judged on the VALUE. Redacting on the
+# name alone was wrong and would have broken a working extractor: the MPLADS
+# dashboard asks for a metric with `key=Allocated Limit for Hon'ble MPs`, where
+# `key` selects a field and is the entire meaning of the request. Masking it
+# would have destroyed the archive identity of every MPLADS document and
+# collapsed distinct queries into one colliding URL.
+AMBIGUOUS_SECRET = {"key", "token", "auth", "sig", "signature"}
+
+SECRET_PARAMS = ALWAYS_SECRET | AMBIGUOUS_SECRET
+REDACTED = "REDACTED"
+
+# Long, unbroken, opaque alphabet - the shape of a machine-issued secret.
+_CREDENTIAL_CHARS = re.compile(r"[A-Za-z0-9_\-.=+/]+")
+
+
+def _looks_like_credential(value: str) -> bool:
+    """Does this value have the shape of a machine-issued secret?
+
+    A credential is long, unbroken and drawn from an opaque alphabet. A
+    human-readable parameter - "Allocated Limit for Hon'ble MPs" - is not, and
+    the space is what gives it away.
+    """
+    v = (value or "").strip()
+    if len(v) < 16 or any(ch.isspace() for ch in v):
+        return False
+    return bool(_CREDENTIAL_CHARS.fullmatch(v))
+
+
+def is_secret(name: str, value: str) -> bool:
+    """Is this query parameter carrying a credential?"""
+    n = (name or "").lower()
+    if n in ALWAYS_SECRET:
+        return True
+    return n in AMBIGUOUS_SECRET and _looks_like_credential(value)
+
+
+def redact(url: str) -> str:
+    """The publishable form of a URL: credentials masked, everything else kept.
+
+    Leaves a URL without secrets completely untouched, including its exact
+    parameter order and escaping, so this cannot disturb the archive identity of
+    any source that never had a credential in it.
+    """
+    parts = urlsplit(url)
+    if not parts.query:
+        return url
+    pairs = parse_qsl(parts.query, keep_blank_values=True)
+    if not any(is_secret(k, v) for k, v in pairs):
+        return url
+    masked = [(k, REDACTED if is_secret(k, v) else v) for k, v in pairs]
+    return urlunsplit(
+        (parts.scheme, parts.netloc, parts.path, urlencode(masked), parts.fragment)
+    )
 
 
 class Archive:
@@ -73,11 +146,16 @@ class Archive:
         without a network call, which keeps re-runs cheap and keeps us off the
         publisher's server.
         """
+        # `url` is fetched; `ident` is the only form ever written down. Reuse
+        # matches on the redacted form too, so rotating a key does not orphan
+        # the archive and re-download everything under a new secret.
+        ident = redact(url)
+
         if reuse:
             row = self.con.execute(
                 "SELECT id, archive_path FROM sources WHERE url = ? "
                 "ORDER BY fetched_at DESC LIMIT 1",
-                (url,),
+                (ident,),
             ).fetchone()
             if row:
                 path = ARCHIVE / row["archive_path"]
@@ -88,12 +166,12 @@ class Archive:
             # any one database. Without this second check, rebuilding the claim
             # store from scratch re-downloads every page we already hold - which
             # is rude to the publisher and slow for no reason.
-            hit = self._disk_index().get(url)
+            hit = self._disk_index().get(ident)
             if hit:
                 path = ARCHIVE / hit["archive_path"]
                 if path.exists():
                     body = path.read_bytes()
-                    return self._register(url, body, hit, from_disk=True), body
+                    return self._register(ident, body, hit, from_disk=True), body
 
         self._wait(url)
         resp = self.session.get(url, timeout=90)
@@ -114,8 +192,8 @@ class Archive:
             "http_status": resp.status_code,
             "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         }
-        self._remember(url, meta)
-        return self._register(url, body, meta), body
+        self._remember(ident, meta)
+        return self._register(ident, body, meta), body
 
     # --------------------------------------------------------------- registry
     def _register(self, url: str, body: bytes, meta: dict, *, from_disk: bool = False) -> int:
@@ -191,7 +269,10 @@ class Archive:
         `prime` is a page to GET first when the endpoint requires a session
         cookie - MPLADS returns an empty array to a cold client.
         """
-        identity = f"{url}?{urlencode(sorted(payload.items()))}"
+        # Redacted for the same reason as in `get`: this string is published as
+        # the claim's source. A credential in either the URL or the payload is
+        # masked before it is ever written down.
+        identity = redact(f"{url}?{urlencode(sorted(payload.items()))}")
 
         if reuse:
             row = self.con.execute(

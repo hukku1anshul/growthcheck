@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from . import localenv
 from .extractors.electoralbonds import ElectoralBonds
 from .extractors.factcheck import FactCheck
 from .extractors.mplads import MPLADS
@@ -89,6 +90,10 @@ def report(con) -> None:
 
 
 def main() -> int:
+    # Before anything reads os.environ. Extractors pick their key up in their
+    # constructor, so this has to happen first or `local.env` arrives too late.
+    localenv.load()
+
     ap = argparse.ArgumentParser()
     ap.add_argument("extractor", nargs="?", choices=sorted(EXTRACTORS))
     ap.add_argument("--limit", type=int, default=None, help="max records to fetch")
