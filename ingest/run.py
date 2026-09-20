@@ -54,8 +54,18 @@ def report(con) -> None:
     orphans = q("SELECT COUNT(*) FROM claims WHERE source_id IS NULL").fetchone()[0]
     print(f"\n  claims with no source document: {orphans}   <- must be 0")
 
+    # The `conflicts` view is RAW: every (person, predicate, date) holding more
+    # than one distinct value, with no normalising and no allowance for facts
+    # that legitimately repeat. Most of it is neither a conflict nor a
+    # disagreement - 3,805 of these are MPLADS works completed on the same day,
+    # 1,734 are questions tabled in one sitting. Calling this "facts where
+    # sources disagree" in the log, which it used to, overstated the real figure
+    # by a factor of forty.
     dupes = q("SELECT COUNT(*) FROM conflicts").fetchone()[0]
-    print(f"  facts where sources disagree:   {dupes}")
+    print(f"  same-date value collisions:     {dupes}  (RAW - includes facts "
+          f"that legitimately repeat)")
+    print("    the normalised figure is what the site shows; for it, run "
+          "python -m etl.corroborate")
 
     print("\n  people with a declared-asset time series (2+ dated points):")
     rows = q(
