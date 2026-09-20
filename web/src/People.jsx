@@ -6,6 +6,10 @@ import CheckClaim from './CheckClaim.jsx'
 
 const BASE = `${import.meta.env.BASE_URL}data/people`
 
+// Rows per page. Small enough that the table stays quick to scan and cheap to
+// render, large enough that paging through a country is not a chore.
+const PAGE_SIZE = 100
+
 /**
  * The politician side of the project, and the point where it meets the country
  * side: a person's declared figures are shown against the national series for
@@ -23,6 +27,7 @@ export default function People({ dark, filtersOpen = false, onCloseFilters }) {
   const [sort, setSort] = useState('relative')
   const [selected, setSelected] = useState(readUrlState().person ?? null)
   const [person, setPerson] = useState(null)
+  const [page, setPage] = useState(0)
 
   useEffect(() => {
     fetch(`${BASE}/index.json`)
@@ -46,7 +51,11 @@ export default function People({ dark, filtersOpen = false, onCloseFilters }) {
       .catch(() => setPerson(null))
   }, [selected])
 
-  const rows = useMemo(() => {
+  // Everything matching the filters, in order. This used to be truncated to the
+  // first 400 with no way to see the rest: fine at 1,284 people, but the store
+  // now holds 2,196 and most of them were unreachable unless you already knew a
+  // name to search for. The cap is now a PAGE, not a ceiling.
+  const matches = useMemo(() => {
     if (!meta) return []
     const needle = q.trim().toLowerCase()
     let list = meta.people.filter(
@@ -65,8 +74,29 @@ export default function People({ dark, filtersOpen = false, onCloseFilters }) {
       utilisation: (a, b) => (b.utilisation ?? -1) - (a.utilisation ?? -1),
       allocated: (a, b) => (b.allocated ?? 0) - (a.allocated ?? 0),
     }[sort]
-    return [...list].sort(cmp).slice(0, 400)
+    return [...list].sort(cmp)
   }, [meta, q, country, sort])
+
+  const pageCount = Math.max(1, Math.ceil(matches.length / PAGE_SIZE))
+  // Narrowing the filters can strand you past the last page, so clamp rather
+  // than showing an empty table for a search that did match something.
+  const current = Math.min(page, pageCount - 1)
+  const rows = useMemo(
+    () => matches.slice(current * PAGE_SIZE, current * PAGE_SIZE + PAGE_SIZE),
+    [matches, current]
+  )
+
+  // Any change to the filters or the ordering makes the old page number
+  // meaningless - page 7 of a new result set is not where the reader was.
+  useEffect(() => setPage(0), [q, country, sort])
+
+  // Turning a page from the controls at the BOTTOM would otherwise leave the
+  // reader looking at the end of the new page.
+  const listTop = useRef(null)
+  const goto = (n) => {
+    setPage(n)
+    listTop.current?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+  }
 
   if (error)
     return (
@@ -121,7 +151,10 @@ export default function People({ dark, filtersOpen = false, onCloseFilters }) {
             </select>
           </label>
           <p className="note">
-            {rows.length} shown of {meta.people.length}
+            {matches.length === meta.people.length
+              ? `${meta.people.length} people`
+              : `${matches.length} of ${meta.people.length} match`}
+            {pageCount > 1 && ` · page ${current + 1} of ${pageCount}`}
           </p>
         </section>
 
@@ -170,7 +203,7 @@ export default function People({ dark, filtersOpen = false, onCloseFilters }) {
             </div>
 
             <CheckClaim people={meta.people} />
-            <div className="ptable">
+            <div className="ptable" ref={listTop}>
               <div className="ptr phead">
                 <span>Name</span>
                 <span>Party</span>
@@ -205,6 +238,29 @@ export default function People({ dark, filtersOpen = false, onCloseFilters }) {
                 </button>
               ))}
             </div>
+            {pageCount > 1 && (
+              <nav className="pager" aria-label="People list pages">
+                <button
+                  className="pg"
+                  onClick={() => goto(current - 1)}
+                  disabled={current === 0}
+                >
+                  ← Previous
+                </button>
+                <span className="pg-at">
+                  {current * PAGE_SIZE + 1}–
+                  {Math.min((current + 1) * PAGE_SIZE, matches.length)} of{' '}
+                  {matches.length}
+                </span>
+                <button
+                  className="pg"
+                  onClick={() => goto(current + 1)}
+                  disabled={current >= pageCount - 1}
+                >
+                  Next →
+                </button>
+              </nav>
+            )}
           </>
         )}
       </main>
@@ -359,6 +415,25 @@ function Person({ p, meta, dark, onBack }) {
               <div className="work" key={i}>
                 <span className="w-date">{f.as_of}</span>
                 <span className="w-desc" style={{ color: 'var(--text)' }}>{f.kind}</span>
+                <span className="w-desc">{f.detail}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {p.factchecks?.items?.length > 0 && (
+        <div className="panel" style={{ marginTop: 12 }}>
+          <h3>Fact-checks published about them, by others</h3>
+          {/* The name-matching limit is a warning, not a footnote. A review
+              about a different person of the same name, shown here as though
+              it were about this one, is the worst thing this page could do. */}
+          <p className="warn" style={{ marginTop: -4 }}>{meta.caveats.factchecks}</p>
+          <div className="works">
+            {p.factchecks.items.map((f, i) => (
+              <div className="work" key={i}>
+                <span className="w-date">{f.as_of}</span>
+                <span className="w-desc" style={{ color: 'var(--text)' }}>{f.rating}</span>
                 <span className="w-desc">{f.detail}</span>
               </div>
             ))}

@@ -190,6 +190,26 @@ async function check(text, index) {
     questions: ['questions_asked', 'questions_topics'],
   }[topic] || []
   const used = (person.claims || []).filter((c) => PRED.includes(c.predicate))
+  // Narrowing to the right PREDICATE was not enough. Once the 2019 affidavits
+  // were harvested alongside the 2024 ones, a person had several
+  // `declared_assets` claims and this still cited whichever happened to be last
+  // in the array - so a check against the 2024 figure was published with the
+  // 2019 candidate page as its receipt. The branch that does the comparison now
+  // names the exact claim it used.
+  //
+  // Matching the year is still not the end of it. A figure for 2024 can appear
+  // in several documents: Rahul Gandhi contested two seats that year, so there
+  // are two 2024 affidavits, and MyNeta's 2019 candidate page ALSO lists 2024 in
+  // its "Other Elections" table. Citing the 2019 page for a 2024 number is not
+  // false - the page really does say it - but it is the wrong receipt to hand a
+  // reader. The contemporaneous document is preferred.
+  let cited = null
+  const yearOf = (c) => String(c.as_of || '').slice(0, 4)
+  const citeYear = (yr) => {
+    const sameYear = used.filter((c) => yearOf(c) === String(yr))
+    return sameYear.find((c) => String(c.src_url || '').includes(String(yr)))
+      || sameYear[0] || null
+  }
 
   const verdict = (ok) => (ok ? 'CONSISTENT' : 'NOT CONSISTENT')
   const flag = (ok) => (ok ? 'ok' : 'bad')
@@ -206,6 +226,9 @@ async function check(text, index) {
         k: 'claimed', flag: flag(ok),
         v: `×${nums.multiple}  ·  record ×${mult.toFixed(1)} (${start[0]}→${pts[pts.length - 1][0]})  ·  ${verdict(ok)} (within 25%)`,
       })
+      // A multiple spans two documents. The later one is cited, and the record
+      // line above lists every point, so the reader can see both ends.
+      cited = citeYear(pts[pts.length - 1][0])
     } else if (nums.amount) {
       const [y, v] = pts[pts.length - 1]
       const ok = Math.abs(v - nums.amount) / v < 0.1
@@ -213,11 +236,17 @@ async function check(text, index) {
         k: 'claimed', flag: flag(ok),
         v: `${rupees(nums.amount)}  ·  record (${y}) ${rupees(v)}  ·  ${verdict(ok)} (within 10%)`,
       })
+      cited = citeYear(y)
     }
   } else if (topic === 'criminal_cases') {
     const c = (person.claims || []).filter((x) => x.predicate === 'criminal_cases_declared' && x.num != null)
     if (!c.length) return cannot(lines, 'No declared criminal-case figure on record for this person.')
-    const latest = c[c.length - 1]
+    // "Latest" has to mean latest BY DATE. Array order is whatever the export
+    // emitted, and with 2019 and 2024 affidavits both present the last element
+    // was as likely to be the older one - which would have reported a stale
+    // case count as the current one.
+    const latest = [...c].sort((a, b) => String(a.as_of).localeCompare(String(b.as_of))).pop()
+    cited = citeYear(yearOf(latest)) || latest
     lines.push({
       k: 'record',
       v: `${latest.num} declared PENDING cases as of ${String(latest.as_of).slice(0, 4)} — self-declared on the affidavit, NOT convictions`,
@@ -261,7 +290,7 @@ async function check(text, index) {
     }
   }
 
-  const src = used[used.length - 1]
+  const src = cited || used[used.length - 1]
   if (src) {
     lines.push({ k: 'source', v: src.src_url })
     lines.push({ k: 'archived', v: `${String(src.src_fetched).slice(0, 10)} · sha256 ${src.src_sha}…` })
