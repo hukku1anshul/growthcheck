@@ -1,0 +1,426 @@
+# Indicator catalogue.
+# Every series the app can plot is declared here, together with the plain-language
+# explainer that MUST be shown to the user. A series with no explainer does not ship.
+#
+# fields:
+#   source       worldbank | owid
+#   code         the source's own series id (WB indicator code, or OWID grapher slug)
+#   column       for owid sources, the value column in the grapher CSV
+#   direction    up_good | down_good | neutral   (drives colour, never a score)
+#   plain        one sentence, no jargon
+#   measures     what the number literally counts
+#   blindspots   what it does NOT capture - shown with equal weight to `plain`
+#   gamed        how governments flatter this number. omit only if genuinely not gameable.
+
+categories:
+  economy:
+    label: Economy
+    blurb: Size, growth and stability of what the country produces.
+  livelihood:
+    label: Livelihoods
+    blurb: What the economy delivers to an ordinary household.
+  state:
+    label: The state's finances
+    blurb: What the government takes in, spends and owes.
+  openness:
+    label: Openness
+    blurb: How connected the economy is to the rest of the world.
+  human:
+    label: Human development
+    blurb: Health, education and survival - the slowest-moving, hardest-to-fake numbers.
+  politics:
+    label: Politics & rights
+    blurb: How power is won, constrained and abused. Expert-coded, not government-reported.
+
+indicators:
+
+  # ---------------- economy ----------------
+  - id: gdp_pc
+    category: economy
+    source: worldbank
+    code: NY.GDP.PCAP.KD
+    name: GDP per capita
+    unit: constant 2015 US$
+    direction: up_good
+    plain: >-
+      The country's total output divided by its population, with inflation stripped
+      out so different years compare fairly.
+    measures: Market value of goods and services produced per person per year.
+    blindspots: >-
+      An average, so it says nothing about distribution - it rises even if all the
+      gains go to the top 1%. Excludes unpaid work, most of the informal economy, and
+      treats environmental destruction as income.
+    gamed: >-
+      Rebasing the national accounts to a new base year can lift the level overnight
+      without anything real changing. India's 2015 revision and Nigeria's 2014
+      rebasing are the textbook cases.
+
+  - id: gdp_growth
+    category: economy
+    source: worldbank
+    code: NY.GDP.MKTP.KD.ZG
+    name: GDP growth
+    unit: "% per year"
+    direction: up_good
+    plain: How much bigger the economy got compared with last year.
+    measures: Year-on-year percentage change in inflation-adjusted total output.
+    blindspots: >-
+      Very noisy year to year. A high growth rate from a low base is not the same as a
+      high growth rate from a high base - always read it next to the level, not alone.
+    gamed: >-
+      Base-year effects: a terrible year makes the next year's growth look
+      spectacular with no real recovery.
+
+  - id: inflation
+    category: economy
+    source: worldbank
+    code: FP.CPI.TOTL.ZG
+    name: Inflation (consumer prices)
+    unit: "% per year"
+    direction: neutral
+    plain: How much faster prices rose this year than last.
+    measures: Annual change in the cost of a fixed basket of consumer goods.
+    blindspots: >-
+      The basket is a national average and rarely matches what a poor household
+      actually buys - food and fuel weigh far more in a poor budget. Mild inflation is
+      normal; the target in most countries is around 2%, not zero.
+    gamed: >-
+      Basket composition and weights are set by the statistical agency. Changing them,
+      or substituting cheaper goods when prices rise, quietly lowers the printed
+      number. Argentina's 2007-2015 statistics are the notorious case.
+
+  - id: unemployment
+    category: economy
+    source: worldbank
+    code: SL.UEM.TOTL.ZS
+    name: Unemployment rate
+    unit: "% of labour force"
+    direction: down_good
+    plain: >-
+      The share of people who want a job and are actively looking, but do not have one.
+    measures: >-
+      Unemployed as a percentage of the labour force, on ILO-modelled estimates.
+    blindspots: >-
+      Excludes anyone who gave up looking, and counts one hour of paid work a week as
+      employed. In economies with large informal sectors this number is close to
+      meaningless on its own - read it next to labour-force participation.
+    gamed: >-
+      Moving people onto disability or training schemes removes them from the labour
+      force and lowers the rate without creating a single job.
+
+  # ---------------- livelihood ----------------
+  - id: gini
+    category: livelihood
+    source: worldbank
+    code: SI.POV.GINI
+    name: Income inequality (Gini)
+    unit: 0 = perfect equality, 100 = one person has everything
+    direction: down_good
+    plain: A single number for how unevenly income is shared.
+    measures: Statistical dispersion of income across households, from survey data.
+    blindspots: >-
+      Patchy - most countries report it only every few years, so the line will have
+      gaps. Household surveys systematically miss the very rich, so real inequality is
+      almost always worse than the printed figure.
+
+  - id: labour_participation
+    category: livelihood
+    source: worldbank
+    code: SL.TLF.CACT.ZS
+    name: Labour force participation
+    unit: "% of population 15+"
+    direction: neutral
+    plain: >-
+      The share of working-age people who are either working or looking for work.
+    measures: >-
+      Economically active population as a share of those aged 15 and over.
+    blindspots: >-
+      A fall can mean mass discouragement (bad) or mass enrolment in education (good).
+      It cannot tell you which - check the age breakdown before concluding anything.
+
+  - id: poverty
+    category: livelihood
+    source: worldbank
+    code: SI.POV.DDAY
+    name: Extreme poverty
+    unit: "% below $2.15/day (2017 PPP)"
+    direction: down_good
+    plain: >-
+      The share of people living on less than the international extreme-poverty line.
+    measures: >-
+      Headcount below $2.15 a day, adjusted for what money actually buys locally.
+    blindspots: >-
+      An extremely low bar - someone just above it is still desperately poor.
+      Survey-based and infrequent, so expect gaps and sudden jumps when a new survey
+      lands.
+
+  # ---------------- the state ----------------
+  - id: govt_debt
+    category: state
+    source: worldbank
+    code: GC.DOD.TOTL.GD.ZS
+    name: Central government debt
+    unit: "% of GDP"
+    direction: neutral
+    plain: >-
+      What the central government owes, measured against the size of the economy.
+    measures: Gross central government debt stock as a share of GDP.
+    blindspots: >-
+      Not automatically bad - it depends on the interest rate, the currency it's owed
+      in, and who holds it. Debt in your own currency is a different animal from debt
+      in dollars. Excludes state/provincial debt and public-sector guarantees, which
+      can be enormous.
+    gamed: >-
+      Moving borrowing off-budget into state-owned enterprises keeps it out of this
+      number entirely.
+
+  - id: tax_revenue
+    category: state
+    source: worldbank
+    code: GC.TAX.TOTL.GD.ZS
+    name: Tax revenue
+    unit: "% of GDP"
+    direction: neutral
+    plain: >-
+      How much the government collects in tax, measured against the size of the
+      economy.
+    measures: >-
+      Compulsory transfers to central government, excluding fines and most social
+      security.
+    blindspots: >-
+      Says nothing about who pays. A country can raise this number entirely through
+      sales taxes that fall hardest on the poor. Low figures usually signal a large
+      informal economy rather than generosity.
+
+  - id: health_spend
+    category: state
+    source: worldbank
+    code: SH.XPD.CHEX.GD.ZS
+    name: Health spending (total)
+    unit: "% of GDP"
+    direction: up_good
+    plain: >-
+      Everything spent on health care - government and private together - against the
+      size of the economy.
+    measures: Current health expenditure as a share of GDP.
+    blindspots: >-
+      Includes out-of-pocket spending, so a high number can mean a failing public
+      system that forces households to pay privately. The US is the extreme example.
+      Always read alongside life expectancy before judging.
+
+  - id: edu_spend
+    category: state
+    source: worldbank
+    code: SE.XPD.TOTL.GD.ZS
+    name: Government education spending
+    unit: "% of GDP"
+    direction: up_good
+    plain: What the government spends on education, against the size of the economy.
+    measures: General government expenditure on education, all levels.
+    blindspots: >-
+      Money in, not learning out. Large shares can go to salaries in systems where
+      teacher absenteeism is high. Pair with literacy before drawing conclusions.
+
+  # ---------------- openness ----------------
+  - id: trade_openness
+    category: openness
+    source: worldbank
+    code: NE.TRD.GNFS.ZS
+    name: Trade openness
+    unit: "% of GDP (exports + imports)"
+    direction: neutral
+    plain: >-
+      How large the country's trade with the world is, relative to its own economy.
+    measures: Exports plus imports of goods and services, divided by GDP.
+    blindspots: >-
+      Small countries score structurally high and big countries structurally low - the
+      US and India will always look closed next to Singapore. Compare a country with
+      its own past, not with a country of a different size.
+
+  - id: fdi
+    category: openness
+    source: worldbank
+    code: BX.KLT.DINV.WD.GD.ZS
+    name: Foreign direct investment, net inflows
+    unit: "% of GDP"
+    direction: neutral
+    plain: >-
+      Money coming in from abroad to buy or build lasting business interests.
+    measures: >-
+      Net inflows of investment acquiring a lasting stake in a foreign enterprise.
+    blindspots: >-
+      Heavily distorted by round-tripping - domestic money routed through a tax haven
+      and back to claim foreign-investor benefits. Mauritius-to-India and
+      Cyprus-to-Russia flows are mostly this.
+
+  # ---------------- human development ----------------
+  - id: life_expectancy
+    category: human
+    source: worldbank
+    code: SP.DYN.LE00.IN
+    name: Life expectancy at birth
+    unit: years
+    direction: up_good
+    plain: >-
+      How long a baby born this year would live if today's death rates held for its
+      whole life.
+    measures: Period life expectancy at birth, both sexes.
+    blindspots: >-
+      A projection under frozen conditions, not a prediction. Historically dragged
+      down hard by infant deaths, so big early gains often reflect fewer babies dying
+      rather than old people living longer.
+
+  - id: infant_mortality
+    category: human
+    source: worldbank
+    code: SP.DYN.IMRT.IN
+    name: Infant mortality
+    unit: deaths per 1,000 live births
+    direction: down_good
+    plain: >-
+      How many babies out of every thousand die before their first birthday.
+    measures: Deaths of infants under one year per 1,000 live births.
+    blindspots: >-
+      One of the hardest numbers to fake and one of the best single summaries of
+      whether a state actually functions. Weak civil registration means poor countries
+      under-count both deaths and births.
+
+  - id: literacy
+    category: human
+    source: worldbank
+    code: SE.ADT.LITR.ZS
+    name: Adult literacy
+    unit: "% of people 15+"
+    direction: up_good
+    plain: >-
+      The share of adults who can read and write a short simple statement.
+    measures: Literate population aged 15 and over, as a percentage.
+    blindspots: >-
+      A very low bar that says nothing about comprehension, and often self-reported by
+      the household rather than tested. Reported infrequently, so expect a sparse line.
+
+  - id: urbanisation
+    category: human
+    source: worldbank
+    code: SP.URB.TOTL.IN.ZS
+    name: Urban population
+    unit: "% of total"
+    direction: neutral
+    plain: The share of people living in towns and cities.
+    measures: Urban residents as a percentage of total population.
+    blindspots: >-
+      Each country defines 'urban' itself, so cross-country comparison is genuinely
+      unreliable. Reclassifying villages as towns moves this number without anyone
+      relocating.
+
+  - id: population
+    category: human
+    source: worldbank
+    code: SP.POP.TOTL
+    name: Population
+    unit: people
+    direction: neutral
+    plain: How many people live in the country.
+    measures: Total resident population, all ages.
+    blindspots: >-
+      Between censuses this is an estimate. Countries that have skipped a census for
+      years are carrying forward assumptions, not counts.
+
+  # ---------------- long run ----------------
+  - id: gdp_pc_maddison
+    category: economy
+    source: owid
+    code: gdp-per-capita-maddison
+    column: GDP per capita
+    name: GDP per capita (long run, Maddison)
+    unit: int-$ (2011 prices)
+    direction: up_good
+    plain: >-
+      The same idea as GDP per capita, but reconstructed by economic historians so it
+      reaches back a century or more.
+    measures: >-
+      Historical real GDP per capita estimates from the Maddison Project Database.
+    blindspots: >-
+      Before roughly 1950 these are scholarly reconstructions, not measurements - the
+      error bars are wide and they get wider the further back you go. Use it for the
+      shape of the trend, never for a precise figure.
+
+  # ---------------- politics (expert-coded, not government-reported) ----------------
+  - id: vdem_electoral
+    category: politics
+    source: owid
+    code: electoral-democracy-index
+    column: Electoral democracy index
+    name: Electoral democracy index (V-Dem)
+    unit: 0 to 1
+    direction: up_good
+    plain: >-
+      How free and fair elections actually are, and how much freedom of speech and
+      association surrounds them.
+    measures: >-
+      V-Dem's polyarchy index, aggregated from expert ratings on suffrage, clean
+      elections, elected officials holding real power, and freedom of expression and
+      association.
+    blindspots: >-
+      Built from the judgements of country experts, not from a mechanical count.
+      V-Dem publishes uncertainty intervals for exactly this reason. Small
+      year-to-year wiggles are noise; sustained multi-year moves are the signal.
+    gamed: >-
+      Hard to game directly, which is precisely why it's here - it does not depend on
+      the government reporting on itself.
+
+  - id: vdem_liberal
+    category: politics
+    source: owid
+    code: liberal-democracy-index
+    column: Liberal democracy index
+    name: Liberal democracy index (V-Dem)
+    unit: 0 to 1
+    direction: up_good
+    plain: >-
+      Not just whether elections happen, but whether courts, law and minority rights
+      constrain whoever wins.
+    measures: >-
+      Electoral democracy plus judicial and legislative constraints on the executive
+      and protection of individual liberties.
+    blindspots: >-
+      A country can hold genuinely competitive elections and still score poorly here
+      if the winner faces no real checks. The gap between this and the electoral index
+      is often the most interesting thing on the chart.
+
+  - id: vdem_corruption
+    category: politics
+    source: owid
+    code: political-corruption-index
+    column: Political Corruption Index
+    name: Political corruption index (V-Dem)
+    unit: 0 = least corrupt, 1 = most
+    direction: down_good
+    plain: >-
+      How much public officials - in the executive, legislature, courts and
+      bureaucracy - use their position for private gain.
+    measures: >-
+      V-Dem composite across executive, legislative, judicial and public-sector
+      corruption.
+    blindspots: >-
+      Measures perception and expert assessment, not convictions. Convictions measure
+      prosecutorial capacity as much as corruption, which is why this is the more
+      honest of the two.
+
+  - id: political_regime
+    category: politics
+    source: owid
+    code: political-regime
+    column: Political regime
+    name: Political regime type
+    unit: 0 closed autocracy, 1 electoral autocracy, 2 electoral democracy, 3 liberal democracy
+    direction: up_good
+    plain: >-
+      A four-way classification of what kind of political system the country had that
+      year.
+    measures: >-
+      Regimes of the World classification, derived from V-Dem indicators.
+    blindspots: >-
+      A step function - it hides gradual erosion until the year a country crosses a
+      threshold. Use the continuous V-Dem indices to see change coming; use this to
+      label it.

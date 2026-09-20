@@ -1,0 +1,2154 @@
+{
+ "built_at": "2026-09-20T08:12:37+00:00",
+ "categories": {
+  "economy": {
+   "label": "Economy",
+   "blurb": "Size, growth and stability of what the country produces."
+  },
+  "livelihood": {
+   "label": "Livelihoods",
+   "blurb": "What the economy delivers to an ordinary household."
+  },
+  "state": {
+   "label": "The state's finances",
+   "blurb": "What the government takes in, spends and owes."
+  },
+  "openness": {
+   "label": "Openness",
+   "blurb": "How connected the economy is to the rest of the world."
+  },
+  "human": {
+   "label": "Human development",
+   "blurb": "Health, education and survival - the slowest-moving, hardest-to-fake numbers."
+  },
+  "politics": {
+   "label": "Politics & rights",
+   "blurb": "How power is won, constrained and abused. Expert-coded, not government-reported."
+  }
+ },
+ "indicators": [
+  {
+   "id": "gdp_pc",
+   "category": "economy",
+   "source": "worldbank",
+   "code": "NY.GDP.PCAP.KD",
+   "name": "GDP per capita",
+   "unit": "constant 2015 US$",
+   "direction": "up_good",
+   "plain": "The country's total output divided by its population, with inflation stripped out so different years compare fairly.",
+   "measures": "Market value of goods and services produced per person per year.",
+   "blindspots": "An average, so it says nothing about distribution - it rises even if all the gains go to the top 1%. Excludes unpaid work, most of the informal economy, and treats environmental destruction as income.",
+   "gamed": "Rebasing the national accounts to a new base year can lift the level overnight without anything real changing. India's 2015 revision and Nigeria's 2014 rebasing are the textbook cases.",
+   "coverage": {
+    "countries": 213,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 11533
+   }
+  },
+  {
+   "id": "gdp_growth",
+   "category": "economy",
+   "source": "worldbank",
+   "code": "NY.GDP.MKTP.KD.ZG",
+   "name": "GDP growth",
+   "unit": "% per year",
+   "direction": "up_good",
+   "plain": "How much bigger the economy got compared with last year.",
+   "measures": "Year-on-year percentage change in inflation-adjusted total output.",
+   "blindspots": "Very noisy year to year. A high growth rate from a low base is not the same as a high growth rate from a high base - always read it next to the level, not alone.",
+   "gamed": "Base-year effects: a terrible year makes the next year's growth look spectacular with no real recovery.",
+   "coverage": {
+    "countries": 214,
+    "min_year": 1961,
+    "max_year": 2025,
+    "observations": 11408
+   }
+  },
+  {
+   "id": "inflation",
+   "category": "economy",
+   "source": "worldbank",
+   "code": "FP.CPI.TOTL.ZG",
+   "name": "Inflation (consumer prices)",
+   "unit": "% per year",
+   "direction": "neutral",
+   "plain": "How much faster prices rose this year than last.",
+   "measures": "Annual change in the cost of a fixed basket of consumer goods.",
+   "blindspots": "The basket is a national average and rarely matches what a poor household actually buys - food and fuel weigh far more in a poor budget. Mild inflation is normal; the target in most countries is around 2%, not zero.",
+   "gamed": "Basket composition and weights are set by the statistical agency. Changing them, or substituting cheaper goods when prices rise, quietly lowers the printed number. Argentina's 2007-2015 statistics are the notorious case.",
+   "coverage": {
+    "countries": 193,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 9136
+   }
+  },
+  {
+   "id": "unemployment",
+   "category": "economy",
+   "source": "worldbank",
+   "code": "SL.UEM.TOTL.ZS",
+   "name": "Unemployment rate",
+   "unit": "% of labour force",
+   "direction": "down_good",
+   "plain": "The share of people who want a job and are actively looking, but do not have one.",
+   "measures": "Unemployed as a percentage of the labour force, on ILO-modelled estimates.",
+   "blindspots": "Excludes anyone who gave up looking, and counts one hour of paid work a week as employed. In economies with large informal sectors this number is close to meaningless on its own - read it next to labour-force participation.",
+   "gamed": "Moving people onto disability or training schemes removes them from the labour force and lowers the rate without creating a single job.",
+   "coverage": {
+    "countries": 187,
+    "min_year": 1991,
+    "max_year": 2025,
+    "observations": 6531
+   }
+  },
+  {
+   "id": "gini",
+   "category": "livelihood",
+   "source": "worldbank",
+   "code": "SI.POV.GINI",
+   "name": "Income inequality (Gini)",
+   "unit": "0 = perfect equality, 100 = one person has everything",
+   "direction": "down_good",
+   "plain": "A single number for how unevenly income is shared.",
+   "measures": "Statistical dispersion of income across households, from survey data.",
+   "blindspots": "Patchy - most countries report it only every few years, so the line will have gaps. Household surveys systematically miss the very rich, so real inequality is almost always worse than the printed figure.",
+   "coverage": {
+    "countries": 171,
+    "min_year": 1963,
+    "max_year": 2025,
+    "observations": 2430
+   }
+  },
+  {
+   "id": "labour_participation",
+   "category": "livelihood",
+   "source": "worldbank",
+   "code": "SL.TLF.CACT.ZS",
+   "name": "Labour force participation",
+   "unit": "% of population 15+",
+   "direction": "neutral",
+   "plain": "The share of working-age people who are either working or looking for work.",
+   "measures": "Economically active population as a share of those aged 15 and over.",
+   "blindspots": "A fall can mean mass discouragement (bad) or mass enrolment in education (good). It cannot tell you which - check the age breakdown before concluding anything.",
+   "coverage": {
+    "countries": 187,
+    "min_year": 1990,
+    "max_year": 2025,
+    "observations": 6718
+   }
+  },
+  {
+   "id": "poverty",
+   "category": "livelihood",
+   "source": "worldbank",
+   "code": "SI.POV.DDAY",
+   "name": "Extreme poverty",
+   "unit": "% below $2.15/day (2017 PPP)",
+   "direction": "down_good",
+   "plain": "The share of people living on less than the international extreme-poverty line.",
+   "measures": "Headcount below $2.15 a day, adjusted for what money actually buys locally.",
+   "blindspots": "An extremely low bar - someone just above it is still desperately poor. Survey-based and infrequent, so expect gaps and sudden jumps when a new survey lands.",
+   "coverage": {
+    "countries": 171,
+    "min_year": 1963,
+    "max_year": 2025,
+    "observations": 2430
+   }
+  },
+  {
+   "id": "govt_debt",
+   "category": "state",
+   "source": "worldbank",
+   "code": "GC.DOD.TOTL.GD.ZS",
+   "name": "Central government debt",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "What the central government owes, measured against the size of the economy.",
+   "measures": "Gross central government debt stock as a share of GDP.",
+   "blindspots": "Not automatically bad - it depends on the interest rate, the currency it's owed in, and who holds it. Debt in your own currency is a different animal from debt in dollars. Excludes state/provincial debt and public-sector guarantees, which can be enormous.",
+   "gamed": "Moving borrowing off-budget into state-owned enterprises keeps it out of this number entirely.",
+   "coverage": {
+    "countries": 109,
+    "min_year": 1970,
+    "max_year": 2024,
+    "observations": 1648
+   }
+  },
+  {
+   "id": "tax_revenue",
+   "category": "state",
+   "source": "worldbank",
+   "code": "GC.TAX.TOTL.GD.ZS",
+   "name": "Tax revenue",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "How much the government collects in tax, measured against the size of the economy.",
+   "measures": "Compulsory transfers to central government, excluding fines and most social security.",
+   "blindspots": "Says nothing about who pays. A country can raise this number entirely through sales taxes that fall hardest on the poor. Low figures usually signal a large informal economy rather than generosity.",
+   "coverage": {
+    "countries": 161,
+    "min_year": 1972,
+    "max_year": 2024,
+    "observations": 4704
+   }
+  },
+  {
+   "id": "health_spend",
+   "category": "state",
+   "source": "worldbank",
+   "code": "SH.XPD.CHEX.GD.ZS",
+   "name": "Health spending (total)",
+   "unit": "% of GDP",
+   "direction": "up_good",
+   "plain": "Everything spent on health care - government and private together - against the size of the economy.",
+   "measures": "Current health expenditure as a share of GDP.",
+   "blindspots": "Includes out-of-pocket spending, so a high number can mean a failing public system that forces households to pay privately. The US is the extreme example. Always read alongside life expectancy before judging.",
+   "coverage": {
+    "countries": 193,
+    "min_year": 2000,
+    "max_year": 2024,
+    "observations": 4562
+   }
+  },
+  {
+   "id": "edu_spend",
+   "category": "state",
+   "source": "worldbank",
+   "code": "SE.XPD.TOTL.GD.ZS",
+   "name": "Government education spending",
+   "unit": "% of GDP",
+   "direction": "up_good",
+   "plain": "What the government spends on education, against the size of the economy.",
+   "measures": "General government expenditure on education, all levels.",
+   "blindspots": "Money in, not learning out. Large shares can go to salaries in systems where teacher absenteeism is high. Pair with literacy before drawing conclusions.",
+   "coverage": {
+    "countries": 203,
+    "min_year": 1970,
+    "max_year": 2025,
+    "observations": 5125
+   }
+  },
+  {
+   "id": "trade_openness",
+   "category": "openness",
+   "source": "worldbank",
+   "code": "NE.TRD.GNFS.ZS",
+   "name": "Trade openness",
+   "unit": "% of GDP (exports + imports)",
+   "direction": "neutral",
+   "plain": "How large the country's trade with the world is, relative to its own economy.",
+   "measures": "Exports plus imports of goods and services, divided by GDP.",
+   "blindspots": "Small countries score structurally high and big countries structurally low - the US and India will always look closed next to Singapore. Compare a country with its own past, not with a country of a different size.",
+   "coverage": {
+    "countries": 194,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 9029
+   }
+  },
+  {
+   "id": "fdi",
+   "category": "openness",
+   "source": "worldbank",
+   "code": "BX.KLT.DINV.WD.GD.ZS",
+   "name": "Foreign direct investment, net inflows",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "Money coming in from abroad to buy or build lasting business interests.",
+   "measures": "Net inflows of investment acquiring a lasting stake in a foreign enterprise.",
+   "blindspots": "Heavily distorted by round-tripping - domestic money routed through a tax haven and back to claim foreign-investor benefits. Mauritius-to-India and Cyprus-to-Russia flows are mostly this.",
+   "coverage": {
+    "countries": 202,
+    "min_year": 1970,
+    "max_year": 2025,
+    "observations": 9306
+   }
+  },
+  {
+   "id": "life_expectancy",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SP.DYN.LE00.IN",
+   "name": "Life expectancy at birth",
+   "unit": "years",
+   "direction": "up_good",
+   "plain": "How long a baby born this year would live if today's death rates held for its whole life.",
+   "measures": "Period life expectancy at birth, both sexes.",
+   "blindspots": "A projection under frozen conditions, not a prediction. Historically dragged down hard by infant deaths, so big early gains often reflect fewer babies dying rather than old people living longer.",
+   "coverage": {
+    "countries": 217,
+    "min_year": 1960,
+    "max_year": 2024,
+    "observations": 14071
+   }
+  },
+  {
+   "id": "infant_mortality",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SP.DYN.IMRT.IN",
+   "name": "Infant mortality",
+   "unit": "deaths per 1,000 live births",
+   "direction": "down_good",
+   "plain": "How many babies out of every thousand die before their first birthday.",
+   "measures": "Deaths of infants under one year per 1,000 live births.",
+   "blindspots": "One of the hardest numbers to fake and one of the best single summaries of whether a state actually functions. Weak civil registration means poor countries under-count both deaths and births.",
+   "coverage": {
+    "countries": 196,
+    "min_year": 1960,
+    "max_year": 2024,
+    "observations": 11830
+   }
+  },
+  {
+   "id": "literacy",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SE.ADT.LITR.ZS",
+   "name": "Adult literacy",
+   "unit": "% of people 15+",
+   "direction": "up_good",
+   "plain": "The share of adults who can read and write a short simple statement.",
+   "measures": "Literate population aged 15 and over, as a percentage.",
+   "blindspots": "A very low bar that says nothing about comprehension, and often self-reported by the household rather than tested. Reported infrequently, so expect a sparse line.",
+   "coverage": {
+    "countries": 170,
+    "min_year": 1970,
+    "max_year": 2024,
+    "observations": 1121
+   }
+  },
+  {
+   "id": "urbanisation",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SP.URB.TOTL.IN.ZS",
+   "name": "Urban population",
+   "unit": "% of total",
+   "direction": "neutral",
+   "plain": "The share of people living in towns and cities.",
+   "measures": "Urban residents as a percentage of total population.",
+   "blindspots": "Each country defines 'urban' itself, so cross-country comparison is genuinely unreliable. Reclassifying villages as towns moves this number without anyone relocating.",
+   "coverage": {
+    "countries": 217,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 14322
+   }
+  },
+  {
+   "id": "population",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SP.POP.TOTL",
+   "name": "Population",
+   "unit": "people",
+   "direction": "neutral",
+   "plain": "How many people live in the country.",
+   "measures": "Total resident population, all ages.",
+   "blindspots": "Between censuses this is an estimate. Countries that have skipped a census for years are carrying forward assumptions, not counts.",
+   "coverage": {
+    "countries": 217,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 14292
+   }
+  },
+  {
+   "id": "gdp_pc_maddison",
+   "category": "economy",
+   "source": "owid",
+   "code": "gdp-per-capita-maddison",
+   "column": "GDP per capita",
+   "name": "GDP per capita (long run, Maddison)",
+   "unit": "int-$ (2011 prices)",
+   "direction": "up_good",
+   "plain": "The same idea as GDP per capita, but reconstructed by economic historians so it reaches back a century or more.",
+   "measures": "Historical real GDP per capita estimates from the Maddison Project Database.",
+   "blindspots": "Before roughly 1950 these are scholarly reconstructions, not measurements - the error bars are wide and they get wider the further back you go. Use it for the shape of the trend, never for a precise figure.",
+   "coverage": {
+    "countries": 164,
+    "min_year": 1,
+    "max_year": 2022,
+    "observations": 20819
+   }
+  },
+  {
+   "id": "vdem_electoral",
+   "category": "politics",
+   "source": "owid",
+   "code": "electoral-democracy-index",
+   "column": "Electoral democracy index",
+   "name": "Electoral democracy index (V-Dem)",
+   "unit": "0 to 1",
+   "direction": "up_good",
+   "plain": "How free and fair elections actually are, and how much freedom of speech and association surrounds them.",
+   "measures": "V-Dem's polyarchy index, aggregated from expert ratings on suffrage, clean elections, elected officials holding real power, and freedom of expression and association.",
+   "blindspots": "Built from the judgements of country experts, not from a mechanical count. V-Dem publishes uncertainty intervals for exactly this reason. Small year-to-year wiggles are noise; sustained multi-year moves are the signal.",
+   "gamed": "Hard to game directly, which is precisely why it's here - it does not depend on the government reporting on itself.",
+   "coverage": {
+    "countries": 174,
+    "min_year": 1789,
+    "max_year": 2025,
+    "observations": 29340
+   }
+  },
+  {
+   "id": "vdem_liberal",
+   "category": "politics",
+   "source": "owid",
+   "code": "liberal-democracy-index",
+   "column": "Liberal democracy index",
+   "name": "Liberal democracy index (V-Dem)",
+   "unit": "0 to 1",
+   "direction": "up_good",
+   "plain": "Not just whether elections happen, but whether courts, law and minority rights constrain whoever wins.",
+   "measures": "Electoral democracy plus judicial and legislative constraints on the executive and protection of individual liberties.",
+   "blindspots": "A country can hold genuinely competitive elections and still score poorly here if the winner faces no real checks. The gap between this and the electoral index is often the most interesting thing on the chart.",
+   "coverage": {
+    "countries": 174,
+    "min_year": 1789,
+    "max_year": 2025,
+    "observations": 28362
+   }
+  },
+  {
+   "id": "vdem_corruption",
+   "category": "politics",
+   "source": "owid",
+   "code": "political-corruption-index",
+   "column": "Political Corruption Index",
+   "name": "Political corruption index (V-Dem)",
+   "unit": "0 = least corrupt, 1 = most",
+   "direction": "down_good",
+   "plain": "How much public officials - in the executive, legislature, courts and bureaucracy - use their position for private gain.",
+   "measures": "V-Dem composite across executive, legislative, judicial and public-sector corruption.",
+   "blindspots": "Measures perception and expert assessment, not convictions. Convictions measure prosecutorial capacity as much as corruption, which is why this is the more honest of the two.",
+   "coverage": {
+    "countries": 174,
+    "min_year": 1789,
+    "max_year": 2025,
+    "observations": 25091
+   }
+  },
+  {
+   "id": "political_regime",
+   "category": "politics",
+   "source": "owid",
+   "code": "political-regime",
+   "column": "Political regime",
+   "name": "Political regime type",
+   "unit": "0 closed autocracy, 1 electoral autocracy, 2 electoral democracy, 3 liberal democracy",
+   "direction": "up_good",
+   "plain": "A four-way classification of what kind of political system the country had that year.",
+   "measures": "Regimes of the World classification, derived from V-Dem indicators.",
+   "blindspots": "A step function - it hides gradual erosion until the year a country crosses a threshold. Use the continuous V-Dem indices to see change coming; use this to label it.",
+   "coverage": {
+    "countries": 174,
+    "min_year": 1789,
+    "max_year": 2025,
+    "observations": 29294
+   }
+  }
+ ],
+ "countries": [
+  {
+   "iso3": "AFG",
+   "name": "Afghanistan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Low income"
+  },
+  {
+   "iso3": "ALB",
+   "name": "Albania",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "DZA",
+   "name": "Algeria",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "ASM",
+   "name": "American Samoa",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "AND",
+   "name": "Andorra",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "AGO",
+   "name": "Angola",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "ATG",
+   "name": "Antigua and Barbuda",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "ARG",
+   "name": "Argentina",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "ARM",
+   "name": "Armenia",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "ABW",
+   "name": "Aruba",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "AUS",
+   "name": "Australia",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "AUT",
+   "name": "Austria",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "AZE",
+   "name": "Azerbaijan",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "BHS",
+   "name": "Bahamas, The",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "BHR",
+   "name": "Bahrain",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "High income"
+  },
+  {
+   "iso3": "BGD",
+   "name": "Bangladesh",
+   "region": "South Asia",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "BRB",
+   "name": "Barbados",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "BLR",
+   "name": "Belarus",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "BEL",
+   "name": "Belgium",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "BLZ",
+   "name": "Belize",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "BEN",
+   "name": "Benin",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "BMU",
+   "name": "Bermuda",
+   "region": "North America",
+   "income": "High income"
+  },
+  {
+   "iso3": "BTN",
+   "name": "Bhutan",
+   "region": "South Asia",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "BOL",
+   "name": "Bolivia",
+   "region": "Latin America & Caribbean ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "BIH",
+   "name": "Bosnia and Herzegovina",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "BWA",
+   "name": "Botswana",
+   "region": "Sub-Saharan Africa ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "BRA",
+   "name": "Brazil",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "VGB",
+   "name": "British Virgin Islands",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "BRN",
+   "name": "Brunei Darussalam",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "BGR",
+   "name": "Bulgaria",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "BFA",
+   "name": "Burkina Faso",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "BDI",
+   "name": "Burundi",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "CPV",
+   "name": "Cabo Verde",
+   "region": "Sub-Saharan Africa ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "KHM",
+   "name": "Cambodia",
+   "region": "East Asia & Pacific",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "CMR",
+   "name": "Cameroon",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "CAN",
+   "name": "Canada",
+   "region": "North America",
+   "income": "High income"
+  },
+  {
+   "iso3": "CYM",
+   "name": "Cayman Islands",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "CAF",
+   "name": "Central African Republic",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "TCD",
+   "name": "Chad",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "CHI",
+   "name": "Channel Islands",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "CHL",
+   "name": "Chile",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "CHN",
+   "name": "China",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "COL",
+   "name": "Colombia",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "COM",
+   "name": "Comoros",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "COD",
+   "name": "Congo, Dem. Rep.",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "COG",
+   "name": "Congo, Rep.",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "CRI",
+   "name": "Costa Rica",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "CIV",
+   "name": "Cote d'Ivoire",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "HRV",
+   "name": "Croatia",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "CUB",
+   "name": "Cuba",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "CUW",
+   "name": "Curacao",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "CYP",
+   "name": "Cyprus",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "CZE",
+   "name": "Czechia",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "DNK",
+   "name": "Denmark",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "DJI",
+   "name": "Djibouti",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "DMA",
+   "name": "Dominica",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "DOM",
+   "name": "Dominican Republic",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "ECU",
+   "name": "Ecuador",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "EGY",
+   "name": "Egypt, Arab Rep.",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "SLV",
+   "name": "El Salvador",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "GNQ",
+   "name": "Equatorial Guinea",
+   "region": "Sub-Saharan Africa ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "ERI",
+   "name": "Eritrea",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "EST",
+   "name": "Estonia",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "SWZ",
+   "name": "Eswatini",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "ETH",
+   "name": "Ethiopia",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "FRO",
+   "name": "Faroe Islands",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "FJI",
+   "name": "Fiji",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "FIN",
+   "name": "Finland",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "FRA",
+   "name": "France",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "PYF",
+   "name": "French Polynesia",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "GAB",
+   "name": "Gabon",
+   "region": "Sub-Saharan Africa ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "GMB",
+   "name": "Gambia, The",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "GEO",
+   "name": "Georgia",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "DEU",
+   "name": "Germany",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "GHA",
+   "name": "Ghana",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "GIB",
+   "name": "Gibraltar",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "GRC",
+   "name": "Greece",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "GRL",
+   "name": "Greenland",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "GRD",
+   "name": "Grenada",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "GUM",
+   "name": "Guam",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "GTM",
+   "name": "Guatemala",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "GIN",
+   "name": "Guinea",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "GNB",
+   "name": "Guinea-Bissau",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "GUY",
+   "name": "Guyana",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "HTI",
+   "name": "Haiti",
+   "region": "Latin America & Caribbean ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "HND",
+   "name": "Honduras",
+   "region": "Latin America & Caribbean ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "HKG",
+   "name": "Hong Kong SAR, China",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "HUN",
+   "name": "Hungary",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "ISL",
+   "name": "Iceland",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "IND",
+   "name": "India",
+   "region": "South Asia",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "IDN",
+   "name": "Indonesia",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "IRN",
+   "name": "Iran, Islamic Rep.",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "IRQ",
+   "name": "Iraq",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "IRL",
+   "name": "Ireland",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "IMN",
+   "name": "Isle of Man",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "ISR",
+   "name": "Israel",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "High income"
+  },
+  {
+   "iso3": "ITA",
+   "name": "Italy",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "JAM",
+   "name": "Jamaica",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "JPN",
+   "name": "Japan",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "JOR",
+   "name": "Jordan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "KAZ",
+   "name": "Kazakhstan",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "KEN",
+   "name": "Kenya",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "KIR",
+   "name": "Kiribati",
+   "region": "East Asia & Pacific",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "PRK",
+   "name": "Korea, Dem. People's Rep.",
+   "region": "East Asia & Pacific",
+   "income": "Low income"
+  },
+  {
+   "iso3": "KOR",
+   "name": "Korea, Rep.",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "XKX",
+   "name": "Kosovo",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "KWT",
+   "name": "Kuwait",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "High income"
+  },
+  {
+   "iso3": "KGZ",
+   "name": "Kyrgyz Republic",
+   "region": "Europe & Central Asia",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "LAO",
+   "name": "Lao PDR",
+   "region": "East Asia & Pacific",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "LVA",
+   "name": "Latvia",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "LBN",
+   "name": "Lebanon",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "LSO",
+   "name": "Lesotho",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "LBR",
+   "name": "Liberia",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "LBY",
+   "name": "Libya",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "LIE",
+   "name": "Liechtenstein",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "LTU",
+   "name": "Lithuania",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "LUX",
+   "name": "Luxembourg",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "MAC",
+   "name": "Macao SAR, China",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "MDG",
+   "name": "Madagascar",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "MWI",
+   "name": "Malawi",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "MYS",
+   "name": "Malaysia",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MDV",
+   "name": "Maldives",
+   "region": "South Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MLI",
+   "name": "Mali",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "MLT",
+   "name": "Malta",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "High income"
+  },
+  {
+   "iso3": "MHL",
+   "name": "Marshall Islands",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MRT",
+   "name": "Mauritania",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "MUS",
+   "name": "Mauritius",
+   "region": "Sub-Saharan Africa ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MEX",
+   "name": "Mexico",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "FSM",
+   "name": "Micronesia, Fed. Sts.",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MDA",
+   "name": "Moldova",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MCO",
+   "name": "Monaco",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "MNG",
+   "name": "Mongolia",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MNE",
+   "name": "Montenegro",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MAR",
+   "name": "Morocco",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "MOZ",
+   "name": "Mozambique",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "MMR",
+   "name": "Myanmar",
+   "region": "East Asia & Pacific",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "NAM",
+   "name": "Namibia",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "NRU",
+   "name": "Naoero",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "NPL",
+   "name": "Nepal",
+   "region": "South Asia",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "NLD",
+   "name": "Netherlands",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "NCL",
+   "name": "New Caledonia",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "NZL",
+   "name": "New Zealand",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "NIC",
+   "name": "Nicaragua",
+   "region": "Latin America & Caribbean ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "NER",
+   "name": "Niger",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "NGA",
+   "name": "Nigeria",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "MKD",
+   "name": "North Macedonia",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MNP",
+   "name": "Northern Mariana Islands",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "NOR",
+   "name": "Norway",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "OMN",
+   "name": "Oman",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "High income"
+  },
+  {
+   "iso3": "PAK",
+   "name": "Pakistan",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "PLW",
+   "name": "Palau",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "PAN",
+   "name": "Panama",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "PNG",
+   "name": "Papua New Guinea",
+   "region": "East Asia & Pacific",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "PRY",
+   "name": "Paraguay",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "PER",
+   "name": "Peru",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "PHL",
+   "name": "Philippines",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "POL",
+   "name": "Poland",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "PRT",
+   "name": "Portugal",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "PRI",
+   "name": "Puerto Rico (US)",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "QAT",
+   "name": "Qatar",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "High income"
+  },
+  {
+   "iso3": "ROU",
+   "name": "Romania",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "RUS",
+   "name": "Russian Federation",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "RWA",
+   "name": "Rwanda",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "WSM",
+   "name": "Samoa",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "SMR",
+   "name": "San Marino",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "STP",
+   "name": "Sao Tome and Principe",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "SAU",
+   "name": "Saudi Arabia",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "High income"
+  },
+  {
+   "iso3": "SEN",
+   "name": "Senegal",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "SRB",
+   "name": "Serbia",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "SYC",
+   "name": "Seychelles",
+   "region": "Sub-Saharan Africa ",
+   "income": "High income"
+  },
+  {
+   "iso3": "SLE",
+   "name": "Sierra Leone",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "SGP",
+   "name": "Singapore",
+   "region": "East Asia & Pacific",
+   "income": "High income"
+  },
+  {
+   "iso3": "SXM",
+   "name": "Sint Maarten (Dutch part)",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "SVK",
+   "name": "Slovak Republic",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "SVN",
+   "name": "Slovenia",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "SLB",
+   "name": "Solomon Islands",
+   "region": "East Asia & Pacific",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "SOM",
+   "name": "Somalia, Fed. Rep.",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "ZAF",
+   "name": "South Africa",
+   "region": "Sub-Saharan Africa ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "SSD",
+   "name": "South Sudan",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "ESP",
+   "name": "Spain",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "LKA",
+   "name": "Sri Lanka",
+   "region": "South Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "KNA",
+   "name": "St. Kitts and Nevis",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "LCA",
+   "name": "St. Lucia",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "MAF",
+   "name": "St. Martin (French part)",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "VCT",
+   "name": "St. Vincent and the Grenadines",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "SDN",
+   "name": "Sudan",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "SUR",
+   "name": "Suriname",
+   "region": "Latin America & Caribbean ",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "SWE",
+   "name": "Sweden",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "CHE",
+   "name": "Switzerland",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "SYR",
+   "name": "Syrian Arab Republic",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Low income"
+  },
+  {
+   "iso3": "TJK",
+   "name": "Tajikistan",
+   "region": "Europe & Central Asia",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "TZA",
+   "name": "Tanzania",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "THA",
+   "name": "Thailand",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "TLS",
+   "name": "Timor-Leste",
+   "region": "East Asia & Pacific",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "TGO",
+   "name": "Togo",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "TON",
+   "name": "Tonga",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "TTO",
+   "name": "Trinidad and Tobago",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "TUN",
+   "name": "Tunisia",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "TUR",
+   "name": "Turkiye",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "TKM",
+   "name": "Turkmenistan",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "TCA",
+   "name": "Turks and Caicos Islands",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "TUV",
+   "name": "Tuvalu",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "UGA",
+   "name": "Uganda",
+   "region": "Sub-Saharan Africa ",
+   "income": "Low income"
+  },
+  {
+   "iso3": "UKR",
+   "name": "Ukraine",
+   "region": "Europe & Central Asia",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "ARE",
+   "name": "United Arab Emirates",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "High income"
+  },
+  {
+   "iso3": "GBR",
+   "name": "United Kingdom",
+   "region": "Europe & Central Asia",
+   "income": "High income"
+  },
+  {
+   "iso3": "USA",
+   "name": "United States",
+   "region": "North America",
+   "income": "High income"
+  },
+  {
+   "iso3": "URY",
+   "name": "Uruguay",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "UZB",
+   "name": "Uzbekistan",
+   "region": "Europe & Central Asia",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "VUT",
+   "name": "Vanuatu",
+   "region": "East Asia & Pacific",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "VEN",
+   "name": "Venezuela, RB",
+   "region": "Latin America & Caribbean ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "VNM",
+   "name": "Viet Nam",
+   "region": "East Asia & Pacific",
+   "income": "Upper middle income"
+  },
+  {
+   "iso3": "VIR",
+   "name": "Virgin Islands (U.S.)",
+   "region": "Latin America & Caribbean ",
+   "income": "High income"
+  },
+  {
+   "iso3": "PSE",
+   "name": "West Bank and Gaza",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "YEM",
+   "name": "Yemen, Rep.",
+   "region": "Middle East, North Africa, Afghanistan & Pakistan",
+   "income": "Low income"
+  },
+  {
+   "iso3": "ZMB",
+   "name": "Zambia",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  },
+  {
+   "iso3": "ZWE",
+   "name": "Zimbabwe",
+   "region": "Sub-Saharan Africa ",
+   "income": "Lower middle income"
+  }
+ ],
+ "event_kinds": {
+  "economic_reform": {
+   "label": "Economic reform",
+   "colour": "reform"
+  },
+  "crisis": {
+   "label": "Crisis",
+   "colour": "crisis"
+  },
+  "conflict": {
+   "label": "War or conflict",
+   "colour": "conflict"
+  },
+  "constitutional": {
+   "label": "Constitutional change",
+   "colour": "politics"
+  },
+  "irregular_power": {
+   "label": "Coup or irregular transfer",
+   "colour": "rupture"
+  },
+  "independence": {
+   "label": "Independence or partition",
+   "colour": "rupture"
+  },
+  "social_policy": {
+   "label": "Social policy",
+   "colour": "social"
+  },
+  "leader_change": {
+   "label": "Leader change",
+   "colour": "politics"
+  },
+  "election": {
+   "label": "Election",
+   "colour": "politics"
+  },
+  "power_transfer": {
+   "label": "Election - power changes hands",
+   "colour": "rupture"
+  },
+  "regime_change": {
+   "label": "Regime change",
+   "colour": "rupture"
+  }
+ },
+ "countries_with_events": [
+  "AFG",
+  "AGO",
+  "ALB",
+  "AND",
+  "ARG",
+  "ARM",
+  "ATG",
+  "AUS",
+  "AUT",
+  "AZE",
+  "BDI",
+  "BEL",
+  "BEN",
+  "BFA",
+  "BGD",
+  "BGR",
+  "BHS",
+  "BIH",
+  "BLR",
+  "BLZ",
+  "BOL",
+  "BRA",
+  "BRB",
+  "BTN",
+  "BWA",
+  "CAF",
+  "CAN",
+  "CHE",
+  "CHL",
+  "CHN",
+  "CIV",
+  "CMR",
+  "COD",
+  "COG",
+  "COL",
+  "COM",
+  "CPV",
+  "CRI",
+  "CUB",
+  "CYP",
+  "CZE",
+  "DEU",
+  "DJI",
+  "DMA",
+  "DNK",
+  "DOM",
+  "DZA",
+  "ECU",
+  "EGY",
+  "ERI",
+  "ESP",
+  "EST",
+  "ETH",
+  "FIN",
+  "FJI",
+  "FRA",
+  "FSM",
+  "GAB",
+  "GBR",
+  "GEO",
+  "GHA",
+  "GIN",
+  "GMB",
+  "GNB",
+  "GNQ",
+  "GRC",
+  "GRD",
+  "GTM",
+  "GUY",
+  "HND",
+  "HRV",
+  "HTI",
+  "HUN",
+  "IDN",
+  "IND",
+  "IRL",
+  "IRN",
+  "IRQ",
+  "ISL",
+  "ISR",
+  "ITA",
+  "JAM",
+  "JPN",
+  "KAZ",
+  "KEN",
+  "KGZ",
+  "KHM",
+  "KIR",
+  "KNA",
+  "KOR",
+  "LAO",
+  "LBN",
+  "LBR",
+  "LBY",
+  "LCA",
+  "LIE",
+  "LKA",
+  "LSO",
+  "LTU",
+  "LUX",
+  "LVA",
+  "MAR",
+  "MDA",
+  "MDG",
+  "MDV",
+  "MEX",
+  "MHL",
+  "MKD",
+  "MLI",
+  "MLT",
+  "MMR",
+  "MNE",
+  "MNG",
+  "MOZ",
+  "MRT",
+  "MUS",
+  "MWI",
+  "MYS",
+  "NAM",
+  "NER",
+  "NGA",
+  "NIC",
+  "NLD",
+  "NOR",
+  "NPL",
+  "NRU",
+  "NZL",
+  "PAK",
+  "PAN",
+  "PER",
+  "PHL",
+  "PLW",
+  "PNG",
+  "POL",
+  "PRK",
+  "PRT",
+  "PRY",
+  "ROU",
+  "RUS",
+  "RWA",
+  "SDN",
+  "SEN",
+  "SGP",
+  "SLB",
+  "SLE",
+  "SLV",
+  "SMR",
+  "SOM",
+  "SRB",
+  "SSD",
+  "STP",
+  "SUR",
+  "SVK",
+  "SVN",
+  "SWE",
+  "SWZ",
+  "SYC",
+  "SYR",
+  "TCD",
+  "TGO",
+  "THA",
+  "TJK",
+  "TKM",
+  "TLS",
+  "TTO",
+  "TUN",
+  "TUR",
+  "TUV",
+  "TZA",
+  "UGA",
+  "UKR",
+  "URY",
+  "USA",
+  "UZB",
+  "VCT",
+  "VEN",
+  "VNM",
+  "VUT",
+  "WSM",
+  "XKX",
+  "YEM",
+  "ZAF",
+  "ZMB",
+  "ZWE"
+ ],
+ "caveats": {
+  "reign_coverage_end": 2021,
+  "note": "Automatic political events (leaders, elections, regimes) come from REIGN, whose public release ends in 2021. Curated landmark decisions run to the present but are not exhaustive - absence of a marker is not evidence that nothing happened."
+ },
+ "provenance": {
+  "owid_electoral-democracy-index.csv": {
+   "bytes": 1115469,
+   "fetched_at": "2026-09-20T08:11:48+00:00",
+   "sha256": "b10099af07ae1c4900edb9e7cd8d2d3876bbca5b3bb1bae69e70932fcdb4bd7e",
+   "url": "https://ourworldindata.org/grapher/electoral-democracy-index.csv"
+  },
+  "owid_gdp-per-capita-maddison.csv": {
+   "bytes": 567430,
+   "fetched_at": "2026-09-20T08:12:07+00:00",
+   "sha256": "0545ad6ca37529206af49f9f964f17af927e8c154c1fe8d3813c523e0d2f43f8",
+   "url": "https://ourworldindata.org/grapher/gdp-per-capita-maddison.csv"
+  },
+  "owid_liberal-democracy-index.csv": {
+   "bytes": 1073845,
+   "fetched_at": "2026-09-20T08:12:06+00:00",
+   "sha256": "d6c331b8ea80027599e1bca8e28aab544382c1625b2536ea62f4df4fcb122de6",
+   "url": "https://ourworldindata.org/grapher/liberal-democracy-index.csv"
+  },
+  "owid_political-corruption-index.csv": {
+   "bytes": 930777,
+   "fetched_at": "2026-09-20T08:11:49+00:00",
+   "sha256": "fd1733e084221ec2a6e6a8b01b9f6b4baeedfa179c25d9e3d3d57348d2b4df8f",
+   "url": "https://ourworldindata.org/grapher/political-corruption-index.csv"
+  },
+  "owid_political-regime.csv": {
+   "bytes": 647110,
+   "fetched_at": "2026-09-20T08:12:07+00:00",
+   "sha256": "1e0d045bc702591c95c9885a6dbe5e8bed13bcca9b2a236464caa7c6098851ff",
+   "url": "https://ourworldindata.org/grapher/political-regime.csv"
+  },
+  "reign_election_list_8_21.csv": {
+   "bytes": 275840,
+   "fetched_at": "2026-09-20T08:11:50+00:00",
+   "sha256": "c815e4293ac49fa21a4b558194baf5c64eeb3d55a8702695357afb5a63997e97",
+   "url": "https://raw.githubusercontent.com/OEFDataScience/REIGN.github.io/gh-pages/data_sets/election_list_8_21.csv"
+  },
+  "reign_leader_list_8_21.csv": {
+   "bytes": 186834,
+   "fetched_at": "2026-09-20T08:11:50+00:00",
+   "sha256": "475a6eaa412c8772e9559650ab3772bb487094b42086f732c79862f5b25b8a52",
+   "url": "https://raw.githubusercontent.com/OEFDataScience/REIGN.github.io/gh-pages/data_sets/leader_list_8_21.csv"
+  },
+  "reign_regime_list.csv": {
+   "bytes": 37241,
+   "fetched_at": "2026-09-20T08:11:51+00:00",
+   "sha256": "8a7203df69448f369f35a95c337de9ae9ea83cbcaec7c0586d2df23cc11742eb",
+   "url": "https://raw.githubusercontent.com/OEFDataScience/REIGN.github.io/gh-pages/data_sets/regime_list.csv"
+  },
+  "wb_BX.KLT.DINV.WD.GD.ZS.json": {
+   "bytes": 4317130,
+   "fetched_at": "2026-09-20T08:12:30+00:00",
+   "sha256": "404e2e14f3f68586a973cecf13faf54822ca005b9899c93d90db3ab58971e2ed",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/BX.KLT.DINV.WD.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_FP.CPI.TOTL.ZG.json": {
+   "bytes": 3994630,
+   "fetched_at": "2026-09-20T08:11:46+00:00",
+   "sha256": "76870d8d5aa420838b5fc3aa462bc5e9faba5854075aa67ba348723c0e9d5ef0",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/FP.CPI.TOTL.ZG?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_GC.DOD.TOTL.GD.ZS.json": {
+   "bytes": 4000610,
+   "fetched_at": "2026-09-20T08:12:22+00:00",
+   "sha256": "c23d7be39d3eb2ca87358a2451dc722fa8d0ac0ac89a8ceefa578fac9e1766d5",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/GC.DOD.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_GC.TAX.TOTL.GD.ZS.json": {
+   "bytes": 3714577,
+   "fetched_at": "2026-09-20T08:12:23+00:00",
+   "sha256": "e2a5a0642de3a6aa602c982e9d4985af67d96c8d437fa011cc7b3242552aa110",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_NE.TRD.GNFS.ZS.json": {
+   "bytes": 3622353,
+   "fetched_at": "2026-09-20T08:12:29+00:00",
+   "sha256": "44b01eb1a06d091e026651546c94888c77dc7e4950a19661d4c4d9153e8fa67d",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NE.TRD.GNFS.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_NY.GDP.MKTP.KD.ZG.json": {
+   "bytes": 3803123,
+   "fetched_at": "2026-09-20T08:11:46+00:00",
+   "sha256": "d95fabbb5731225261778b7febda96eceadd66a557ce81a9f3255520703ad0b6",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_NY.GDP.PCAP.KD.json": {
+   "bytes": 3976465,
+   "fetched_at": "2026-09-20T08:11:45+00:00",
+   "sha256": "60bdf145e781d722bffa9e9ea4eb0b3b74f220dcdba36f7d391b1f2c048dc930",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.KD?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SE.ADT.LITR.ZS.json": {
+   "bytes": 4256060,
+   "fetched_at": "2026-09-20T08:12:33+00:00",
+   "sha256": "7312c53c6fbbe0584576f2909e516bca6bbc24e8c7e56a65bea3bc44f8374d80",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SE.ADT.LITR.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SE.XPD.TOTL.GD.ZS.json": {
+   "bytes": 4264670,
+   "fetched_at": "2026-09-20T08:12:27+00:00",
+   "sha256": "faba5eaf9856a03e60d0fca7d0708dc0df3ebcd5897fc8cc5a2521ca48ac3e66",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SE.XPD.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SH.XPD.CHEX.GD.ZS.json": {
+   "bytes": 3949999,
+   "fetched_at": "2026-09-20T08:12:25+00:00",
+   "sha256": "7a11e2a3b0f5214e7f82e80890571f002135238a6b47f4ea7c431628fc83a191",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SI.POV.DDAY.json": {
+   "bytes": 4326335,
+   "fetched_at": "2026-09-20T08:12:21+00:00",
+   "sha256": "11af9364ad667ac3fc4be0643a241ced657d07497913956317c323f10a59a7af",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SI.POV.DDAY?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SI.POV.GINI.json": {
+   "bytes": 3331619,
+   "fetched_at": "2026-09-20T08:12:18+00:00",
+   "sha256": "2cd7412267bc876a97aa35242b01f6e5328058927dc308f733ebfdf51e702256",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SI.POV.GINI?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SL.TLF.CACT.ZS.json": {
+   "bytes": 4868796,
+   "fetched_at": "2026-09-20T08:12:19+00:00",
+   "sha256": "23be12c81f6148a97e3a206a8f1b6a2b4103bde82de90faaaf5c7bb739ecb203",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SL.TLF.CACT.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SL.UEM.TOTL.ZS.json": {
+   "bytes": 4407416,
+   "fetched_at": "2026-09-20T08:12:18+00:00",
+   "sha256": "58e82de86f5fd81f0630fabfdc40d10fd067cb6d14192b545b8c9cc027825a4f",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SL.UEM.TOTL.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SP.DYN.IMRT.IN.json": {
+   "bytes": 4025810,
+   "fetched_at": "2026-09-20T08:12:31+00:00",
+   "sha256": "a072823d69c47b72897b50d816aca1f5a2bc1aee05592efad0da2dac3aa0b70f",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.IMRT.IN?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SP.DYN.LE00.IN.json": {
+   "bytes": 3989201,
+   "fetched_at": "2026-09-20T08:11:47+00:00",
+   "sha256": "92f0ed5499d007fc24bcaee40b48dc3ec3b788e3fb33bc352a4cf9dfe8638fe9",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SP.DYN.LE00.IN?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SP.POP.TOTL.json": {
+   "bytes": 3512353,
+   "fetched_at": "2026-09-20T08:12:34+00:00",
+   "sha256": "21816454b5ea6e6b7a602aa7e1b10d8d275bf2bb59f38f882477e4d1ed3b09ab",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SP.POP.TOTL?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SP.URB.TOTL.IN.ZS.json": {
+   "bytes": 4160580,
+   "fetched_at": "2026-09-20T08:12:34+00:00",
+   "sha256": "6f72b6bbddc94265eb41e3c7822a5b4e1c0381e212cf615cfecf4cf077a2aaf4",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SP.URB.TOTL.IN.ZS?format=json&per_page=20000&date=1960:2026"
+  }
+ }
+}

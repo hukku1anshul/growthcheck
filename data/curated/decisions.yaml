@@ -1,0 +1,556 @@
+# Landmark decisions.
+#
+# REIGN gives us *who held power and when*. It cannot tell us *what they decided*.
+# This file is that layer, and it is deliberately hand-curated: an automated pipeline
+# cannot distinguish a routine budget from a turning point, and pretending otherwise
+# would be the single fastest way to make this app untrustworthy.
+#
+# HOUSE RULES - a decision does not ship unless it satisfies all four:
+#   1. It is DATED. A year is acceptable; a decade is not.
+#   2. `what` describes the decision, not its effect. No causal verbs.
+#   3. `contested` is filled in whenever economists genuinely disagree about the
+#      consequences - which is nearly always. An entry with an empty `contested`
+#      field is making an implicit claim that the effect is settled.
+#   4. At least one `sources` entry with a citable reference.
+#
+# The app renders `what` prominently, `contested` immediately beneath it with equal
+# visual weight, and never draws a causal arrow between a marker and a trend line.
+
+kinds:
+  economic_reform:  {label: Economic reform,     colour: reform}
+  crisis:           {label: Crisis,              colour: crisis}
+  conflict:         {label: War or conflict,     colour: conflict}
+  constitutional:   {label: Constitutional change, colour: politics}
+  irregular_power:  {label: Coup or irregular transfer, colour: rupture}
+  independence:     {label: Independence or partition, colour: rupture}
+  social_policy:    {label: Social policy,       colour: social}
+
+decisions:
+
+  # ---------------------------------------------------------------- India
+  - iso3: IND
+    date: 1991-07-24
+    kind: economic_reform
+    title: Liberalisation budget ends the licence raj
+    what: >-
+      Facing reserves covering roughly two weeks of imports, the Narasimha Rao
+      government devalued the rupee, abolished industrial licensing for most
+      sectors, cut peak import tariffs and opened many industries to foreign equity.
+    contested: >-
+      Growth accelerated after 1991, but the size of the reform's own contribution is
+      argued over. One school dates the trend break to the 1980s, when a milder
+      pro-business shift was already under way, and treats 1991 as consolidation of a
+      trend rather than its start. Others argue the 1980s expansion was debt-financed
+      and unsustainable, and that 1991 is what made growth durable.
+    sources:
+      - ref: "Government of India, Union Budget speech, 24 July 1991"
+      - ref: "Rodrik & Subramanian, 'From Hindu Growth to Productivity Surge' (IMF Staff Papers, 2005)"
+      - ref: "Panagariya, 'India: The Emerging Giant' (2008)"
+
+  - iso3: IND
+    date: 1975-06-25
+    kind: constitutional
+    title: Emergency declared
+    what: >-
+      A state of internal emergency was proclaimed, suspending elections, detaining
+      opposition figures and imposing press censorship. It lasted until March 1977.
+    contested: >-
+      Read by some as an aberration that democratic institutions survived, and by
+      others as evidence of how few structural checks existed on executive power.
+      Economic readings differ too - the period saw both forced sterilisation
+      campaigns and a temporary fall in industrial unrest.
+    sources:
+      - ref: "Proclamation of Emergency under Article 352, 25 June 1975"
+      - ref: "Shah Commission of Inquiry, Interim and Final Reports (1978)"
+
+  - iso3: IND
+    date: 2016-11-08
+    kind: economic_reform
+    title: Demonetisation of high-value currency notes
+    what: >-
+      500- and 1000-rupee notes, roughly 86% of currency in circulation by value,
+      were withdrawn as legal tender with four hours' notice.
+    contested: >-
+      Stated aims were to destroy black money, counterfeit currency and terror
+      financing. The RBI later reported that almost all withdrawn notes returned to
+      the banking system. Supporters point to accelerated digital payment adoption
+      and a widened tax base; critics point to the contraction in informal-sector
+      activity. The measured GDP effect is disputed partly because the informal
+      economy is poorly captured by national accounts in the first place.
+    sources:
+      - ref: "RBI Annual Report 2017-18, chapter on currency management"
+      - ref: "Government of India Economic Survey 2016-17, chapter 3"
+
+  # ---------------------------------------------------------------- China
+  - iso3: CHN
+    date: 1978-12-18
+    kind: economic_reform
+    title: Third Plenum launches reform and opening up
+    what: >-
+      The Third Plenum of the 11th Central Committee shifted the Party's stated
+      priority from class struggle to economic construction, opening the way to the
+      household responsibility system in agriculture, special economic zones, and
+      eventual price liberalisation.
+    contested: >-
+      Whether growth came mainly from agricultural decollectivisation, from
+      township-and-village enterprises, from export processing, or from the simple
+      removal of earlier self-inflicted damage remains actively debated. The
+      sequencing - gradual and experimental rather than big-bang - is itself the
+      subject of a long argument with the post-Soviet transition experience.
+    sources:
+      - ref: "Communiqué of the Third Plenary Session of the 11th Central Committee, December 1978"
+      - ref: "Naughton, 'Growing Out of the Plan' (1995)"
+
+  - iso3: CHN
+    date: 2001-12-11
+    kind: economic_reform
+    title: Accession to the World Trade Organization
+    what: >-
+      China joined the WTO, binding tariff reductions and committing to phased
+      opening of services, in exchange for permanent normal trade relations with
+      members.
+    contested: >-
+      Credited with the export surge of the 2000s, but the counterfactual is unclear
+      since much liberalisation preceded accession. The distributional effects in
+      trading partners - the 'China shock' literature on manufacturing employment -
+      are a separate and unsettled debate.
+    sources:
+      - ref: "WTO, Protocol on the Accession of the People's Republic of China (2001)"
+      - ref: "Autor, Dorn & Hanson, 'The China Shock' (Annual Review of Economics, 2016)"
+
+  # ---------------------------------------------------------------- Russia / USSR
+  - iso3: RUS
+    date: 1992-01-02
+    kind: economic_reform
+    title: Shock therapy - price liberalisation
+    what: >-
+      Most administered prices were freed at once, followed by mass privatisation
+      through voucher auctions from 1992 to 1994.
+    contested: >-
+      Output fell sharply and life expectancy dropped through the 1990s. Defenders
+      argue the collapse was inherited from the Soviet system and that partial reform
+      would have been captured by insiders; critics argue speed itself destroyed
+      institutions and handed assets to a narrow group. This is one of the most
+      heavily contested episodes in modern economic history.
+    sources:
+      - ref: "Russian Federation, Presidential Decree on liberalisation of prices, December 1991"
+      - ref: "Stiglitz, 'Globalization and Its Discontents' (2002)"
+      - ref: "Åslund, 'How Russia Became a Market Economy' (1995)"
+
+  - iso3: RUS
+    date: 1998-08-17
+    kind: crisis
+    title: Sovereign default and rouble devaluation
+    what: >-
+      Russia defaulted on domestic debt, devalued the rouble and declared a
+      moratorium on payments to foreign creditors.
+    contested: >-
+      Followed by unexpectedly rapid recovery. How much is owed to the devaluation's
+      effect on import substitution versus the rise in oil prices from 1999 is
+      disputed.
+    sources:
+      - ref: "IMF, 'Russian Federation: Recent Economic Developments' (1999)"
+
+  # ---------------------------------------------------------------- Chile
+  - iso3: CHL
+    date: 1973-09-11
+    kind: irregular_power
+    title: Military coup overthrows the Allende government
+    what: >-
+      The armed forces seized power, dissolving Congress and beginning a military
+      government that lasted until 1990.
+    contested: >-
+      The economic programme that followed is among the most polarised cases in the
+      field. Supporters cite the post-1985 growth record; critics cite the 1982
+      collapse, the rise in inequality and poverty through the 1980s, and note that
+      systematic human rights violations are not an economic trade-off to be netted
+      off against GDP.
+    sources:
+      - ref: "Chilean National Commission on Truth and Reconciliation (Rettig Report, 1991)"
+      - ref: "Ffrench-Davis, 'Economic Reforms in Chile' (2002)"
+
+  # ---------------------------------------------------------------- Brazil
+  - iso3: BRA
+    date: 1994-07-01
+    kind: economic_reform
+    title: Plano Real
+    what: >-
+      A new currency, the real, was introduced alongside a transitional unit of
+      account, ending an inflation episode that had run above 2,000% a year.
+    contested: >-
+      Broadly regarded as a successful stabilisation, but the fixed exchange rate it
+      relied on became unsustainable and broke in the 1999 devaluation. Whether the
+      peg was a necessary bridge or a delayed crisis is still argued.
+    sources:
+      - ref: "Banco Central do Brasil, Plano Real documentation (1994)"
+      - ref: "Franco, 'O Plano Real e Outros Ensaios' (1995)"
+
+  - iso3: BRA
+    date: 2003-10-20
+    kind: social_policy
+    title: Bolsa Família conditional cash transfer launched
+    what: >-
+      Existing transfer programmes were consolidated into a single conditional cash
+      transfer paying poor households contingent on school attendance and health
+      check-ups.
+    contested: >-
+      Widely credited with reducing extreme poverty and inequality at low fiscal cost,
+      and widely copied. Debate centres on long-run effects on labour supply and on
+      whether it substituted for investment in the quality of schools and clinics.
+    sources:
+      - ref: "Lei 10.836/2004 (Brazil), establishing the Bolsa Família programme"
+      - ref: "World Bank, 'Conditional Cash Transfers' policy research report (2009)"
+
+  # ---------------------------------------------------------------- Argentina
+  - iso3: ARG
+    date: 1991-04-01
+    kind: economic_reform
+    title: Convertibility - the peso pegged one-to-one to the dollar
+    what: >-
+      The Convertibility Law fixed the peso to the US dollar and required the central
+      bank to back the monetary base with foreign reserves.
+    contested: >-
+      Ended hyperinflation quickly. It also removed the exchange rate as an adjustment
+      tool, which most accounts treat as central to the 2001 collapse - though the
+      relative weight of the peg, fiscal policy and external shocks is disputed.
+    sources:
+      - ref: "Ley de Convertibilidad 23.928 (Argentina, 1991)"
+
+  - iso3: ARG
+    date: 2001-12-23
+    kind: crisis
+    title: Sovereign default and the end of convertibility
+    what: >-
+      Argentina defaulted on roughly US$93bn of sovereign debt, abandoned the peg and
+      froze bank deposits.
+    contested: >-
+      Restructuring took over a decade and litigation ran to 2016. Argues both ways in
+      the sovereign-debt literature - as evidence that default can be survivable, and
+      as evidence of its lasting cost in market access.
+    sources:
+      - ref: "IMF Independent Evaluation Office, 'The IMF and Argentina, 1991-2001' (2004)"
+
+  # ---------------------------------------------------------------- Poland
+  - iso3: POL
+    date: 1990-01-01
+    kind: economic_reform
+    title: Balcerowicz Plan
+    what: >-
+      Price controls were lifted, subsidies cut, the currency made convertible and
+      trade opened, in a single package at the start of 1990.
+    contested: >-
+      Poland recovered its pre-transition output level faster than most of the region,
+      which is often cited for big-bang reform. Critics note the depth of the initial
+      recession and the persistence of regional unemployment, and point out that
+      Poland also had debt relief and EU accession prospects that others lacked.
+    sources:
+      - ref: "Balcerowicz, 'Socialism, Capitalism, Transformation' (1995)"
+      - ref: "Sachs, 'Poland's Jump to the Market Economy' (1993)"
+
+  # ---------------------------------------------------------------- United Kingdom
+  - iso3: GBR
+    date: 1979-05-04
+    kind: economic_reform
+    title: Thatcher government takes office
+    what: >-
+      The incoming government shifted to monetary targeting, raised VAT while cutting
+      income tax rates, removed exchange controls in October 1979, and began
+      privatising state-owned industries from 1981.
+    contested: >-
+      Inflation fell and productivity growth improved in some sectors; unemployment
+      rose above three million and regional and income inequality widened sharply.
+      How much of the manufacturing decline was policy and how much was the North Sea
+      oil-driven exchange rate is a long-running argument.
+    sources:
+      - ref: "HM Treasury, Medium Term Financial Strategy (1980)"
+      - ref: "Crafts, 'Forging Ahead, Falling Behind and Fighting Back' (2018)"
+
+  # ---------------------------------------------------------------- United States
+  - iso3: USA
+    date: 1971-08-15
+    kind: economic_reform
+    title: Nixon suspends dollar convertibility into gold
+    what: >-
+      The US ended the dollar's convertibility into gold, imposed a temporary import
+      surcharge and froze wages and prices, effectively ending the Bretton Woods
+      system.
+    contested: >-
+      Marks the start of the floating-rate era. Whether it caused the 1970s inflation
+      or merely coincided with oil shocks and accommodative monetary policy is
+      disputed.
+    sources:
+      - ref: "US Executive Order 11615 (15 August 1971)"
+
+  - iso3: USA
+    date: 1979-10-06
+    kind: economic_reform
+    title: Volcker shock - Federal Reserve targets money supply
+    what: >-
+      The Federal Reserve shifted to targeting bank reserves rather than interest
+      rates, allowing rates to rise above 19%.
+    contested: >-
+      Inflation fell from about 13% to under 4% within three years, at the cost of two
+      recessions and unemployment near 11%. Treated in most accounts as the
+      foundational case for central bank independence; the distribution of the
+      adjustment cost is less often foregrounded.
+    sources:
+      - ref: "Federal Open Market Committee, statement of 6 October 1979"
+
+  # ---------------------------------------------------------------- Japan
+  - iso3: JPN
+    date: 1985-09-22
+    kind: economic_reform
+    title: Plaza Accord
+    what: >-
+      France, West Germany, Japan, the UK and the US agreed to depreciate the dollar
+      against the yen and Deutsche Mark through coordinated intervention.
+    contested: >-
+      Often named as a trigger for the Japanese asset bubble via the monetary easing
+      that followed the yen's appreciation. Others argue domestic financial
+      deregulation and supervisory failure were the binding causes and the accord is
+      a convenient scapegoat.
+    sources:
+      - ref: "Announcement of the Ministers of Finance and Central Bank Governors (Plaza Hotel, 22 September 1985)"
+
+  # ---------------------------------------------------------------- Germany
+  - iso3: DEU
+    date: 1990-07-01
+    kind: constitutional
+    title: German monetary, economic and social union
+    what: >-
+      The Deutsche Mark was extended to East Germany, with most wages and savings
+      converted at one-to-one, ahead of political reunification in October 1990.
+    contested: >-
+      The conversion rate is widely argued to have priced East German industry out of
+      competitiveness overnight, causing rapid deindustrialisation; the counter-view
+      is that a market rate would have triggered mass westward migration with worse
+      consequences. Transfers have continued for decades.
+    sources:
+      - ref: "Treaty Establishing a Monetary, Economic and Social Union (18 May 1990)"
+
+  # ---------------------------------------------------------------- South Korea
+  - iso3: KOR
+    date: 1997-12-03
+    kind: crisis
+    title: IMF programme during the Asian financial crisis
+    what: >-
+      Korea agreed a US$58bn support package with conditions covering financial-sector
+      restructuring, capital account opening, labour market flexibility and chaebol
+      governance.
+    contested: >-
+      Recovery was fast. Whether the conditions were appropriate for what many argue
+      was a liquidity rather than solvency crisis became one of the defining critiques
+      of 1990s IMF practice, and the Fund's own evaluation office has been critical of
+      aspects of the programme design.
+    sources:
+      - ref: "IMF, Republic of Korea: Letter of Intent (December 1997)"
+      - ref: "Radelet & Sachs, 'The East Asian Financial Crisis' (Brookings Papers, 1998)"
+
+  # ---------------------------------------------------------------- Indonesia
+  - iso3: IDN
+    date: 1998-05-21
+    kind: constitutional
+    title: Suharto resigns; Reformasi begins
+    what: >-
+      After the rupiah's collapse and mass protests, Suharto resigned, beginning
+      democratisation, decentralisation of budget authority to districts, and central
+      bank independence.
+    contested: >-
+      Decentralisation is credited with improving responsiveness and blamed for
+      fragmenting accountability and multiplying local rent-seeking. Both readings are
+      supported by evidence from different districts.
+    sources:
+      - ref: "Indonesia Law 22/1999 on Regional Governance"
+
+  # ---------------------------------------------------------------- Vietnam
+  - iso3: VNM
+    date: 1986-12-18
+    kind: economic_reform
+    title: Doi Moi
+    what: >-
+      The Sixth Party Congress adopted market-oriented reform - decollectivising
+      agriculture, legalising private enterprise and opening to foreign investment -
+      while retaining single-party rule.
+    contested: >-
+      Poverty fell dramatically over the following two decades. The sequencing debate
+      mirrors China's: whether gradualism was the cause of success or simply what was
+      politically feasible.
+    sources:
+      - ref: "Sixth National Congress of the Communist Party of Vietnam, Political Report (1986)"
+
+  # ---------------------------------------------------------------- South Africa
+  - iso3: ZAF
+    date: 1994-04-27
+    kind: constitutional
+    title: First non-racial elections end apartheid
+    what: >-
+      Universal-franchise elections were held, followed by the 1996 Constitution and,
+      the same year, the GEAR macroeconomic strategy emphasising deficit reduction
+      and trade liberalisation.
+    contested: >-
+      Political enfranchisement was near-total; economic redistribution was far more
+      limited, and inequality remained among the world's highest. Whether GEAR was a
+      necessary stabilisation or a missed redistributive opportunity is a central
+      dispute in South African policy debate.
+    sources:
+      - ref: "Constitution of the Republic of South Africa, 1996"
+      - ref: "South African Department of Finance, 'Growth, Employment and Redistribution' (1996)"
+
+  # ---------------------------------------------------------------- Zimbabwe
+  - iso3: ZWE
+    date: 2000-07-01
+    kind: economic_reform
+    title: Fast Track Land Reform Programme
+    what: >-
+      Large-scale compulsory acquisition and redistribution of commercial farmland
+      began, largely without compensation.
+    contested: >-
+      Agricultural output and export earnings fell sharply and hyperinflation followed
+      by 2008. Some field research argues that smallholder beneficiaries did better
+      than the aggregate collapse suggests and that sanctions and monetary financing
+      were independent causes. The aggregate record is not in dispute; the attribution
+      is.
+    sources:
+      - ref: "Government of Zimbabwe, Land Acquisition Act as amended (2000)"
+      - ref: "Scoones et al., 'Zimbabwe's Land Reform: Myths and Realities' (2010)"
+
+  # ---------------------------------------------------------------- Greece
+  - iso3: GRC
+    date: 2010-05-02
+    kind: crisis
+    title: First eurozone adjustment programme
+    what: >-
+      Greece accepted a €110bn support package conditional on deep fiscal
+      consolidation, pension and labour market reform, and privatisation.
+    contested: >-
+      Output fell by roughly a quarter and unemployment exceeded 27%. The IMF later
+      acknowledged that fiscal multipliers had been underestimated. Whether the
+      failure lay in the scale of consolidation, the absence of early debt
+      restructuring, or the constraints of monetary union is unresolved.
+    sources:
+      - ref: "IMF, 'Greece: Ex Post Evaluation of Exceptional Access' (2013)"
+      - ref: "Blanchard & Leigh, 'Growth Forecast Errors and Fiscal Multipliers' (2013)"
+
+  # ---------------------------------------------------------------- Turkey
+  - iso3: TUR
+    date: 2001-05-15
+    kind: economic_reform
+    title: Post-crisis programme and central bank independence
+    what: >-
+      After the February 2001 crisis, Turkey floated the lira, recapitalised the
+      banking system and granted the central bank formal independence with a price
+      stability mandate.
+    contested: >-
+      Inflation fell from chronic high levels and growth resumed. The later erosion of
+      that independence from the mid-2010s is often used to argue the institutional
+      change was never fully consolidated.
+    sources:
+      - ref: "Central Bank of the Republic of Turkey Law No. 4651 (2001)"
+
+  # ---------------------------------------------------------------- Nigeria
+  - iso3: NGA
+    date: 1986-06-27
+    kind: economic_reform
+    title: Structural Adjustment Programme
+    what: >-
+      Nigeria adopted a programme devaluing the naira through a second-tier foreign
+      exchange market, cutting subsidies and dismantling commodity marketing boards.
+    contested: >-
+      A standard reference case in the debate over 1980s structural adjustment in
+      Africa. Defenders point to unsustainable pre-reform distortions; critics point
+      to falling real wages, the collapse of social spending and the absence of the
+      promised supply response.
+    sources:
+      - ref: "Federal Government of Nigeria, Structural Adjustment Programme 1986-88"
+
+  # ---------------------------------------------------------------- Ghana
+  - iso3: GHA
+    date: 1983-04-01
+    kind: economic_reform
+    title: Economic Recovery Programme
+    what: >-
+      Ghana devalued the cedi sharply, liberalised prices and cut public employment
+      under an IMF and World Bank supported programme.
+    contested: >-
+      Often cited as structural adjustment's best African case, with sustained growth
+      resuming. Sceptics note the low starting base after years of collapse and the
+      scale of external financing that accompanied it.
+    sources:
+      - ref: "World Bank, 'Ghana: Adjustment and Growth' (1984)"
+
+  # ---------------------------------------------------------------- Mexico
+  - iso3: MEX
+    date: 1994-01-01
+    kind: economic_reform
+    title: NAFTA enters into force
+    what: >-
+      The North American Free Trade Agreement phased out most tariffs between Mexico,
+      the United States and Canada.
+    contested: >-
+      Manufacturing exports and FDI rose substantially; agricultural employment fell
+      and convergence with US income levels did not materialise as projected. Effects
+      differ so sharply between northern and southern Mexico that national aggregates
+      obscure more than they show.
+    sources:
+      - ref: "North American Free Trade Agreement (1992), entered into force 1 January 1994"
+
+  - iso3: MEX
+    date: 1994-12-20
+    kind: crisis
+    title: Tequila crisis - peso devaluation
+    what: >-
+      An attempt to widen the peso's trading band triggered capital flight, forcing a
+      float and a US-led support package of roughly US$50bn.
+    contested: >-
+      A defining case in the literature on pegged exchange rates and short-term
+      dollar-linked debt. Whether the trigger was political instability, monetary
+      policy or the tesobono structure is still argued.
+    sources:
+      - ref: "IMF, 'Mexico: Economic Developments 1994-95'"
+
+  # ---------------------------------------------------------------- Singapore
+  - iso3: SGP
+    date: 1965-08-09
+    kind: independence
+    title: Separation from Malaysia
+    what: >-
+      Singapore became an independent state and subsequently pursued export-oriented
+      industrialisation, large-scale public housing and compulsory savings through
+      the Central Provident Fund.
+    contested: >-
+      The growth record is not disputed; its transferability is. Accounts differ on
+      how much reflects effective state capacity and how much reflects entrepôt
+      geography, small scale, and the absence of a rural hinterland.
+    sources:
+      - ref: "Proclamation of Singapore, Independence of Singapore Agreement 1965"
+
+  # ---------------------------------------------------------------- Egypt
+  - iso3: EGY
+    date: 2016-11-03
+    kind: economic_reform
+    title: Flotation of the Egyptian pound
+    what: >-
+      The pound was floated and fuel subsidies cut, unlocking a US$12bn IMF Extended
+      Fund Facility.
+    contested: >-
+      Reserves and formal remittance inflows recovered; inflation exceeded 30% and
+      real incomes fell. A recurring test case for whether IMF programmes adequately
+      protect the poor during exchange-rate adjustment.
+    sources:
+      - ref: "IMF, 'Arab Republic of Egypt: Request for Extended Arrangement' (2016)"
+
+  # ---------------------------------------------------------------- Venezuela
+  - iso3: VEN
+    date: 2003-02-05
+    kind: economic_reform
+    title: Currency and price controls introduced
+    what: >-
+      Following the oil strike, exchange controls were imposed through CADIVI along
+      with wide-ranging price controls on basic goods.
+    contested: >-
+      Poverty and social indicators improved during the high-oil-price years that
+      followed, then reversed catastrophically after 2014. Attribution between the oil
+      price collapse, the control regime itself, monetary financing, and later
+      sanctions is heavily contested and heavily politicised.
+    sources:
+      - ref: "Venezuela, Convenio Cambiario No. 1 (2003)"
