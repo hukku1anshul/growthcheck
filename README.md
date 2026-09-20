@@ -138,10 +138,22 @@ Adding a country means writing one `Extractor` subclass.
 
 ### What it produces
 
-**1,193 politicians · 8,780 claims · 1,772 archived documents (61 MB) · 0 unsourced**
+**1,284 politicians · 51,931 claims · 2,109 archived documents · 0 unsourced**
 
-544 Indian MPs (Lok Sabha 2024) and 649 UK MPs (current Commons), every
-claim traceable to a hash-verified copy of the document it was read from.
+544 Indian MPs (Lok Sabha 2024) and 649 UK MPs (current Commons), from six
+extractors, every claim traceable to a hash-verified copy of the document it was
+read from.
+
+| Extractor | What it gives | Claims |
+|---|---|---|
+| `mplads` | public money: allocation, completed works, individual works | 36,608 |
+| `myneta` | declared assets, liabilities, pending cases, education | 5,677 |
+| `ukparliament` | members + registered financial interests | 3,958 |
+| `prs` | attendance, debates, questions, private member's bills | 3,749 |
+| `electoralbonds` | money IN: 26 parties, 1,233 donors | 1,259 |
+| `ocds` | public procurement, any OCDS publisher | 636 |
+
+Deploying: see [docs/DEPLOY.md](docs/DEPLOY.md). Static site, no backend.
 
 Declared-asset trajectories per politician, across every election they contested,
 each point traceable to an archived document:
@@ -185,8 +197,8 @@ python -m etl.corroborate     # do two publishers agree about the same people?
 
 **Corroboration.** MyNeta and PRS independently publish party, constituency, age
 and education for the same 543 members, so they can be checked against each
-other. After normalising, they agree on **96.7%** of shared facts - party 100%,
-age 95.9%, education 94.0%.
+other. After normalising, they agree on **97.5%** of 1,470 shared facts - party
+100%, age 97.0%, education 95.4%.
 
 The normalising is the whole job. A naive comparison of the raw values reported
 **9.4%** agreement, and every one of those "disagreements" was an artefact:
