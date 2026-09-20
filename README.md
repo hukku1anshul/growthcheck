@@ -131,7 +131,10 @@ Adding a country means writing one `Extractor` subclass.
 
 ### What it produces
 
-**544 Indian MPs · 649 UK MPs · 1,091+ archived documents · every claim sourced**
+**1,193 politicians · 8,780 claims · 1,772 archived documents (61 MB) · 0 unsourced**
+
+544 Indian MPs (Lok Sabha 2024) and 649 UK MPs (current Commons), every
+claim traceable to a hash-verified copy of the document it was read from.
 
 Declared-asset trajectories per politician, across every election they contested,
 each point traceable to an archived document:
