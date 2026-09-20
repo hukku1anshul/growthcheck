@@ -219,6 +219,7 @@ declaration.
 python verify.py              # the commitments in docs/ETHICS.md, as code
 python tools/audit.py         # every invariant against every record
 python tests/test_parsers.py  # parsers vs hand-read values from real pages
+cd web && npm test            # 38 browser tests, desktop and phone
 python -m ingest.recheck --sample 25   # re-fetch and diff against what we stored
 python -m etl.corroborate     # do the publishers agree about the same people?
 ```
@@ -243,9 +244,27 @@ looks exactly like a right one.
 Opening a page cannot find that. `verify.py` checks the ethics commitments;
 `test_parsers.py` checks parsers against hand-read fixtures. Neither asks
 whether the 2,196 shipped bundles are consistent with the store they came from.
-`audit.py` does, over every record — 76,283 claims, every bundle, and 273,102
+`audit.py` does, over every record — 76,668 claims, every bundle, and 273,102
 observations across 23 indicators and 217 countries. A check there has to be
 true of **all** the data, never a sample.
+
+**Why the browser tests exist too.** Several of those defects were *rendering*
+facts no Python check could see: a citation pointing at the wrong document, a
+defector shown under the party they left, an India-only caveat printed on a UK
+member's page. `web/tests/` covers what the data looks like once a browser has
+it — provenance on every claim row, pagination, the three countries' page
+shapes, the claim checker's refusal path, dark mode, and phone width.
+
+Assertions there are **rules, not remembered values**: "the year in the cited
+source must match the year of the figure compared", rather than a hard-coded
+candidate id that breaks on the next harvest.
+
+The suite was checked by **mutation testing** — deliberately reintroducing each
+real bug to confirm the tests fail. That immediately caught a flaw in the
+harness itself: Playwright's documented `reuseExistingServer: !process.env.CI`
+reuses a running preview *without rebuilding*, so a reintroduced citation bug
+passed all six checker tests while the browser was served the previous build. A
+suite that cannot fail is worse than no suite, so it never reuses a server.
 
 **Corroboration.** Four publishers - MyNeta, PRS, OpenSanctions and Wikidata -
 independently report party, age and education for the same people, so they can
