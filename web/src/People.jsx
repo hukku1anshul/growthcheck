@@ -248,6 +248,10 @@ function Person({ p, meta, dark, onBack }) {
         <AssetChart points={p.asset_points} currency={p.currency} dark={dark} />
       )}
 
+      {p.asset_points.length < 2 && p.flow_by_year?.length > 0 && (
+        <FlowChart points={p.flow_by_year} currency={p.currency} dark={dark} />
+      )}
+
       <div className="panel" style={{ marginTop: 12 }}>
         <h3>Every claim, with its receipt</h3>
         <div className="claims">
@@ -334,6 +338,68 @@ function AssetChart({ points, currency, dark }) {
     <div className="panel" style={{ marginTop: 12 }}>
       <h3>Declared assets at each election</h3>
       <div ref={ref} style={{ height: 230 }} />
+    </div>
+  )
+}
+
+/**
+ * Registered payments per year. Bars, not a line: these are separate dated
+ * receipts, not a quantity that moved continuously between them. Drawing a line
+ * through them would imply a trajectory that the underlying data does not assert,
+ * and would invite comparison with the asset-total chart above - a different kind
+ * of number entirely.
+ */
+function FlowChart({ points, currency, dark }) {
+  const ref = useRef(null)
+  useEffect(() => {
+    const c = echarts.init(ref.current, dark ? 'dark' : null)
+    const text = dark ? '#cbd5e1' : '#475569'
+    const line = dark ? '#334155' : '#e2e8f0'
+    c.setOption({
+      backgroundColor: 'transparent',
+      grid: { left: 62, right: 20, top: 22, bottom: 30 },
+      tooltip: {
+        trigger: 'axis',
+        formatter: (ps) =>
+          `Registered in ${ps[0].axisValue}<br/><b>${sym(currency)}${ps[0].value.toLocaleString()}</b>`,
+      },
+      xAxis: {
+        type: 'category',
+        data: points.map(([y]) => y),
+        axisLabel: { color: text },
+        axisLine: { lineStyle: { color: line } },
+      },
+      yAxis: {
+        type: 'value',
+        axisLabel: { color: text, formatter: (v) => fmt(v) },
+        splitLine: { lineStyle: { color: line, type: 'dashed' } },
+      },
+      series: [
+        {
+          type: 'bar',
+          data: points.map(([, v]) => v),
+          barMaxWidth: 46,
+          itemStyle: { color: '#0891b2', borderRadius: [3, 3, 0, 0] },
+        },
+      ],
+    })
+    const r = () => c.resize()
+    window.addEventListener('resize', r)
+    return () => {
+      window.removeEventListener('resize', r)
+      c.dispose()
+    }
+  }, [points, currency, dark])
+  return (
+    <div className="panel" style={{ marginTop: 12 }}>
+      <h3>Registered payments, by year of registration</h3>
+      <p className="note" style={{ marginTop: -4 }}>
+        Individual declared payments, not a measure of total wealth. Grouped by the
+        date the interest was <em>registered</em>, which is not always the date the
+        payment was received. Not comparable with the declared-asset totals shown
+        for Indian members.
+      </p>
+      <div ref={ref} style={{ height: 210 }} />
     </div>
   )
 }
