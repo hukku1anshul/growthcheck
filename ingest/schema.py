@@ -147,6 +147,11 @@ PREDICATES = {
     # Collapsing them would make India and the UK look comparable when they are not.
     "outside_earnings",       # value_num + currency, one registered payment
     "registered_interest",    # value_text, a declared interest with no cash figure
+    # parliamentary activity - what a member does, as opposed to what they own
+    "attendance_pct",
+    "debates_participated",
+    "questions_asked",
+    "private_member_bills",
     # money-out side, for procurement/budget extractors
     "budget_allocated",
     "budget_spent",
@@ -167,8 +172,14 @@ def connect(db_path: str | Path) -> sqlite3.Connection:
     # pragma placed in the DDL string appears to work and does nothing at all.
     # The claim->source foreign key is the mechanism that enforces this project's
     # one hard rule, so it is set explicitly here and then verified.
+    # Two extractors can legitimately run at once - a 100-minute crawl that must
+    # respect a publisher's crawl-delay should not block a fast API harvest. WAL
+    # allows one writer at a time, and without a busy timeout the second writer
+    # fails immediately with "database is locked" instead of waiting its turn.
+    con.execute("PRAGMA busy_timeout = 60000")
     con.execute("PRAGMA foreign_keys = ON")
     con.executescript(DDL)
+    con.execute("PRAGMA busy_timeout = 60000")
     con.execute("PRAGMA foreign_keys = ON")
 
     if not con.execute("PRAGMA foreign_keys").fetchone()[0]:

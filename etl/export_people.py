@@ -23,6 +23,8 @@ from __future__ import annotations
 import json
 import sqlite3
 from collections import defaultdict
+
+from ingest.resolve import _near
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -36,6 +38,13 @@ OUT = ROOT / "web" / "public" / "data" / "people"
 CURRENCY = {"IND": "INR", "GBR": "GBP"}
 
 STOCK_PREDICATES = {"declared_assets", "declared_liabilities"}
+# Public money is a different category from personal wealth and must never be
+# mixed into the same figure. An MPLADS allocation is the public's money that a
+# member may direct; declared assets are the member's own. Showing them in one
+# number would be the single most misleading thing this app could do.
+PUBLIC_MONEY = {"budget_allocated", "budget_spent", "contract_awarded"}
+ACTIVITY = {"attendance_pct", "debates_participated", "questions_asked",
+            "private_member_bills"}
 FLOW_PREDICATES = {"outside_earnings"}
 
 
@@ -78,6 +87,48 @@ def growth_context(
         "from_value": v0,
         "to_value": v1,
     }
+
+
+def _seat_key(name: str | None) -> str:
+    """Normalise a constituency name to bare letters.
+
+    Reservation markers carry no identifying information - "JAMUI" and
+    "JAMUI(SC)" are one seat - so they are stripped. Two traps here, both of
+    which this function previously fell into:
+
+      * a lazy, all-optional paren pattern can match the EMPTY string, so re.sub
+        inserts its replacement at every position and shreds the name.
+      * stripping "sc|st" without word boundaries corrupts ordinary names:
+        "EAST DELHI" would become "EA DELHI".
+    """
+    import re as _re
+    s = (name or "").lower()
+    s = _re.sub(r"\([^)]*\)?", " ", s)          # drop "(sc)" and unclosed "(sc"
+    s = _re.sub(r"(sc|st)", " ", s)         # word-bounded, never mid-word
+    return _re.sub(r"[^a-z]", "", s)
+
+
+def _same_seat(a: str, b: str) -> bool:
+    """Do two constituency spellings denote the same seat?
+
+    Publishers disagree on spelling and truncate long names:
+
+        MyNeta  BARAMULLA                    MPLADS  BARAMULLAH
+        MyNeta  NAINITAL-UDHAM SINGH NAGAR   MPLADS  NAINITAL UDHAM SINGH NAG.
+
+    Exact comparison made one seat look like several and badged members as
+    having contested seats they never stood in. Rahul Gandhi's WAYANAD and
+    RAE BARELI are genuinely two seats and must stay two, so this stays strict
+    about anything that is not a spelling variant or a truncation.
+    """
+    if not a or not b:
+        return a == b
+    if a == b:
+        return True
+    short, long_ = sorted((a, b), key=len)
+    if len(short) >= 6 and long_.startswith(short):
+        return True                              # truncated ("...nag" / "...nagar")
+    return _near(a, b)                           # one-character spelling variant
 
 
 def _conflicts(claims: list[dict]) -> list[dict]:
@@ -142,7 +193,28 @@ def build() -> dict:
         )
 
     for p in people.values():
-        offices = p.get("offices") or []
+        # Three extractors reporting the same seat is not three seats. Dedupe on
+        # (jurisdiction, constituency) so the "seats contested" badge means what
+        # it says - Rahul Gandhi really did contest two, and that must stay
+        # visible, but Arun Kumar Sagar's one seat was being shown as three.
+        seen_seat: list[tuple] = []
+        deduped = []
+        # Prefer offices that name a seat: an extractor that failed to parse the
+        # constituency should not manufacture an extra "seat contested".
+        raw_offices = sorted(
+            (p.get("offices") or []),
+            key=lambda o: 0 if (o.get("constituency") or "").strip() else 1,
+        )
+        for o in raw_offices:
+            juris, seat = o.get("jurisdiction"), _seat_key(o.get("constituency"))
+            if not seat and any(j == juris for j, _ in seen_seat):
+                continue
+            if any(j == juris and _same_seat(seat, k) for j, k in seen_seat):
+                continue
+            seen_seat.append((juris, seat))
+            deduped.append(o)
+        p["offices"] = deduped
+        offices = deduped
         first = offices[0] if offices else {}
         # Convenience fields for the list view; `offices` remains authoritative.
         p.update(
@@ -206,12 +278,44 @@ def build() -> dict:
 
         ctx = growth_context(assets, gdp_by_country.get(person["country"], {}))
 
+        # --- public money directed by this member (MPLADS) -------------------
+        def latest(pred):
+            hits = [c for c in claims if c["predicate"] == pred and c["num"] is not None]
+            return hits[-1]["num"] if hits else None
+
+        allocated = latest("budget_allocated")
+        spent = latest("budget_spent")
+        works = [c for c in claims if c["predicate"] == "contract_awarded"]
+        public = None
+        if allocated or spent:
+            public = {
+                "allocated": allocated,
+                "spent": spent,
+                "utilisation": (round(100 * spent / allocated, 1)
+                                if allocated and spent else None),
+                "works": len(works),
+                # a sample only: a member can have hundreds of works and the
+                # bundle has to stay loadable
+                "largest_works": [
+                    {"amount": w["num"], "as_of": w["as_of"], "detail": w["note"]}
+                    for w in sorted(works, key=lambda w: -(w["num"] or 0))[:12]
+                ],
+            }
+
+        # --- parliamentary activity (PRS) ------------------------------------
+        activity = {}
+        for c in claims:
+            if c["predicate"] in ACTIVITY and c["num"] is not None:
+                activity[c["predicate"]] = {"value": c["num"], "benchmark": c["note"]}
+
         record = {
             **person,
             "claims": claims,
             "asset_points": assets,
             "flow_by_year": sorted(flows.items()),
             "context": ctx,
+            "public_money": public,
+            "activity": activity or None,
             "n_claims": len(claims),
             "sources": sorted({c["src_url"] for c in claims}),
             # facts where two source documents disagree, surfaced not resolved
@@ -243,6 +347,11 @@ def build() -> dict:
                 "span": f"{ctx['from_year']}-{ctx['to_year']}" if ctx else None,
                 "n_claims": len(claims),
                 "n_offices": person.get("n_offices", 0),
+                "allocated": allocated,
+                "spent": spent,
+                "utilisation": public["utilisation"] if public else None,
+                "works": len(works) if works else None,
+                "attendance": activity.get("attendance_pct", {}).get("value"),
                 "n_conflicts": len(_conflicts(claims)),
             }
         )
@@ -301,6 +410,13 @@ def build() -> dict:
                 "shown as separate people until a human decides. Merging two "
                 "different politicians would attribute one person's assets and "
                 "pending cases to another, which is why the default is to split."
+            ),
+            "public_money": (
+                "MPLADS figures are PUBLIC money a member may direct to works in "
+                "their constituency - not the member's own money and not their "
+                "income. The member recommends works; district authorities "
+                "sanction, implement and pay. Low utilisation can reflect district "
+                "capacity as much as the member."
             ),
             "stock_vs_flow": (
                 "India's figures are total declared assets at a date. The UK's are "

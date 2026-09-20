@@ -9,14 +9,17 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .extractors.mplads import MPLADS
 from .extractors.myneta import MyNeta
+from .extractors.prs import PRS
 from .extractors.ukparliament import UKParliament
 from .schema import connect
 
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "data" / "processed" / "claims.db"
 
-EXTRACTORS = {"myneta": MyNeta, "ukparliament": UKParliament}
+EXTRACTORS = {"mplads": MPLADS, "myneta": MyNeta, "prs": PRS,
+              "ukparliament": UKParliament}
 
 
 def report(con) -> None:

@@ -68,9 +68,42 @@ def normalise_name(name: str) -> str:
     s = s.lower()
     s = re.sub(r"[^a-z\s]", " ", s)
     tokens = [t for t in s.split() if t and t not in HONORIFICS]
+    # Split run-together initials: sources write both "C N Annadurai" and
+    # "CN Annadurai", and treating "cn" as one token made them score 0.62 and
+    # stay apart. A short token with no vowel is initials, not a name.
+    expanded: list[str] = []
+    for t in tokens:
+        if 2 <= len(t) <= 3 and not set(t) & set("aeiou"):
+            expanded.extend(t)
+        else:
+            expanded.append(t)
     # Sorting makes "sharma rajesh" and "rajesh sharma" identical. South Asian and
     # Hungarian name ordering both vary by source, so order carries little signal.
-    return " ".join(sorted(tokens))
+    return " ".join(sorted(expanded))
+
+
+def _near(a: str, b: str) -> bool:
+    """True if two LONG tokens differ by a single character.
+
+    Transliteration noise scales with name length: "vallabhaneni" and
+    "vallabbhaneni" are the same surname spelled two ways, and so are
+    "purandeshwari" and "purandheshwari". Short names are the opposite - "rajesh"
+    and "ramesh" also differ by one character and belong to different people, as
+    do "rahul" and "rajiv". So this deliberately applies only at length >= 8,
+    where a one-character difference is far more likely to be a spelling variant
+    than a different name.
+    """
+    if min(len(a), len(b)) < 8 or abs(len(a) - len(b)) > 1:
+        return False
+    if a == b:
+        return True
+    if len(a) == len(b):  # substitution
+        return sum(x != y for x, y in zip(a, b)) == 1
+    short, long_ = (a, b) if len(a) < len(b) else (b, a)  # insertion
+    for i in range(len(long_)):
+        if long_[:i] + long_[i + 1:] == short:
+            return True
+    return False
 
 
 def initials_key(norm: str) -> str:
@@ -113,13 +146,24 @@ def score(a: str, b: str) -> float:
                 rest_a.discard(hit)
                 initial_hits += 1
 
+    # Long tokens that differ by one character are almost certainly the same name
+    # spelled two ways. Scored slightly below an exact match so a pair resting on
+    # them lands in review rather than auto-merging.
+    near_hits = 0
+    for x in sorted(list(rest_a)):
+        hit = next((y for y in sorted(rest_b) if _near(x, y)), None)
+        if hit:
+            rest_a.discard(x)
+            rest_b.discard(hit)
+            near_hits += 1
+
     # The denominator counts distinct *people-name components*, not distinct
     # strings. When an initial matches a full token they are one component, so
     # counting both in the union understates the similarity: "r k sharma" vs
     # "rajesh kumar sharma" scored 0.68 that way and fell below even the review
     # band, meaning an obvious same-person candidate was silently split in two.
-    components = len(exact) + initial_hits + len(rest_a) + len(rest_b)
-    matched = len(exact) + initial_hits * 0.85
+    components = len(exact) + initial_hits + near_hits + len(rest_a) + len(rest_b)
+    matched = len(exact) + initial_hits * 0.85 + near_hits * 0.9
     return min(1.0, matched / components) if components else 0.0
 
 
@@ -142,11 +186,28 @@ def find_or_create(
         raise ValueError(f"name normalised to nothing: {full_name!r}")
 
     key = initials_key(norm)
-    candidates = con.execute(
+    tokens = set(norm.split())
+    rows = con.execute(
         "SELECT id, full_name, norm_name FROM persons WHERE country = ?", (country,)
     ).fetchall()
-    # cheap blocking - only score names sharing the initials multiset
-    candidates = [c for c in candidates if initials_key(c["norm_name"]) == key]
+
+    # Blocking decides what even gets compared, so it caps recall absolutely: a
+    # pair the blocker rejects can never be merged no matter how well it scores.
+    # Keying on the initials multiset alone was far too strict, because any
+    # difference in token COUNT changes the key. "Devendra Alias Bhole Singh" and
+    # "Devendra Singh Alias Bhole Singh" score 1.00 against each other and were
+    # never compared, and 74 of 543 MPLADS members failed to match a MyNeta record
+    # for this reason alone.
+    #
+    # Sharing any substantial name token is a much better candidate test. It is
+    # looser, so more pairs are scored - but scoring is where precision lives, and
+    # the thresholds and review band are unchanged. Over a few hundred people per
+    # country the extra comparisons cost nothing.
+    candidates = [
+        c for c in rows
+        if initials_key(c["norm_name"]) == key
+        or tokens & {t for t in c["norm_name"].split() if len(t) >= 3}
+    ]
 
     best, best_score = None, 0.0
     for c in candidates:

@@ -58,6 +58,8 @@ export default function People({ dark }) {
       declared: (a, b) => (b.latest_assets || 0) - (a.latest_assets || 0),
       name: (a, b) => a.name.localeCompare(b.name),
       claims: (a, b) => b.n_claims - a.n_claims,
+      utilisation: (a, b) => (b.utilisation ?? -1) - (a.utilisation ?? -1),
+      allocated: (a, b) => (b.allocated ?? 0) - (a.allocated ?? 0),
     }[sort]
     return [...list].sort(cmp).slice(0, 400)
   }, [meta, q, country, sort])
@@ -107,6 +109,8 @@ export default function People({ dark }) {
             <span>Sort by</span>
             <select className="mini" value={sort} onChange={(e) => setSort(e.target.value)}>
               <option value="relative">Growth vs national</option>
+              <option value="utilisation">Public funds used</option>
+              <option value="allocated">Public funds allocated</option>
               <option value="declared">Declared total</option>
               <option value="claims">Most claims</option>
               <option value="name">Name</option>
@@ -165,8 +169,8 @@ export default function People({ dark }) {
                 <span>Name</span>
                 <span>Party</span>
                 <span>Seat</span>
-                <span className="num">Declared</span>
-                <span className="num">vs national</span>
+                <span className="num">Declared (own)</span>
+                <span className="num">Public funds used</span>
               </div>
               {rows.map((p) => (
                 <button key={p.id} className="ptr" onClick={() => setSelected(p.id)}>
@@ -181,7 +185,12 @@ export default function People({ dark }) {
                         : '—'}
                   </span>
                   <span className="num">
-                    {p.declared_multiple ? (
+                    {p.utilisation != null ? (
+                      <span title={`₹${fmt(p.spent)} of ₹${fmt(p.allocated)} allocated`}>
+                        <b>{p.utilisation}%</b>
+                        <span className="dim"> of ₹{fmt(p.allocated)}</span>
+                      </span>
+                    ) : p.declared_multiple ? (
                       <Ratio p={p} />
                     ) : (
                       <span className="dim">—</span>
@@ -244,6 +253,85 @@ function Person({ p, meta, dark, onBack }) {
             </div>
           </div>
           <p className="ctx-caveat">{meta.caveats.not_a_score}</p>
+        </div>
+      )}
+
+      {p.public_money && (
+        <div className="panel public-money" style={{ marginTop: 12 }}>
+          <h3>Public money directed to this constituency (MPLADS)</h3>
+          <div className="pm-row">
+            <div>
+              <span className="ctx-label">Allocated to them</span>
+              <span className="ctx-big">
+                {p.public_money.allocated != null
+                  ? `₹${fmt(p.public_money.allocated)}`
+                  : '—'}
+              </span>
+              <span className="ctx-sub">entitlement for the tenure</span>
+            </div>
+            <div>
+              <span className="ctx-label">Completed works</span>
+              <span className="ctx-big">
+                {p.public_money.spent != null ? `₹${fmt(p.public_money.spent)}` : '—'}
+              </span>
+              <span className="ctx-sub">
+                {p.public_money.works
+                  ? `${p.public_money.works.toLocaleString()} works`
+                  : 'none recorded'}
+              </span>
+            </div>
+            <div>
+              <span className="ctx-label">Utilisation</span>
+              <span className="ctx-big">
+                {p.public_money.utilisation != null
+                  ? `${p.public_money.utilisation}%`
+                  : '—'}
+              </span>
+              <span className="ctx-sub">completed ÷ allocated</span>
+            </div>
+          </div>
+          <p className="ctx-caveat">{meta.caveats.public_money}</p>
+          {p.public_money.largest_works?.length > 0 && (
+            <>
+              <h3 style={{ marginTop: 12 }}>Largest completed works</h3>
+              <div className="works">
+                {p.public_money.largest_works.map((w, i) => (
+                  <div className="work" key={i}>
+                    <span className="w-amt">₹{fmt(w.amount)}</span>
+                    <span className="w-date">{w.as_of || 'undated'}</span>
+                    <span className="w-desc">{w.detail}</span>
+                  </div>
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {p.activity && (
+        <div className="panel" style={{ marginTop: 12 }}>
+          <h3>Parliamentary activity (PRS)</h3>
+          <div className="pm-row">
+            {[
+              ['attendance_pct', 'Attendance', '%'],
+              ['debates_participated', 'Debates', ''],
+              ['questions_asked', 'Questions', ''],
+              ['private_member_bills', "Private member's bills", ''],
+            ].map(([k, label, suffix]) =>
+              p.activity[k] ? (
+                <div key={k}>
+                  <span className="ctx-label">{label}</span>
+                  <span className="ctx-big">
+                    {p.activity[k].value}
+                    {suffix}
+                  </span>
+                  <span className="ctx-sub">
+                    {p.activity[k].benchmark || 'no benchmark published'}
+                  </span>
+                </div>
+              ) : null
+            )}
+          </div>
         </div>
       )}
 

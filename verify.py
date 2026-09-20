@@ -182,11 +182,30 @@ CALIBRATION = [
     ("Narendra Modi", "Narendra Damodardas Modi", "review", "dropped middle name"),
     ("Rajesh Kumar Sharma", "Ramesh Kumar Sharma", "separate", "one letter apart"),
     ("Rahul Gandhi", "Rajiv Gandhi", "separate", "real, different politicians"),
+    # Pairs taken from the real MPLADS-vs-MyNeta reconciliation of 543 members.
+    ("SHARMA RAJESH KUMAR", "Rajesh Kumar Sharma", "merge", "token order + case"),
+    ("CN Annadurai", "C N Annadurai", "merge", "run-together initials"),
+    ("Devendra Alias Bhole Singh", "Devendra Singh Alias Bhole Singh", "merge",
+     "repeated surname token"),
+    ("Balashowry Vallabbhaneni", "Balashowry Vallabhaneni", "merge",
+     "transliteration, long surname"),
+    ("Daggubati Purandeshwari", "Daggubati Purandheshwari", "merge",
+     "transliteration, long surname"),
+    ("Andimuthu Raja", "Raja A", "review", "initial vs full given name"),
+    ("Devusinh Jesingbhai Chauhan", "Devusinh Chauhan", "review", "dropped patronymic"),
+    ("Bhagirath Chaudhary", "Pankaj Chaudhary", "separate", "shared surname only"),
+    ("Venkatesan S", "V. Somanna", "separate_or_review",
+     "different MPs; must never auto-merge"),
+    ("Selvaganapathi T M", "Tharaniventhan M S", "separate_or_review",
+     "different MPs; must never auto-merge"),
 ]
 for a_raw, b_raw, want, label in CALIBRATION:
     sc = score(normalise_name(a_raw), normalise_name(b_raw))
     got = "merge" if sc >= AUTO_MERGE else ("review" if sc >= REVIEW else "separate")
-    check(f"{want:8} - {label}", got == want, f"score {sc:.2f}, got {got}")
+    # "separate_or_review" means: a human may look, but the machine must not
+    # decide. These are genuinely different politicians whose names score high.
+    ok = (got in ("separate", "review")) if want == "separate_or_review" else (got == want)
+    check(f"{want:18} - {label}", ok, f"score {sc:.2f}, got {got}")
 
 # 6 ---------------------------------------------------------------------------
 print("\n[6] Absence of a marker is not evidence that nothing happened.")

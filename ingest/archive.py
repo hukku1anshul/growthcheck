@@ -19,9 +19,15 @@ import sqlite3
 import time
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urlencode, urlparse
 
 import requests
+
+from .dns_fallback import install as install_dns_fallback
+
+# Government portals are exactly where local resolvers fail. Tried only after the
+# system resolver gives up; TLS verification is untouched. See dns_fallback.py.
+install_dns_fallback()
 
 ROOT = Path(__file__).resolve().parents[1]
 ARCHIVE = ROOT / "data" / "archive"
@@ -45,6 +51,7 @@ class Archive:
         self.delay = delay          # seconds between requests to one host
         self._last: dict[str, float] = {}
         self._index: dict | None = None
+        self._primed: dict[str, bool] = {}
         self.session = requests.Session()
         self.session.headers["User-Agent"] = UA
 
@@ -167,3 +174,82 @@ class Archive:
     def text(self, url: str, encoding: str = "utf-8", **kw) -> tuple[int, str]:
         sid, body = self.get(url, **kw)
         return sid, body.decode(encoding, errors="replace")
+
+    # -------------------------------------------------------------- POST APIs
+    def post_json(
+        self, url: str, payload: dict, *, reuse: bool = True, prime: str | None = None
+    ) -> tuple[int, bytes]:
+        """Archive the response to a JSON POST.
+
+        Some portals expose their public data only through POST endpoints, so
+        provenance has to cover the request as well as the URL. The archived
+        identity is `url?<urlencoded payload>`: a faithful, readable description
+        of exactly what was asked for, and distinct per query, so two different
+        questions to the same endpoint are two different documents rather than
+        one silently overwriting the other.
+
+        `prime` is a page to GET first when the endpoint requires a session
+        cookie - MPLADS returns an empty array to a cold client.
+        """
+        identity = f"{url}?{urlencode(sorted(payload.items()))}"
+
+        if reuse:
+            row = self.con.execute(
+                "SELECT id, archive_path FROM sources WHERE url = ? "
+                "ORDER BY fetched_at DESC LIMIT 1", (identity,),
+            ).fetchone()
+            if row:
+                path = ARCHIVE / row["archive_path"]
+                if path.exists():
+                    return row["id"], path.read_bytes()
+            hit = self._disk_index().get(identity)
+            if hit:
+                path = ARCHIVE / hit["archive_path"]
+                if path.exists():
+                    body = path.read_bytes()
+                    return self._register(identity, body, hit, from_disk=True), body
+
+        if prime and not self._primed.get(urlparse(url).netloc):
+            self._wait(prime)
+            try:
+                self.session.get(prime, timeout=90)
+                self._primed[urlparse(url).netloc] = True
+            except Exception:  # noqa: BLE001 - priming is best effort
+                pass
+
+        # These payloads run to tens of megabytes uncompressed and the connection
+        # is dropped mid-stream often enough to matter - the same request that
+        # fails at 56MB of 64MB will succeed on a retry. A truncated JSON body is
+        # unparseable, and silently keeping a partial array would undercount
+        # per-person totals in alphabetical order, so a failed read must retry
+        # rather than degrade.
+        last_error: Exception | None = None
+        for attempt in range(1, 4):
+            self._wait(url)
+            try:
+                resp = self.session.post(url, json=payload, timeout=900)
+                body = resp.content
+                break
+            except Exception as exc:  # noqa: BLE001
+                last_error = exc
+                print(f"    retry {attempt}/3 after {type(exc).__name__}", flush=True)
+        else:
+            raise RuntimeError(f"POST {url} failed after 3 attempts: {last_error}")
+        digest = hashlib.sha256(body).hexdigest()
+
+        rel = Path(urlparse(url).netloc) / digest[:2] / f"{digest}.bin"
+        dest = ARCHIVE / rel
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        if not dest.exists():
+            dest.write_bytes(body)
+
+        meta = {
+            "archive_path": str(rel).replace("\\", "/"),
+            "sha256": digest,
+            "bytes": len(body),
+            "content_type": resp.headers.get("Content-Type"),
+            "http_status": resp.status_code,
+            "fetched_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        }
+        self._remember(identity, meta)
+        return self._register(identity, body, meta), body

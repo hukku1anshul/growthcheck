@@ -314,3 +314,19 @@ select.mini {
 }
 .rp-name:hover { text-decoration: underline; }
 .rp-score { font-size: 10.5px; color: var(--muted); font-family: var(--mono); }
+
+/* ------------------------------------------------------- public money (MPLADS) */
+/* Deliberately a different colour from the personal-wealth panel: public funds a
+   member directs are not the member's money, and the UI must not blur that. */
+.public-money { border-left: 3px solid #0891b2; }
+.pm-row { display: flex; gap: 26px; flex-wrap: wrap; }
+.pm-row > div { display: flex; flex-direction: column; gap: 1px; min-width: 130px; }
+.works { display: flex; flex-direction: column; gap: 5px; max-height: 260px; overflow-y: auto; }
+.work {
+  display: grid; grid-template-columns: 96px 88px 1fr; gap: 9px; align-items: baseline;
+  border-top: 1px solid var(--line); padding-top: 5px; font-size: 12px;
+}
+.w-amt { font-weight: 600; font-variant-numeric: tabular-nums; }
+.w-date { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.w-desc { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 860px) { .work { grid-template-columns: 1fr; gap: 1px; } }
