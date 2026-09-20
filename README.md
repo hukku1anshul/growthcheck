@@ -61,7 +61,7 @@ python verify.py
 
 ## Product A: what's in it
 
-**273,102 observations · 23 indicators · 217 countries · 7,811 events · 3,110 spans**
+**375,323 observations · 36 indicators · 217 countries · 7,843 events · 3,110 spans**
 
 | Layer | Source | Coverage |
 |---|---|---|
@@ -245,8 +245,8 @@ looks exactly like a right one.
 Opening a page cannot find that. `verify.py` checks the ethics commitments;
 `test_parsers.py` checks parsers against hand-read fixtures. Neither asks
 whether the 2,196 shipped bundles are consistent with the store they came from.
-`audit.py` does, over every record — 76,668 claims, every bundle, and 273,102
-observations across 23 indicators and 217 countries. A check there has to be
+`audit.py` does, over every record — 76,668 claims, every bundle, and 375,323
+observations across 36 indicators and 217 countries. A check there has to be
 true of **all** the data, never a sample.
 
 **Why the browser tests exist too.** Several of those defects were *rendering*

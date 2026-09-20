@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-20T10:57:30+00:00",
+ "built_at": "2026-09-20T21:21:32+00:00",
  "categories": {
   "economy": {
    "label": "Economy",
@@ -450,6 +450,253 @@
     "min_year": 1789,
     "max_year": 2025,
     "observations": 29294
+   }
+  },
+  {
+   "id": "gdp_total",
+   "category": "economy",
+   "source": "worldbank",
+   "code": "NY.GDP.MKTP.KD",
+   "name": "GDP, total",
+   "unit": "constant 2015 US$",
+   "direction": "up_good",
+   "plain": "The whole economy's output, inflation stripped out, not divided by population.",
+   "measures": "Market value of all goods and services produced in a year.",
+   "blindspots": "Size is not prosperity. A large, poor country outranks a small, rich one on this number and always will, which is why it belongs beside GDP per capita rather than instead of it.",
+   "gamed": "The same rebasing trick as GDP per capita, with more room to hide: revisions to the deflator move the level without any change in what was produced.",
+   "coverage": {
+    "countries": 213,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 11533
+   }
+  },
+  {
+   "id": "gdp_pc_growth",
+   "category": "economy",
+   "source": "worldbank",
+   "code": "NY.GDP.PCAP.KD.ZG",
+   "name": "GDP per capita growth",
+   "unit": "% per year",
+   "direction": "up_good",
+   "plain": "How much richer the average person got, after accounting for more people.",
+   "measures": "Annual change in inflation-adjusted output per person.",
+   "blindspots": "An average again. It can be positive while most people get poorer, if the gains are concentrated. Where population is falling it flatters the number for reasons nobody chose.",
+   "gamed": "An undercounted population raises output per head arithmetically, so a delayed or disputed census lifts this without anything being produced.",
+   "coverage": {
+    "countries": 214,
+    "min_year": 1961,
+    "max_year": 2025,
+    "observations": 11408
+   }
+  },
+  {
+   "id": "manufacturing",
+   "category": "economy",
+   "source": "worldbank",
+   "code": "NV.IND.MANF.ZS",
+   "name": "Manufacturing share of output",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "How much of the economy is making physical things.",
+   "measures": "Value added by manufacturing as a share of total output.",
+   "blindspots": "A falling share is not automatically decline - rich countries shift towards services as they get richer. It is bad news only when it falls WITHOUT that shift, which this number alone cannot tell you.",
+   "gamed": "Reclassifying assembly or processing work between industry and services moves the share without moving a single factory.",
+   "coverage": {
+    "countries": 204,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 8253
+   }
+  },
+  {
+   "id": "investment",
+   "category": "economy",
+   "source": "worldbank",
+   "code": "NE.GDI.TOTL.ZS",
+   "name": "Investment (capital formation)",
+   "unit": "% of GDP",
+   "direction": "up_good",
+   "plain": "How much of what the country earns is put back into building things.",
+   "measures": "Gross capital formation - buildings, machinery, infrastructure and inventory changes - as a share of output.",
+   "blindspots": "Counts spending, never usefulness. A bridge to nowhere and a needed railway are the same number here, and a construction boom that ends in empty towers looks identical to productive investment while it lasts.",
+   "gamed": "Bringing projects forward before an election raises it for a year or two. Unsold inventory also counts as investment.",
+   "coverage": {
+    "countries": 187,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 8670
+   }
+  },
+  {
+   "id": "youth_unemployment",
+   "category": "livelihood",
+   "source": "worldbank",
+   "code": "SL.UEM.1524.ZS",
+   "name": "Youth unemployment",
+   "unit": "% of labour force aged 15-24",
+   "direction": "down_good",
+   "plain": "The share of young people looking for work who cannot find it.",
+   "measures": "Modelled ILO estimate of unemployment among 15-24 year olds.",
+   "blindspots": "Students sit outside the labour force, so a country that keeps young people in education longer looks better without a single job being created. It also misses underemployment, which is the more common problem in poorer countries.",
+   "gamed": "Training schemes and apprenticeships move people out of the count without moving them into work.",
+   "coverage": {
+    "countries": 187,
+    "min_year": 1991,
+    "max_year": 2025,
+    "observations": 6531
+   }
+  },
+  {
+   "id": "female_labour",
+   "category": "livelihood",
+   "source": "worldbank",
+   "code": "SL.TLF.CACT.FE.ZS",
+   "name": "Female labour force participation",
+   "unit": "% of women aged 15+",
+   "direction": "up_good",
+   "plain": "The share of adult women in paid work or looking for it.",
+   "measures": "Modelled ILO estimate of women aged 15+ who are economically active.",
+   "blindspots": "Unpaid household and care work is invisible here, so a fall can mean women being pushed out of paid work, or a household becoming prosperous enough not to need a second income. The number does not distinguish them.",
+   "gamed": "Whether subsistence agriculture counts as employment is a definitional choice, and it moves this sharply in largely rural economies.",
+   "coverage": {
+    "countries": 187,
+    "min_year": 1990,
+    "max_year": 2025,
+    "observations": 6718
+   }
+  },
+  {
+   "id": "top10_share",
+   "category": "livelihood",
+   "source": "worldbank",
+   "code": "SI.DST.10TH.10",
+   "name": "Income share of the richest 10%",
+   "unit": "% of all income",
+   "direction": "down_good",
+   "plain": "How much of the country's income goes to the best-off tenth.",
+   "measures": "Share of total income or consumption held by the top decile.",
+   "blindspots": "The thinnest series in this catalogue - roughly 2,400 observations across 171 countries, so most countries have a scattering of years rather than a line. Household surveys also systematically miss the very richest, so this understates concentration almost everywhere.",
+   "gamed": "Survey design decides the answer: what counts as income, whether capital gains are included, and how non-responding rich households are treated.",
+   "coverage": {
+    "countries": 171,
+    "min_year": 1963,
+    "max_year": 2025,
+    "observations": 2430
+   }
+  },
+  {
+   "id": "military_spend",
+   "category": "state",
+   "source": "worldbank",
+   "code": "MS.MIL.XPND.GD.ZS",
+   "name": "Military spending",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "How much of the economy goes on defence.",
+   "measures": "Military expenditure - personnel, operations, procurement, military aid - as a share of output, from SIPRI via the World Bank.",
+   "blindspots": "There is no correct level, so up is neither good nor bad. A share of GDP also falls when the economy grows, even if spending rose in cash terms.",
+   "gamed": "Paramilitary forces, veterans' benefits and military pensions sit inside or outside the definition depending on the country, and states under pressure move them.",
+   "coverage": {
+    "countries": 164,
+    "min_year": 1960,
+    "max_year": 2024,
+    "observations": 7909
+   }
+  },
+  {
+   "id": "remittances",
+   "category": "openness",
+   "source": "worldbank",
+   "code": "BX.TRF.PWKR.DT.GD.ZS",
+   "name": "Remittances received",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "Money sent home by people working abroad, as a share of the economy.",
+   "measures": "Personal transfers and compensation of employees received from abroad.",
+   "blindspots": "Counts only money moving through recorded channels, so where informal transfer systems dominate the real figure is far higher. A high number is double-edged: it supports households while saying the work is elsewhere.",
+   "gamed": "Not readily gamed by a government, but it jumps when informal flows are formalised - which looks like growth and is a change of plumbing.",
+   "coverage": {
+    "countries": 199,
+    "min_year": 1970,
+    "max_year": 2025,
+    "observations": 7114
+   }
+  },
+  {
+   "id": "current_account",
+   "category": "openness",
+   "source": "worldbank",
+   "code": "BN.CAB.XOKA.GD.ZS",
+   "name": "Current account balance",
+   "unit": "% of GDP",
+   "direction": "neutral",
+   "plain": "Whether the country earns more from the rest of the world than it spends there. Negative means spending more abroad than it earns.",
+   "measures": "Trade, income and transfers with the rest of the world, net, over output.",
+   "blindspots": "A deficit is not automatically a problem - it can fund productive investment - and a surplus is not automatically strength, since it can mean weak domestic demand. The direction alone tells you nothing.",
+   "gamed": "A large errors-and-omissions line absorbs unrecorded flows, and the balance is revised heavily for years after first publication.",
+   "coverage": {
+    "countries": 200,
+    "min_year": 1960,
+    "max_year": 2025,
+    "observations": 7715
+   }
+  },
+  {
+   "id": "maternal_mortality",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SH.STA.MMRT",
+   "name": "Maternal mortality",
+   "unit": "deaths per 100,000 live births",
+   "direction": "down_good",
+   "plain": "How many women die from causes related to pregnancy and childbirth.",
+   "measures": "Modelled estimate of maternal deaths per 100,000 live births.",
+   "blindspots": "Modelled, not counted, across most of the world. Where civil registration is weak the figure comes from a statistical model whose uncertainty band is wide enough to swallow small year-to-year changes.",
+   "gamed": "Cause-of-death coding decides whether a death is maternal, and deaths outside hospitals are the ones most often missed.",
+   "coverage": {
+    "countries": 194,
+    "min_year": 1985,
+    "max_year": 2023,
+    "observations": 7566
+   }
+  },
+  {
+   "id": "water_basic",
+   "category": "human",
+   "source": "worldbank",
+   "code": "SH.H2O.BASW.ZS",
+   "name": "Basic drinking water access",
+   "unit": "% of population",
+   "direction": "up_good",
+   "plain": "The share of people with a protected water source within a short walk.",
+   "measures": "People using an improved source within a 30-minute round trip, queuing included.",
+   "blindspots": "\"Basic\" is a low bar. It says nothing about whether the water is safe to drink, whether it runs today, or whether a household can afford it - a country can be at 100% here and still have unsafe water.",
+   "gamed": "Counting infrastructure built rather than infrastructure working: a standpipe installed and long since broken still counts as a source.",
+   "coverage": {
+    "countries": 214,
+    "min_year": 2000,
+    "max_year": 2024,
+    "observations": 5209
+   }
+  },
+  {
+   "id": "co2_pc",
+   "category": "human",
+   "source": "worldbank",
+   "code": "EN.GHG.CO2.PC.CE.AR5",
+   "name": "CO2 emissions per person",
+   "unit": "tonnes CO2e per person",
+   "direction": "down_good",
+   "plain": "How much carbon dioxide the average resident's economy emits in a year.",
+   "measures": "Territorial CO2 emissions excluding land use change, per head, on the AR5 accounting basis.",
+   "blindspots": "Territorial, so emissions from making goods that are exported count where they are produced, not where they are consumed. Rich countries that import manufactured goods look cleaner than their consumption warrants.",
+   "gamed": "Offshoring heavy industry lowers this while global emissions are unchanged - the single largest source of apparent progress in rich countries.",
+   "coverage": {
+    "countries": 203,
+    "min_year": 1970,
+    "max_year": 2024,
+    "observations": 11165
    }
   }
  ],
@@ -2078,11 +2325,29 @@
    "sha256": "8a7203df69448f369f35a95c337de9ae9ea83cbcaec7c0586d2df23cc11742eb",
    "url": "https://raw.githubusercontent.com/OEFDataScience/REIGN.github.io/gh-pages/data_sets/regime_list.csv"
   },
+  "wb_BN.CAB.XOKA.GD.ZS.json": {
+   "bytes": 3954807,
+   "fetched_at": "2026-09-20T21:21:24+00:00",
+   "sha256": "1a1a2cf9b0c79f1fde9a6d82899206e4ffb082c2e4866cad6ceb48381ec10543",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/BN.CAB.XOKA.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_BX.KLT.DINV.WD.GD.ZS.json": {
    "bytes": 4317130,
    "fetched_at": "2026-09-20T08:12:30+00:00",
    "sha256": "404e2e14f3f68586a973cecf13faf54822ca005b9899c93d90db3ab58971e2ed",
    "url": "https://api.worldbank.org/v2/country/all/indicator/BX.KLT.DINV.WD.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_BX.TRF.PWKR.DT.GD.ZS.json": {
+   "bytes": 4145343,
+   "fetched_at": "2026-09-20T21:21:24+00:00",
+   "sha256": "a532c07489ce66c17c76d5f0ffcc0ceb196facceda18aec8a77c69d3a0f8d811",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/BX.TRF.PWKR.DT.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_EN.GHG.CO2.PC.CE.AR5.json": {
+   "bytes": 4794018,
+   "fetched_at": "2026-09-20T21:21:27+00:00",
+   "sha256": "78aaef94e76e88e87965551350a5e8554a5ff981b18700c3aca167a9c5baff36",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/EN.GHG.CO2.PC.CE.AR5?format=json&per_page=20000&date=1960:2026"
   },
   "wb_FP.CPI.TOTL.ZG.json": {
    "bytes": 3994630,
@@ -2102,17 +2367,47 @@
    "sha256": "e2a5a0642de3a6aa602c982e9d4985af67d96c8d437fa011cc7b3242552aa110",
    "url": "https://api.worldbank.org/v2/country/all/indicator/GC.TAX.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_MS.MIL.XPND.GD.ZS.json": {
+   "bytes": 3931013,
+   "fetched_at": "2026-09-20T21:21:22+00:00",
+   "sha256": "4aef0d814ea7ad970b72cec1f8f2740044ac363dd8da6d07366d51f01d163d14",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/MS.MIL.XPND.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_NE.GDI.TOTL.ZS.json": {
+   "bytes": 3933124,
+   "fetched_at": "2026-09-20T21:21:19+00:00",
+   "sha256": "313c1afc5acad1a098bf1203b67344023c131ae3c8f4fdb8a7d10997dae74296",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NE.GDI.TOTL.ZS?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_NE.TRD.GNFS.ZS.json": {
    "bytes": 3622353,
    "fetched_at": "2026-09-20T08:12:29+00:00",
    "sha256": "44b01eb1a06d091e026651546c94888c77dc7e4950a19661d4c4d9153e8fa67d",
    "url": "https://api.worldbank.org/v2/country/all/indicator/NE.TRD.GNFS.ZS?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_NV.IND.MANF.ZS.json": {
+   "bytes": 3975877,
+   "fetched_at": "2026-09-20T21:21:18+00:00",
+   "sha256": "db2e8b4b621393d20ad501962cccd45a15d5864121130a559f6f23fcc7342c33",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NV.IND.MANF.ZS?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_NY.GDP.MKTP.KD.ZG.json": {
    "bytes": 3803123,
    "fetched_at": "2026-09-20T08:11:46+00:00",
    "sha256": "d95fabbb5731225261778b7febda96eceadd66a557ce81a9f3255520703ad0b6",
    "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.KD.ZG?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_NY.GDP.MKTP.KD.json": {
+   "bytes": 3783503,
+   "fetched_at": "2026-09-20T21:21:14+00:00",
+   "sha256": "a68bc2aeaceff2aad8e9d6c1fb712f3764915005765b2f96644b7e1af900e83a",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.MKTP.KD?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_NY.GDP.PCAP.KD.ZG.json": {
+   "bytes": 3998503,
+   "fetched_at": "2026-09-20T21:21:16+00:00",
+   "sha256": "3116b0f82b2c4cb5dbf3221078d1d03aade9286f8904c2c55681d5ab0a9afc98",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/NY.GDP.PCAP.KD.ZG?format=json&per_page=20000&date=1960:2026"
   },
   "wb_NY.GDP.PCAP.KD.json": {
    "bytes": 3976465,
@@ -2132,11 +2427,29 @@
    "sha256": "faba5eaf9856a03e60d0fca7d0708dc0df3ebcd5897fc8cc5a2521ca48ac3e66",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SE.XPD.TOTL.GD.ZS?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_SH.H2O.BASW.ZS.json": {
+   "bytes": 4485151,
+   "fetched_at": "2026-09-20T21:21:26+00:00",
+   "sha256": "4494d4c179d99e0c782d30dac8d18d07f16bd5fab2432d9bca02d266f38ed1aa",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SH.H2O.BASW.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SH.STA.MMRT.json": {
+   "bytes": 4331482,
+   "fetched_at": "2026-09-20T21:21:26+00:00",
+   "sha256": "d19e18021c680f5f910b13c9d9f93d4219824cc5b0f44350e1b69e8840b07c73",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SH.STA.MMRT?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_SH.XPD.CHEX.GD.ZS.json": {
    "bytes": 3949999,
    "fetched_at": "2026-09-20T08:12:25+00:00",
    "sha256": "7a11e2a3b0f5214e7f82e80890571f002135238a6b47f4ea7c431628fc83a191",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SH.XPD.CHEX.GD.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SI.DST.10TH.10.json": {
+   "bytes": 3768859,
+   "fetched_at": "2026-09-20T21:21:22+00:00",
+   "sha256": "dfdc272a7061b0dfd6487ff75c7f7c51981bd5ecf9dae57297e22f50da25305c",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SI.DST.10TH.10?format=json&per_page=20000&date=1960:2026"
   },
   "wb_SI.POV.DDAY.json": {
    "bytes": 4326335,
@@ -2150,11 +2463,23 @@
    "sha256": "2cd7412267bc876a97aa35242b01f6e5328058927dc308f733ebfdf51e702256",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SI.POV.GINI?format=json&per_page=20000&date=1960:2026"
   },
+  "wb_SL.TLF.CACT.FE.ZS.json": {
+   "bytes": 4956427,
+   "fetched_at": "2026-09-20T21:21:20+00:00",
+   "sha256": "91c30d564b7c81f8019e9c9ceaadb73a73ee4a43e54e744c5a75c82997673e29",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SL.TLF.CACT.FE.ZS?format=json&per_page=20000&date=1960:2026"
+  },
   "wb_SL.TLF.CACT.ZS.json": {
    "bytes": 4868796,
    "fetched_at": "2026-09-20T08:12:19+00:00",
    "sha256": "23be12c81f6148a97e3a206a8f1b6a2b4103bde82de90faaaf5c7bb739ecb203",
    "url": "https://api.worldbank.org/v2/country/all/indicator/SL.TLF.CACT.ZS?format=json&per_page=20000&date=1960:2026"
+  },
+  "wb_SL.UEM.1524.ZS.json": {
+   "bytes": 4708321,
+   "fetched_at": "2026-09-20T21:21:19+00:00",
+   "sha256": "e54f80c2613de70cb35486582e7c21bf2763cb3821e1470a6617b295514f144a",
+   "url": "https://api.worldbank.org/v2/country/all/indicator/SL.UEM.1524.ZS?format=json&per_page=20000&date=1960:2026"
   },
   "wb_SL.UEM.TOTL.ZS.json": {
    "bytes": 4407416,

@@ -424,3 +424,242 @@ indicators:
       A step function - it hides gradual erosion until the year a country crosses a
       threshold. Use the continuous V-Dem indices to see change coming; use this to
       label it.
+
+  # ---------------- added: broader coverage of the same questions -----------
+  # Every entry below was probed against the World Bank API before being added -
+  # code, name, unit, observation count and year span all read off the live
+  # response rather than copied from documentation. EN.ATM.CO2E.PC, the code
+  # most tutorials still give for CO2 per capita, is retired and returns
+  # "Invalid format"; the AR5 code below is its live replacement.
+
+  - id: gdp_total
+    category: economy
+    source: worldbank
+    code: NY.GDP.MKTP.KD
+    name: GDP, total
+    unit: constant 2015 US$
+    direction: up_good
+    plain: The whole economy's output, inflation stripped out, not divided by population.
+    measures: Market value of all goods and services produced in a year.
+    blindspots: >-
+      Size is not prosperity. A large, poor country outranks a small, rich one on
+      this number and always will, which is why it belongs beside GDP per capita
+      rather than instead of it.
+    gamed: >-
+      The same rebasing trick as GDP per capita, with more room to hide: revisions
+      to the deflator move the level without any change in what was produced.
+
+  - id: gdp_pc_growth
+    category: economy
+    source: worldbank
+    code: NY.GDP.PCAP.KD.ZG
+    name: GDP per capita growth
+    unit: "% per year"
+    direction: up_good
+    plain: How much richer the average person got, after accounting for more people.
+    measures: Annual change in inflation-adjusted output per person.
+    blindspots: >-
+      An average again. It can be positive while most people get poorer, if the
+      gains are concentrated. Where population is falling it flatters the number
+      for reasons nobody chose.
+    gamed: >-
+      An undercounted population raises output per head arithmetically, so a
+      delayed or disputed census lifts this without anything being produced.
+
+  - id: manufacturing
+    category: economy
+    source: worldbank
+    code: NV.IND.MANF.ZS
+    name: Manufacturing share of output
+    unit: "% of GDP"
+    direction: neutral
+    plain: How much of the economy is making physical things.
+    measures: Value added by manufacturing as a share of total output.
+    blindspots: >-
+      A falling share is not automatically decline - rich countries shift towards
+      services as they get richer. It is bad news only when it falls WITHOUT that
+      shift, which this number alone cannot tell you.
+    gamed: >-
+      Reclassifying assembly or processing work between industry and services
+      moves the share without moving a single factory.
+
+  - id: investment
+    category: economy
+    source: worldbank
+    code: NE.GDI.TOTL.ZS
+    name: Investment (capital formation)
+    unit: "% of GDP"
+    direction: up_good
+    plain: How much of what the country earns is put back into building things.
+    measures: >-
+      Gross capital formation - buildings, machinery, infrastructure and inventory
+      changes - as a share of output.
+    blindspots: >-
+      Counts spending, never usefulness. A bridge to nowhere and a needed railway
+      are the same number here, and a construction boom that ends in empty towers
+      looks identical to productive investment while it lasts.
+    gamed: >-
+      Bringing projects forward before an election raises it for a year or two.
+      Unsold inventory also counts as investment.
+
+  - id: youth_unemployment
+    category: livelihood
+    source: worldbank
+    code: SL.UEM.1524.ZS
+    name: Youth unemployment
+    unit: "% of labour force aged 15-24"
+    direction: down_good
+    plain: The share of young people looking for work who cannot find it.
+    measures: Modelled ILO estimate of unemployment among 15-24 year olds.
+    blindspots: >-
+      Students sit outside the labour force, so a country that keeps young people
+      in education longer looks better without a single job being created. It also
+      misses underemployment, which is the more common problem in poorer countries.
+    gamed: >-
+      Training schemes and apprenticeships move people out of the count without
+      moving them into work.
+
+  - id: female_labour
+    category: livelihood
+    source: worldbank
+    code: SL.TLF.CACT.FE.ZS
+    name: Female labour force participation
+    unit: "% of women aged 15+"
+    direction: up_good
+    plain: The share of adult women in paid work or looking for it.
+    measures: Modelled ILO estimate of women aged 15+ who are economically active.
+    blindspots: >-
+      Unpaid household and care work is invisible here, so a fall can mean women
+      being pushed out of paid work, or a household becoming prosperous enough not
+      to need a second income. The number does not distinguish them.
+    gamed: >-
+      Whether subsistence agriculture counts as employment is a definitional
+      choice, and it moves this sharply in largely rural economies.
+
+  - id: top10_share
+    category: livelihood
+    source: worldbank
+    code: SI.DST.10TH.10
+    name: Income share of the richest 10%
+    unit: "% of all income"
+    direction: down_good
+    plain: How much of the country's income goes to the best-off tenth.
+    measures: Share of total income or consumption held by the top decile.
+    blindspots: >-
+      The thinnest series in this catalogue - roughly 2,400 observations across 171
+      countries, so most countries have a scattering of years rather than a line.
+      Household surveys also systematically miss the very richest, so this
+      understates concentration almost everywhere.
+    gamed: >-
+      Survey design decides the answer: what counts as income, whether capital
+      gains are included, and how non-responding rich households are treated.
+
+  - id: military_spend
+    category: state
+    source: worldbank
+    code: MS.MIL.XPND.GD.ZS
+    name: Military spending
+    unit: "% of GDP"
+    direction: neutral
+    plain: How much of the economy goes on defence.
+    measures: >-
+      Military expenditure - personnel, operations, procurement, military aid - as
+      a share of output, from SIPRI via the World Bank.
+    blindspots: >-
+      There is no correct level, so up is neither good nor bad. A share of GDP also
+      falls when the economy grows, even if spending rose in cash terms.
+    gamed: >-
+      Paramilitary forces, veterans' benefits and military pensions sit inside or
+      outside the definition depending on the country, and states under pressure
+      move them.
+
+  - id: remittances
+    category: openness
+    source: worldbank
+    code: BX.TRF.PWKR.DT.GD.ZS
+    name: Remittances received
+    unit: "% of GDP"
+    direction: neutral
+    plain: Money sent home by people working abroad, as a share of the economy.
+    measures: Personal transfers and compensation of employees received from abroad.
+    blindspots: >-
+      Counts only money moving through recorded channels, so where informal
+      transfer systems dominate the real figure is far higher. A high number is
+      double-edged: it supports households while saying the work is elsewhere.
+    gamed: >-
+      Not readily gamed by a government, but it jumps when informal flows are
+      formalised - which looks like growth and is a change of plumbing.
+
+  - id: current_account
+    category: openness
+    source: worldbank
+    code: BN.CAB.XOKA.GD.ZS
+    name: Current account balance
+    unit: "% of GDP"
+    direction: neutral
+    plain: >-
+      Whether the country earns more from the rest of the world than it spends
+      there. Negative means spending more abroad than it earns.
+    measures: Trade, income and transfers with the rest of the world, net, over output.
+    blindspots: >-
+      A deficit is not automatically a problem - it can fund productive investment -
+      and a surplus is not automatically strength, since it can mean weak domestic
+      demand. The direction alone tells you nothing.
+    gamed: >-
+      A large errors-and-omissions line absorbs unrecorded flows, and the balance
+      is revised heavily for years after first publication.
+
+  - id: maternal_mortality
+    category: human
+    source: worldbank
+    code: SH.STA.MMRT
+    name: Maternal mortality
+    unit: deaths per 100,000 live births
+    direction: down_good
+    plain: How many women die from causes related to pregnancy and childbirth.
+    measures: Modelled estimate of maternal deaths per 100,000 live births.
+    blindspots: >-
+      Modelled, not counted, across most of the world. Where civil registration is
+      weak the figure comes from a statistical model whose uncertainty band is wide
+      enough to swallow small year-to-year changes.
+    gamed: >-
+      Cause-of-death coding decides whether a death is maternal, and deaths outside
+      hospitals are the ones most often missed.
+
+  - id: water_basic
+    category: human
+    source: worldbank
+    code: SH.H2O.BASW.ZS
+    name: Basic drinking water access
+    unit: "% of population"
+    direction: up_good
+    plain: The share of people with a protected water source within a short walk.
+    measures: >-
+      People using an improved source within a 30-minute round trip, queuing
+      included.
+    blindspots: >-
+      "Basic" is a low bar. It says nothing about whether the water is safe to
+      drink, whether it runs today, or whether a household can afford it - a
+      country can be at 100% here and still have unsafe water.
+    gamed: >-
+      Counting infrastructure built rather than infrastructure working: a standpipe
+      installed and long since broken still counts as a source.
+
+  - id: co2_pc
+    category: human
+    source: worldbank
+    code: EN.GHG.CO2.PC.CE.AR5
+    name: CO2 emissions per person
+    unit: tonnes CO2e per person
+    direction: down_good
+    plain: How much carbon dioxide the average resident's economy emits in a year.
+    measures: >-
+      Territorial CO2 emissions excluding land use change, per head, on the AR5
+      accounting basis.
+    blindspots: >-
+      Territorial, so emissions from making goods that are exported count where
+      they are produced, not where they are consumed. Rich countries that import
+      manufactured goods look cleaner than their consumption warrants.
+    gamed: >-
+      Offshoring heavy industry lowers this while global emissions are unchanged -
+      the single largest source of apparent progress in rich countries.
