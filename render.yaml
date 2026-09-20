@@ -1,0 +1,52 @@
+# Render blueprint.
+#
+# This deploys as a STATIC SITE, with no server and no database, because the app
+# genuinely needs neither at runtime. `python -m etl.build` and
+# `python -m etl.export_people` pre-compute every number into JSON, so the
+# browser only ever fetches files. That is a deliberate property, not a
+# limitation:
+#
+#   * nothing to keep running, nothing to pay for, nothing to get breached
+#   * the published data is a fixed artefact - what a reader sees is exactly
+#     what was built, and can be diffed between builds
+#   * no request from a visitor ever reaches a government portal, so publishing
+#     this cannot turn readers into unwitting load on someone else's server
+#
+# The Python side is a build-time pipeline that runs on a developer's machine.
+# Render never needs Python, network access to data sources, or the 75MB
+# archive.
+
+services:
+  - type: web
+    name: politicalfindings
+    runtime: static
+    # The data bundles are committed, so the build only compiles the frontend.
+    # Rebuilding data here would need Python plus live access to the World Bank,
+    # OWID, MyNeta, MPLADS and PRS - slow, fragile, and rude to those servers on
+    # every deploy.
+    buildCommand: cd web && npm ci && npm run build
+    staticPublishPath: web/dist
+    pullRequestPreviewsEnabled: true
+
+    headers:
+      # The JSON bundles are content-addressed by build, not by filename, so
+      # they must revalidate. The hashed JS/CSS assets can be cached hard.
+      - path: /data/*
+        name: Cache-Control
+        value: public, max-age=300, must-revalidate
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+
+    routes:
+      # Single-page app: the query string carries the view state, so any path
+      # that is not a real file must fall through to index.html.
+      - type: rewrite
+        source: /*
+        destination: /index.html

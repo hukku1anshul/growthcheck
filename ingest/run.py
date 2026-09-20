@@ -9,8 +9,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .extractors.electoralbonds import ElectoralBonds
 from .extractors.mplads import MPLADS
 from .extractors.myneta import MyNeta
+from .extractors.ocds import OCDS
 from .extractors.prs import PRS
 from .extractors.ukparliament import UKParliament
 from .schema import connect
@@ -18,7 +20,8 @@ from .schema import connect
 ROOT = Path(__file__).resolve().parents[1]
 DB = ROOT / "data" / "processed" / "claims.db"
 
-EXTRACTORS = {"mplads": MPLADS, "myneta": MyNeta, "prs": PRS,
+EXTRACTORS = {"electoralbonds": ElectoralBonds, "mplads": MPLADS,
+              "myneta": MyNeta, "ocds": OCDS, "prs": PRS,
               "ukparliament": UKParliament}
 
 

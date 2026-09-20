@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-20T10:52:40+00:00",
+ "built_at": "2026-09-20T11:05:50+00:00",
  "people": [
   {
    "id": 1014,
@@ -15856,14 +15856,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 198,
+   "n_claims": 205,
    "n_offices": 1,
    "allocated": 147816309.11,
    "spent": 32041066.0,
    "utilisation": 21.7,
    "works": 189,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 97.0,
+   "n_conflicts": 3
   },
   {
    "id": 202,
@@ -19432,14 +19432,14 @@
    "declared_multiple": 145.19,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 13,
+   "n_claims": 20,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 5753000.0,
    "utilisation": 3.9,
    "works": 2,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 0.0,
+   "n_conflicts": 3
   },
   {
    "id": 427,
@@ -19456,14 +19456,14 @@
    "declared_multiple": 23.76,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 35,
+   "n_claims": 42,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 24967281.0,
    "utilisation": 17.0,
    "works": 16,
-   "attendance": null,
-   "n_conflicts": 3
+   "attendance": 94.0,
+   "n_conflicts": 6
   },
   {
    "id": 131,
@@ -19480,14 +19480,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 74,
+   "n_claims": 81,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 34424306.0,
    "utilisation": 23.4,
    "works": 66,
-   "attendance": null,
-   "n_conflicts": 10
+   "attendance": 94.0,
+   "n_conflicts": 13
   },
   {
    "id": 79,
@@ -19504,14 +19504,14 @@
    "declared_multiple": 2.02,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 56,
+   "n_claims": 63,
    "n_offices": 1,
    "allocated": 150450930.89,
    "spent": 60629237.0,
    "utilisation": 40.3,
    "works": 46,
-   "attendance": null,
-   "n_conflicts": 3
+   "attendance": 99.0,
+   "n_conflicts": 5
   },
   {
    "id": 30,
@@ -19528,14 +19528,14 @@
    "declared_multiple": 25.2,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 22,
+   "n_claims": 29,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 2900000.0,
    "utilisation": 2.0,
    "works": 9,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 86.0,
+   "n_conflicts": 2
   },
   {
    "id": 474,
@@ -19552,14 +19552,14 @@
    "declared_multiple": 1.5,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 69,
+   "n_claims": 76,
    "n_offices": 1,
    "allocated": 192042469.11,
    "spent": 62194543.0,
    "utilisation": 32.4,
    "works": 54,
-   "attendance": null,
-   "n_conflicts": 11
+   "attendance": 82.0,
+   "n_conflicts": 13
   },
   {
    "id": 61,
@@ -19576,14 +19576,14 @@
    "declared_multiple": 15.06,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 126,
+   "n_claims": 133,
    "n_offices": 1,
    "allocated": 150070866.11,
    "spent": 87908021.0,
    "utilisation": 58.6,
    "works": 106,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 91.0,
+   "n_conflicts": 3
   },
   {
    "id": 107,
@@ -19600,14 +19600,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 18,
    "n_offices": 1,
    "allocated": 160434965.11,
    "spent": 8122452.0,
    "utilisation": 5.1,
    "works": 2,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 98.0,
+   "n_conflicts": 3
   },
   {
    "id": 397,
@@ -19744,14 +19744,14 @@
    "declared_multiple": 1.89,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 84,
+   "n_claims": 91,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 20786958.0,
    "utilisation": 14.1,
    "works": 72,
-   "attendance": null,
-   "n_conflicts": 15
+   "attendance": 78.0,
+   "n_conflicts": 18
   },
   {
    "id": 526,
@@ -19768,14 +19768,14 @@
    "declared_multiple": 1.67,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 16,
+   "n_claims": 23,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 12082736.0,
    "utilisation": 8.2,
    "works": 5,
-   "attendance": null,
-   "n_conflicts": 2
+   "attendance": 90.0,
+   "n_conflicts": 5
   },
   {
    "id": 150,
@@ -19792,14 +19792,14 @@
    "declared_multiple": 2.23,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 203,
+   "n_claims": 209,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 43597988.0,
    "utilisation": 29.7,
    "works": 191,
    "attendance": null,
-   "n_conflicts": 45
+   "n_conflicts": 48
   },
   {
    "id": 303,
@@ -19984,14 +19984,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 84,
+   "n_claims": 91,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 48261662.0,
    "utilisation": 32.8,
    "works": 75,
-   "attendance": null,
-   "n_conflicts": 10
+   "attendance": 90.0,
+   "n_conflicts": 13
   },
   {
    "id": 279,
@@ -20008,14 +20008,14 @@
    "declared_multiple": 2.06,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 12,
+   "n_claims": 19,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 991449.0,
    "utilisation": 0.7,
    "works": 1,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 98.0,
+   "n_conflicts": 3
   },
   {
    "id": 264,
@@ -20464,14 +20464,14 @@
    "declared_multiple": 4.9,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 70,
+   "n_claims": 77,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 21545000.0,
    "utilisation": 14.7,
    "works": 57,
-   "attendance": null,
-   "n_conflicts": 7
+   "attendance": 85.0,
+   "n_conflicts": 10
   },
   {
    "id": 392,
@@ -20488,14 +20488,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 54,
+   "n_claims": 61,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 44163117.0,
    "utilisation": 30.0,
    "works": 45,
-   "attendance": null,
-   "n_conflicts": 5
+   "attendance": 85.0,
+   "n_conflicts": 7
   },
   {
    "id": 552,
@@ -20546,6 +20546,30 @@
    "n_conflicts": 0
   },
   {
+   "id": 1267,
+   "name": "Durgadas D D Uikey",
+   "country": "IND",
+   "party": "Bharatiya Janata Party",
+   "constituency": "Betul",
+   "region": "Madhya Pradesh",
+   "currency": "INR",
+   "latest_assets": null,
+   "asset_points": 0,
+   "flow_total": null,
+   "cases": null,
+   "declared_multiple": null,
+   "national_multiple": null,
+   "span": null,
+   "n_claims": 6,
+   "n_offices": 1,
+   "allocated": null,
+   "spent": null,
+   "utilisation": null,
+   "works": null,
+   "attendance": null,
+   "n_conflicts": 0
+  },
+  {
    "id": 349,
    "name": "Dushyant Singh",
    "country": "IND",
@@ -20560,14 +20584,14 @@
    "declared_multiple": 54.97,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 16,
+   "n_claims": 23,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": null,
    "utilisation": null,
    "works": null,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 94.0,
+   "n_conflicts": 3
   },
   {
    "id": 171,
@@ -20584,14 +20608,14 @@
    "declared_multiple": 9.54,
    "national_multiple": 2.18,
    "span": "2008-2024",
-   "n_claims": 20,
+   "n_claims": 27,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 988344.0,
    "utilisation": 0.7,
    "works": 3,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 58.0,
+   "n_conflicts": 3
   },
   {
    "id": 204,
@@ -20608,14 +20632,14 @@
    "declared_multiple": 2.5,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 60,
+   "n_claims": 67,
    "n_offices": 1,
    "allocated": 163895872.11,
    "spent": 22847698.0,
    "utilisation": 13.9,
    "works": 50,
-   "attendance": null,
-   "n_conflicts": 11
+   "attendance": 90.0,
+   "n_conflicts": 13
   },
   {
    "id": 408,
@@ -20632,14 +20656,14 @@
    "declared_multiple": 6.79,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 55,
+   "n_claims": 62,
    "n_offices": 1,
    "allocated": 327477390.86,
    "spent": 19752111.0,
    "utilisation": 6.0,
    "works": 32,
-   "attendance": null,
-   "n_conflicts": 11
+   "attendance": 84.0,
+   "n_conflicts": 13
   },
   {
    "id": 383,
@@ -20656,14 +20680,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 57,
+   "n_claims": 64,
    "n_offices": 1,
    "allocated": 162315106.11,
    "spent": 46830135.0,
    "utilisation": 28.9,
    "works": 48,
-   "attendance": null,
-   "n_conflicts": 3
+   "attendance": 83.0,
+   "n_conflicts": 6
   },
   {
    "id": 232,
@@ -20680,14 +20704,38 @@
    "declared_multiple": 17.32,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 53,
+   "n_claims": 60,
    "n_offices": 1,
    "allocated": 151861648.41,
    "spent": 17132310.0,
    "utilisation": 11.3,
    "works": 34,
-   "attendance": null,
-   "n_conflicts": 4
+   "attendance": 88.0,
+   "n_conflicts": 7
+  },
+  {
+   "id": 1268,
+   "name": "G Lakshminarayana",
+   "country": "IND",
+   "party": "Telugu Desam Party",
+   "constituency": "Ananthapur",
+   "region": "Andhra Pradesh",
+   "currency": "INR",
+   "latest_assets": null,
+   "asset_points": 0,
+   "flow_total": null,
+   "cases": null,
+   "declared_multiple": null,
+   "national_multiple": null,
+   "span": null,
+   "n_claims": 7,
+   "n_offices": 1,
+   "allocated": null,
+   "spent": null,
+   "utilisation": null,
+   "works": null,
+   "attendance": 94.0,
+   "n_conflicts": 0
   },
   {
    "id": 2,
@@ -20728,14 +20776,14 @@
    "declared_multiple": 2.98,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 14,
+   "n_claims": 20,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": null,
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 188,
@@ -20752,14 +20800,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 18,
+   "n_claims": 25,
    "n_offices": 1,
    "allocated": 147066591.11,
    "spent": 6475548.0,
    "utilisation": 4.4,
    "works": 9,
-   "attendance": null,
-   "n_conflicts": 1
+   "attendance": 86.0,
+   "n_conflicts": 4
   },
   {
    "id": 554,
@@ -20776,13 +20824,13 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 57,
+   "n_claims": 64,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 49099343.0,
    "utilisation": 33.4,
    "works": 54,
-   "attendance": null,
+   "attendance": 99.0,
    "n_conflicts": 12
   },
   {
@@ -20800,13 +20848,13 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 159,
+   "n_claims": 166,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 38989745.0,
    "utilisation": 26.5,
    "works": 156,
-   "attendance": null,
+   "attendance": 83.0,
    "n_conflicts": 27
   },
   {
@@ -20824,14 +20872,14 @@
    "declared_multiple": 2.09,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 105,
+   "n_claims": 112,
    "n_offices": 1,
    "allocated": 167541747.11,
    "spent": 45898327.0,
    "utilisation": 27.4,
    "works": 92,
-   "attendance": null,
-   "n_conflicts": 19
+   "attendance": 86.0,
+   "n_conflicts": 22
   },
   {
    "id": 268,
@@ -20848,14 +20896,14 @@
    "declared_multiple": 12.44,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 14,
+   "n_claims": 21,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": null,
    "utilisation": null,
    "works": null,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 96.0,
+   "n_conflicts": 3
   },
   {
    "id": 231,
@@ -20872,14 +20920,14 @@
    "declared_multiple": 2.39,
    "national_multiple": 1.69,
    "span": "2013-2024",
-   "n_claims": 121,
+   "n_claims": 128,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 25892919.0,
    "utilisation": 17.6,
    "works": 108,
-   "attendance": null,
-   "n_conflicts": 3
+   "attendance": 97.0,
+   "n_conflicts": 6
   },
   {
    "id": 351,
@@ -20896,14 +20944,14 @@
    "declared_multiple": 1.35,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 12,
+   "n_claims": 18,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": null,
    "utilisation": null,
    "works": null,
    "attendance": null,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 367,
@@ -20920,14 +20968,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 16,
+   "n_claims": 23,
    "n_offices": 1,
    "allocated": 147370490.11,
    "spent": 8599674.0,
    "utilisation": 5.8,
    "works": 7,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 91.0,
+   "n_conflicts": 3
   },
   {
    "id": 553,
@@ -20968,14 +21016,14 @@
    "declared_multiple": 2.27,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 90,
+   "n_claims": 97,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 21445936.0,
    "utilisation": 14.6,
    "works": 77,
-   "attendance": null,
-   "n_conflicts": 3
+   "attendance": 94.0,
+   "n_conflicts": 6
   },
   {
    "id": 35,
@@ -20992,14 +21040,14 @@
    "declared_multiple": 8.96,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 49,
+   "n_claims": 56,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 8728907.0,
    "utilisation": 5.9,
    "works": 37,
-   "attendance": null,
-   "n_conflicts": 7
+   "attendance": 77.0,
+   "n_conflicts": 10
   },
   {
    "id": 110,
@@ -21016,14 +21064,14 @@
    "declared_multiple": 1.3,
    "national_multiple": 1.13,
    "span": "2022-2024",
-   "n_claims": 52,
+   "n_claims": 59,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 16146199.0,
    "utilisation": 11.0,
    "works": 41,
-   "attendance": null,
-   "n_conflicts": 3
+   "attendance": 92.0,
+   "n_conflicts": 5
   },
   {
    "id": 46,
@@ -21040,14 +21088,14 @@
    "declared_multiple": 0.67,
    "national_multiple": 1.49,
    "span": "2015-2024",
-   "n_claims": 107,
+   "n_claims": 114,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 113558653.0,
    "utilisation": 77.3,
    "works": 94,
-   "attendance": null,
-   "n_conflicts": 5
+   "attendance": 75.0,
+   "n_conflicts": 8
   },
   {
    "id": 47,
@@ -21064,14 +21112,14 @@
    "declared_multiple": 2.86,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 38,
+   "n_claims": 44,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 21896679.0,
    "utilisation": 14.9,
    "works": 17,
    "attendance": null,
-   "n_conflicts": 2
+   "n_conflicts": 4
   },
   {
    "id": 400,
@@ -21088,14 +21136,14 @@
    "declared_multiple": 5.83,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 95,
+   "n_claims": 102,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 17451632.0,
    "utilisation": 11.9,
    "works": 80,
-   "attendance": null,
-   "n_conflicts": 11
+   "attendance": 94.0,
+   "n_conflicts": 14
   },
   {
    "id": 50,
@@ -21112,14 +21160,14 @@
    "declared_multiple": 4.87,
    "national_multiple": 1.92,
    "span": "2010-2024",
-   "n_claims": 74,
+   "n_claims": 81,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 28699256.0,
    "utilisation": 19.5,
    "works": 59,
-   "attendance": null,
-   "n_conflicts": 2
+   "attendance": 97.0,
+   "n_conflicts": 5
   },
   {
    "id": 376,
@@ -21160,14 +21208,14 @@
    "declared_multiple": 2.5,
    "national_multiple": 1.69,
    "span": "2013-2024",
-   "n_claims": 34,
+   "n_claims": 41,
    "n_offices": 1,
    "allocated": 177317841.11,
    "spent": 8719720.0,
    "utilisation": 4.9,
    "works": 20,
-   "attendance": null,
-   "n_conflicts": 2
+   "attendance": 73.0,
+   "n_conflicts": 5
   },
   {
    "id": 5,
@@ -21184,14 +21232,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 36,
+   "n_claims": 43,
    "n_offices": 1,
    "allocated": 149458905.11,
    "spent": 39390323.0,
    "utilisation": 26.4,
    "works": 28,
-   "attendance": null,
-   "n_conflicts": 5
+   "attendance": 91.0,
+   "n_conflicts": 8
   },
   {
    "id": 322,
@@ -21208,14 +21256,14 @@
    "declared_multiple": 1.61,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 104,
+   "n_claims": 111,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 38537872.0,
    "utilisation": 26.2,
    "works": 91,
-   "attendance": null,
-   "n_conflicts": 18
+   "attendance": 87.0,
+   "n_conflicts": 20
   },
   {
    "id": 334,
@@ -21280,14 +21328,14 @@
    "declared_multiple": 1.39,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 214,
+   "n_claims": 221,
    "n_offices": 1,
    "allocated": 155690684.77,
    "spent": 65304128.0,
    "utilisation": 41.9,
    "works": 203,
-   "attendance": null,
-   "n_conflicts": 7
+   "attendance": 92.0,
+   "n_conflicts": 10
   },
   {
    "id": 186,
@@ -21304,14 +21352,14 @@
    "declared_multiple": 1.3,
    "national_multiple": 1.26,
    "span": "2018-2024",
-   "n_claims": 20,
+   "n_claims": 26,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 3500000.0,
    "utilisation": 2.4,
    "works": 7,
    "attendance": null,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 354,
@@ -21328,14 +21376,14 @@
    "declared_multiple": 7.32,
    "national_multiple": 2.18,
    "span": "2008-2024",
-   "n_claims": 199,
+   "n_claims": 206,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 53461587.0,
    "utilisation": 36.4,
    "works": 179,
-   "attendance": null,
-   "n_conflicts": 27
+   "attendance": 99.0,
+   "n_conflicts": 29
   },
   {
    "id": 481,
@@ -21352,14 +21400,14 @@
    "declared_multiple": 4.13,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 45,
+   "n_claims": 52,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 19524140.0,
    "utilisation": 13.3,
    "works": 32,
-   "attendance": null,
-   "n_conflicts": 8
+   "attendance": 99.0,
+   "n_conflicts": 10
   },
   {
    "id": 121,
@@ -21376,14 +21424,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 159,
+   "n_claims": 166,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 27935405.0,
    "utilisation": 19.0,
    "works": 150,
-   "attendance": null,
-   "n_conflicts": 30
+   "attendance": 97.0,
+   "n_conflicts": 33
   },
   {
    "id": 358,
@@ -21400,14 +21448,14 @@
    "declared_multiple": 3.82,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 13,
+   "n_claims": 20,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": null,
    "utilisation": null,
    "works": null,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 98.0,
+   "n_conflicts": 2
   },
   {
    "id": 98,
@@ -21424,14 +21472,14 @@
    "declared_multiple": 2.56,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 63,
+   "n_claims": 69,
    "n_offices": 1,
    "allocated": 147134131.0,
    "spent": 22244092.0,
    "utilisation": 15.1,
    "works": 53,
    "attendance": null,
-   "n_conflicts": 10
+   "n_conflicts": 13
   },
   {
    "id": 324,
@@ -21448,14 +21496,14 @@
    "declared_multiple": 14.84,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 181,
+   "n_claims": 188,
    "n_offices": 2,
    "allocated": 159775982.39,
    "spent": 52548849.0,
    "utilisation": 32.9,
    "works": 160,
-   "attendance": null,
-   "n_conflicts": 25
+   "attendance": 69.0,
+   "n_conflicts": 28
   },
   {
    "id": 556,
@@ -21506,6 +21554,30 @@
    "n_conflicts": 0
   },
   {
+   "id": 1269,
+   "name": "Hasmukhbhai Somabhai Patel",
+   "country": "IND",
+   "party": "Bharatiya Janata Party",
+   "constituency": "Ahmedabad East",
+   "region": "Gujarat",
+   "currency": "INR",
+   "latest_assets": null,
+   "asset_points": 0,
+   "flow_total": null,
+   "cases": null,
+   "declared_multiple": null,
+   "national_multiple": null,
+   "span": null,
+   "n_claims": 8,
+   "n_offices": 1,
+   "allocated": null,
+   "spent": null,
+   "utilisation": null,
+   "works": null,
+   "attendance": 98.0,
+   "n_conflicts": 0
+  },
+  {
    "id": 192,
    "name": "Hegde Vishweshwar",
    "country": "IND",
@@ -21544,14 +21616,14 @@
    "declared_multiple": 1.57,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 11,
+   "n_claims": 18,
    "n_offices": 1,
    "allocated": null,
    "spent": null,
    "utilisation": null,
    "works": null,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 38.0,
+   "n_conflicts": 3
   },
   {
    "id": 197,
@@ -21568,14 +21640,14 @@
    "declared_multiple": 19.58,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 34,
+   "n_claims": 41,
    "n_offices": 1,
    "allocated": 162177260.11,
    "spent": 22457309.0,
    "utilisation": 13.8,
    "works": 21,
-   "attendance": null,
-   "n_conflicts": 4
+   "attendance": 85.0,
+   "n_conflicts": 6
   },
   {
    "id": 488,
@@ -21592,14 +21664,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 59,
+   "n_claims": 66,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 42078624.0,
    "utilisation": 28.6,
    "works": 51,
-   "attendance": null,
-   "n_conflicts": 7
+   "attendance": 92.0,
+   "n_conflicts": 10
   },
   {
    "id": 360,
@@ -21616,14 +21688,14 @@
    "declared_multiple": 31.01,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 49,
+   "n_claims": 56,
    "n_offices": 1,
    "allocated": 152003923.11,
    "spent": 76962180.0,
    "utilisation": 50.6,
    "works": 38,
-   "attendance": null,
-   "n_conflicts": 6
+   "attendance": 92.0,
+   "n_conflicts": 8
   },
   {
    "id": 463,
@@ -21640,14 +21712,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 64,
+   "n_claims": 71,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 43081202.0,
    "utilisation": 29.3,
    "works": 55,
-   "attendance": null,
-   "n_conflicts": 7
+   "attendance": 95.0,
+   "n_conflicts": 10
   },
   {
    "id": 534,
@@ -21664,14 +21736,14 @@
    "declared_multiple": 16.76,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 41,
+   "n_claims": 48,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 8567025.0,
    "utilisation": 5.8,
    "works": 25,
-   "attendance": null,
-   "n_conflicts": 5
+   "attendance": 80.0,
+   "n_conflicts": 7
   },
   {
    "id": 253,
@@ -21736,14 +21808,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 19,
    "n_offices": 1,
    "allocated": 168604641.11,
    "spent": 13602452.0,
    "utilisation": 8.1,
    "works": 4,
-   "attendance": null,
-   "n_conflicts": 1
+   "attendance": 51.0,
+   "n_conflicts": 4
   },
   {
    "id": 170,
@@ -21760,14 +21832,14 @@
    "declared_multiple": 2.7,
    "national_multiple": 1.69,
    "span": "2013-2024",
-   "n_claims": 16,
+   "n_claims": 23,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 499705.0,
    "utilisation": 0.3,
    "works": 1,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 85.0,
+   "n_conflicts": 3
   },
   {
    "id": 541,
@@ -21784,14 +21856,14 @@
    "declared_multiple": 1.27,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 92,
+   "n_claims": 99,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 39879044.0,
    "utilisation": 27.1,
    "works": 80,
-   "attendance": null,
-   "n_conflicts": 13
+   "attendance": 81.0,
+   "n_conflicts": 16
   },
   {
    "id": 443,
@@ -21808,14 +21880,14 @@
    "declared_multiple": 10.86,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 14,
+   "n_claims": 21,
    "n_offices": 1,
    "allocated": 160643957.11,
    "spent": 350000.0,
    "utilisation": 0.2,
    "works": 1,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 100.0,
+   "n_conflicts": 3
   },
   {
    "id": 136,
@@ -21832,14 +21904,14 @@
    "declared_multiple": 14.9,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 90,
+   "n_claims": 97,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 17152376.0,
    "utilisation": 11.7,
    "works": 69,
-   "attendance": null,
-   "n_conflicts": 19
+   "attendance": 96.0,
+   "n_conflicts": 22
   },
   {
    "id": 458,
@@ -21856,14 +21928,14 @@
    "declared_multiple": 16.54,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 18,
+   "n_claims": 25,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 18939014.0,
    "utilisation": 12.9,
    "works": 3,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 85.0,
+   "n_conflicts": 2
   },
   {
    "id": 237,
@@ -21880,14 +21952,14 @@
    "declared_multiple": 5.02,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 14,
+   "n_claims": 21,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 1125327.0,
    "utilisation": 0.8,
    "works": 1,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 100.0,
+   "n_conflicts": 3
   },
   {
    "id": 63,
@@ -21928,14 +22000,14 @@
    "declared_multiple": 2.41,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 112,
+   "n_claims": 119,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 32109147.0,
    "utilisation": 21.8,
    "works": 101,
-   "attendance": null,
-   "n_conflicts": 12
+   "attendance": 96.0,
+   "n_conflicts": 14
   },
   {
    "id": 115,
@@ -21952,14 +22024,14 @@
    "declared_multiple": 7.22,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 110,
+   "n_claims": 117,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 26725792.0,
    "utilisation": 18.2,
    "works": 93,
-   "attendance": null,
-   "n_conflicts": 24
+   "attendance": 92.0,
+   "n_conflicts": 27
   },
   {
    "id": 51,
@@ -21976,14 +22048,14 @@
    "declared_multiple": 1.28,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 170,
+   "n_claims": 176,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 42553425.0,
    "utilisation": 28.9,
    "works": 152,
    "attendance": null,
-   "n_conflicts": 18
+   "n_conflicts": 19
   },
   {
    "id": 445,
@@ -22000,14 +22072,14 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 201,
+   "n_claims": 208,
    "n_offices": 1,
    "allocated": 188747306.26,
    "spent": 59111265.0,
    "utilisation": 31.3,
    "works": 192,
-   "attendance": null,
-   "n_conflicts": 3
+   "attendance": 94.0,
+   "n_conflicts": 6
   },
   {
    "id": 484,
@@ -22024,14 +22096,14 @@
    "declared_multiple": 3.24,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 44,
+   "n_claims": 50,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 31720408.0,
    "utilisation": 21.6,
    "works": 32,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 6
   },
   {
    "id": 164,
@@ -22048,14 +22120,14 @@
    "declared_multiple": 7.51,
    "national_multiple": 2.5,
    "span": "2005-2024",
-   "n_claims": 16,
+   "n_claims": 23,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": null,
    "utilisation": null,
    "works": null,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 79.0,
+   "n_conflicts": 3
   },
   {
    "id": 375,
@@ -22096,14 +22168,14 @@
    "declared_multiple": 50.71,
    "national_multiple": 1.2,
    "span": "2021-2024",
-   "n_claims": 30,
+   "n_claims": 37,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 20909203.0,
    "utilisation": 14.2,
    "works": 20,
-   "attendance": null,
-   "n_conflicts": 2
+   "attendance": 82.0,
+   "n_conflicts": 3
   },
   {
    "id": 320,
@@ -22120,14 +22192,14 @@
    "declared_multiple": 3.14,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 106,
+   "n_claims": 112,
    "n_offices": 1,
    "allocated": 173096756.91,
    "spent": 47778097.0,
    "utilisation": 27.6,
    "works": 91,
    "attendance": null,
-   "n_conflicts": 8
+   "n_conflicts": 11
   },
   {
    "id": 148,
@@ -22144,14 +22216,14 @@
    "declared_multiple": 8.56,
    "national_multiple": 2.18,
    "span": "2008-2024",
-   "n_claims": 13,
+   "n_claims": 20,
    "n_offices": 1,
    "allocated": null,
    "spent": null,
    "utilisation": null,
    "works": null,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 90.0,
+   "n_conflicts": 3
   },
   {
    "id": 537,
@@ -22168,14 +22240,14 @@
    "declared_multiple": 1.92,
    "national_multiple": 1.2,
    "span": "2021-2024",
-   "n_claims": 18,
+   "n_claims": 25,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 18832040.0,
    "utilisation": 12.8,
    "works": 7,
-   "attendance": null,
-   "n_conflicts": 1
+   "attendance": 79.0,
+   "n_conflicts": 4
   },
   {
    "id": 224,
@@ -22192,14 +22264,14 @@
    "declared_multiple": 118.55,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 65,
+   "n_claims": 71,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 45664197.0,
    "utilisation": 31.1,
    "works": 46,
    "attendance": null,
-   "n_conflicts": 3
+   "n_conflicts": 6
   },
   {
    "id": 539,
@@ -22216,14 +22288,14 @@
    "declared_multiple": 0.26,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 41,
+   "n_claims": 48,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 11711831.0,
    "utilisation": 8.0,
    "works": 31,
-   "attendance": null,
-   "n_conflicts": 0
+   "attendance": 71.0,
+   "n_conflicts": 3
   },
   {
    "id": 89,
@@ -28360,13 +28432,13 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 35,
+   "n_claims": 42,
    "n_offices": 1,
    "allocated": 147000000.0,
    "spent": 36296156.0,
    "utilisation": 24.7,
    "works": 32,
-   "attendance": null,
+   "attendance": 100.0,
    "n_conflicts": 3
   },
   {
@@ -28768,14 +28840,14 @@
    "declared_multiple": 1.37,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 58,
+   "n_claims": 65,
    "n_offices": 1,
    "allocated": 150724861.11,
    "spent": 26599003.0,
    "utilisation": 17.6,
    "works": 47,
-   "attendance": null,
-   "n_conflicts": 3
+   "attendance": 97.0,
+   "n_conflicts": 5
   },
   {
    "id": 521,
@@ -30910,6 +30982,19 @@
    "country": "IND",
    "score": 0.9,
    "note": "scored 0.900 against 'C R Patil'; below auto-merge threshold 0.93"
+  },
+  {
+   "a": {
+    "id": 1269,
+    "name": "Hasmukhbhai Somabhai Patel"
+   },
+   "b": {
+    "id": 106,
+    "name": "Hasmukhbhai Patel"
+   },
+   "country": "IND",
+   "score": 0.667,
+   "note": "scored 0.667 against 'Hasmukhbhai Patel'; below auto-merge threshold 0.93"
   }
  ],
  "caveats": {

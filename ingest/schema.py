@@ -109,8 +109,12 @@ CREATE TABLE IF NOT EXISTS claims (
 -- declarations across 26 Indian members vanished that way. COALESCE is required
 -- because SQLite treats NULLs as distinct in a UNIQUE index, which would disable
 -- de-duplication entirely for the many claims that carry no note.
+-- COALESCE on BOTH id columns: SQLite treats NULLs as distinct inside a unique
+-- index, so a party-level claim (person_id NULL) would never de-duplicate and
+-- every re-run would insert it again.
 CREATE UNIQUE INDEX IF NOT EXISTS ux_claims
-    ON claims(person_id, predicate, as_of, source_id, COALESCE(note, ''));
+    ON claims(COALESCE(person_id, -1), COALESCE(subject_id, ''), predicate,
+              as_of, source_id, COALESCE(note, ''));
 CREATE INDEX IF NOT EXISTS ix_claims_person ON claims(person_id, predicate, as_of);
 CREATE INDEX IF NOT EXISTS ix_claims_pred   ON claims(predicate);
 
@@ -152,6 +156,9 @@ PREDICATES = {
     "debates_participated",
     "questions_asked",
     "private_member_bills",
+    # money-IN side. These attach to parties and donors, not to people.
+    "electoral_bonds_received",
+    "electoral_bonds_purchased",
     # money-out side, for procurement/budget extractors
     "budget_allocated",
     "budget_spent",
@@ -159,6 +166,33 @@ PREDICATES = {
     # internal bookkeeping, written by resolve.py rather than by an extractor
     "possible_duplicate_of",
 }
+
+
+EXPECTED_CLAIM_INDEX = (
+    "COALESCE(person_id, -1), COALESCE(subject_id, ''), predicate, "
+    "as_of, source_id, COALESCE(note, '')"
+)
+
+
+def _migrate_claim_index(con: sqlite3.Connection) -> None:
+    """Replace ux_claims when its definition has changed.
+
+    `CREATE UNIQUE INDEX IF NOT EXISTS` is a no-op against an index of the same
+    NAME but a different definition, so an existing database silently keeps the
+    old uniqueness rule. That matters: the previous rule keyed on person_id
+    alone, and party-level claims (person_id NULL) would never de-duplicate,
+    because SQLite treats NULLs as distinct inside a unique index. Every re-run
+    would insert the same electoral bond totals again.
+    """
+    row = con.execute(
+        "SELECT sql FROM sqlite_master WHERE type='index' AND name='ux_claims'"
+    ).fetchone()
+    if row and row[0] and "subject_id" not in row[0]:
+        con.execute("DROP INDEX ux_claims")
+        con.execute(
+            f"CREATE UNIQUE INDEX ux_claims ON claims({EXPECTED_CLAIM_INDEX})"
+        )
+        con.commit()
 
 
 def connect(db_path: str | Path) -> sqlite3.Connection:
@@ -181,6 +215,8 @@ def connect(db_path: str | Path) -> sqlite3.Connection:
     con.executescript(DDL)
     con.execute("PRAGMA busy_timeout = 60000")
     con.execute("PRAGMA foreign_keys = ON")
+
+    _migrate_claim_index(con)
 
     if not con.execute("PRAGMA foreign_keys").fetchone()[0]:
         raise RuntimeError(

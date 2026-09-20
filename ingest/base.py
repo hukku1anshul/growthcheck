@@ -30,6 +30,10 @@ class Claim:
 
     predicate: str
     source_id: int
+    # Not every fact is about a person. Electoral bonds attach to parties and
+    # donors, and procurement to buyers and suppliers.
+    subject: str = "person"
+    subject_id: str | None = None
     person_name: str | None = None
     person_id: int | None = None
     value_num: float | None = None
@@ -160,11 +164,12 @@ class Extractor(ABC):
             pid = self._person(c.person_name, c.source_id, c.context)
         cur = self.con.execute(
             """INSERT OR IGNORE INTO claims
-               (person_id, subject, predicate, value_num, value_text, unit, currency,
-                as_of, source_id, extractor, confidence, note)
-               VALUES (?,?,?,?,?,?,?,?,?,?,?,?)""",
-            (pid, "person", c.predicate, c.value_num, c.value_text, c.unit,
-             c.currency, c.as_of, c.source_id, self.name, c.confidence, c.note),
+               (person_id, subject, subject_id, predicate, value_num, value_text,
+                unit, currency, as_of, source_id, extractor, confidence, note)
+               VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (pid, c.subject, c.subject_id, c.predicate, c.value_num, c.value_text,
+             c.unit, c.currency, c.as_of, c.source_id, self.name, c.confidence,
+             c.note),
         )
         if cur.rowcount:
             self.stats.claims += 1

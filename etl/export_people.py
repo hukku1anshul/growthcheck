@@ -308,9 +308,20 @@ def build() -> dict:
             if c["predicate"] in ACTIVITY and c["num"] is not None:
                 activity[c["predicate"]] = {"value": c["num"], "benchmark": c["note"]}
 
+        # Individual MPLADS works are summarised in `public_money` and sampled in
+        # `largest_works`. Repeating all of them in `claims` too pushed one
+        # person's bundle to 488KB and the whole export to 36MB, which is a slow
+        # page load for data nobody scrolls through. The full set stays in
+        # claims.db, which is what the analysis path uses.
+        WORK_SAMPLE = 25
+        works_in_claims = [c for c in claims if c["predicate"] == "contract_awarded"]
+        shown_claims = [c for c in claims if c["predicate"] != "contract_awarded"]
+        shown_claims += sorted(works_in_claims, key=lambda c: -(c["num"] or 0))[:WORK_SAMPLE]
+
         record = {
             **person,
-            "claims": claims,
+            "claims": shown_claims,
+            "claims_omitted": max(0, len(works_in_claims) - WORK_SAMPLE),
             "asset_points": assets,
             "flow_by_year": sorted(flows.items()),
             "context": ctx,
