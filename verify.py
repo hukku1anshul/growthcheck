@@ -146,6 +146,37 @@ if people_js.exists():
         "national_multiple" in src and "not_a_score" in src,
     )
 
+# A relayed fact-check is the one place this project shows a VERDICT about a
+# named living person. It is only defensible because the verdict is somebody
+# else's, attributed and linked - and because the match is admitted to be by
+# name alone. `claims:search` has no identifier to join on, so a review found
+# for "Rajesh Verma" may be about a different Rajesh Verma, and publishing that
+# against the wrong politician is the worst thing this feature could do.
+if claims_db.exists():
+    con = sqlite3.connect(f"file:{claims_db}?mode=ro", uri=True)
+    total_fc = con.execute(
+        "SELECT COUNT(*) FROM claims WHERE predicate = 'factcheck_published'"
+    ).fetchone()[0]
+    if total_fc:
+        unwarned = con.execute(
+            "SELECT COUNT(*) FROM claims WHERE predicate = 'factcheck_published' "
+            "AND (note IS NULL OR note NOT LIKE '%MATCHED BY NAME%')"
+        ).fetchone()[0]
+        check("every relayed fact-check admits it was matched by name only",
+              unwarned == 0, f"{unwarned} of {total_fc} missing the caveat")
+        unattributed = con.execute(
+            "SELECT COUNT(*) FROM claims WHERE predicate = 'factcheck_published' "
+            "AND (note IS NULL OR note NOT LIKE '%not ours%')"
+        ).fetchone()[0]
+        check("no relayed rating is presented as our own finding",
+              unattributed == 0, f"{unattributed} of {total_fc} unattributed")
+        if people_js.exists():
+            check("and the reader sees that caveat as a warning, not small print",
+                  'className="warn"' in src and "factchecks" in src)
+    else:
+        skip("relayed fact-checks", "none harvested; set GOOGLE_FACTCHECK_KEY")
+    con.close()
+
 # 4 ---------------------------------------------------------------------------
 print("\n[4] Declared assets are not evidence of corruption.")
 myneta = (ROOT / "ingest" / "extractors" / "myneta.py").read_text(encoding="utf-8")

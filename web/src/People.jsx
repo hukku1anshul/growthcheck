@@ -531,7 +531,14 @@ function Person({ p, meta, dark, onBack }) {
             </div>
           ))}
         </div>
-        <p className="note caveat">{meta.caveats.cases}</p>
+        {/* Only where there are criminal-case claims to caveat. It used to
+            print unconditionally, so a UK member with no such claims - a
+            country that does not publish them at all - carried a notice about
+            self-declared pending cases on an affidavit they never filed. A
+            caveat for absent data implies the data is there. */}
+        {p.claims?.some((c) => c.predicate === 'criminal_cases_declared') && (
+          <p className="note caveat">{meta.caveats.cases}</p>
+        )}
       </div>
     </>
   )

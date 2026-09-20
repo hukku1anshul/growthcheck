@@ -5,7 +5,8 @@ is described as reachable, keyless or licensed, that was tested, not assumed.
 
 ## Where the site stands
 
-Six extractors, 51,931 sourced claims, 1,284 politicians, 217 countries. The
+Eleven extractors, 76,668 sourced claims, 2,196 politicians across India, the
+UK and the United States, and 217 countries. The
 things it does that nothing else in the market does, confirmed by looking at the
 alternatives:
 
@@ -13,14 +14,14 @@ alternatives:
 |---|---|---|---|---|---|
 | Political decisions marked on economic charts, with the dispute attached | yes | – | – | – | no decision layer |
 | Declared wealth beside **public money directed** (MPLADS) | yes | – | – | – | – |
-| Cross-publisher corroboration with a stated agreement rate | yes (93.7% across 4 publishers) | – | – | – | – |
+| Cross-publisher corroboration with a stated agreement rate | yes (93.9% across 4 publishers) | – | – | – | – |
 | Every figure traceable to an archived, hashed document | yes | source link | source link | – | citation |
 | Disagreements between official sources shown, not resolved | yes | – | – | – | – |
 | Refuses to merge ambiguous names; queues them for a human | yes | – | – | – | – |
 
 Where the market beats us: **breadth**. NetaWorth has 4,092 sitting MLAs, 229
-Rajya Sabha members and 181,307 historical candidate records. We have 543 Lok
-Sabha members and one election. That gap is closable from sources we already use.
+Rajya Sabha members and 181,307 historical candidate records. We have 1,008 Indian members across two
+Lok Sabha elections. That gap is closable from sources we already use.
 
 ---
 

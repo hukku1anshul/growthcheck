@@ -138,11 +138,11 @@ Adding a country means writing one `Extractor` subclass.
 
 ### What it produces
 
-**1,284 politicians · 51,931 claims · 2,109 archived documents · 0 unsourced**
+**2,196 politicians · 76,668 claims · 5,202 archived documents · 0 unsourced**
 
-544 Indian MPs (Lok Sabha 2024) and 649 UK MPs (current Commons), from six
-extractors, every claim traceable to a hash-verified copy of the document it was
-read from.
+1,008 Indian (Lok Sabha 2024 and 2019), 649 UK (current Commons) and 539 US
+members of Congress, from eleven extractors, every claim traceable to a
+hash-verified copy of the document it was read from.
 
 | Extractor | What it gives | Country |
 |---|---|---|
@@ -249,8 +249,8 @@ true of **all** the data, never a sample.
 
 **Corroboration.** Four publishers - MyNeta, PRS, OpenSanctions and Wikidata -
 independently report party, age and education for the same people, so they can
-be checked against each other. After normalising, they agree on **93.7%** of
-1,801 shared facts: education 95.5%, age 93.2%, party 92.9%.
+be checked against each other. After normalising, they agree on **93.9%** of
+1,800 shared facts: education 95.5%, age 93.6%, party 93.1%.
 
 The normalising is the whole job. A naive comparison of the raw values reported
 **9.4%** agreement, and every one of those "disagreements" was an artefact:
@@ -276,7 +276,7 @@ MP who had **crossed the floor** taught it that Congress and the BJP were one
 party. Two spellings now have to describe the same person **in the same year**,
 and to be structurally related, before they count as a synonym.
 
-So 93.7% is across more publishers and more people than the old 97.5%, and it is
+So 93.9% is across more publishers and more people than the old 97.5%, and it is
 the number that survives comparing like with like. What remains is genuine
 disagreement between official sources - Amit Shah's own affidavit says 12th Pass
 where PRS says Graduate - and that is reported, never resolved.

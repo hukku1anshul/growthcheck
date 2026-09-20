@@ -30,6 +30,25 @@ a numeric truth scale would mean inventing an equivalence between publishers who
 never agreed one, and would let this project imply a verdict it did not make.
 The publisher's own words are stored verbatim.
 
+THE MATCH IS BY NAME, AND THAT IS A REAL LIMIT
+----------------------------------------------
+`claims:search` takes a text query, so the only thing linking a review to a
+politician here is their name. There is no identifier to join on - no bioguide,
+no QID, nothing. A review returned for "Rajesh Verma" may be about any Rajesh
+Verma.
+
+This is the same failure that put a stranger's birth date on Tariq Anwar's page
+when the Wikidata witness matched on label alone. It cannot be fixed the same
+way, because these reviews carry no identifiers to filter on, and a
+text-containment check would be worse than useless: the correct reviews for
+Abhijit Gangopadhyay are written in Bengali and do not contain his name in
+Latin script at all.
+
+So the uncertainty is not hidden and not silently resolved. Every claim says it
+was matched by name, and the UI must repeat that where a reader will see it.
+Showing a fact-check about a different person as though it were about this one
+is the most damaging mistake this feature could make.
+
 A key is required. Google refuses unregistered callers with HTTP 403, which was
 verified. Keys are free from the Google Cloud Console; this extractor will not
 run without one and will say so rather than silently producing nothing.
@@ -136,6 +155,11 @@ class FactCheck(Extractor):
                             + f" Reviewed by {pub}"
                             + (f" ({site})" if site else "")
                             + f". Their rating, in their words: “{rating}”. "
+                            f"MATCHED BY NAME: this review was found by searching "
+                            f"fact-checkers' databases for “{r['full_name']}”, not "
+                            f"by any identifier. Names are shared, so it may "
+                            f"concern a different person of the same name - read "
+                            f"the article before relying on it. "
                             f"Read it: {link}"
                         ),
                     )

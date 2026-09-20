@@ -440,6 +440,22 @@ def build() -> dict:
             for c in claims if c["predicate"] == "disclosure_filed"
         ]
 
+        # --- fact-checks published by others (Google ClaimReview relay) ------
+        # Relayed, never restated. We add no assessment: each entry is a named
+        # IFCN-signatory organisation's own rating, in their own words, with a
+        # link to their article.
+        #
+        # `matched_by_name` is carried explicitly rather than buried in the note.
+        # These reviews come from a TEXT SEARCH on the politician's name and
+        # carry no identifier, so one of them may be about a different person
+        # with the same name - and a fact-check shown against the wrong
+        # politician is the most damaging thing this page could do.
+        factchecks = [
+            {"rating": c["text"], "as_of": c["as_of"], "detail": c["note"],
+             "src_url": c["src_url"]}
+            for c in claims if c["predicate"] == "factcheck_published"
+        ]
+
         # --- parliamentary activity (PRS) ------------------------------------
         activity = {}
         for c in claims:
@@ -467,6 +483,11 @@ def build() -> dict:
             "activity": activity or None,
             "asked": asked,
             "filings": sorted(filings, key=lambda f: f["as_of"] or "", reverse=True)[:20] or None,
+            "factchecks": {
+                "matched_by_name": True,
+                "items": sorted(factchecks, key=lambda f: f["as_of"] or "",
+                                reverse=True)[:20],
+            } if factchecks else None,
             "n_claims": len(claims),
             "sources": sorted({c["src_url"] for c in claims}),
             # facts where two source documents disagree, surfaced not resolved
@@ -584,6 +605,16 @@ def build() -> dict:
                 "A filing record says a financial disclosure EXISTS and links to "
                 "it. No dollar figure is extracted: India publishes the numbers, "
                 "the US publishes the paperwork."
+            ),
+            "factchecks": (
+                "These reviews are published by independent fact-checking "
+                "organisations, not by this site. The rating is theirs, in their "
+                "words, and we add no assessment of our own. They review viral "
+                "claims - images, quotes, videos - and not the affidavit figures "
+                "shown elsewhere on this page. Each was found by SEARCHING FOR "
+                "THE POLITICIAN'S NAME, with no identifier to confirm it, so a "
+                "review may concern a different person of the same name. Read "
+                "the linked article before relying on it."
             ),
             "stock_vs_flow": (
                 "India's figures are total declared assets at a date. The UK's are "
