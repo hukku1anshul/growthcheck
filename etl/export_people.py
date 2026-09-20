@@ -80,6 +80,25 @@ def growth_context(
     }
 
 
+def _conflicts(claims: list[dict]) -> list[dict]:
+    """Facts asserted differently by different documents.
+
+    Reported, never resolved. Two affidavits from the same person in the same year
+    can legitimately differ; deciding which is true is not this tool's job.
+    """
+    seen: dict[tuple, set] = defaultdict(set)
+    for c in claims:
+        if c["predicate"] == "possible_duplicate_of":
+            continue
+        val = c["num"] if c["num"] is not None else c["text"]
+        seen[(c["predicate"], c["as_of"])].add(val)
+    return [
+        {"predicate": k[0], "as_of": k[1], "values": sorted(map(str, v))}
+        for k, v in seen.items()
+        if len(v) > 1
+    ]
+
+
 def build() -> dict:
     if not CLAIMS_DB.exists():
         raise SystemExit(f"no claim store at {CLAIMS_DB} - run `python -m ingest.run` first")
@@ -98,20 +117,42 @@ def build() -> dict:
         for r in con.execute("SELECT id, full_name, country FROM persons")
     }
 
+    # A person can hold or contest more than one office. In India a candidate may
+    # legally stand in two constituencies at once - Rahul Gandhi did in 2024, and
+    # filed two affidavits that disagree with each other. Flattening offices onto
+    # the person record would silently drop one seat and pick a winner between two
+    # genuine source documents, which is exactly what the claim store exists to
+    # avoid. So offices are kept as a list.
     for r in con.execute(
         "SELECT person_id, jurisdiction, title, constituency, region, party, won"
-        " FROM offices"
+        " FROM offices ORDER BY id"
     ):
         p = people.get(r["person_id"])
         if p is None:
             continue
+        p.setdefault("offices", []).append(
+            {
+                "jurisdiction": r["jurisdiction"],
+                "title": r["title"],
+                "constituency": r["constituency"],
+                "region": r["region"],
+                "party": r["party"],
+                "won": bool(r["won"]) if r["won"] is not None else None,
+            }
+        )
+
+    for p in people.values():
+        offices = p.get("offices") or []
+        first = offices[0] if offices else {}
+        # Convenience fields for the list view; `offices` remains authoritative.
         p.update(
-            jurisdiction=r["jurisdiction"],
-            title=r["title"],
-            constituency=r["constituency"],
-            region=r["region"],
-            party=r["party"],
-            won=bool(r["won"]) if r["won"] is not None else None,
+            jurisdiction=first.get("jurisdiction"),
+            title=first.get("title"),
+            constituency=first.get("constituency"),
+            region=first.get("region"),
+            party=first.get("party"),
+            won=first.get("won"),
+            n_offices=len(offices),
         )
 
     claims_by_person: dict[int, list[dict]] = defaultdict(list)
@@ -173,6 +214,8 @@ def build() -> dict:
             "context": ctx,
             "n_claims": len(claims),
             "sources": sorted({c["src_url"] for c in claims}),
+            # facts where two source documents disagree, surfaced not resolved
+            "conflicts": _conflicts(claims),
         }
         (OUT / f"{pid}.json").write_text(
             json.dumps(record, separators=(",", ":")), encoding="utf-8"
@@ -199,6 +242,8 @@ def build() -> dict:
                 "national_multiple": ctx["national_multiple"] if ctx else None,
                 "span": f"{ctx['from_year']}-{ctx['to_year']}" if ctx else None,
                 "n_claims": len(claims),
+                "n_offices": person.get("n_offices", 0),
+                "n_conflicts": len(_conflicts(claims)),
             }
         )
 

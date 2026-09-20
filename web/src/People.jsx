@@ -181,9 +181,16 @@ function Person({ p, meta, dark, onBack }) {
             ← all people
           </button>
           <h2 style={{ marginTop: 8 }}>{p.name}</h2>
-          <p className="unit">
-            {[p.title, p.party, p.constituency, p.region].filter(Boolean).join(' · ')}
-          </p>
+          {(p.offices || []).map((o, i) => (
+            <p className="unit" key={i}>
+              {[o.title, o.party, o.constituency, o.region].filter(Boolean).join(' · ')}
+              {p.offices.length > 1 && i === 0 && (
+                <span className="badge" style={{ marginLeft: 8 }}>
+                  {p.offices.length} seats contested
+                </span>
+              )}
+            </p>
+          ))}
         </div>
       </div>
 
@@ -209,6 +216,31 @@ function Person({ p, meta, dark, onBack }) {
             </div>
           </div>
           <p className="ctx-caveat">{meta.caveats.not_a_score}</p>
+        </div>
+      )}
+
+      {p.conflicts?.length > 0 && (
+        <div className="panel conflict-panel" style={{ marginTop: 12 }}>
+          <h3>Sources disagree on {p.conflicts.length} fact
+            {p.conflicts.length > 1 ? 's' : ''}</h3>
+          <p className="note" style={{ marginTop: 0 }}>
+            Two or more official documents state different things. Both are shown;
+            neither is picked as correct. A candidate standing in two seats files two
+            affidavits, and they do not always match.
+          </p>
+          {p.conflicts.map((c, i) => (
+            <div className="conflict" key={i}>
+              <span className="cl-pred">
+                {c.predicate.replace(/_/g, ' ')}
+                {c.as_of ? ` · ${c.as_of}` : ''}
+              </span>
+              <ul>
+                {c.values.map((v, j) => (
+                  <li key={j}>{v}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       )}
 
