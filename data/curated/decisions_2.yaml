@@ -1,0 +1,541 @@
+# Landmark decisions, part two.
+#
+# Same house rules as decisions.yaml - dated, `what` describes the decision and
+# not its effect, `contested` is filled wherever the consequences are genuinely
+# argued over, and every entry cites something. Split into a second file purely
+# so neither becomes unreviewable; the build loads both.
+#
+# Selection bias worth naming: these are the episodes that economic history
+# writes about, which skews towards crises, liberalisations and transitions, and
+# towards countries that anglophone scholarship covers well. A country's absence
+# from this file means nobody has written its entry yet - never that its history
+# was uneventful. The UI says so under every event list.
+
+decisions:
+
+  # ---------------------------------------------------------------- Europe
+  - iso3: ESP
+    date: 1977-10-25
+    kind: economic_reform
+    title: Moncloa Pacts
+    what: >-
+      Government, parties and unions agreed a package of wage restraint,
+      devaluation, tax reform and monetary targets during the transition from
+      the Franco dictatorship to parliamentary democracy.
+    contested: >-
+      Frequently cited as proof that a broad political pact can carry painful
+      adjustment. Sceptics note that unemployment continued rising for years
+      afterwards and that the pacts coincided with, rather than caused, the end
+      of the oil-shock inflation.
+    sources:
+      - ref: "Acuerdos de la Moncloa, 25 October 1977"
+      - ref: "Fuentes Quintana, 'De los Pactos de la Moncloa a la Constitución' (2005)"
+
+  - iso3: IRL
+    date: 1987-10-09
+    kind: economic_reform
+    title: Programme for National Recovery
+    what: >-
+      A tripartite agreement paired sharp cuts in public spending with wage
+      moderation and income tax reductions, alongside an existing low corporate
+      tax regime for manufacturing and traded services.
+    contested: >-
+      The growth that followed is variously credited to the fiscal correction,
+      to EU structural funds and single-market access, to the corporate tax
+      regime, or to demographics. Later scholarship also distinguishes the
+      genuine productivity growth of the 1990s from the credit-driven expansion
+      of the 2000s that ended in the 2008 banking collapse.
+    sources:
+      - ref: "Government of Ireland, Programme for National Recovery (1987)"
+      - ref: "Honohan & Walsh, 'Catching Up With the Leaders: The Irish Hare' (2002)"
+
+  - iso3: FRA
+    date: 1983-03-25
+    kind: economic_reform
+    title: The turn to austerity
+    what: >-
+      After two years of reflation, nationalisations and three devaluations, the
+      Mitterrand government reversed course towards disinflation and defence of
+      the franc's parity inside the European Monetary System.
+    contested: >-
+      Read either as accepting the constraints of an open economy inside a fixed
+      exchange-rate system, or as the moment European social democracy abandoned
+      an alternative before it had been fairly tried. Both readings agree on the
+      facts and disagree on the counterfactual.
+    sources:
+      - ref: "Fonteneau & Muet, 'La gauche face à la crise' (1985)"
+
+  - iso3: ITA
+    date: 1992-09-17
+    kind: crisis
+    title: The lira leaves the Exchange Rate Mechanism
+    what: >-
+      After heavy speculative pressure, Italy suspended intervention and the
+      lira left the ERM, depreciating sharply; a large fiscal consolidation
+      followed under the Amato government.
+    contested: >-
+      Exports recovered strongly, which is used to argue that the peg had been
+      overvalued. The same episode is used in the opposite direction: that the
+      subsequent decades of weak productivity show devaluation bought time
+      rather than solving anything.
+    sources:
+      - ref: "Banca d'Italia, Annual Report for 1992"
+      - ref: "Eichengreen & Wyplosz, 'The Unstable EMS' (Brookings Papers, 1993)"
+
+  - iso3: SWE
+    date: 1992-11-19
+    kind: crisis
+    title: Krona float ends the banking crisis defence
+    what: >-
+      After briefly raising the marginal lending rate to 500% to defend the peg,
+      the Riksbank let the krona float. A bank guarantee, an asset management
+      company for bad loans, and a later fiscal framework with expenditure
+      ceilings followed.
+    contested: >-
+      The resolution model - guarantee, split out bad assets, recapitalise,
+      accept dilution - is widely held up as the template later crises should
+      have copied. Critics point out it worked in a small open economy with its
+      own currency and broad political consensus, conditions the 2008 cases
+      lacked.
+    sources:
+      - ref: "Jonung, 'The Swedish Model for Resolving the Banking Crisis of 1991-93' (2009)"
+
+  - iso3: NOR
+    date: 1990-06-22
+    kind: economic_reform
+    title: Government Petroleum Fund established
+    what: >-
+      Legislation created a sovereign fund to receive petroleum revenues, later
+      paired with a fiscal rule limiting structural spending of the fund's
+      expected real return.
+    contested: >-
+      Routinely cited as the answer to the resource curse. How transferable it
+      is remains disputed: Norway already had strong institutions, high trust
+      and a small population before the oil, so the fund may be as much a
+      consequence of good governance as a cause of it.
+    sources:
+      - ref: "Act on the Government Petroleum Fund, 22 June 1990 (Norway)"
+
+  - iso3: NLD
+    date: 1982-11-24
+    kind: economic_reform
+    title: Wassenaar Agreement
+    what: >-
+      Employers and unions agreed wage restraint in exchange for reduced working
+      hours and a commitment to job creation, with the government withdrawing a
+      threatened statutory wage freeze.
+    contested: >-
+      Credited with the long employment expansion later called the Dutch
+      miracle. Critics note much of the job growth was part-time and that female
+      labour-force entry, not the accord, drove headline employment numbers.
+    sources:
+      - ref: "Stichting van de Arbeid, Central Accord of 24 November 1982"
+      - ref: "Visser & Hemerijck, 'A Dutch Miracle' (1997)"
+
+  - iso3: HUN
+    date: 1968-01-01
+    kind: economic_reform
+    title: New Economic Mechanism
+    what: >-
+      Hungary replaced most mandatory plan targets with enterprise-level
+      profit incentives and partially freed prices, while retaining state
+      ownership and single-party rule.
+    contested: >-
+      The furthest any Warsaw Pact economy went towards market mechanisms before
+      1989, and an explicit reference point for later Chinese reformers. Whether
+      it improved performance or merely disguised soft budget constraints was
+      argued at the time and still is.
+    sources:
+      - ref: "Kornai, 'The Hungarian Reform Process' (Journal of Economic Literature, 1986)"
+
+  - iso3: CZE
+    date: 1993-01-01
+    kind: constitutional
+    title: Dissolution of Czechoslovakia
+    what: >-
+      Czechoslovakia separated into the Czech Republic and Slovakia by agreement
+      between the two republics' governments, without a referendum and without
+      violence.
+    contested: >-
+      Often contrasted with Yugoslavia's simultaneous violent breakup to argue
+      that institutions and elite restraint matter more than ethnic difference.
+      Others emphasise that the two cases differed in almost every relevant
+      respect, making the comparison rhetorical rather than analytical.
+    sources:
+      - ref: "Constitutional Act 542/1992 on the dissolution of the Czech and Slovak Federative Republic"
+
+  - iso3: UKR
+    date: 2014-02-22
+    kind: constitutional
+    title: Removal of the president after the Maidan protests
+    what: >-
+      Parliament voted to remove President Yanukovych following months of
+      protest and lethal violence in Kyiv; Russia annexed Crimea the following
+      month and fighting began in the Donbas.
+    contested: >-
+      Described within Ukraine and by most Western governments as a revolution
+      against an authoritarian turn, and by Russia as an unconstitutional coup.
+      The economic consequences are entangled with war and cannot be separated
+      from it.
+    sources:
+      - ref: "Resolution of the Verkhovna Rada of Ukraine, 22 February 2014"
+      - ref: "UN General Assembly Resolution 68/262 (2014)"
+
+  # ---------------------------------------------------------------- Asia
+  - iso3: PAK
+    date: 1972-01-02
+    kind: economic_reform
+    title: Nationalisation of major industries
+    what: >-
+      The Bhutto government took thirty-one large firms in ten basic industries
+      into state ownership, extending later to banking, insurance and shipping.
+    contested: >-
+      Blamed in much subsequent writing for weakening private investment for a
+      generation. Defenders point to the concentration of industrial ownership
+      that preceded it and note that the 1971 war and loss of East Pakistan are
+      hard to separate from what followed.
+    sources:
+      - ref: "Economic Reforms Order 1972 (Pakistan)"
+
+  - iso3: BGD
+    date: 1983-01-01
+    kind: social_policy
+    title: Grameen Bank established as a specialised institution
+    what: >-
+      Group-liability microcredit lending to the rural poor, largely to women,
+      was given a formal legal charter after several years as a pilot project.
+    contested: >-
+      Once presented as a general solution to poverty, later randomised
+      evaluations found modest effects on consumption and business investment
+      and little effect on income or schooling. Whether the model's main
+      contribution was credit or women's participation in a formal institution
+      is still argued.
+    sources:
+      - ref: "Grameen Bank Ordinance 1983 (Bangladesh)"
+      - ref: "Banerjee, Karlan & Zinman, 'Six Randomized Evaluations of Microcredit' (2015)"
+
+  - iso3: LKA
+    date: 1977-11-01
+    kind: economic_reform
+    title: Liberalisation under the Jayewardene government
+    what: >-
+      Sri Lanka dismantled import licensing and rationing, devalued and unified
+      the exchange rate, and opened to foreign investment, ending a long period
+      of inward-looking controls.
+    contested: >-
+      Growth and export diversification followed. So did widening regional and
+      ethnic inequality, and civil war from 1983, which some argue the
+      distributional pattern of liberalisation helped inflame - a causal claim
+      that is contested and hard to test.
+    sources:
+      - ref: "Athukorala & Jayasuriya, 'Macroeconomic Policies, Crises and Growth in Sri Lanka' (1994)"
+
+  - iso3: THA
+    date: 1997-07-02
+    kind: crisis
+    title: Baht float triggers the Asian financial crisis
+    what: >-
+      After months of defending the peg and depleting reserves, Thailand floated
+      the baht, which fell sharply; an IMF programme followed in August.
+    contested: >-
+      The trigger point of a regional crisis. The debate over whether the cause
+      was crony capitalism and weak balance sheets or panic and premature
+      capital-account liberalisation reshaped mainstream thinking on capital
+      controls.
+    sources:
+      - ref: "Bank of Thailand announcement, 2 July 1997"
+      - ref: "Radelet & Sachs, 'The East Asian Financial Crisis' (1998)"
+
+  - iso3: MYS
+    date: 1998-09-01
+    kind: economic_reform
+    title: Capital controls and a fixed ringgit
+    what: >-
+      Malaysia imposed controls on short-term capital outflows and pegged the
+      ringgit to the dollar, declining an IMF programme during the Asian crisis.
+    contested: >-
+      Recovery was comparable to neighbours that took IMF programmes, which is
+      used both to argue controls worked and that they made little difference.
+      The episode nonetheless moved capital controls from heresy towards
+      accepted policy in the IMF's own later position.
+    sources:
+      - ref: "Bank Negara Malaysia, selective exchange control measures, 1 September 1998"
+      - ref: "Kaplan & Rodrik, 'Did the Malaysian Capital Controls Work?' (2001)"
+
+  - iso3: PHL
+    date: 1986-02-25
+    kind: constitutional
+    title: People Power removes Marcos
+    what: >-
+      Mass non-violent protest and military defections ended twenty years of
+      Marcos rule; a new constitution followed in 1987 with a single six-year
+      presidential term.
+    contested: >-
+      Democratic restoration did not produce the growth acceleration many
+      expected, and land reform stalled. Whether that reflects the persistence
+      of oligarchic economic structures or the design of the new institutions is
+      a live argument in Philippine scholarship.
+    sources:
+      - ref: "Constitution of the Republic of the Philippines (1987)"
+
+  - iso3: IRN
+    date: 1979-02-11
+    kind: constitutional
+    title: Islamic Revolution
+    what: >-
+      The monarchy fell and a republic was established under clerical
+      supervision, followed by nationalisation of banks and major industry and,
+      from 1980, eight years of war with Iraq.
+    contested: >-
+      Separating the effects of revolution, war, nationalisation and four
+      decades of sanctions is close to impossible, which is why per-capita
+      income comparisons across this period should be read with caution rather
+      than as a verdict on any one of them.
+    sources:
+      - ref: "Constitution of the Islamic Republic of Iran (1979)"
+
+  - iso3: ISR
+    date: 1985-07-01
+    kind: economic_reform
+    title: Economic Stabilisation Plan
+    what: >-
+      A package combining sharp fiscal cuts, a wage and price freeze, devaluation
+      and a prohibition on central bank financing of the deficit ended inflation
+      running at several hundred percent.
+    contested: >-
+      One of the cleanest heterodox stabilisations on record, and widely studied
+      because inflation fell without the deep recession orthodox models
+      predicted. How much rested on US aid arriving at the same moment is
+      disputed.
+    sources:
+      - ref: "Bruno & Piterman, 'Israel's Stabilization: A Two-Year Review' (1988)"
+
+  - iso3: KAZ
+    date: 1993-11-15
+    kind: economic_reform
+    title: Introduction of the tenge
+    what: >-
+      Kazakhstan left the rouble zone and issued its own currency, following
+      mass privatisation and the opening of the oil sector to foreign partners.
+    contested: >-
+      Leaving the rouble zone is generally treated as necessary for monetary
+      control. The privatisation that accompanied it concentrated ownership
+      heavily, and how much of the later growth reflects institutions rather
+      than oil prices is not settled.
+    sources:
+      - ref: "Presidential Decree on the introduction of the national currency, 12 November 1993"
+
+  # ---------------------------------------------------------------- Africa
+  - iso3: ETH
+    date: 1991-05-28
+    kind: constitutional
+    title: Fall of the Derg and ethnic federalism
+    what: >-
+      The military Derg regime was overthrown; the 1995 constitution established
+      a federation of ethnically defined regions with a nominal right of
+      secession, alongside state ownership of all land.
+    contested: >-
+      Two decades of rapid state-led growth followed, driven by public
+      investment. Whether ethnic federalism stabilised a diverse country or
+      entrenched the cleavages that produced the 2020 Tigray war is the central
+      dispute in Ethiopian politics.
+    sources:
+      - ref: "Constitution of the Federal Democratic Republic of Ethiopia (1995)"
+
+  - iso3: KEN
+    date: 2010-08-27
+    kind: constitutional
+    title: New constitution devolves power to counties
+    what: >-
+      A constitution approved by referendum created 47 county governments with
+      guaranteed revenue shares, a bill of rights, and constraints on
+      presidential power.
+    contested: >-
+      Devolution moved resources and decisions closer to citizens. It also
+      multiplied the number of offices at which public money can be diverted,
+      and county-level audit findings since have been poor. Both things are
+      true; which dominates is argued.
+    sources:
+      - ref: "Constitution of Kenya, 2010"
+
+  - iso3: RWA
+    date: 1994-07-04
+    kind: conflict
+    title: End of the genocide against the Tutsi
+    what: >-
+      The Rwandan Patriotic Front took Kigali, ending roughly a hundred days in
+      which an estimated 800,000 people were killed. A reconstruction programme
+      followed, including the gacaca community courts and later Vision 2020.
+    contested: >-
+      Post-genocide growth and service delivery are strong by regional standards
+      and widely praised. Human rights organisations document severe
+      restrictions on political competition and press freedom, and some
+      economists question the reliability of the poverty statistics. Aggregate
+      indicators alone cannot settle this.
+    sources:
+      - ref: "UN International Criminal Tribunal for Rwanda, judgements and findings"
+      - ref: "Republic of Rwanda, Vision 2020 (2000)"
+
+  - iso3: BWA
+    date: 1969-09-01
+    kind: economic_reform
+    title: Renegotiation of the diamond agreement
+    what: >-
+      Botswana renegotiated terms with De Beers towards an equal joint venture
+      and retained mineral rights in the state, later channelling revenue
+      through a sustainable budget rule.
+    contested: >-
+      The standard counter-example to the resource curse. Debate centres on
+      whether the decisive factor was institutions inherited and built, the
+      ethnic homogeneity of the country, or simply that diamonds are easier to
+      tax than oil.
+    sources:
+      - ref: "Acemoglu, Johnson & Robinson, 'An African Success Story: Botswana' (2003)"
+
+  - iso3: MAR
+    date: 2004-02-03
+    kind: social_policy
+    title: Reform of the Moudawana family code
+    what: >-
+      The family code was revised to raise the minimum marriage age to 18, place
+      the family under joint responsibility of both spouses, restrict polygamy
+      and allow women to seek divorce.
+    contested: >-
+      Among the most substantial legal changes to women's status in the region.
+      Implementation has lagged the text, particularly on the judicial
+      exceptions permitting underage marriage, so measured effects are smaller
+      than the reform's scope.
+    sources:
+      - ref: "Morocco, Law 70-03 (Code de la Famille), 2004"
+
+  # ---------------------------------------------------------------- Americas
+  - iso3: CAN
+    date: 1995-02-27
+    kind: economic_reform
+    title: The 1995 federal budget
+    what: >-
+      Programme spending was cut by roughly 20% over three years and federal
+      transfers to provinces were consolidated and reduced, after debt reached
+      about 70% of GDP.
+    contested: >-
+      Often cited as a successful expenditure-led consolidation. It also shifted
+      pressure onto provincial health and education budgets, and coincided with
+      a strong US expansion and a depreciating dollar - conditions not available
+      to every country attempting the same thing.
+    sources:
+      - ref: "Government of Canada, Budget 1995"
+
+  - iso3: COL
+    date: 1991-07-04
+    kind: constitutional
+    title: New constitution and central bank independence
+    what: >-
+      A constituent assembly produced a constitution establishing an independent
+      central bank with a price stability mandate, a constitutional court, and
+      an expanded set of enforceable social rights.
+    contested: >-
+      Inflation fell durably. The justiciable social rights produced a large
+      volume of court-ordered spending, which supporters see as rights being
+      taken seriously and critics see as fiscal policy made by litigation.
+    sources:
+      - ref: "Constitución Política de Colombia (1991)"
+
+  - iso3: PER
+    date: 1990-08-08
+    kind: economic_reform
+    title: The Fujishock stabilisation
+    what: >-
+      Fuel and food prices were freed overnight, subsidies removed and the
+      exchange rate unified, ending hyperinflation that had exceeded 7,000% a
+      year.
+    contested: >-
+      Inflation stopped quickly and poverty rose sharply in the short run. The
+      stabilisation is also inseparable from the 1992 self-coup that followed,
+      which raises the recurring question of whether the two were connected by
+      necessity or only by circumstance.
+    sources:
+      - ref: "Banco Central de Reserva del Perú, Memoria 1990"
+
+  - iso3: BOL
+    date: 1985-08-29
+    kind: economic_reform
+    title: New Economic Policy (Decree 21060)
+    what: >-
+      A single decree floated the currency, freed prices, removed most
+      subsidies, liberalised trade and allowed dismissals in state mining,
+      ending hyperinflation above 11,000%.
+    contested: >-
+      The speed of the disinflation is not disputed. The distributional cost is
+      equally undisputed: tens of thousands of miners lost their jobs, and the
+      political movements that produced the 2005 election were formed in the
+      aftermath.
+    sources:
+      - ref: "Decreto Supremo 21060 (Bolivia, 1985)"
+      - ref: "Sachs, 'The Bolivian Hyperinflation and Stabilization' (1987)"
+
+  - iso3: URY
+    date: 2007-07-01
+    kind: economic_reform
+    title: Tax reform introduces personal income tax
+    what: >-
+      Uruguay introduced a dual personal income tax, consolidated a proliferation
+      of indirect taxes, and expanded the health insurance system alongside it.
+    contested: >-
+      Inequality fell over the following decade, faster than in most of the
+      region. How much is attributable to the tax change as opposed to the
+      commodity boom, cash transfers and formalisation of employment is not
+      resolved.
+    sources:
+      - ref: "Ley 18.083 de Reforma Tributaria (Uruguay, 2006)"
+
+  - iso3: CUB
+    date: 1990-08-29
+    kind: crisis
+    title: The Special Period begins
+    what: >-
+      Following the collapse of Soviet trade and subsidies, Cuba declared a
+      peacetime emergency, rationing fuel and food and later legalising the
+      dollar, self-employment and foreign joint ventures.
+    contested: >-
+      Output fell by around a third in four years. Health and education
+      indicators held up far better than income, which is read either as
+      evidence that social provision can be insulated from economic collapse, or
+      as a question about how those indicators are measured and reported.
+    sources:
+      - ref: "Mesa-Lago, 'Growing Economic and Social Disparities in Cuba' (2002)"
+
+  # ---------------------------------------------------------------- Oceania
+  - iso3: NZL
+    date: 1984-07-14
+    kind: economic_reform
+    title: Rogernomics
+    what: >-
+      Following a currency crisis at the change of government, New Zealand
+      floated the dollar, removed agricultural subsidies and import licensing,
+      corporatised state enterprises and gave the Reserve Bank an explicit
+      inflation target in 1989.
+    contested: >-
+      The fastest and most complete liberalisation attempted by any rich
+      democracy, and the source of the inflation-targeting framework now used
+      almost everywhere. Growth was weak for a decade afterwards and inequality
+      rose sharply, which is either the cost of adjustment or evidence the
+      programme went too far too fast.
+    sources:
+      - ref: "Reserve Bank of New Zealand Act 1989"
+      - ref: "Evans, Grimes & Wilkinson, 'Economic Reform in New Zealand 1984-95' (1996)"
+
+  - iso3: AUS
+    date: 1983-12-12
+    kind: economic_reform
+    title: Float of the Australian dollar
+    what: >-
+      The dollar was floated and most exchange controls abolished, followed by
+      financial deregulation, tariff reductions and, from 1992, compulsory
+      superannuation.
+    contested: >-
+      Australia's long unbroken expansion is often traced to this sequence.
+      Others attribute it primarily to Chinese demand for commodities, and note
+      that the reform programme's least popular elements were sustained by an
+      accord with the union movement that no longer exists.
+    sources:
+      - ref: "Treasurer of Australia, statement of 9 December 1983"

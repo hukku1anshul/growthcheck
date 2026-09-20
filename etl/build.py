@@ -51,7 +51,18 @@ def load_catalogue() -> dict:
 
 
 def load_decisions() -> dict:
-    return yaml.safe_load((CURATED / "decisions.yaml").read_text(encoding="utf-8"))
+    """Merge every decisions*.yaml file.
+
+    Split across files so neither grows past the point where a human will
+    actually re-read it before adding an entry. `kinds` is defined once, in
+    decisions.yaml.
+    """
+    merged: dict = {"kinds": {}, "decisions": []}
+    for path in sorted(CURATED.glob("decisions*.yaml")):
+        part = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        merged["kinds"].update(part.get("kinds") or {})
+        merged["decisions"].extend(part.get("decisions") or [])
+    return merged
 
 
 # ------------------------------------------------------------------------ series

@@ -34,6 +34,7 @@ export default function App() {
   const [seriesByIso, setSeriesByIso] = useState({})
   const [eventData, setEventData] = useState({ events: [], spans: [] })
   const [picked, setPicked] = useState(null)
+  const [filtersOpen, setFiltersOpen] = useState(false)
   const [mode, setMode] = useState(URL0.view === 'people' ? 'people' : 'countries')
   const [dark, setDark] = useState(
     () => window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
@@ -191,6 +192,13 @@ export default function App() {
             {' '}{Object.keys(meta.event_kinds).length} kinds of event, drawn on the chart
           </p>
         </div>
+        <button
+          className="ghost filter-toggle"
+          onClick={() => setFiltersOpen((v) => !v)}
+          aria-expanded={filtersOpen}
+        >
+          {filtersOpen ? '✕ Close' : '☰ Filters'}
+        </button>
         <div className="modeswitch">
           <button
             className={mode === 'countries' ? 'on' : ''}
@@ -210,10 +218,12 @@ export default function App() {
         </button>
       </header>
 
-      {mode === 'people' ? <People dark={dark} /> : (
+      {mode === 'people' ? (
+        <People dark={dark} filtersOpen={filtersOpen} onCloseFilters={() => setFiltersOpen(false)} />
+      ) : (
       <div className="body">
         {/* ------------------------------------------------ filters */}
-        <aside className="side">
+        <aside className={`side ${filtersOpen ? 'side-open' : ''}`}>
           <section>
             <h2>Countries <span className="hint">{selected.length}/{MAX_COUNTRIES}</span></h2>
             <input

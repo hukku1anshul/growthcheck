@@ -10,8 +10,11 @@ const BASE = `${import.meta.env.BASE_URL}data/people`
  * side: a person's declared figures are shown against the national series for
  * the same years, so "8 crore" becomes a number a reader can actually judge.
  */
-export default function People({ dark }) {
-  const onOpen = (id) => setSelected(id)
+export default function People({ dark, filtersOpen = false, onCloseFilters }) {
+  const onOpen = (id) => {
+    setSelected(id)
+    onCloseFilters?.()
+  }
   const [meta, setMeta] = useState(null)
   const [error, setError] = useState(null)
   const [q, setQ] = useState('')
@@ -81,7 +84,7 @@ export default function People({ dark }) {
 
   return (
     <div className="body">
-      <aside className="side">
+      <aside className={`side ${filtersOpen ? 'side-open' : ''}`}>
         <section>
           <h2>Filter</h2>
           <input

@@ -330,3 +330,33 @@ select.mini {
 .w-date { font-family: var(--mono); font-size: 11px; color: var(--muted); }
 .w-desc { color: var(--muted); overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 860px) { .work { grid-template-columns: 1fr; gap: 1px; } }
+
+/* --------------------------------------------------------------- mobile drawer */
+/* On a phone the filter column was ~45vh of checkboxes sitting ABOVE the chart,
+   so the thing the page exists to show was below the fold on every load. The
+   filters become an explicit drawer, closed by default. */
+.filter-toggle { display: none; }
+
+@media (max-width: 860px) {
+  .top { flex-wrap: wrap; gap: 8px 10px; padding: 9px 14px; }
+  .brand h1 { font-size: 15px; }
+  .brand p { display: none; }              /* the stats line wraps to 4 lines */
+  .filter-toggle { display: inline-block; order: 3; font-size: 12px; padding: 4px 9px; }
+  .modeswitch { order: 2; margin-left: auto; margin-right: 0; }
+
+  .side {
+    display: none;
+    max-height: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .side.side-open { display: block; max-height: 70vh; }
+  .main { padding: 12px 14px 18px; }
+  .chart { height: 300px; }
+  .charthead h2 { font-size: 17px; }
+  .controls { gap: 6px; }
+  .context-box { padding: 11px 13px; }
+  .ctx-nums { gap: 14px; }
+  .ctx-big { font-size: 22px; }
+  .pm-row { gap: 14px; }
+  .pm-row > div { min-width: 104px; }
+}
