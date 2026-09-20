@@ -105,6 +105,23 @@ class Extractor(ABC):
     def harvest(self) -> Iterator[Claim | Office]:
         """Yield Claims and Offices. Use `self.archive.text(url)` to fetch."""
 
+    def reparse(self, body: bytes, source_id: int, url: str) -> list[Claim]:
+        """Re-derive claims from an already-fetched document, without network I/O.
+
+        The re-fetch checker needs to ask "would this document produce different
+        facts today?", which means parsing bytes it already holds. `harvest()`
+        cannot answer that - it fetches. Every extractor must therefore expose a
+        pure body -> claims function here.
+
+        Default raises rather than returning [], because silently returning no
+        claims makes every previously stored fact look deleted. That exact
+        mistake reported three UK members as having lost their entire register.
+        """
+        raise NotImplementedError(
+            f"{type(self).__name__} cannot re-parse a document offline. "
+            f"Implement reparse() so change detection can work on this source."
+        )
+
     # ------------------------------------------------------------------- run
     def run(self) -> Stats:
         if not self.robots_checked:

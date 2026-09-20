@@ -247,11 +247,43 @@ def build() -> dict:
             }
         )
 
+    # --- names the resolver refused to merge on its own ---------------------
+    # These are pairs that scored between the review and auto-merge thresholds.
+    # The resolver deliberately created TWO person records rather than risk
+    # attributing one person's assets or criminal cases to another. A human has
+    # to decide, so the pairs are shipped to the UI rather than buried in a table.
+    con2 = sqlite3.connect(f"file:{CLAIMS_DB}?mode=ro", uri=True)
+    con2.row_factory = sqlite3.Row
+    review = []
+    for r in con2.execute(
+        """SELECT c.person_id, c.value_text AS other_id, c.confidence, c.note,
+                  p.full_name, p.country
+           FROM claims c JOIN persons p ON p.id = c.person_id
+           WHERE c.predicate = 'possible_duplicate_of'"""
+    ):
+        try:
+            other = con2.execute(
+                "SELECT id, full_name FROM persons WHERE id = ?", (int(r["other_id"]),)
+            ).fetchone()
+        except (TypeError, ValueError):
+            continue
+        if not other:
+            continue
+        review.append({
+            "a": {"id": r["person_id"], "name": r["full_name"]},
+            "b": {"id": other["id"], "name": other["full_name"]},
+            "country": r["country"],
+            "score": r["confidence"],
+            "note": r["note"],
+        })
+    con2.close()
+
     index.sort(key=lambda r: (r["country"], r["name"]))
     meta = {
         "built_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "people": index,
         "countries": sorted({r["country"] for r in index}),
+        "review_queue": review,
         "caveats": {
             "not_a_score": (
                 "These are declared figures from official filings, shown with their "
@@ -262,6 +294,13 @@ def build() -> dict:
             "cases": (
                 "Criminal cases shown are self-declared PENDING cases from the "
                 "candidate's own affidavit. They are not convictions."
+            ),
+            "review": (
+                "These name pairs scored close enough to be the same person, but "
+                "not close enough for a machine to merge them safely. They are "
+                "shown as separate people until a human decides. Merging two "
+                "different politicians would attribute one person's assets and "
+                "pending cases to another, which is why the default is to split."
             ),
             "stock_vs_flow": (
                 "India's figures are total declared assets at a date. The UK's are "
@@ -279,6 +318,7 @@ def main() -> int:
     idx = meta["people"]
     print(f"\n  people exported     {len(idx):,}")
     print(f"  countries           {', '.join(meta['countries'])}")
+    print(f"  review queue        {len(meta['review_queue'])}")
     trended = [r for r in idx if r["declared_multiple"]]
     print(f"  with asset trend    {len(trended):,}")
     if trended:

@@ -39,7 +39,8 @@ INTERESTS = "https://interests-api.parliament.uk/api/v1/Interests"
 STERLING = re.compile(r"£\s*([\d,]+(?:\.\d{1,2})?)")
 
 HOUSE_COMMONS = 1
-PAGE = 20  # the members API caps `take` at 20
+PAGE = 20        # the members API caps `take` at 20
+INTERESTS_PAGE = 50  # interests API page size; paginated below
 
 
 def sterling(text: str) -> float | None:
@@ -140,20 +141,48 @@ class UKParliament(Extractor):
             yield from self._interests(mid, name, ctx)
 
     def _interests(self, member_id: int, name: str, ctx: str) -> Iterator[Claim]:
-        url = f"{INTERESTS}?MemberId={member_id}&Take=50"
-        try:
-            sid, body = self.archive.text(url)
-        except Exception as exc:  # noqa: BLE001
-            self.stats.errors.append(f"interests {member_id}: {exc}")
-            return
-        self.stats.documents += 1
+        """Every registered interest for a member, following pagination.
 
-        try:
-            items = json.loads(body).get("items", [])
-        except json.JSONDecodeError as exc:
-            self.stats.errors.append(f"interests {member_id}: bad json: {exc}")
-            return
+        The API defaults to PublishingDateDescending, so a single Take=50 request
+        silently drops the oldest entries for anyone with a longer register - four
+        current members have 53, 70, 72 and 88. Truncating a financial-interests
+        register at an arbitrary cut-off, with no error, is exactly the kind of
+        quiet data loss this project exists to avoid.
+        """
+        skip, total = 0, None
+        while total is None or skip < total:
+            url = f"{INTERESTS}?MemberId={member_id}&Take={INTERESTS_PAGE}&Skip={skip}"
+            try:
+                sid, body = self.archive.text(url)
+            except Exception as exc:  # noqa: BLE001
+                self.stats.errors.append(f"interests {member_id} skip={skip}: {exc}")
+                return
+            self.stats.documents += 1
+            try:
+                payload = json.loads(body)
+            except json.JSONDecodeError as exc:
+                self.stats.errors.append(f"interests {member_id}: bad json: {exc}")
+                return
+            total = payload.get("totalResults", 0)
+            items = payload.get("items", [])
+            if not items:
+                return
+            yield from self._claims_from(items, sid, name, ctx)
+            skip += INTERESTS_PAGE
 
+    def reparse(self, body: bytes, source_id: int, url: str) -> list[Claim]:
+        """Re-derive claims from an archived interests payload, no network I/O."""
+        if "interests-api" not in url:
+            return []          # members-search pages carry no claims of their own
+        try:
+            payload = json.loads(body.decode("utf-8", errors="replace"))
+        except json.JSONDecodeError:
+            return []
+        return list(
+            self._claims_from(payload.get("items", []), source_id, "", "")
+        )
+
+    def _claims_from(self, items, sid: int, name: str, ctx: str) -> Iterator[Claim]:
         for it in items:
             summary = (it.get("summary") or "").strip()
             if not summary:

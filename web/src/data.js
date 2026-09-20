@@ -64,3 +64,41 @@ export function eventColour(meta, kind) {
 export function eventLabel(meta, kind) {
   return meta?.event_kinds?.[kind]?.label || kind
 }
+
+/* --------------------------------------------------------------- url state */
+/**
+ * The app's state lives in the query string so a view can be sent to someone.
+ * A chart showing "India vs China, corruption index, 1975-2000, coups only" is
+ * an argument; without a URL it can only be described, not handed over.
+ *
+ * replaceState, not pushState: dragging a year field should not bury the back
+ * button under fifty history entries.
+ */
+export function readUrlState() {
+  const q = new URLSearchParams(window.location.search)
+  const get = (k) => q.get(k) || undefined
+  const list = (k) => (q.get(k) ? q.get(k).split(',').filter(Boolean) : undefined)
+  const num = (k) => (q.get(k) != null && q.get(k) !== '' ? Number(q.get(k)) : undefined)
+  return {
+    view: get('view'),
+    countries: list('c'),
+    indicator: get('i'),
+    from: num('from'),
+    to: num('to'),
+    focus: get('focus'),
+    kinds: list('k'),
+    rebased: q.get('rebased') === '1' ? true : q.get('rebased') === '0' ? false : undefined,
+    spans: q.get('spans') === '1' ? true : q.get('spans') === '0' ? false : undefined,
+    person: num('p'),
+  }
+}
+
+export function writeUrlState(patch) {
+  const q = new URLSearchParams(window.location.search)
+  for (const [k, v] of Object.entries(patch)) {
+    if (v === undefined || v === null || v === '') q.delete(k)
+    else q.set(k, Array.isArray(v) ? v.join(',') : String(v))
+  }
+  const next = `${window.location.pathname}?${q.toString()}`
+  window.history.replaceState(null, '', next)
+}

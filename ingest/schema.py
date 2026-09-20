@@ -100,9 +100,17 @@ CREATE TABLE IF NOT EXISTS claims (
     source_id  INTEGER NOT NULL REFERENCES sources(id),
     extractor  TEXT    NOT NULL,
     confidence REAL    NOT NULL DEFAULT 1.0,     -- <1 when parsed heuristically
-    note       TEXT,
-    UNIQUE (person_id, predicate, as_of, source_id)
+    note       TEXT
 );
+
+-- Uniqueness deliberately includes `note`, because a person can legitimately file
+-- two declarations dated to the same year - a by-election, or two seats. Keying
+-- only on (person, predicate, as_of, source) silently dropped the second: 31
+-- declarations across 26 Indian members vanished that way. COALESCE is required
+-- because SQLite treats NULLs as distinct in a UNIQUE index, which would disable
+-- de-duplication entirely for the many claims that carry no note.
+CREATE UNIQUE INDEX IF NOT EXISTS ux_claims
+    ON claims(person_id, predicate, as_of, source_id, COALESCE(note, ''));
 CREATE INDEX IF NOT EXISTS ix_claims_person ON claims(person_id, predicate, as_of);
 CREATE INDEX IF NOT EXISTS ix_claims_pred   ON claims(predicate);
 

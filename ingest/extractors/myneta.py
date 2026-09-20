@@ -160,6 +160,11 @@ class MyNeta(Extractor):
             self.stats.documents += 1
             yield from self._parse(html, sid, url)
 
+    def reparse(self, body: bytes, source_id: int, url: str) -> list[Claim]:
+        html = body.decode("utf-8", errors="replace")
+        return [i for i in self._parse(html, source_id, url)
+                if isinstance(i, Claim)]
+
     def _parse(self, html: str, sid: int, url: str) -> Iterator[Claim | Office]:
         soup = BeautifulSoup(html, "lxml")
         text = clean(soup.get_text(" "))
@@ -207,7 +212,7 @@ class MyNeta(Extractor):
         if m:
             yield claim("age", value_num=float(m.group(1)), unit="years", as_of=year)
 
-        edu = self._after(soup, r"Category\s*:\s*([A-Za-z0-9 .\-]+)")
+        edu = self._education(text)
         if edu:
             yield claim("education_level", value_text=edu, as_of=year)
 
@@ -279,10 +284,51 @@ class MyNeta(Extractor):
         return v[:180] or None
 
     def _cases(self, text: str) -> int | None:
-        if re.search(r"No criminal cases", text, re.I):
+        """Declared pending criminal cases for THIS election.
+
+        MyNeta's "Crime-O-Meter" block states this one of two ways, and the count
+        comes AFTER the words, not before:
+
+            "No criminal cases"
+            "Number of Criminal Cases: 88"
+
+        An earlier version of this method only matched a leading-number form
+        ("88 cases pending"), which never appears on the page. The result was that
+        every MP with zero cases was recorded correctly and every MP WITH cases was
+        silently recorded as having no data at all - 250 of 544 members, and biased
+        in the one direction that matters, making the dataset look cleaner than
+        reality. Do not narrow these patterns without a fixture test.
+        """
+        if re.search(r"No\s+criminal\s+cases", text, re.I):
             return 0
+        m = re.search(r"Number\s+of\s+Criminal\s+Cases\s*:?\s*(\d+)", text, re.I)
+        if m:
+            return int(m.group(1))
+        # tolerated fallback for older page layouts
         m = re.search(r"(\d+)\s*(?:criminal\s*)?cases?\s*(?:pending|declared)", text, re.I)
         return int(m.group(1)) if m else None
+
+    # ADR's fixed education classification. Matching against a closed vocabulary
+    # beats a character-class regex, which ran on past the category into the free
+    # text after it - "Post Graduate M.Com from Rajasthan University Jaipur" was
+    # stored as the education *level*, which is not a level and is not comparable
+    # across members. Longest first, so "Graduate Professional" wins over
+    # "Graduate" and "Post Graduate" is not read as "Graduate".
+    EDUCATION_LEVELS = (
+        "Graduate Professional", "Post Graduate", "12th Pass", "10th Pass",
+        "8th Pass", "5th Pass", "Doctorate", "Graduate", "Illiterate",
+        "Literate", "Others", "Not Given",
+    )
+
+    def _education(self, text: str) -> str | None:
+        m = re.search(r"Category\s*:\s*(.{0,40})", text, re.I)
+        if not m:
+            return None
+        tail = m.group(1)
+        for level in self.EDUCATION_LEVELS:
+            if re.match(rf"\s*{re.escape(level)}\b", tail, re.I):
+                return level
+        return None
 
     def _year(self) -> str:
         m = re.search(r"(\d{4})", self.election)
@@ -304,6 +350,18 @@ class MyNeta(Extractor):
                 break
         if table is None:
             return
+        # Count how often each year appears first, so repeats can be numbered.
+        # A member may contest a general election and a by-election in the same
+        # year, and MyNeta labels both rows identically.
+        year_counts: dict[str, int] = {}
+        for tr in table.find_all("tr"):
+            cs = [clean(td.get_text(" ")) for td in tr.find_all(["td", "th"])]
+            if len(cs) >= 2 and rupees(cs[1]) is not None:
+                ym0 = re.search(r"(19|20)\d{2}", cs[0])
+                if ym0:
+                    year_counts[ym0.group(0)] = year_counts.get(ym0.group(0), 0) + 1
+
+        seen_year: dict[str, int] = {}
         for tr in table.find_all("tr"):
             cells = [clean(td.get_text(" ")) for td in tr.find_all(["td", "th"])]
             if len(cells) < 2:
@@ -315,6 +373,12 @@ class MyNeta(Extractor):
             amount = rupees(cells[1])
             if amount is None:
                 continue
+            yr = ym.group(0)
+            seen_year[yr] = seen_year.get(yr, 0) + 1
+            suffix = (
+                f" (entry {seen_year[yr]} of {year_counts[yr]} dated {yr})"
+                if year_counts.get(yr, 0) > 1 else ""
+            )
             yield Claim(
                 predicate="declared_assets",
                 source_id=sid,
@@ -322,9 +386,9 @@ class MyNeta(Extractor):
                 context=ctx,
                 value_num=amount,
                 currency="INR",
-                as_of=f"{ym.group(0)}-01-01",
+                as_of=f"{yr}-01-01",
                 confidence=0.9,   # parsed from a summary table, not the affidavit itself
-                note=f"Declared at: {label}",
+                note=f"Declared at: {label}{suffix}",
             )
             if len(cells) >= 3 and cells[2].isdigit():
                 yield Claim(
@@ -334,7 +398,7 @@ class MyNeta(Extractor):
                     context=ctx,
                     value_num=float(cells[2]),
                     unit="declared pending cases",
-                    as_of=f"{ym.group(0)}-01-01",
+                    as_of=f"{yr}-01-01",
                     confidence=0.9,
-                    note=f"Declared at: {label}. Pending cases, NOT convictions.",
+                    note=f"Declared at: {label}{suffix}. Pending cases, NOT convictions.",
                 )

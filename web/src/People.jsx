@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import * as echarts from 'echarts'
 import { fmt } from './Chart.jsx'
+import { readUrlState, writeUrlState } from './data.js'
 
 const BASE = `${import.meta.env.BASE_URL}data/people`
 
@@ -10,12 +11,13 @@ const BASE = `${import.meta.env.BASE_URL}data/people`
  * the same years, so "8 crore" becomes a number a reader can actually judge.
  */
 export default function People({ dark }) {
+  const onOpen = (id) => setSelected(id)
   const [meta, setMeta] = useState(null)
   const [error, setError] = useState(null)
   const [q, setQ] = useState('')
   const [country, setCountry] = useState('all')
   const [sort, setSort] = useState('relative')
-  const [selected, setSelected] = useState(null)
+  const [selected, setSelected] = useState(readUrlState().person ?? null)
   const [person, setPerson] = useState(null)
 
   useEffect(() => {
@@ -27,6 +29,10 @@ export default function People({ dark }) {
       .then(setMeta)
       .catch((e) => setError(String(e)))
   }, [])
+
+  useEffect(() => {
+    writeUrlState({ p: selected ?? undefined })
+  }, [selected])
 
   useEffect(() => {
     if (selected == null) return setPerson(null)
@@ -116,6 +122,28 @@ export default function People({ dark }) {
           <p className="note">{meta.caveats.not_a_score}</p>
           <p className="note">{meta.caveats.stock_vs_flow}</p>
         </section>
+
+        {meta.review_queue?.length > 0 && (
+          <section>
+            <h2>
+              Needs a human <span className="hint">{meta.review_queue.length}</span>
+            </h2>
+            <p className="note">{meta.caveats.review}</p>
+            {meta.review_queue.map((r, i) => (
+              <div className="review-pair" key={i}>
+                <button className="rp-name" onClick={() => onOpen(r.a.id)}>
+                  {r.a.name}
+                </button>
+                <span className="rp-score">
+                  same person? score {r.score}
+                </span>
+                <button className="rp-name" onClick={() => onOpen(r.b.id)}>
+                  {r.b.name}
+                </button>
+              </div>
+            ))}
+          </section>
+        )}
       </aside>
 
       <main className="main">

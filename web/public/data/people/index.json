@@ -1,5 +1,5 @@
 {
- "built_at": "2026-09-20T09:05:18+00:00",
+ "built_at": "2026-09-20T09:59:17+00:00",
  "people": [
   {
    "id": 953,
@@ -149,9 +149,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 911,
@@ -163,14 +163,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 43570.67,
+   "flow_total": 53570.67,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 18,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1111,
@@ -201,14 +201,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 9674.41,
+   "flow_total": 13487.57,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 582,
@@ -258,14 +258,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 16111.0,
+   "flow_total": 18611.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 626,
@@ -277,14 +277,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 10152.0,
+   "flow_total": 10552.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 700,
@@ -339,9 +339,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 935,
@@ -391,14 +391,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 29818.0,
+   "flow_total": 30318.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 904,
@@ -448,14 +448,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 7275.2,
+   "flow_total": 8415.2,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 797,
@@ -486,14 +486,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 299.3,
+   "flow_total": 635.87,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 934,
@@ -529,9 +529,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1109,
@@ -567,9 +567,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 915,
@@ -581,14 +581,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 5333.0,
+   "flow_total": 6150.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 615,
@@ -657,14 +657,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 39629.41,
+   "flow_total": 43810.41,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 15,
+   "n_claims": 16,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 892,
@@ -676,14 +676,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 83495.66,
+   "flow_total": 83765.66,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1006,
@@ -733,14 +733,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 14500.0,
+   "flow_total": 24500.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1167,
@@ -752,14 +752,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 15350.0,
+   "flow_total": 32850.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 629,
@@ -771,14 +771,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 73300.0,
+   "flow_total": 322569.62,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 906,
@@ -847,14 +847,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 261526.0,
+   "flow_total": 301526.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 17,
+   "n_claims": 20,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 694,
@@ -871,9 +871,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 712,
@@ -961,14 +961,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 34730.0,
+   "flow_total": 36730.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 714,
@@ -1037,14 +1037,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 3933.45,
+   "flow_total": 4013.45,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 596,
@@ -1061,9 +1061,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 689,
@@ -1094,14 +1094,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 52762.67,
+   "flow_total": 67009.4,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1074,
@@ -1118,9 +1118,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 651,
@@ -1151,14 +1151,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 12063.69,
+   "flow_total": 17063.69,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 15,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 5
   },
   {
    "id": 782,
@@ -1227,14 +1227,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 132.3,
+   "flow_total": 504.35,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 879,
@@ -1270,9 +1270,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 992,
@@ -1346,9 +1346,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 606,
@@ -1474,14 +1474,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 42954.2,
+   "flow_total": 94223.17,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 14,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 561,
@@ -1517,9 +1517,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1129,
@@ -1550,14 +1550,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1836.32,
+   "flow_total": 3636.32,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 896,
@@ -1574,9 +1574,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 988,
@@ -1626,14 +1626,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 2610.0,
+   "flow_total": 2910.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 13,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 730,
@@ -1778,14 +1778,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 88209.6,
+   "flow_total": 132886.4,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 6
   },
   {
    "id": 641,
@@ -1840,9 +1840,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 624,
@@ -1854,14 +1854,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 111778.84,
+   "flow_total": 112123.84,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 13,
+   "n_claims": 14,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 659,
@@ -1873,14 +1873,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 6033.66,
+   "flow_total": 9440.83,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 686,
@@ -1892,14 +1892,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 13180.99,
+   "flow_total": 13965.2,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 736,
@@ -1992,9 +1992,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 885,
@@ -2011,9 +2011,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 929,
@@ -2030,9 +2030,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 973,
@@ -2063,12 +2063,12 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 20000.0,
+   "flow_total": 30000.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -2272,14 +2272,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 299.0,
+   "flow_total": 529.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 852,
@@ -2291,14 +2291,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 8623.9,
+   "flow_total": 16003.9,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 893,
@@ -2310,14 +2310,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 32211.8,
+   "flow_total": 33687.32,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 16,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 728,
@@ -2367,14 +2367,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 64544.4,
+   "flow_total": 110047.38,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 13,
+   "n_claims": 20,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 725,
@@ -2405,14 +2405,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 59410.1,
+   "flow_total": 59970.1,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 997,
@@ -2424,14 +2424,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 2386.0,
+   "flow_total": 2886.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 850,
@@ -2481,14 +2481,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 3800.0,
+   "flow_total": 8200.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 18,
+   "n_claims": 19,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 817,
@@ -2880,14 +2880,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 7317.8,
+   "flow_total": 11417.8,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 701,
@@ -2899,14 +2899,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 68900.0,
+   "flow_total": 128900.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 970,
@@ -2918,14 +2918,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 22850.0,
+   "flow_total": 23025.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1020,
@@ -2937,14 +2937,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 55100.58,
+   "flow_total": 56350.58,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1040,
@@ -2956,14 +2956,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 13368.48,
+   "flow_total": 13393.48,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1080,
@@ -2975,14 +2975,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 14395.0,
+   "flow_total": 24145.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1086,
@@ -2999,9 +2999,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1125,
@@ -3037,9 +3037,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 631,
@@ -3051,12 +3051,12 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 9500.0,
+   "flow_total": 13500.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -3203,14 +3203,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 47167.52,
+   "flow_total": 48386.52,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 668,
@@ -3265,9 +3265,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 649,
@@ -3279,14 +3279,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 5984.44,
+   "flow_total": 7460.29,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 654,
@@ -3360,9 +3360,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 741,
@@ -3431,14 +3431,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 38012.69,
+   "flow_total": 38262.69,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 20,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1028,
@@ -3455,9 +3455,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 558,
@@ -3488,14 +3488,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 5059.42,
+   "flow_total": 9263.38,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 835,
@@ -3564,14 +3564,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 8510.0,
+   "flow_total": 18010.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 549,
@@ -3583,14 +3583,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 31810.0,
+   "flow_total": 83753.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 832,
@@ -3621,14 +3621,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 13298.0,
+   "flow_total": 25798.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 947,
@@ -3849,14 +3849,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 16109.96,
+   "flow_total": 26409.94,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 5
   },
   {
    "id": 1102,
@@ -3925,14 +3925,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 5820.0,
+   "flow_total": 6830.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 738,
@@ -4134,14 +4134,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 17000.0,
+   "flow_total": 18500.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 18,
+   "n_claims": 19,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 790,
@@ -4196,9 +4196,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 768,
@@ -4324,14 +4324,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 10740.0,
+   "flow_total": 11230.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 963,
@@ -4424,9 +4424,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1099,
@@ -4438,14 +4438,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 13479.03,
+   "flow_total": 122479.03,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1151,
@@ -4519,9 +4519,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 809,
@@ -4552,14 +4552,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 22147.54,
+   "flow_total": 27147.54,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 16,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 961,
@@ -4590,14 +4590,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 40500.0,
+   "flow_total": 48000.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 715,
@@ -4609,14 +4609,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 6500.0,
+   "flow_total": 13100.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1143,
@@ -4666,12 +4666,12 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": null,
+   "flow_total": 4868.12,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 1,
+   "n_claims": 4,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -4804,9 +4804,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 638,
@@ -4856,14 +4856,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 23165.0,
+   "flow_total": 23665.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 661,
@@ -4875,14 +4875,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1453.0,
+   "flow_total": 1943.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 614,
@@ -4970,14 +4970,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 2355.33,
+   "flow_total": 3074.83,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 941,
@@ -5027,14 +5027,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 11282.4,
+   "flow_total": 13308.62,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1176,
@@ -5046,14 +5046,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1100.0,
+   "flow_total": 1690.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1107,
@@ -5070,9 +5070,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 687,
@@ -5179,12 +5179,12 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 25390.0,
+   "flow_total": 41890.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -5198,14 +5198,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1278.07,
+   "flow_total": 1878.9,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 20,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 922,
@@ -5222,9 +5222,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 570,
@@ -5255,14 +5255,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 15042.5,
+   "flow_total": 25042.5,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 1016,
@@ -5274,14 +5274,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 4409.92,
+   "flow_total": 4707.92,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 989,
@@ -5293,14 +5293,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 4352.88,
+   "flow_total": 4517.83,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 15,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 959,
@@ -5464,14 +5464,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 42902.0,
+   "flow_total": 50402.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1044,
@@ -5488,9 +5488,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 789,
@@ -5621,9 +5621,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 783,
@@ -5711,14 +5711,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 70435.0,
+   "flow_total": 117737.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 949,
@@ -5787,12 +5787,12 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 4450.0,
+   "flow_total": 5700.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -5882,12 +5882,12 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 59500.0,
+   "flow_total": 61500.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -6191,9 +6191,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 880,
@@ -6210,9 +6210,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1173,
@@ -6438,9 +6438,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 607,
@@ -6547,14 +6547,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 97648.0,
+   "flow_total": 103832.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 15,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 731,
@@ -6566,14 +6566,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 400.0,
+   "flow_total": 900.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1148,
@@ -6604,14 +6604,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 23946.0,
+   "flow_total": 32946.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 16,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 563,
@@ -6623,14 +6623,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 6233.47,
+   "flow_total": 7643.28,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 13,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 7
   },
   {
    "id": 589,
@@ -6666,9 +6666,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 839,
@@ -6761,9 +6761,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 794,
@@ -6870,14 +6870,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 15639.68,
+   "flow_total": 35139.68,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 19,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 844,
@@ -6927,14 +6927,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 6558.8,
+   "flow_total": 48138.8,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 19,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1150,
@@ -7060,14 +7060,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 13908.0,
+   "flow_total": 21443.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1068,
@@ -7098,14 +7098,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 83354.0,
+   "flow_total": 123354.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 14,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1052,
@@ -7141,9 +7141,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 972,
@@ -7174,14 +7174,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 250.0,
+   "flow_total": 1500.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1024,
@@ -7293,9 +7293,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 748,
@@ -7326,14 +7326,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 17480.0,
+   "flow_total": 32480.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 19,
+   "n_claims": 20,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1029,
@@ -7350,9 +7350,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1072,
@@ -7635,9 +7635,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1008,
@@ -7706,14 +7706,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 12663.09,
+   "flow_total": 19474.09,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 735,
@@ -7863,9 +7863,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1165,
@@ -7915,14 +7915,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 18248.0,
+   "flow_total": 22848.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 16,
+   "n_claims": 19,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1039,
@@ -7934,14 +7934,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 7779.32,
+   "flow_total": 7928.36,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1123,
@@ -8029,14 +8029,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 28543.88,
+   "flow_total": 57393.88,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 16,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 837,
@@ -8053,9 +8053,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 590,
@@ -8072,9 +8072,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 644,
@@ -8091,9 +8091,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1095,
@@ -8129,9 +8129,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 551,
@@ -8148,9 +8148,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 579,
@@ -8186,9 +8186,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 601,
@@ -8262,9 +8262,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 955,
@@ -8357,9 +8357,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1047,
@@ -8376,9 +8376,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 710,
@@ -8395,9 +8395,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 765,
@@ -8409,14 +8409,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 8640.0,
+   "flow_total": 13640.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 652,
@@ -8471,9 +8471,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 873,
@@ -8485,14 +8485,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 4222.86,
+   "flow_total": 5824.03,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 594,
@@ -8504,14 +8504,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 2710.0,
+   "flow_total": 2930.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 824,
@@ -8561,14 +8561,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1145.0,
+   "flow_total": 1955.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 755,
@@ -8637,14 +8637,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 919.6,
+   "flow_total": 1579.6,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 999,
@@ -8732,14 +8732,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 6156.0,
+   "flow_total": 10881.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 603,
@@ -8770,14 +8770,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1282.25,
+   "flow_total": 1432.25,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1180,
@@ -8789,14 +8789,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 59415.38,
+   "flow_total": 67215.38,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 18,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1175,
@@ -9017,14 +9017,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 691.12,
+   "flow_total": 1187.2,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1138,
@@ -9036,14 +9036,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 160994.0,
+   "flow_total": 210994.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 19,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 744,
@@ -9055,14 +9055,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 146498.24,
+   "flow_total": 757686.48,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 40,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 9
   },
   {
    "id": 829,
@@ -9074,14 +9074,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 37308.66,
+   "flow_total": 79554.16,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 5
   },
   {
    "id": 886,
@@ -9131,14 +9131,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 3900.0,
+   "flow_total": 8900.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 608,
@@ -9307,9 +9307,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 698,
@@ -9416,14 +9416,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 2820.0,
+   "flow_total": 3390.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 14,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 956,
@@ -9440,9 +9440,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1182,
@@ -9739,14 +9739,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 3411.0,
+   "flow_total": 4161.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 807,
@@ -9777,14 +9777,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 39945.0,
+   "flow_total": 77901.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1009,
@@ -9796,14 +9796,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1451.62,
+   "flow_total": 1590.11,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1091,
@@ -9896,9 +9896,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1030,
@@ -9915,9 +9915,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1135,
@@ -9929,14 +9929,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1416.85,
+   "flow_total": 10639.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 10,
+   "n_claims": 14,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 1118,
@@ -9948,14 +9948,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 2593210.06,
+   "flow_total": 2799071.58,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 15,
+   "n_claims": 19,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 957,
@@ -9967,12 +9967,12 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 7980.0,
+   "flow_total": 12980.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -9986,14 +9986,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 120100.0,
+   "flow_total": 125100.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1120,
@@ -10043,14 +10043,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 2750.0,
+   "flow_total": 4650.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 900,
@@ -10067,9 +10067,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 21,
+   "n_claims": 23,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 556,
@@ -10105,9 +10105,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 856,
@@ -10143,9 +10143,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 841,
@@ -10176,14 +10176,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 691.0,
+   "flow_total": 718.5,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 713,
@@ -10252,14 +10252,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 25000.0,
+   "flow_total": 25355.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 613,
@@ -10271,14 +10271,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 4296.6,
+   "flow_total": 4561.42,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 650,
@@ -10333,9 +10333,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 732,
@@ -10366,14 +10366,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 8243.79,
+   "flow_total": 21122.22,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 5
   },
   {
    "id": 793,
@@ -10409,9 +10409,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 857,
@@ -10485,9 +10485,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 8,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1062,
@@ -10518,14 +10518,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 9712.5,
+   "flow_total": 17262.5,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 1092,
@@ -10542,9 +10542,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 864,
@@ -10651,14 +10651,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 28227.53,
+   "flow_total": 43285.53,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 1033,
@@ -10694,9 +10694,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 821,
@@ -10784,14 +10784,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 29601.0,
+   "flow_total": 73905.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 16,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 758,
@@ -10827,9 +10827,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 653,
@@ -10922,9 +10922,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 676,
@@ -10936,14 +10936,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 228350.0,
+   "flow_total": 417000.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 22,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 5
   },
   {
    "id": 722,
@@ -10955,14 +10955,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 6060.0,
+   "flow_total": 6100.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 20,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 656,
@@ -10974,14 +10974,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 89400.0,
+   "flow_total": 95350.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 834,
@@ -10993,14 +10993,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 135000.0,
+   "flow_total": 205919.5,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 15,
+   "n_claims": 20,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 3
   },
   {
    "id": 1186,
@@ -11012,12 +11012,12 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1200.0,
+   "flow_total": 1400.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -11088,14 +11088,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 28389.24,
+   "flow_total": 29438.65,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 828,
@@ -11164,14 +11164,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 39417.0,
+   "flow_total": 62191.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 6
   },
   {
    "id": 688,
@@ -11188,9 +11188,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 2,
+   "n_claims": 3,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 719,
@@ -11202,14 +11202,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 159442.79,
+   "flow_total": 172302.79,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 19,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 769,
@@ -11302,9 +11302,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 4,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 729,
@@ -11335,14 +11335,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 25912.0,
+   "flow_total": 27012.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1011,
@@ -11411,14 +11411,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 5170.0,
+   "flow_total": 10470.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 3,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 587,
@@ -11430,14 +11430,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 51000.0,
+   "flow_total": 55000.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 16,
+   "n_claims": 18,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 691,
@@ -11582,14 +11582,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 9925.95,
+   "flow_total": 20425.95,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 14,
+   "n_claims": 18,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 616,
@@ -11644,9 +11644,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1003,
@@ -11701,9 +11701,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 4,
+   "n_claims": 5,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 746,
@@ -11715,14 +11715,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 67731.04,
+   "flow_total": 126136.66,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1057,
@@ -11848,14 +11848,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 26779.21,
+   "flow_total": 35779.21,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 20,
+   "n_claims": 39,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 566,
@@ -11886,14 +11886,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 53007.96,
+   "flow_total": 80409.82,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 16,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 682,
@@ -12057,14 +12057,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 2472.0,
+   "flow_total": 3328.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 9,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 664,
@@ -12076,14 +12076,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 13851.6,
+   "flow_total": 18851.6,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 7,
+   "n_claims": 10,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1081,
@@ -12100,9 +12100,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 13,
+   "n_claims": 14,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 861,
@@ -12114,14 +12114,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 1442.0,
+   "flow_total": 2327.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 648,
@@ -12157,9 +12157,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 822,
@@ -12176,9 +12176,9 @@
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 7,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 1110,
@@ -12190,14 +12190,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 66250.0,
+   "flow_total": 151339.0,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 9,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 1108,
@@ -12247,14 +12247,14 @@
    "currency": "GBP",
    "latest_assets": null,
    "asset_points": 0,
-   "flow_total": 25273.88,
+   "flow_total": 57273.88,
    "cases": null,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 16,
+   "n_claims": 18,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 671,
@@ -12366,7 +12366,7 @@
    "declared_multiple": 1.95,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12385,7 +12385,7 @@
    "declared_multiple": 5.42,
    "national_multiple": 1.49,
    "span": "2015-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12423,7 +12423,7 @@
    "declared_multiple": 1.53,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12442,7 +12442,7 @@
    "declared_multiple": 7.94,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12476,11 +12476,11 @@
    "latest_assets": 26179993.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 6.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12518,7 +12518,7 @@
    "declared_multiple": 1.78,
    "national_multiple": 1.4,
    "span": "2016-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12556,7 +12556,7 @@
    "declared_multiple": 8.34,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12575,7 +12575,7 @@
    "declared_multiple": 1.55,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12594,7 +12594,7 @@
    "declared_multiple": 40.84,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 13,
+   "n_claims": 14,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12708,9 +12708,9 @@
    "declared_multiple": 18.16,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 450,
@@ -12727,7 +12727,7 @@
    "declared_multiple": 13.52,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12765,7 +12765,7 @@
    "declared_multiple": 11.64,
    "national_multiple": 2.18,
    "span": "2008-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12837,11 +12837,11 @@
    "latest_assets": 47540056.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 8.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12860,7 +12860,7 @@
    "declared_multiple": 11.79,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12913,11 +12913,11 @@
    "latest_assets": 1838440.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 12.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12936,7 +12936,7 @@
    "declared_multiple": 4.16,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -12974,7 +12974,7 @@
    "declared_multiple": 1.62,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13107,7 +13107,7 @@
    "declared_multiple": 56.24,
    "national_multiple": 2.5,
    "span": "2005-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13126,7 +13126,7 @@
    "declared_multiple": 40.55,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13145,7 +13145,7 @@
    "declared_multiple": 2.05,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13160,11 +13160,11 @@
    "latest_assets": 109259962.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13183,7 +13183,7 @@
    "declared_multiple": 1.57,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13221,7 +13221,7 @@
    "declared_multiple": 5.08,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13240,7 +13240,7 @@
    "declared_multiple": 1.46,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13373,7 +13373,7 @@
    "declared_multiple": 1.84,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13411,7 +13411,7 @@
    "declared_multiple": 1.25,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13430,7 +13430,7 @@
    "declared_multiple": 3.84,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13449,7 +13449,7 @@
    "declared_multiple": 1.33,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13502,11 +13502,11 @@
    "latest_assets": 58583773.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13582,7 +13582,7 @@
    "declared_multiple": 3.82,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13601,7 +13601,7 @@
    "declared_multiple": 18.93,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13620,7 +13620,7 @@
    "declared_multiple": 7.16,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13639,7 +13639,7 @@
    "declared_multiple": 2.48,
    "national_multiple": 1.69,
    "span": "2013-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13654,11 +13654,11 @@
    "latest_assets": 200149000.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 25.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13677,7 +13677,7 @@
    "declared_multiple": 18.07,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13696,7 +13696,7 @@
    "declared_multiple": 9.19,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13734,7 +13734,7 @@
    "declared_multiple": 1.49,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13753,7 +13753,7 @@
    "declared_multiple": 12.95,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13772,7 +13772,7 @@
    "declared_multiple": 1.3,
    "national_multiple": 1.26,
    "span": "2018-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13791,7 +13791,7 @@
    "declared_multiple": 4.87,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13810,7 +13810,7 @@
    "declared_multiple": 8.29,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13829,7 +13829,7 @@
    "declared_multiple": 20.7,
    "national_multiple": 2.35,
    "span": "2006-2024",
-   "n_claims": 15,
+   "n_claims": 16,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13863,11 +13863,11 @@
    "latest_assets": 24530801.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13924,7 +13924,7 @@
    "declared_multiple": 11.84,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -13962,7 +13962,7 @@
    "declared_multiple": 2.77,
    "national_multiple": 1.69,
    "span": "2013-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14038,7 +14038,7 @@
    "declared_multiple": 11.16,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 13,
+   "n_claims": 14,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14114,7 +14114,7 @@
    "declared_multiple": 3.53,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14171,7 +14171,7 @@
    "declared_multiple": 3.12,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14190,7 +14190,7 @@
    "declared_multiple": 27.12,
    "national_multiple": 2.5,
    "span": "2005-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14247,7 +14247,7 @@
    "declared_multiple": 27.03,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14323,7 +14323,7 @@
    "declared_multiple": 88.72,
    "national_multiple": 1.4,
    "span": "2016-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14376,11 +14376,11 @@
    "latest_assets": 4976024996.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 5.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14395,11 +14395,11 @@
    "latest_assets": 7056365.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14418,7 +14418,7 @@
    "declared_multiple": 1.29,
    "national_multiple": 1.13,
    "span": "2022-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14433,11 +14433,11 @@
    "latest_assets": 287211468.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 3.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14456,7 +14456,7 @@
    "declared_multiple": 2.53,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14475,9 +14475,9 @@
    "declared_multiple": 38.71,
    "national_multiple": 2.5,
    "span": "2005-2024",
-   "n_claims": 14,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 342,
@@ -14513,7 +14513,7 @@
    "declared_multiple": 0.9,
    "national_multiple": 1.13,
    "span": "2022-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14551,9 +14551,9 @@
    "declared_multiple": 0.98,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 13,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 275,
@@ -14608,7 +14608,7 @@
    "declared_multiple": 12.84,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14623,11 +14623,11 @@
    "latest_assets": 3428668000.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14703,7 +14703,7 @@
    "declared_multiple": 6.56,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14741,7 +14741,7 @@
    "declared_multiple": 7.37,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14775,11 +14775,11 @@
    "latest_assets": 71392415.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14798,7 +14798,7 @@
    "declared_multiple": 2.49,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14836,7 +14836,7 @@
    "declared_multiple": 1.56,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14893,7 +14893,7 @@
    "declared_multiple": 2.35,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14908,11 +14908,11 @@
    "latest_assets": 88465387.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -14931,7 +14931,7 @@
    "declared_multiple": 3.52,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15026,7 +15026,7 @@
    "declared_multiple": 145.19,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15045,9 +15045,9 @@
    "declared_multiple": 23.76,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 131,
@@ -15083,7 +15083,7 @@
    "declared_multiple": 2.02,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15121,9 +15121,9 @@
    "declared_multiple": 1.5,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 11,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 61,
@@ -15178,7 +15178,7 @@
    "declared_multiple": 1.51,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15197,7 +15197,7 @@
    "declared_multiple": 17.07,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15212,11 +15212,11 @@
    "latest_assets": 147631050.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15250,11 +15250,11 @@
    "latest_assets": 57054727538.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15330,7 +15330,7 @@
    "declared_multiple": 17.07,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15364,11 +15364,11 @@
    "latest_assets": 4799426.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 3.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15558,7 +15558,7 @@
    "declared_multiple": 2.07,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15668,11 +15668,11 @@
    "latest_assets": 144008066.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15767,9 +15767,9 @@
    "declared_multiple": 14.57,
    "national_multiple": 1.69,
    "span": "2013-2024",
-   "n_claims": 12,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 364,
@@ -15805,7 +15805,7 @@
    "declared_multiple": 2.33,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15824,7 +15824,7 @@
    "declared_multiple": 8.08,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15843,7 +15843,7 @@
    "declared_multiple": 4.9,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15938,7 +15938,7 @@
    "declared_multiple": 2.5,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -15954,12 +15954,12 @@
    "asset_points": 5,
    "flow_total": null,
    "cases": 1.0,
-   "declared_multiple": 7.05,
+   "declared_multiple": 6.79,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 14,
+   "n_claims": 21,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 4
   },
   {
    "id": 383,
@@ -15972,11 +15972,11 @@
    "latest_assets": 345276957.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16090,7 +16090,7 @@
    "declared_multiple": 12.44,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16143,11 +16143,11 @@
    "latest_assets": 890397608.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16166,7 +16166,7 @@
    "declared_multiple": 2.27,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16185,7 +16185,7 @@
    "declared_multiple": 8.96,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16204,7 +16204,7 @@
    "declared_multiple": 1.3,
    "national_multiple": 1.13,
    "span": "2022-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16242,7 +16242,7 @@
    "declared_multiple": 2.86,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 18,
+   "n_claims": 19,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16261,7 +16261,7 @@
    "declared_multiple": 5.83,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16280,7 +16280,7 @@
    "declared_multiple": 4.87,
    "national_multiple": 1.92,
    "span": "2010-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16375,7 +16375,7 @@
    "declared_multiple": 8.67,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16413,7 +16413,7 @@
    "declared_multiple": 1.39,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16432,7 +16432,7 @@
    "declared_multiple": 1.3,
    "national_multiple": 1.26,
    "span": "2018-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16451,7 +16451,7 @@
    "declared_multiple": 7.32,
    "national_multiple": 2.18,
    "span": "2008-2024",
-   "n_claims": 17,
+   "n_claims": 18,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16470,7 +16470,7 @@
    "declared_multiple": 4.13,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16622,7 +16622,7 @@
    "declared_multiple": 19.58,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16637,11 +16637,11 @@
    "latest_assets": 55502166.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 8.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16717,7 +16717,7 @@
    "declared_multiple": 27.91,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16736,7 +16736,7 @@
    "declared_multiple": 2.5,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16751,11 +16751,11 @@
    "latest_assets": 26907638.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16793,7 +16793,7 @@
    "declared_multiple": 1.27,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16812,7 +16812,7 @@
    "declared_multiple": 10.86,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16831,9 +16831,9 @@
    "declared_multiple": 14.9,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 15,
+   "n_claims": 19,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 458,
@@ -16888,7 +16888,7 @@
    "declared_multiple": 1.68,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16907,7 +16907,7 @@
    "declared_multiple": 2.41,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -16945,9 +16945,9 @@
    "declared_multiple": 1.28,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 13,
+   "n_claims": 16,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 445,
@@ -17021,7 +17021,7 @@
    "declared_multiple": 4.22,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17040,7 +17040,7 @@
    "declared_multiple": 50.71,
    "national_multiple": 1.2,
    "span": "2021-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17056,12 +17056,12 @@
    "asset_points": 3,
    "flow_total": null,
    "cases": 1.0,
-   "declared_multiple": 3.57,
+   "declared_multiple": 3.14,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 148,
@@ -17135,7 +17135,7 @@
    "declared_multiple": 0.26,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17192,7 +17192,7 @@
    "declared_multiple": 2.09,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17211,7 +17211,7 @@
    "declared_multiple": 1.53,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17226,11 +17226,11 @@
    "latest_assets": 36342460.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17249,7 +17249,7 @@
    "declared_multiple": 85.0,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17268,7 +17268,7 @@
    "declared_multiple": 1.53,
    "national_multiple": 1.4,
    "span": "2016-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17325,7 +17325,7 @@
    "declared_multiple": 6.03,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17359,11 +17359,11 @@
    "latest_assets": 86201641.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17420,9 +17420,9 @@
    "declared_multiple": 245.78,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 37,
@@ -17496,7 +17496,7 @@
    "declared_multiple": 2.11,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17511,11 +17511,11 @@
    "latest_assets": 916631239.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 8.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17534,7 +17534,7 @@
    "declared_multiple": 1.99,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17553,7 +17553,7 @@
    "declared_multiple": 1.37,
    "national_multiple": 2.18,
    "span": "2008-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17591,7 +17591,7 @@
    "declared_multiple": 1.61,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17686,7 +17686,7 @@
    "declared_multiple": 2.54,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17724,7 +17724,7 @@
    "declared_multiple": 233.76,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17736,16 +17736,16 @@
    "constituency": "SRIKAKULAM",
    "region": "ANDHRA PRADESH",
    "currency": "INR",
-   "latest_assets": 233073561.0,
+   "latest_assets": 750000.0,
    "asset_points": 3,
    "flow_total": null,
    "cases": 0.0,
-   "declared_multiple": 2.77,
+   "declared_multiple": 0.01,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 11,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 28,
@@ -17781,7 +17781,7 @@
    "declared_multiple": 43.11,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17819,7 +17819,7 @@
    "declared_multiple": 1.18,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17838,7 +17838,7 @@
    "declared_multiple": 8.64,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -17986,11 +17986,11 @@
    "latest_assets": 355731499.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18009,7 +18009,7 @@
    "declared_multiple": 1.22,
    "national_multiple": 1.13,
    "span": "2022-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18043,11 +18043,11 @@
    "latest_assets": 33728000.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 3.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18104,7 +18104,7 @@
    "declared_multiple": 1.99,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18123,7 +18123,7 @@
    "declared_multiple": 1.97,
    "national_multiple": 1.26,
    "span": "2018-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18142,7 +18142,7 @@
    "declared_multiple": 14.62,
    "national_multiple": 2.35,
    "span": "2006-2024",
-   "n_claims": 16,
+   "n_claims": 17,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18161,9 +18161,9 @@
    "declared_multiple": 5.47,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 14,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 19,
@@ -18199,7 +18199,7 @@
    "declared_multiple": 1.0,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18256,7 +18256,7 @@
    "declared_multiple": 1.4,
    "national_multiple": 1.4,
    "span": "2016-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18294,7 +18294,7 @@
    "declared_multiple": 286.72,
    "national_multiple": 2.35,
    "span": "2006-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18309,11 +18309,11 @@
    "latest_assets": 8716980.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 4.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18366,11 +18366,11 @@
    "latest_assets": 86564403.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18389,7 +18389,7 @@
    "declared_multiple": 1.24,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18408,7 +18408,7 @@
    "declared_multiple": 1.99,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18503,7 +18503,7 @@
    "declared_multiple": 3.67,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18522,7 +18522,7 @@
    "declared_multiple": 27.54,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18537,11 +18537,11 @@
    "latest_assets": 328162601.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18579,7 +18579,7 @@
    "declared_multiple": 3.22,
    "national_multiple": 1.4,
    "span": "2016-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18617,7 +18617,7 @@
    "declared_multiple": 2.15,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18689,11 +18689,11 @@
    "latest_assets": 4505342.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 3.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18708,11 +18708,11 @@
    "latest_assets": 489434188.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 36.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18822,11 +18822,11 @@
    "latest_assets": 20734393.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 6.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18841,11 +18841,11 @@
    "latest_assets": 243244483.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 3.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18864,7 +18864,7 @@
    "declared_multiple": 1.92,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18883,7 +18883,7 @@
    "declared_multiple": 3.29,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18902,7 +18902,7 @@
    "declared_multiple": 7.82,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -18940,9 +18940,9 @@
    "declared_multiple": 15.69,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 12,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 497,
@@ -18993,11 +18993,11 @@
    "latest_assets": 262602215.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19016,7 +19016,7 @@
    "declared_multiple": 102.35,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19054,7 +19054,7 @@
    "declared_multiple": 0.6,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19092,7 +19092,7 @@
    "declared_multiple": 7.39,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19111,9 +19111,9 @@
    "declared_multiple": 1.82,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 12,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 80,
@@ -19130,7 +19130,7 @@
    "declared_multiple": 12.93,
    "national_multiple": 1.92,
    "span": "2010-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19168,7 +19168,7 @@
    "declared_multiple": 11.09,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19187,7 +19187,7 @@
    "declared_multiple": 15.13,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19301,7 +19301,7 @@
    "declared_multiple": 2.37,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19320,7 +19320,7 @@
    "declared_multiple": 8.47,
    "national_multiple": 1.85,
    "span": "2011-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19339,7 +19339,7 @@
    "declared_multiple": 1.76,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19377,7 +19377,7 @@
    "declared_multiple": 8.87,
    "national_multiple": 2.35,
    "span": "2006-2024",
-   "n_claims": 16,
+   "n_claims": 17,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19430,11 +19430,11 @@
    "latest_assets": 7163322265.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 6.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19472,7 +19472,7 @@
    "declared_multiple": 3.28,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19491,9 +19491,9 @@
    "declared_multiple": 24.86,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 40,
@@ -19548,7 +19548,7 @@
    "declared_multiple": 3.42,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19567,7 +19567,7 @@
    "declared_multiple": 2.04,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19586,7 +19586,7 @@
    "declared_multiple": 3.68,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19658,11 +19658,11 @@
    "latest_assets": 1125719.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19677,11 +19677,11 @@
    "latest_assets": 775477352.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 3.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19753,11 +19753,11 @@
    "latest_assets": 720851715.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19776,7 +19776,7 @@
    "declared_multiple": 3.05,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19833,7 +19833,7 @@
    "declared_multiple": 1.27,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19848,11 +19848,11 @@
    "latest_assets": 533899960.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -19890,7 +19890,7 @@
    "declared_multiple": 36.83,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 30,
+   "n_claims": 38,
    "n_offices": 2,
    "n_conflicts": 3
   },
@@ -19925,12 +19925,12 @@
    "asset_points": 2,
    "flow_total": null,
    "cases": 0.0,
-   "declared_multiple": 1.48,
+   "declared_multiple": 1.25,
    "national_multiple": 1.26,
    "span": "2018-2024",
-   "n_claims": 9,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 65,
@@ -19966,7 +19966,7 @@
    "declared_multiple": 96.16,
    "national_multiple": 1.26,
    "span": "2018-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20004,7 +20004,7 @@
    "declared_multiple": 12.04,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20023,7 +20023,7 @@
    "declared_multiple": 3.81,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20061,7 +20061,7 @@
    "declared_multiple": 2.99,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20080,7 +20080,7 @@
    "declared_multiple": 1.01,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20099,7 +20099,7 @@
    "declared_multiple": 1.75,
    "national_multiple": 1.31,
    "span": "2020-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20137,9 +20137,9 @@
    "declared_multiple": 20.49,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 15,
+   "n_claims": 17,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 449,
@@ -20156,7 +20156,7 @@
    "declared_multiple": 175.26,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20175,7 +20175,7 @@
    "declared_multiple": 1.8,
    "national_multiple": 1.4,
    "span": "2016-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20213,7 +20213,7 @@
    "declared_multiple": 2.43,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20232,7 +20232,7 @@
    "declared_multiple": 7.29,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20270,7 +20270,7 @@
    "declared_multiple": 4.07,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20304,11 +20304,11 @@
    "latest_assets": 582770537.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20346,7 +20346,7 @@
    "declared_multiple": 6.11,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 16,
+   "n_claims": 17,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20422,7 +20422,7 @@
    "declared_multiple": 9.33,
    "national_multiple": 2.18,
    "span": "2008-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20536,7 +20536,7 @@
    "declared_multiple": 54.33,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20589,11 +20589,11 @@
    "latest_assets": 92662888.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20669,7 +20669,7 @@
    "declared_multiple": 7.56,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 11,
+   "n_claims": 12,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20688,7 +20688,7 @@
    "declared_multiple": 0.47,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20722,11 +20722,11 @@
    "latest_assets": 2597479.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 9.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20802,7 +20802,7 @@
    "declared_multiple": 2.75,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20821,7 +20821,7 @@
    "declared_multiple": 2.41,
    "national_multiple": 2.21,
    "span": "2007-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20859,7 +20859,7 @@
    "declared_multiple": 25.02,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20878,9 +20878,9 @@
    "declared_multiple": 45.34,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 14,
+   "n_claims": 16,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 163,
@@ -20897,7 +20897,7 @@
    "declared_multiple": 1.72,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -20954,7 +20954,7 @@
    "declared_multiple": 1.73,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21125,7 +21125,7 @@
    "declared_multiple": 0.71,
    "national_multiple": 1.2,
    "span": "2021-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21159,11 +21159,11 @@
    "latest_assets": 754021976.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21197,11 +21197,11 @@
    "latest_assets": 11062368.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21216,11 +21216,11 @@
    "latest_assets": 9934524.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 47.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21277,7 +21277,7 @@
    "declared_multiple": 6.35,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21315,7 +21315,7 @@
    "declared_multiple": 2.43,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21331,12 +21331,12 @@
    "asset_points": 2,
    "flow_total": null,
    "cases": 2.0,
-   "declared_multiple": 1.09,
+   "declared_multiple": 1.59,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 9,
+   "n_claims": 11,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 327,
@@ -21410,7 +21410,7 @@
    "declared_multiple": 15.45,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 16,
+   "n_claims": 19,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21429,7 +21429,7 @@
    "declared_multiple": 2.03,
    "national_multiple": 1.69,
    "span": "2013-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21467,7 +21467,7 @@
    "declared_multiple": 1.15,
    "national_multiple": 1.06,
    "span": "2023-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21486,9 +21486,9 @@
    "declared_multiple": 3.68,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 13,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 1
   },
   {
    "id": 104,
@@ -21524,7 +21524,7 @@
    "declared_multiple": 1.98,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21539,11 +21539,11 @@
    "latest_assets": 42894953.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21619,7 +21619,7 @@
    "declared_multiple": 18.66,
    "national_multiple": 2.65,
    "span": "2004-2024",
-   "n_claims": 18,
+   "n_claims": 19,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21638,7 +21638,7 @@
    "declared_multiple": 1.29,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21657,7 +21657,7 @@
    "declared_multiple": 5.34,
    "national_multiple": 1.49,
    "span": "2015-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21672,11 +21672,11 @@
    "latest_assets": 3862830.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 10.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21695,7 +21695,7 @@
    "declared_multiple": 7.56,
    "national_multiple": 1.92,
    "span": "2010-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21714,7 +21714,7 @@
    "declared_multiple": 3.36,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21733,7 +21733,7 @@
    "declared_multiple": 12.19,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21752,7 +21752,7 @@
    "declared_multiple": 2.14,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21771,9 +21771,9 @@
    "declared_multiple": 27.0,
    "national_multiple": 2.5,
    "span": "2005-2024",
-   "n_claims": 14,
+   "n_claims": 19,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 328,
@@ -21824,11 +21824,11 @@
    "latest_assets": 78466251.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21885,7 +21885,7 @@
    "declared_multiple": 15.48,
    "national_multiple": 2.5,
    "span": "2005-2024",
-   "n_claims": 15,
+   "n_claims": 16,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21904,7 +21904,7 @@
    "declared_multiple": 1.83,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21961,7 +21961,7 @@
    "declared_multiple": 1.75,
    "national_multiple": 1.26,
    "span": "2018-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -21976,11 +21976,11 @@
    "latest_assets": 67226281.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 2.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 5,
+   "n_claims": 6,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22014,11 +22014,11 @@
    "latest_assets": 311535620.0,
    "asset_points": 1,
    "flow_total": null,
-   "cases": null,
+   "cases": 1.0,
    "declared_multiple": null,
    "national_multiple": null,
    "span": null,
-   "n_claims": 6,
+   "n_claims": 7,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22034,12 +22034,12 @@
    "asset_points": 4,
    "flow_total": null,
    "cases": 0.0,
-   "declared_multiple": 22.99,
+   "declared_multiple": 1.76,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 12,
+   "n_claims": 15,
    "n_offices": 1,
-   "n_conflicts": 0
+   "n_conflicts": 2
   },
   {
    "id": 27,
@@ -22113,7 +22113,7 @@
    "declared_multiple": 30.47,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 8,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22132,7 +22132,7 @@
    "declared_multiple": 4.5,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22170,7 +22170,7 @@
    "declared_multiple": 3.33,
    "national_multiple": 1.4,
    "span": "2016-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22284,7 +22284,7 @@
    "declared_multiple": 1.95,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22303,7 +22303,7 @@
    "declared_multiple": 2.58,
    "national_multiple": 1.69,
    "span": "2013-2024",
-   "n_claims": 12,
+   "n_claims": 15,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22360,7 +22360,7 @@
    "declared_multiple": 3.22,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22398,7 +22398,7 @@
    "declared_multiple": 1.39,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22417,7 +22417,7 @@
    "declared_multiple": 11.34,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 7,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22455,7 +22455,7 @@
    "declared_multiple": 6.75,
    "national_multiple": 2.05,
    "span": "2009-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22493,7 +22493,7 @@
    "declared_multiple": 1.21,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22531,7 +22531,7 @@
    "declared_multiple": 1.38,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22550,7 +22550,7 @@
    "declared_multiple": 4.65,
    "national_multiple": 1.22,
    "span": "2019-2024",
-   "n_claims": 8,
+   "n_claims": 9,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22607,7 +22607,7 @@
    "declared_multiple": 5.74,
    "national_multiple": 1.59,
    "span": "2014-2024",
-   "n_claims": 10,
+   "n_claims": 11,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22645,7 +22645,7 @@
    "declared_multiple": 12.6,
    "national_multiple": 1.78,
    "span": "2012-2024",
-   "n_claims": 12,
+   "n_claims": 13,
    "n_offices": 1,
    "n_conflicts": 0
   },
@@ -22664,7 +22664,7 @@
    "declared_multiple": 4.26,
    "national_multiple": 1.32,
    "span": "2017-2024",
-   "n_claims": 9,
+   "n_claims": 10,
    "n_offices": 1,
    "n_conflicts": 0
   }
@@ -22673,9 +22673,51 @@
   "GBR",
   "IND"
  ],
+ "review_queue": [
+  {
+   "a": {
+    "id": 377,
+    "name": "Venkatesan S"
+   },
+   "b": {
+    "id": 190,
+    "name": "V. Somanna"
+   },
+   "country": "IND",
+   "score": 0.85,
+   "note": "scored 0.850 against 'V. Somanna'; below auto-merge threshold 0.93"
+  },
+  {
+   "a": {
+    "id": 379,
+    "name": "Selvaraj V"
+   },
+   "b": {
+    "id": 377,
+    "name": "Venkatesan S"
+   },
+   "country": "IND",
+   "score": 0.85,
+   "note": "scored 0.850 against 'Venkatesan S'; below auto-merge threshold 0.93"
+  },
+  {
+   "a": {
+    "id": 385,
+    "name": "Selvaganapathi T M"
+   },
+   "b": {
+    "id": 362,
+    "name": "Tharaniventhan M S"
+   },
+   "country": "IND",
+   "score": 0.9,
+   "note": "scored 0.900 against 'Tharaniventhan M S'; below auto-merge threshold 0.93"
+  }
+ ],
  "caveats": {
   "not_a_score": "These are declared figures from official filings, shown with their sources. Declared wealth rises with property prices, inheritance, business income and inflation. A high multiple is a reason to ask a question, not an accusation.",
   "cases": "Criminal cases shown are self-declared PENDING cases from the candidate's own affidavit. They are not convictions.",
+  "review": "These name pairs scored close enough to be the same person, but not close enough for a machine to merge them safely. They are shown as separate people until a human decides. Merging two different politicians would attribute one person's assets and pending cases to another, which is why the default is to split.",
   "stock_vs_flow": "India's figures are total declared assets at a date. The UK's are individual registered payments. They are different kinds of number and are never plotted on the same axis."
  }
 }

@@ -44,6 +44,20 @@ REVIEW = 0.62       # between: queue for a human. below: different people
 # names - "Narendra Modi" vs "Narendra Damodardas Modi" (0.67), very common in
 # Indian and Spanish naming - into human review instead of silently splitting
 # them, while keeping a comfortable margin above the true negatives.
+#
+# AUTO_MERGE must stay high, and here is the evidence from a real 543-member run.
+# These three pairs are DIFFERENT sitting MPs, and they scored:
+#
+#     Venkatesan S        vs  V. Somanna            0.85
+#     Selvaraj V          vs  Venkatesan S          0.85
+#     Selvaganapathi T M  vs  Tharaniventhan M S    0.90
+#
+# South Indian naming defeats the initial-matching heuristic: a lone initial is
+# often the father's name rather than a first name, token order varies by source,
+# and a single letter will happily match the first letter of any long given name.
+# All three landed in the review band and were kept apart, which is the system
+# working. Lowering AUTO_MERGE towards 0.85 would have merged three pairs of real
+# politicians and attributed one person's assets and pending cases to another.
 
 
 def normalise_name(name: str) -> str:

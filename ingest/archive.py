@@ -131,7 +131,12 @@ class Archive:
             ),
         )
         self.con.commit()
-        if cur.lastrowid:
+        # `lastrowid` is NOT cleared when INSERT OR IGNORE ignores a row - it keeps
+        # the rowid of the last insert that actually happened on this connection.
+        # Trusting it here returned an unrelated id for a document we already held,
+        # which made the re-fetch checker report unchanged pages as CHANGED.
+        # `rowcount` is 1 on insert and 0 on ignore, which is the real signal.
+        if cur.rowcount:
             return cur.lastrowid
         row = self.con.execute(
             "SELECT id FROM sources WHERE url = ? AND sha256 = ?",

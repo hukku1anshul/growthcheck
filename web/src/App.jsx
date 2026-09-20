@@ -6,10 +6,14 @@ import {
   loadSeries,
   loadEvents,
   rebase,
+  readUrlState,
+  writeUrlState,
   COLOURS,
   eventColour,
   eventLabel,
 } from './data.js'
+
+const URL0 = readUrlState()
 
 const MAX_COUNTRIES = 6
 const DEFAULT_COUNTRIES = ['IND', 'CHN']
@@ -19,18 +23,18 @@ export default function App() {
   const [meta, setMeta] = useState(null)
   const [error, setError] = useState(null)
 
-  const [selected, setSelected] = useState(DEFAULT_COUNTRIES)
-  const [focus, setFocus] = useState(DEFAULT_COUNTRIES[0])
-  const [indicatorId, setIndicatorId] = useState(DEFAULT_INDICATOR)
-  const [range, setRange] = useState([1960, 2025])
-  const [rebased, setRebased] = useState(false)
-  const [showSpans, setShowSpans] = useState(true)
+  const [selected, setSelected] = useState(URL0.countries || DEFAULT_COUNTRIES)
+  const [focus, setFocus] = useState(URL0.focus || (URL0.countries || DEFAULT_COUNTRIES)[0])
+  const [indicatorId, setIndicatorId] = useState(URL0.indicator || DEFAULT_INDICATOR)
+  const [range, setRange] = useState([URL0.from ?? 1960, URL0.to ?? 2025])
+  const [rebased, setRebased] = useState(URL0.rebased ?? false)
+  const [showSpans, setShowSpans] = useState(URL0.spans ?? true)
   const [kinds, setKinds] = useState(null) // null = not yet initialised
   const [search, setSearch] = useState('')
   const [seriesByIso, setSeriesByIso] = useState({})
   const [eventData, setEventData] = useState({ events: [], spans: [] })
   const [picked, setPicked] = useState(null)
-  const [mode, setMode] = useState('countries')
+  const [mode, setMode] = useState(URL0.view === 'people' ? 'people' : 'countries')
   const [dark, setDark] = useState(
     () => window.matchMedia?.('(prefers-color-scheme: dark)').matches ?? false
   )
@@ -44,15 +48,35 @@ export default function App() {
     if (!meta || kinds) return
     // Start with the curated decisions and ruptures on, routine elections off -
     // showing every election in a 65-year window buries the signal immediately.
-    const on = new Set(
-      Object.keys(meta.event_kinds).filter((k) => k !== 'election' && k !== 'leader_change')
-    )
+    const on = URL0.kinds
+      ? new Set(URL0.kinds.filter((k) => k in meta.event_kinds))
+      : new Set(
+          Object.keys(meta.event_kinds).filter(
+            (k) => k !== 'election' && k !== 'leader_change'
+          )
+        )
     setKinds(on)
   }, [meta, kinds])
 
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? 'dark' : 'light'
   }, [dark])
+
+  // Mirror the current view into the address bar so it can be shared.
+  useEffect(() => {
+    if (!kinds) return
+    writeUrlState({
+      view: mode,
+      c: mode === 'countries' ? selected : undefined,
+      i: mode === 'countries' ? indicatorId : undefined,
+      from: mode === 'countries' ? range[0] : undefined,
+      to: mode === 'countries' ? range[1] : undefined,
+      focus: mode === 'countries' ? focus : undefined,
+      k: mode === 'countries' ? [...kinds] : undefined,
+      rebased: mode === 'countries' ? (rebased ? 1 : 0) : undefined,
+      spans: mode === 'countries' ? (showSpans ? 1 : 0) : undefined,
+    })
+  }, [mode, selected, indicatorId, range, focus, kinds, rebased, showSpans])
 
   // ---------------------------------------------------------------- data load
   useEffect(() => {
