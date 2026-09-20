@@ -292,7 +292,7 @@ check("no eaten escapes in any source file", not damaged,
 print("\n[9] The 'sources disagree' warning is not dominated by one predicate.")
 # A conflict is only meaningful for a fact with ONE value per person per date.
 # When a predicate that legitimately repeats is not declared in
-# etl.export_people.MULTI_INSTANCE, every repetition becomes a fake
+# etl.export_people.SINGLE_VALUED, every repetition becomes a fake
 # disagreement - and because the fakes arrive in bulk, they drown the real ones.
 #
 # `parliamentary_question` and `disclosure_filed` did exactly this: 90% of every
@@ -324,7 +324,7 @@ else:
             "no predicate dominates the conflict count",
             share <= 0.5,
             f"largest is {predicate} at {count}/{total} ({share:.0%})"
-            + ("  <- add it to MULTI_INSTANCE if it can repeat on one date"
+            + ("  <- is it really single-valued per date? see SINGLE_VALUED"
                if share > 0.5 else ""),
         )
 

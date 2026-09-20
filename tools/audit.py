@@ -179,7 +179,7 @@ def audit_bundles(con):
 
     bad_id, bad_count, bad_src, bad_pts, bad_util, bad_conflict = [], [], [], [], [], []
     bad_currency, bad_party, bad_nan = [], [], []
-    from etl.export_people import MULTI_INSTANCE
+    from etl.export_people import SINGLE_VALUED
 
     for pid, listing in listed.items():
         f = PEOPLE / f"{pid}.json"
@@ -218,7 +218,7 @@ def audit_bundles(con):
                     f"{pm.get('spent')}/{pm['allocated']} = {calc:.1f}%")
         # a conflict must never be a predicate that legitimately repeats
         for k in d.get("conflicts") or []:
-            if k.get("predicate") in MULTI_INSTANCE:
+            if k.get("predicate") not in SINGLE_VALUED:
                 bad_conflict.append(f"{d.get('name')}: {k.get('predicate')}")
                 break
         # the headline party must match the most recent office
@@ -235,7 +235,8 @@ def audit_bundles(con):
     report("no NaN or Infinity reached a bundle", bad_nan, "")
     report("asset points are year-sorted, unique and positive", bad_pts, "")
     report("MPLADS utilisation equals completed / allocated", bad_util, "")
-    report("no conflict is a predicate that legitimately repeats", bad_conflict, "")
+    report("no conflict is a predicate that can repeat on one date",
+           bad_conflict, f"{len(SINGLE_VALUED)} single-valued predicates")
     report("the headline party is the most recent term's party", bad_party, "")
     report("Indian bundles carry rupees", bad_currency, "")
 

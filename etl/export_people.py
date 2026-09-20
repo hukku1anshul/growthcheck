@@ -177,18 +177,39 @@ def _same_seat(a: str, b: str) -> bool:
 # that disagree. That accounted for 1,772 of 1,935 flagged facts - 90% of the
 # warning was noise. Check [9] in verify.py now fails if one predicate dominates
 # the conflict count like that again.
-MULTI_INSTANCE = {
-    "contract_awarded",
-    "outside_earnings",
-    "registered_interest",
-    "electoral_bonds_received",
-    "electoral_bonds_purchased",
-    "possible_duplicate_of",
-    # Several questions can be tabled on one sitting day, and each is its own
-    # question rather than a rival account of one question.
-    "parliamentary_question",
-    # A US filer can lodge an original report and an amendment the same day.
-    "disclosure_filed",
+# Predicates where a person has exactly ONE value on a given date. Two
+# different values for one of these is a genuine disagreement worth showing.
+#
+# This is an ALLOW-LIST, and the direction matters more than the contents. It
+# replaces a deny-list of predicates that legitimately repeat, which failed
+# three times: MPLADS works, then parliamentary questions and US filings, then
+# relayed fact-checks. Each new extractor brought a repeating predicate, nobody
+# remembered to add it, and the live site announced that a member's sources
+# disagreed on facts where they agreed completely - 1,772 of 1,935 flagged facts
+# at the worst point, and 112 of 273 after that.
+#
+# A deny-list fails open: an unknown predicate becomes a false alarm. This fails
+# closed. The twelfth extractor's new predicate is simply not a conflict until
+# someone decides it is one, which is the safe default for a warning the app
+# asks readers to trust.
+SINGLE_VALUED = {
+    "age",
+    "attendance_pct",
+    "budget_allocated",
+    "budget_spent",
+    "criminal_cases_declared",
+    "debates_participated",
+    "declared_assets",
+    "declared_immovable_assets",
+    "declared_liabilities",
+    "declared_movable_assets",
+    "education_level",
+    "party_affiliation",
+    "private_member_bills",
+    "questions_asked",
+    "questions_topics",
+    "self_profession",
+    "serious_criminal_cases",
 }
 
 
@@ -222,14 +243,25 @@ def _same_value(predicate: str, values: list, aliases: dict) -> bool:
 
 
 def _conflicts(claims: list[dict], aliases: dict) -> list[dict]:
-    """Facts asserted differently by different documents.
+    """Facts asserted differently by different DOCUMENTS.
 
     Reported, never resolved. Two affidavits from the same person in the same year
     can legitimately differ; deciding which is true is not this tool's job.
+
+    Only SINGLE_VALUED predicates are considered, so a predicate that repeats
+    on a date can never raise a false alarm.
+
+    Note what is deliberately NOT required: that the values come from two
+    different archived documents. Requiring that looked principled and was
+    wrong. Rahul Gandhi contested two seats in 2019 and filed two affidavits
+    declaring 5 and 6 pending cases - two genuine documents in the world, but
+    both reported by the same archived page, so a two-document test silently
+    dropped a real disagreement. Two different values for a fact that can only
+    have one is a conflict however many pages carried it.
     """
     seen: dict[tuple, set] = defaultdict(set)
     for c in claims:
-        if c["predicate"] in MULTI_INSTANCE:
+        if c["predicate"] not in SINGLE_VALUED:
             continue
         val = c["num"] if c["num"] is not None else c["text"]
         seen[(c["predicate"], c["as_of"])].add(val)
