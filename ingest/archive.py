@@ -138,6 +138,40 @@ class Archive:
                 time.sleep(self.delay - gap)
         self._last[host] = time.monotonic()
 
+    # A 5xx or a 429 is the server having a bad moment, not a document. Archiving
+    # one is worse than it looks: `reuse=True` then serves that error forever and
+    # the page is never fetched again, so a transient blip becomes a permanent
+    # hole in the data with no symptom. A single 503 from Google during a
+    # five-name test run was cached exactly this way; across a 1,650-name harvest
+    # it would have silently lost people.
+    TRANSIENT = frozenset({429, 500, 502, 503, 504})
+
+    def _fetch(self, url: str, attempts: int = 3):
+        """GET with a retry on transient failures. Never returns a 5xx/429.
+
+        Raises rather than handing back an error body, so the caller records a
+        failure in `stats.errors` instead of archiving a stack trace as evidence.
+        """
+        last = None
+        for n in range(1, attempts + 1):
+            self._wait(url)
+            resp = self.session.get(url, timeout=90)
+            if resp.status_code not in self.TRANSIENT:
+                return resp
+            last = resp
+            if n < attempts:
+                # Honour Retry-After when the server sends one; otherwise back
+                # off, capped so one sick host cannot stall a whole harvest.
+                try:
+                    wait = float(resp.headers.get("Retry-After") or 2 ** n)
+                except (TypeError, ValueError):
+                    wait = float(2 ** n)
+                time.sleep(min(wait, 60.0))
+        raise requests.HTTPError(
+            f"HTTP {last.status_code} after {attempts} attempts: {redact(url)}",
+            response=last,
+        )
+
     # ------------------------------------------------------------------ fetch
     def get(self, url: str, *, reuse: bool = True) -> tuple[int, bytes]:
         """Fetch `url`, archive it, register a source row. Returns (source_id, body).
@@ -173,8 +207,7 @@ class Archive:
                     body = path.read_bytes()
                     return self._register(ident, body, hit, from_disk=True), body
 
-        self._wait(url)
-        resp = self.session.get(url, timeout=90)
+        resp = self._fetch(url)
         body = resp.content
         digest = hashlib.sha256(body).hexdigest()
 
