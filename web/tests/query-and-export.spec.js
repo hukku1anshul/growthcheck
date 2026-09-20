@@ -70,6 +70,12 @@ test('a leader period sets the year range and says whose it is', async ({ page }
   await page.goto('/?view=countries&c=IND&i=gdp_pc&from=1960&to=2025')
   const period = page.locator('.qfield', { hasText: 'Period' }).locator('select')
 
+  // Spans are fetched separately from the series, so the select holds only its
+  // placeholder for a moment. Reading it immediately passed locally and failed
+  // against the deployed site under parallel load - a race, and a flaky test is
+  // worse than a missing one because it teaches you to ignore red.
+  await expect.poll(() => period.locator('option').count()).toBeGreaterThan(5)
+
   const options = await period.locator('option').evaluateAll((o) =>
     o.map((x) => ({ value: x.value, label: x.textContent })))
   // REIGN gives India's leaders from Nehru onwards; if this is empty the spans
