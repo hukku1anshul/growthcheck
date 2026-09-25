@@ -428,12 +428,15 @@ def test_url_redaction() -> None:
     mplads = ("https://mplads.mospi.gov.in/rest/PreLoginDashboardData/"
               "getTilesReportData?combo=0%2C0%2C0%2C2"
               "&key=Allocated+Limit+for+Hon%27ble+MPs")
+    # Shaped like a Google API key (the 39-character "AIza" form) but invented,
+    # and assembled here so no key-shaped string sits in the source for a
+    # scanner, or a reader, to mistake for a real one.
+    fake_key = "AIza" + "Sy" + "FAKE0TEST0KEY0NOT0REAL" + "0" * 11
     factcheck = ("https://factchecktools.googleapis.com/v1alpha1/claims:search"
-                 "?key=AIzaSyA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q"
+                 "?key=" + fake_key +
                  "&pageSize=10&query=Rahul+Gandhi")
 
-    check("a Google API key is masked", "AIzaSyA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q"
-          not in redact(factcheck), True)
+    check("a Google API key is masked", fake_key not in redact(factcheck), True)
     check("the rest of the request survives redaction",
           "query=Rahul+Gandhi" in redact(factcheck), True)
     check("MPLADS' key= field selector is NOT a credential",
@@ -449,7 +452,7 @@ def test_url_redaction() -> None:
     check("a value containing spaces is not a credential",
           is_secret("key", "Allocated Limit for Hon'ble MPs"), False)
     check("a long opaque value under an ambiguous name is a credential",
-          is_secret("key", "AIzaSyA1b2C3d4E5f6G7h8I9j0K1l2M3n4O5p6Q"), True)
+          is_secret("key", fake_key), True)
     check("a short token is not assumed to be a credential",
           is_secret("token", "abc"), False)
 
